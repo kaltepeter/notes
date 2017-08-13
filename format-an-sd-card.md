@@ -22,12 +22,20 @@ Find a copy of the image you want online and start download. In this example Kal
 
    `xz -d kali-2017.01-rpi2.img.xz`
 
-2. unmount sd card
+2. unmount sd card  
+   **linux**
 
    \`lsblk  \# verify disk
 
-   sudo umount /dev/sdc1\`
+   sudo umount /dev/sdc1\`  
+  
+   **mac  
+   **`diskutil list  
+    diskutil unmountDisk /dev/sdc1`
 
-3. 
+3. copy image to sd card  
+   `sudo dd if=kali-2017.01-rpi2.img of=/dev/sdc1 bs=1m`
+
+4. 
 
 
