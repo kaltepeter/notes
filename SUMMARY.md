@@ -1,3 +1,7 @@
 # Summary
 
-* [First Chapter](chapter1.md)
+* [Introduction](README.md)
+* [Linux Commands](chapter1.md)
+* [Basics](basics.md)
+* [Prep SD card with image](format-an-sd-card.md)
+
