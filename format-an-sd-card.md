@@ -29,8 +29,8 @@ Find a copy of the image you want online and start download. In this example Kal
 
    sudo umount /dev/sdc1\`
 
-   **mac    
-   **`diskutil list    
+   **mac      
+   **`diskutil list      
     diskutil unmountDisk /dev/sdc1`
 
 3. copy image to sd card  
