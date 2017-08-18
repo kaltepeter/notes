@@ -1,4 +1,4 @@
-# Basics
+# Linux Commands
 
 | command | purpose | notes |
 | :--- | :--- | :--- |
