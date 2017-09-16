@@ -13,7 +13,8 @@
 | less /etc/passwd | list users | [https://www.digitalocean.com/community/tutorials/how-to-view-system-users-in-linux-on-ubuntu](https://www.digitalocean.com/community/tutorials/how-to-view-system-users-in-linux-on-ubuntu) |
 | less /etc/group | list groups | [https://www.digitalocean.com/community/tutorials/how-to-view-system-users-in-linux-on-ubuntu](https://www.digitalocean.com/community/tutorials/how-to-view-system-users-in-linux-on-ubuntu) |
 | w | who | [https://www.digitalocean.com/community/tutorials/how-to-view-system-users-in-linux-on-ubuntu](https://www.digitalocean.com/community/tutorials/how-to-view-system-users-in-linux-on-ubuntu) |
-| uname -a | display kernal version |  |
+| uname -a | display kernel version |  |
+| cat /proc/version | see kernel and gcc version |  |
 |  |  |  |
 
 
