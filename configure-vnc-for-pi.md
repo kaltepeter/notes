@@ -26,5 +26,13 @@ Type=forking
 WantedBy=multi-user.target
 ```
 
+```
+chown root:root /etc/systemd/system/tightvncserver.service
+```
+
+```
+chmod 755 /etc/systemd/system/tightvncserver.service
+```
+
 
 
