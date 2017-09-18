@@ -14,12 +14,12 @@
 | less /etc/group | list groups | [https://www.digitalocean.com/community/tutorials/how-to-view-system-users-in-linux-on-ubuntu](https://www.digitalocean.com/community/tutorials/how-to-view-system-users-in-linux-on-ubuntu) |
 | w | who | [https://www.digitalocean.com/community/tutorials/how-to-view-system-users-in-linux-on-ubuntu](https://www.digitalocean.com/community/tutorials/how-to-view-system-users-in-linux-on-ubuntu) |
 | uname -a | display kernel version |  |
-| cat /proc/version | see kernel and gcc version |   |
+| cat /proc/version | see kernel and gcc version |  |
 | fdisk -l \| grep Disk | The fdisk command is partition table manipulator for Linux. But it can be used to display total hard disk size | [https://www.cyberciti.biz/faq/howto-find-out-or-learn-harddisk-size-in-linux-or-unix/](https://www.cyberciti.biz/faq/howto-find-out-or-learn-harddisk-size-in-linux-or-unix/) |
 | fdisk /dev/mmcblk0 | open fdisk to change partition | [https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html](https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html) |
-| parted /dev/mmcblk0 | partition manager for mmcblk0 partition | [https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html](/	https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html) |
+| parted /dev/mmcblk0 | partition manager for mmcblk0 partition | [https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html](/    https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html) |
 | resize2fs /dev/mmcblk0p2 | resize partition | [https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html](https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html) |
-|  |  |  |
+| tar -xzf file.tar.gz | extract tar |  |
 |  |  |  |
 
 
