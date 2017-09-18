@@ -46,5 +46,12 @@ systemctl start tightvncserver.service
 systemctl enable tightvncserver.service
 ```
 
+#### connect from client \(tunnel\)
+
+```
+ssh pi@192.168.1.6 -L 5901:localhost:5901
+xtightvncviewer 127.0.0.1:1
+```
+
 
 
