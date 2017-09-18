@@ -40,5 +40,11 @@ chmod 755 /etc/systemd/system/tightvncserver.service
 systemctl start tightvncserver.service
 ```
 
+#### enable at boot
+
+```
+systemctl enable tightvncserver.service
+```
+
 
 
