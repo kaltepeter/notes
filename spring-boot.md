@@ -6,6 +6,8 @@
 
 ### test with curl
 
+`curl -sSf http://localhost:8888/health -o /dev/null || echo "website down"`
+
 `curl -sSf http://localhost:8888/health -o /dev/null || exit 1`
 
 will echo website down if healthcheck is not UP due to how /health works
