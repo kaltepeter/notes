@@ -14,5 +14,13 @@
 
 [https://docs.docker.com/compose/startup-order/](https://docs.docker.com/compose/startup-order/)
 
+## compose / stack
+
+compose is legacy
+
+links are legacy.
+
+`docker container run --name api-gateway --rm --link config-service:ali-config-service api-gateway:latest`
+
 
 
