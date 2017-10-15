@@ -6,5 +6,7 @@
 
 ### test with curl
 
-\`\`\`curl -sSf [http://localhost:8888/health](http://localhost:8888/health) -o /dev/null \| grep "UP" \|\| echo "website down" \`\`\`
+`curl -sSf `[`http://localhost:8888/health`](http://localhost:8888/health)` -o /dev/null || echo "website down"`
+
+will echo website down if healthcheck is not UP
 
