@@ -22,5 +22,7 @@ links are legacy.
 
 `docker container run --name api-gateway --rm --link config-service:ali-config-service api-gateway:latest`
 
+start stack
 
+`docker stack deploy -c docker-compose.yml javelin`
 
