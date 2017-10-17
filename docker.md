@@ -68,5 +68,5 @@ hostname -i
 $(ip route show 0.0.0.0/0 dev eth0 | cut -d\  -f3)
 ```
 
-
+\*\* Use docker compose/stacks to network containers. old way was link. using the gateway address will also do it.
 
