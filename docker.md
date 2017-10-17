@@ -10,6 +10,8 @@
 
 [https://ryaneschinger.com/blog/using-docker-native-health-checks/](https://ryaneschinger.com/blog/using-docker-native-health-checks/)
 
+**health check samples: **[https://github.com/docker-library/healthcheck](https://github.com/docker-library/healthcheck)
+
 ## Startup dependencies
 
 [https://docs.docker.com/compose/startup-order/](https://docs.docker.com/compose/startup-order/)
