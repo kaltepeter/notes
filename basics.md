@@ -20,6 +20,8 @@
 | parted /dev/mmcblk0 | partition manager for mmcblk0 partition | [https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html](/    https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html) |
 | resize2fs /dev/mmcblk0p2 | resize partition | [https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html](https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html) |
 | tar -xzf file.tar.gz | extract tar |  |
+| ip route show 0.0.0.0/0 dev eth0 \| cut -d  -f3 | find gateway ip | [https://serverfault.com/questions/31170/how-to-find-the-gateway-ip-address-in-linux](https://serverfault.com/questions/31170/how-to-find-the-gateway-ip-address-in-linux) |
+| hostname -i | find ip address for host |  |
 |  |  |  |
 
 
