@@ -56,3 +56,17 @@ environment replacement doc: [https://docs.docker.com/engine/reference/builder/\
 
 docs: [https://docs.docker.com/engine/userguide/networking/work-with-networks/\#basic-container-networking-example](https://docs.docker.com/engine/userguide/networking/work-with-networks/#basic-container-networking-example)
 
+#### get container ip
+
+```
+hostname -i
+```
+
+#### get container gateway
+
+```
+$(ip route show 0.0.0.0/0 dev eth0 | cut -d\  -f3)
+```
+
+
+
