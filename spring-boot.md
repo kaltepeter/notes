@@ -24,3 +24,9 @@ will exit with error status if healthcheck is  not UP
 
 because of error codes it will cause a curl fail state
 
+## getting started
+
+**nosql db: **[https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-nosql.html](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-nosql.html)
+
+
+
