@@ -30,6 +30,8 @@ start stack
 
 how entry points work: [https://stackoverflow.com/questions/41512237/how-to-execute-a-shell-command-before-the-entrypoint-via-the-dockerfile](https://stackoverflow.com/questions/41512237/how-to-execute-a-shell-command-before-the-entrypoint-via-the-dockerfile)
 
+vars in dockerfile: [https://stackoverflow.com/questions/19537645/get-environment-variable-value-in-dockerfile](https://stackoverflow.com/questions/19537645/get-environment-variable-value-in-dockerfile)
+
 environment replacement doc: [https://docs.docker.com/engine/reference/builder/\#environment-replacement](https://docs.docker.com/engine/reference/builder/#environment-replacement)
 
 #### how to run command to set env var
