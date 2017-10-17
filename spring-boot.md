@@ -36,3 +36,9 @@ spring.data.mongodb.host=mongodbhost
 
 
 
+## properties
+
+**command line properties:** [https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html\#boot-features-external-config-command-line-args](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html#boot-features-external-config-command-line-args)
+
+
+
