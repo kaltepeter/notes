@@ -80,3 +80,5 @@ $(ip route show 0.0.0.0/0 dev eth0 | cut -d\  -f3)
 
 **getting started for spring boot:** [https://spring.io/guides/gs/spring-boot-docker/](https://spring.io/guides/gs/spring-boot-docker/)
 
+**host multiple websites on single host docker: **[https://blog.florianlopes.io/host-multiple-websites-on-single-host-docker/](https://blog.florianlopes.io/host-multiple-websites-on-single-host-docker/)
+
