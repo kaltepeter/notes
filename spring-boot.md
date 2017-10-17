@@ -24,9 +24,15 @@ will exit with error status if healthcheck is  not UP
 
 because of error codes it will cause a curl fail state
 
-## getting started
+## mongo
 
 **nosql db: **[https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-nosql.html](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-nosql.html)
+
+#### modify host
+
+```
+spring.data.mongodb.host=mongodbhost
+```
 
 
 
