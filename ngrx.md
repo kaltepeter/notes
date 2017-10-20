@@ -1,0 +1,10 @@
+# ngrx
+
+#### adding store
+
+
+
+
+
+
+
