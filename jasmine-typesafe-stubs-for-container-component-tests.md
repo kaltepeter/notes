@@ -8,7 +8,9 @@ container component tests are slow and painful. require mocking a lot of objects
 
 [https://angular.io/guide/testing\#shallow-component-tests-with-no\_errors\_schema](https://angular.io/guide/testing#shallow-component-tests-with-no_errors_schema)
 
-#### option 2
+### option 2: typesafe stubs
+
+
 
 
 
