@@ -6,8 +6,8 @@ proxying - [https://www.digitalocean.com/community/tutorials/understanding-nginx
 
 ```
 proxy_set_header X-Real-IP  $remote_addr;
-	proxy_set_header X-Forwarded-For $remote_addr;
-	proxy_set_header Host $host;
+proxy_set_header X-Forwarded-For $remote_addr;
+proxy_set_header Host $host;
 ```
 
 #### env vars in config
