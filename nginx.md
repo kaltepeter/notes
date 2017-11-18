@@ -2,6 +2,14 @@
 
 proxying - [https://www.digitalocean.com/community/tutorials/understanding-nginx-http-proxying-load-balancing-buffering-and-caching](https://www.digitalocean.com/community/tutorials/understanding-nginx-http-proxying-load-balancing-buffering-and-caching)
 
+#### headers
+
+```
+proxy_set_header X-Real-IP  $remote_addr;
+	proxy_set_header X-Forwarded-For $remote_addr;
+	proxy_set_header Host $host;
+```
+
 #### env vars in config
 
 [https://docs.docker.com/samples/library/nginx/\#using-environment-variables-in-nginx-configuration](https://docs.docker.com/samples/library/nginx/#using-environment-variables-in-nginx-configuration)
@@ -9,7 +17,7 @@ proxying - [https://www.digitalocean.com/community/tutorials/understanding-nginx
 1. Create upstreams.conf.template. wrap vars with ${}
    ```
    upstream jaasmanda {
-   	server ${JAAS_MANDA};
+       server ${JAAS_MANDA};
    }
    ```
 2. process vars. will copy processed to /etc/nginx/snippets/upstreams.conf
