@@ -12,4 +12,5 @@
 * [Spring Boot ](spring-boot.md)
 * [Jasmine: typesafe stubs for container component tests](jasmine-typesafe-stubs-for-container-component-tests.md)
 * [ngrx](ngrx.md)
+* [nginx](nginx.md)
 
