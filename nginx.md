@@ -30,5 +30,9 @@ proxy_set_header Host $host;
    include /etc/nginx/snippets/upstreams.conf;
    ```
 
+## microservices
+
+[https://www.nginx.com/blog/building-microservices-using-an-api-gateway/](https://www.nginx.com/blog/building-microservices-using-an-api-gateway/)
+
 
 
