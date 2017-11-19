@@ -27,3 +27,9 @@
 
 
 
+### File permissions
+
+[http://www.tldp.org/LDP/intro-linux/html/sect\_03\_04.html](http://www.tldp.org/LDP/intro-linux/html/sect_03_04.html)
+
+
+
