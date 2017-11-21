@@ -12,5 +12,9 @@
 
 [https://jenkins.io/solutions/github/](https://jenkins.io/solutions/github/) - current integration doc
 
+[https://support.cloudbees.com/hc/en-us/articles/224543927-GitHub-webhook-configuration](https://support.cloudbees.com/hc/en-us/articles/224543927-GitHub-webhook-configuration) - webhooks
+
+
+
 
 
