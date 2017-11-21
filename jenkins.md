@@ -6,11 +6,13 @@
 
 [https://jenkins.io/doc/book/managing/cli/](https://jenkins.io/doc/book/managing/cli/) - cli
 
+[https://wiki.jenkins.io/display/JENKINS/Figuring+out+URL+binding+of+Stapler](https://wiki.jenkins.io/display/JENKINS/Figuring+out+URL+binding+of+Stapler) - uri bindings investigation
+
+
+
 #### credentials
 
 [http://www.greenreedtech.com/creating-jenkins-credentials-via-the-rest-api/](http://www.greenreedtech.com/creating-jenkins-credentials-via-the-rest-api/) - create credentials via REST
-
-
 
 ### Github
 
@@ -19,6 +21,4 @@
 [https://jenkins.io/solutions/github/](https://jenkins.io/solutions/github/) - current integration doc
 
 [https://support.cloudbees.com/hc/en-us/articles/224543927-GitHub-webhook-configuration](https://support.cloudbees.com/hc/en-us/articles/224543927-GitHub-webhook-configuration) - webhooks
-
-
 
