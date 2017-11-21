@@ -8,7 +8,7 @@
 
 [https://wiki.jenkins.io/display/JENKINS/Figuring+out+URL+binding+of+Stapler](https://wiki.jenkins.io/display/JENKINS/Figuring+out+URL+binding+of+Stapler) - uri bindings investigation
 
-[https://github.com/arangamani/jenkins\_api\_client](https://github.com/arangamani/jenkins_api_client) - cli repos
+[https://github.com/kohsuke/jenkins/tree/55203ebeed1b7e182878d3e3c1184ac042f20473/core/src/main/java/hudson/cli](https://github.com/kohsuke/jenkins/tree/55203ebeed1b7e182878d3e3c1184ac042f20473/core/src/main/java/hudson/cli) - cli repos
 
 
 
