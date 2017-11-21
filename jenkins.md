@@ -10,6 +10,8 @@
 
 [https://github.com/kohsuke/jenkins/tree/55203ebeed1b7e182878d3e3c1184ac042f20473/core/src/main/java/hudson/cli](https://github.com/kohsuke/jenkins/tree/55203ebeed1b7e182878d3e3c1184ac042f20473/core/src/main/java/hudson/cli) - cli repos
 
+[http://javadoc.jenkins-ci.org/](http://javadoc.jenkins-ci.org/) - java doc
+
 
 
 #### credentials
