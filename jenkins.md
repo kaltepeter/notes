@@ -12,7 +12,7 @@
 
 [http://javadoc.jenkins-ci.org/](http://javadoc.jenkins-ci.org/) - java doc
 
-
+[https://github.com/jenkinsci/credentials-plugin/blob/master/src/main/java/com/cloudbees/plugins/credentials/cli/UpdateCredentialsByXmlCommand.java](https://github.com/jenkinsci/credentials-plugin/blob/master/src/main/java/com/cloudbees/plugins/credentials/cli/UpdateCredentialsByXmlCommand.java) - update credentials code
 
 #### credentials
 
