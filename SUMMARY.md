@@ -14,4 +14,5 @@
 * [ngrx](ngrx.md)
 * [nginx](nginx.md)
 * [jenkins](jenkins.md)
+* [ruby](ruby.md)
 
