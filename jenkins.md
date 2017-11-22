@@ -14,6 +14,8 @@
 
 [https://github.com/jenkinsci/credentials-plugin/blob/master/src/main/java/com/cloudbees/plugins/credentials/cli/UpdateCredentialsByXmlCommand.java](https://github.com/jenkinsci/credentials-plugin/blob/master/src/main/java/com/cloudbees/plugins/credentials/cli/UpdateCredentialsByXmlCommand.java) - update credentials code
 
+{jenkins\_server}/cli/ - cli docs
+
 #### credentials
 
 [http://www.greenreedtech.com/creating-jenkins-credentials-via-the-rest-api/](http://www.greenreedtech.com/creating-jenkins-credentials-via-the-rest-api/) - create credentials via REST
