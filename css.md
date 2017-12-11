@@ -80,7 +80,7 @@ print abbr title
 :user-error or :user-invalid
 ```
 
-psuedo classes
+##### pseudo classes
 
 ```
 body {counter-reset: invalidCount;}
