@@ -319,5 +319,19 @@ feature detection without js
  0% — 00
 ```
 
+##### appearance
+
+[https://opensource.apple.com/source/WebCore/WebCore-1889.1/css/mediaControls.css.auto.html](https://opensource.apple.com/source/WebCore/WebCore-1889.1/css/mediaControls.css.auto.html)
+
+#### flexbox
+
+[https://caniuse.com/\#search=flexbox](https://caniuse.com/#search=flexbox) - caniuse flexbox
+
+[https://drafts.csswg.org/css-flexbox/](https://drafts.csswg.org/css-flexbox/) - spec
+
+
+
+
+
 
 
