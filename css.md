@@ -229,5 +229,9 @@ Purely decorative
 content: "\25BA" / "";
 ```
 
+[https://w3c.github.io/accname/](https://w3c.github.io/accname/)
+
+don't mix content vs. presentation. i.e. generated content is extra, not required as it is presentation
+
 
 
