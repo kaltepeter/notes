@@ -362,5 +362,11 @@ inline \| block \| list-item \| inline-list-item \| inline-block \| flex \| inli
 3. clear
 4. vertical-align
 
+##### axis
+
+[https://estelle.github.io/cssmastery/flexbox/files/axes.html](https://estelle.github.io/cssmastery/flexbox/files/axes.html)
+
+
+
 
 
