@@ -59,5 +59,41 @@ case insensitivity
 
 print abbr title
 
+##### UI selectors
+
+```
+:default
+:valid
+:invalid
+
+:required
+:optional
+
+:in-range
+:out-of-range
+
+:read-only
+:read-write
+
+:placeholder-shown
+
+:user-error or :user-invalid
+```
+
+psuedo classes
+
+```
+body {counter-reset: invalidCount;}
+:invalid {
+  background-color: pink;
+  counter-increment: invalidCount;
+}
+p:before {
+  content: "You have " counter(invalidCount) " invalid entries";
+}
+```
+
+css counters
+
 
 
