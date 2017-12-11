@@ -24,3 +24,14 @@ select elements matching css class
 
 
 
+##### Attribute Selectors
+
+```
+a[href^=mailto] {background-image: url(emailicon.gif);}
+a[href^=http]:after {content: " (" attr(href) ")";}
+```
+
+print or progressive enhancement to types of links
+
+
+
