@@ -152,5 +152,23 @@ style webkit scrollbar
 
 shadow-dom
 
+#### generating content
+
+##### quotes
+
+```
+/* Specify pairs of quotes for two levels in two languages */
+:lang(en) > q { quotes: '"' '"' "'" "'" }
+:lang(fr) > q { quotes: "«" "»" "’" "’" }
+
+/* Insert quotes before and after Q element content */
+q::before { content: open-quote }
+q::after  { content: close-quote }
+```
+
+dynamically insert language specific quotes
+
+[https://codepen.io/estelle/pen/yPbKVW/](https://codepen.io/estelle/pen/yPbKVW/)
+
 
 
