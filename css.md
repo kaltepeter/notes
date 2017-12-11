@@ -117,5 +117,40 @@ use :rem units for root fonts
 
 two :: is correct, : worked
 
+```
+.scrollbar ::-webkit-scrollbar {
+  margin-right: 5px;
+  background-color: #f36;
+  border-radius: 6px;
+  width: 12px;
+}
+.scrollbar ::-webkit-scrollbar-track {
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+.scrollbar ::-webkit-scrollbar-thumb {
+  border: 1px #eee solid;
+  border-radius: 12px;
+  background: #f63;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+  transition: all .3s ease-out;
+}
+.scrollbar ::-webkit-scrollbar-thumb:window-inactive {
+  background: #bbb;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+}
+.scrollbar ::-webkit-scrollbar-thumb:hover {
+  background: royalblue; 
+}
+.scrollbar pre {
+  width: 700px;
+  height: 200px;
+  overflow:auto;
+}
+```
+
+style webkit scrollbar
+
+shadow-dom
+
 
 
