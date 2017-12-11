@@ -329,9 +329,7 @@ feature detection without js
 
 [https://drafts.csswg.org/css-flexbox/](https://drafts.csswg.org/css-flexbox/) - spec
 
-
-
-
+[https://estelle.github.io/cssmastery/flexbox/files/pagelayout.html](https://estelle.github.io/cssmastery/flexbox/files/pagelayout.html) - holy grail layout example
 
 
 
