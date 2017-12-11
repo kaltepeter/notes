@@ -348,7 +348,19 @@ Add
 
 inline \| block \| list-item \| inline-list-item \| inline-block \| flex \| inline-flex \| grid \| inline-grid \| table \| inline-table \| table-row-group \| table-header-group \| table-footer-group \| table-row \| table-cell \| table-column-group \| table-column \| table-caption \| ruby \| ruby-base \| ruby-text \| ruby-base-container \| ruby-text-container \| contents \| none \| flow \| flow-root
 
+##### changed props
 
+* floats are not impacted. use as fallback
+* `margin`: adjacent flex items margins do not collapse
+* `min-width`& `min-height`: default is auto, not 0
+* `visibility: collapse;`
+
+###### ignored:
+
+1. column-\* properties
+2. float
+3. clear
+4. vertical-align
 
 
 
