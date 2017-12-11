@@ -95,5 +95,13 @@ p:before {
 
 css counters
 
+##### structural selectors
+
+```
+:root
+```
+
+use :rem units for root fonts
+
 
 
