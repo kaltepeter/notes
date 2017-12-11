@@ -344,6 +344,10 @@ Add
    `flex-wrap`
    to control wrap direction
 
+##### display properties
+
+inline \| block \| list-item \| inline-list-item \| inline-block \| flex \| inline-flex \| grid \| inline-grid \| table \| inline-table \| table-row-group \| table-header-group \| table-footer-group \| table-row \| table-cell \| table-column-group \| table-column \| table-caption \| ruby \| ruby-base \| ruby-text \| ruby-base-container \| ruby-text-container \| contents \| none \| flow \| flow-root
+
 
 
 
