@@ -1,0 +1,19 @@
+# CSS
+
+## CSS Mastery
+
+[http://estelle.github.io](http://estelle.github.io)
+
+[https://estelle.github.io/cssmastery/\#slide8](https://estelle.github.io/cssmastery/#slide8) - slides
+
+[https://www.fontsquirrel.com/tools/webfont-generator](https://www.fontsquirrel.com/tools/webfont-generator)
+
+[https://estelle.github.io/cssmastery/selectors/selectors.html](https://estelle.github.io/cssmastery/selectors/selectors.html) - selectors complete list
+
+[http://specifishity.com/specifishity.pdf](http://specifishity.com/specifishity.pdf) - specificity reference pdf
+
+  
+
+
+
+
