@@ -187,7 +187,7 @@ a[href^=http]:hover:after {
    color: white;
    padding: 3px 5px;
    line-height:1;
-} 
+}
 ```
 
 ##### counter
@@ -205,6 +205,8 @@ p:before {
 ```
 
 body - reload page and set count
+
+bump count when an invalid field is hit
 
 
 
