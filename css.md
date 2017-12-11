@@ -22,8 +22,6 @@ var chil = el.querySelectorAll('.foo');
 
 select elements matching css class
 
-
-
 ##### Attribute Selectors
 
 ```
@@ -32,6 +30,13 @@ a[href^=http]:after {content: " (" attr(href) ")";}
 ```
 
 print or progressive enhancement to types of links
+
+```
+a[href$=pdf] {background-image: url(pdficon.gif);}
+a[href$=pdf]:after {content: " (PDF)";}
+```
+
+decorate links of type
 
 
 
