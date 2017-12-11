@@ -38,5 +38,11 @@ a[href$=pdf]:after {content: " (PDF)";}
 
 decorate links of type
 
+```
+input[type=checkbox i]
+```
 
+case insensitivity
+
+[https://codepen.io/estelle/pen/lEGev](https://codepen.io/estelle/pen/lEGev)
 
