@@ -170,5 +170,7 @@ dynamically insert language specific quotes
 
 [https://codepen.io/estelle/pen/yPbKVW/](https://codepen.io/estelle/pen/yPbKVW/)
 
+[https://codepen.io/estelle/pen/aVWYyZ](https://codepen.io/estelle/pen/aVWYyZ) - no closing quote for multiple paragraphs
+
 
 
