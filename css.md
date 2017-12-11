@@ -275,5 +275,17 @@ feature detection without js
 
 [https://codepen.io/estelle/pen/ihsny](https://codepen.io/estelle/pen/ihsny) - css feature detection
 
+##### viewport
+
+```
+<meta name="viewport" content="width=device-width,
+            initial-scale=1, maximum-scale=1"/>
+```
+
+* always include
+* don't disable scaling
+
+
+
 
 
