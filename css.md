@@ -233,5 +233,43 @@ content: "\25BA" / "";
 
 don't mix content vs. presentation. i.e. generated content is extra, not required as it is presentation
 
+##### shapes
+
+[https://css-tricks.com/examples/ShapesOfCSS/](https://css-tricks.com/examples/ShapesOfCSS/)
+
+[https://css-tricks.com/pseudo-element-roundup/](https://css-tricks.com/pseudo-element-roundup/)
+
+#### media queries
+
+[https://estelle.github.io/cssmastery/media/\#slide2](https://estelle.github.io/cssmastery/media/#slide2)
+
+[https://developer.mozilla.org/en-US/docs/Web/CSS/@media\#Media\_features](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features) - media query specs
+
+##### resolution
+
+**dpi**
+
+* : dots per inch \(72, 96\)
+ 
+* **dpcm**
+  : dots per centimeter \(1dpcm ≈ 2.54dpi\)
+ 
+* **dppx**
+  : dots per pixel
+ 
+  1dppx = 96dpi \(default resolution of images\)
+
+---
+
+Note: 0 is invalid. O is not equal to 0dpi, 0dpcm, or 0dppx.
+
+#### @supports
+
+```
+@supports (display: flex){
+  /* rules for browsers supporting unprefixed flex box */
+}
+```
+
 
 
