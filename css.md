@@ -331,5 +331,20 @@ feature detection without js
 
 [https://estelle.github.io/cssmastery/flexbox/files/pagelayout.html](https://estelle.github.io/cssmastery/flexbox/files/pagelayout.html) - holy grail layout example
 
+###### steps
+
+Add
+
+1. `display: flex;`
+   to the parent of the elements to be flexed.
+2. Set
+   `flex-direction`
+   to horizontal or vertical
+3. Set
+   `flex-wrap`
+   to control wrap direction
+
+
+
 
 
