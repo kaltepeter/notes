@@ -250,13 +250,13 @@ don't mix content vs. presentation. i.e. generated content is extra, not require
 **dpi**
 
 * : dots per inch \(72, 96\)
- 
-* **dpcm**
+
+* **dpcm**  
   : dots per centimeter \(1dpcm ≈ 2.54dpi\)
- 
-* **dppx**
+
+* **dppx**  
   : dots per pixel
- 
+
   1dppx = 96dpi \(default resolution of images\)
 
 ---
@@ -270,6 +270,10 @@ Note: 0 is invalid. O is not equal to 0dpi, 0dpcm, or 0dppx.
   /* rules for browsers supporting unprefixed flex box */
 }
 ```
+
+feature detection without js
+
+[https://codepen.io/estelle/pen/ihsny](https://codepen.io/estelle/pen/ihsny) - css feature detection
 
 
 
