@@ -105,5 +105,17 @@ use :rem units for root fonts
 
 [https://estelle.github.io/wtf/](https://estelle.github.io/wtf/)
 
+##### pseudo elements
+
+```
+::first-line
+::first-letter
+::selection (not in specification)
+::before
+::after
+```
+
+two :: is correct, : worked
+
 
 
