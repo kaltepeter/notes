@@ -46,3 +46,18 @@ case insensitivity
 
 [https://codepen.io/estelle/pen/lEGev](https://codepen.io/estelle/pen/lEGev)
 
+```
+@media print{
+  abbr[title]:after {
+    content: "(" attr(title) ")";
+  }
+  a[href^=http]:after {
+    content: "(" attr(href) ")";
+  }
+}
+```
+
+print abbr title
+
+
+
