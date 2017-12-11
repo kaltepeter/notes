@@ -4,7 +4,7 @@
 
 [http://estelle.github.io](http://estelle.github.io)
 
-[https://estelle.github.io/cssmastery/\#slide8](https://estelle.github.io/cssmastery/#slide8) - slides
+[https://estelle.github.io/cssmastery/\#slide8](https://estelle.github.io/cssmastery/#slide8) - slides
 
 [https://www.fontsquirrel.com/tools/webfont-generator](https://www.fontsquirrel.com/tools/webfont-generator)
 
@@ -12,8 +12,15 @@
 
 [http://specifishity.com/specifishity.pdf](http://specifishity.com/specifishity.pdf) - specificity reference pdf
 
-  
+##### Selectors API
 
+```
+var el   = document.querySelector('#bar');
+
+var chil = el.querySelectorAll('.foo');
+```
+
+select elements matching css class
 
 
 
