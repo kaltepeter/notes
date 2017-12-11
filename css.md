@@ -172,5 +172,39 @@ dynamically insert language specific quotes
 
 [https://codepen.io/estelle/pen/aVWYyZ](https://codepen.io/estelle/pen/aVWYyZ) - no closing quote for multiple paragraphs
 
+##### links
+
+```
+a[href^=http]:hover {
+   position: relative;
+}
+a[href^=http]:hover:after {
+   content: attr(href);
+   position: absolute;
+   top: 1em;
+   left: 0;
+   background-color: black;
+   color: white;
+   padding: 3px 5px;
+   line-height:1;
+} 
+```
+
+##### counter
+
+```
+body {counter-reset: invalidCount;}
+:invalid {
+  background-color: pink;
+  counter-increment: invalidCount;
+}
+p:before {
+  content: "You have " 
+      counter(invalidCount) " invalid entries";
+}
+```
+
+body - reload page and set count
+
 
 
