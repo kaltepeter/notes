@@ -392,5 +392,141 @@ display: table-column;
 display: table-caption;
 ```
 
+```
+ <colgroup>
+    <col class="week"/>
+    <col class="player"/>
+    <col class="club"/>
+    <col class="stat"/>
+  </colgroup>
+```
+
+```
+td, th { padding: .5em 1em; border: 2px solid #999; }
+table { border-collapse: collapse;}
+col.week {}
+col.player { background: rgba(180,180,180,.3); }
+col.club {}
+col.stat {}
+caption { padding: 1em;}
+thead {}
+th { background: #999; color: #fff; font-weight: normal; font-size: 1em; text-transform: uppercase; border-right: 2px solid #ccc; }
+th:last-child {border-right-color: #999;}
+tr:nth-of-type(even) { background: rgba(33,33,33,.1);}
+tr:hover {background: rgba(0,180,180,.3);  }
+tbody {}
+a {color: #0bb; text-decoration: none;}
+a:hover {text-decoration: underline; }
+```
+
+#### Grids
+
+IE 10 support with different syntax
+
+```
+ol { 
+  display: grid;
+list-style: none;
+  grid-template-columns: repeat(2, 3fr) 12fr repeat(3, 6fr);
+grid-template-rows: 2fr repeat(4, 12fr) repeat(4, 3fr);
+grid-gap: 1em;
+}
+li:nth-of-type(even) { background: #099; color: #fff; }
+li:nth-of-type(odd) { background: #004; color: #fff; }
+li:nth-of-type(24n + 9) { background: #ccc; }
+li:nth-of-type(24n + 7) { background: #ccc; }
+li:nth-of-type(24n + 8) { background: #ccc; }
+```
+
+```
+body {
+display: grid;
+grid-template-columns: 3fr 3fr 3fr 4fr;
+grid-template-rows: 3fr 1fr 12fr 12fr 1fr;
+grid-gap: 1em;
+padding: 1em;
+}
+header {
+grid-row: 1/2;
+grid-column: 1/6;
+}
+nav {
+  grid-column: 1/6;
+grid-row: 2/3;
+}
+aside {
+//order: 2;
+grid-column: 4/6;
+grid-row: 3/5;
+}
+article {
+grid-row: 4/5;
+}
+article:nth-of-type(1){
+ grid-row: 3/4;
+grid-column: 1/4; 
+}
+article:nth-of-type(2){
+  grid-column: 1/2;
+}
+article:nth-of-type(3){
+  grid-column: 2/4;
+}
+footer {
+grid-row: 5/6;
+  grid-column: 1/6;
+//order: 2;
+}
+```
+
+```
+body {
+display: grid;
+grid-gap: 1em;
+grid-template-columns: 3fr 12fr 4fr;
+grid-template-rows: 4fr 12fr 1fr 2fr;
+  grid-template-areas:
+      "header header header"
+      "nav article aside"
+      "footer footer footer"
+      "s s s ";
+}
+header {
+  grid-area: header;
+}
+nav {
+  grid-area: nav;
+}
+article {
+  grid-area: article;
+}
+footer { grid-area: footer; }
+style {grid-area: s;}
+```
+
+[https://gridbyexample.com/](https://gridbyexample.com/)
+
+[http://labs.jensimmons.com/](http://labs.jensimmons.com/)
+
+```
+.slide {
+  background-color: #0dd;
+background-image:
+  linear-gradient(
+      rgba(255, 255, 80, 0.4) 75%,
+      rgba(255, 60, 80, .2) 75%),
+  linear-gradient(125deg,
+      rgba(255, 50, 100, 0.4) 55%,
+      rgba(255, 50, 100, .2) 55%),
+    linear-gradient(95deg,
+      rgba(255, 100, 50, 0.4) 25%,
+      rgba(255, 100, 50, .2) 25%),
+linear-gradient(145deg,
+      rgba(80, 0, 100, 0.4) 65%,
+      rgba(80, 0, 100, .1) 10%);
+background-size: 300px 150px;
+}
+```
+
 
 
