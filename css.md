@@ -536,6 +536,8 @@ background-size: 300px 150px;
 
 
 
+
+
 [http://estelle.github.io/input-masking/indexcss.html](http://estelle.github.io/input-masking/indexcss.html)
 
 [https://developer.mozilla.org/en-US/docs/Web/CSS/filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
@@ -543,6 +545,4 @@ background-size: 300px 150px;
 [https://css-tricks.com/almanac/properties/b/background-blend-mode/](https://css-tricks.com/almanac/properties/b/background-blend-mode/)
 
 [http://www.axis-praxis.org/specimens/\_\_DEFAULT\_\_](http://www.axis-praxis.org/specimens/__DEFAULT__)
-
-
 
