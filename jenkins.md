@@ -28,13 +28,15 @@
 
 [https://support.cloudbees.com/hc/en-us/articles/224543927-GitHub-webhook-configuration](https://support.cloudbees.com/hc/en-us/articles/224543927-GitHub-webhook-configuration) - webhooks
 
-
-
 ## builds
 
 wrapping a process in try/catch will not fail the build on exit 1
 
 
+
+## docker runs
+
+![](/assets/speed-first-and-second-run.png)
 
 
 
