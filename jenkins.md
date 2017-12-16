@@ -32,11 +32,11 @@
 
 wrapping a process in try/catch will not fail the build on exit 1
 
-
-
 ## docker runs
 
 ![](/assets/speed-first-and-second-run.png)
 
+only defined step is 'Test'. declarative auto created steps
 
+![](/assets/declarative-auto-steps.png)
 
