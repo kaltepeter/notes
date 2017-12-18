@@ -40,3 +40,9 @@ only defined step is 'Test'. declarative auto created steps
 
 ![](/assets/declarative-auto-steps.png)
 
+#### shared pipelines
+
+[https://jenkins.io/blog/2017/10/02/pipeline-templates-with-shared-libraries/](https://jenkins.io/blog/2017/10/02/pipeline-templates-with-shared-libraries/)
+
+
+
