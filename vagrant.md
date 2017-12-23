@@ -2,7 +2,7 @@
 
 ## Networking
 
-from: https://www.safaribooksonline.com/library/view/vagrant-virtual-development/9781784393748/ch05s02.html
+from: [https://www.safaribooksonline.com/library/view/vagrant-virtual-development/9781784393748/ch05s02.html](https://www.safaribooksonline.com/library/view/vagrant-virtual-development/9781784393748/ch05s02.html)
 
 **A quick note regarding static IP addresses**
 
@@ -22,6 +22,8 @@ When using astatic IP address on a local machine, we'll want to ensure that we a
   \(192.168/16 prefix\)
 
 When assigning static IPs in a Vagrantfile, choose one of these ranges to assign IPs in. More specifically, you'll likely want to assign ranges in either the`172`or`192`ranges, many corporate \(or even home\) networks use the`10`range for resources located within the wider network by default. Your hypervisor software will typically alert you if you are running into an IP address conflict.
+
+
 
 
 
