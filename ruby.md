@@ -10,3 +10,9 @@
 
 
 
+## GSUB
+
+[https://stackoverflow.com/questions/16579223/using-named-capture-groups-inside-ruby-gsub-blocks-regex](https://stackoverflow.com/questions/16579223/using-named-capture-groups-inside-ruby-gsub-blocks-regex) - capture groups in gsub
+
+
+
