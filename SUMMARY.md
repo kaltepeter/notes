@@ -18,4 +18,5 @@
 * [github](github.md)
 * [css](css.md)
 * [Vagrant](vagrant.md)
+* [Bash](bash.md)
 
