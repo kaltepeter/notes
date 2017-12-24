@@ -6,5 +6,9 @@
 
 [http://goo.gl/ZThKCj](http://goo.gl/ZThKCj) - printing strings help
 
-http://goo.gl/HnPkiq - arithmetic operator 
+[http://goo.gl/HnPkiq](http://goo.gl/HnPkiq) - arithmetic operator
+
+http://goo.gl/g6xtca - arrays
+
+
 
