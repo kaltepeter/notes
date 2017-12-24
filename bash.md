@@ -4,9 +4,7 @@
 
 [https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash](https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash)
 
+[http://goo.gl/ZThKCj](http://goo.gl/ZThKCj) - printing strings help
 
-
-http://goo.gl/ZThKCj - printing strings help
-
-
+http://goo.gl/HnPkiq - arithmetic operator 
 
