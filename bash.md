@@ -10,6 +10,8 @@
 
 [http://goo.gl/g6xtca](http://goo.gl/g6xtca) - arrays
 
+http://goo.gl/xRHo3u - parameter expansion
+
 [https://github.com/aperezdc/perezdecastro.org/blob/master/stash/using-boolean-variables-in-bash.markdown](https://github.com/aperezdc/perezdecastro.org/blob/master/stash/using-boolean-variables-in-bash.markdown) - flag variables in bourne shell
 
 ### Bash 4
@@ -26,7 +28,7 @@ Post upgrade to use bash 4 in script. change shebang line
 # Add the new shell to the list of allowed shells
 sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 # Change to the new shell
-chsh -s /usr/local/bin/bash 
+chsh -s /usr/local/bin/bash
 ```
 
 
