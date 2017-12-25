@@ -8,7 +8,9 @@
 
 [http://goo.gl/HnPkiq](http://goo.gl/HnPkiq) - arithmetic operator
 
-http://goo.gl/g6xtca - arrays
+[http://goo.gl/g6xtca](http://goo.gl/g6xtca) - arrays
+
+https://blog.plover.com/prog/sh-flags.html - flag variables in bourne shell
 
 
 
