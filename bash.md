@@ -20,5 +20,14 @@ Post upgrade to use bash 4 in script. change shebang line
 
 `#!/usr/local/bin/bash`
 
+##### Configure terminal to use it
+
+```
+# Add the new shell to the list of allowed shells
+sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+# Change to the new shell
+chsh -s /usr/local/bin/bash 
+```
+
 
 
