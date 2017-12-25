@@ -12,13 +12,13 @@
 
 [https://github.com/aperezdc/perezdecastro.org/blob/master/stash/using-boolean-variables-in-bash.markdown](https://github.com/aperezdc/perezdecastro.org/blob/master/stash/using-boolean-variables-in-bash.markdown) - flag variables in bourne shell
 
-
-
 ### Bash 4
 
-http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/
+[http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/](http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/)
 
+Post upgrade to use bash 4 in script. change shebang line
 
+`#!/usr/local/bin/bash`
 
 
 
