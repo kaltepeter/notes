@@ -10,7 +10,7 @@
 
 [http://goo.gl/g6xtca](http://goo.gl/g6xtca) - arrays
 
-https://blog.plover.com/prog/sh-flags.html - flag variables in bourne shell
+https://github.com/aperezdc/perezdecastro.org/blob/master/stash/using-boolean-variables-in-bash.markdown - flag variables in bourne shell
 
 
 
