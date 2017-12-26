@@ -31,14 +31,18 @@ sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 chsh -s /usr/local/bin/bash
 ```
 
-
-
 ## sed
 
-appending newlines with mac: https://stackoverflow.com/questions/16576197/how-to-add-new-line-using-sed-mac 
+appending newlines with mac: [https://stackoverflow.com/questions/16576197/how-to-add-new-line-using-sed-mac](https://stackoverflow.com/questions/16576197/how-to-add-new-line-using-sed-mac)
 
 ```
 echo foo | sed 's/f/f\'$'\n/'
+```
+
+```
+tokens=$(echo "$tokens" | sed ' /^[[:space:]]*}/a \
+ \
+  ')
 ```
 
 
