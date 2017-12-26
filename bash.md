@@ -51,3 +51,13 @@ tokens=$(echo "${tokens}" | sed ' /^\s*$/d;s/},/}/;s/}/}\'$'\n\\\n/; ')
 
 [https://taoofmac.com/space/cli/sed](https://taoofmac.com/space/cli/sed) - examples
 
+
+
+## awk
+
+```
+echo "${tokens}" | awk 'BEGIN { RS=""; FS=/,/; }; $0 ~ "jane@github.com" { print }'
+```
+
+
+
