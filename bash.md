@@ -10,7 +10,7 @@
 
 [http://goo.gl/g6xtca](http://goo.gl/g6xtca) - arrays
 
-http://goo.gl/xRHo3u - parameter expansion
+[http://goo.gl/xRHo3u](http://goo.gl/xRHo3u) - parameter expansion
 
 [https://github.com/aperezdc/perezdecastro.org/blob/master/stash/using-boolean-variables-in-bash.markdown](https://github.com/aperezdc/perezdecastro.org/blob/master/stash/using-boolean-variables-in-bash.markdown) - flag variables in bourne shell
 
@@ -29,6 +29,16 @@ Post upgrade to use bash 4 in script. change shebang line
 sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 # Change to the new shell
 chsh -s /usr/local/bin/bash
+```
+
+
+
+## sed
+
+appending newlines with mac: https://stackoverflow.com/questions/16576197/how-to-add-new-line-using-sed-mac 
+
+```
+echo foo | sed 's/f/f\'$'\n/'
 ```
 
 
