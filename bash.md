@@ -45,7 +45,9 @@ tokens=$(echo "$tokens" | sed ' /^[[:space:]]*}/a \
   ')
 ```
 
-https://taoofmac.com/space/cli/sed - examples
+```
+tokens=$(echo "${tokens}" | sed ' /^\s*$/d;s/},/}/;s/}/}\'$'\n\\\n/; ')
+```
 
-
+[https://taoofmac.com/space/cli/sed](https://taoofmac.com/space/cli/sed) - examples
 
