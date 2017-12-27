@@ -8,11 +8,13 @@ mirroring: [https://help.github.com/articles/duplicating-a-repository/](https://
 
 
 
+### clean history
 
-
-
-
-
+```
+ git filter-branch --force --index-filter \
+'git rm --cached --ignore-unmatch PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA' \
+--prune-empty --tag-name-filter cat -- --all
+```
 
 
 
