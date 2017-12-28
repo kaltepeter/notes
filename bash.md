@@ -49,9 +49,18 @@ tokens=$(echo "$tokens" | sed ' /^[[:space:]]*}/a \
 tokens=$(echo "${tokens}" | sed ' /^\s*$/d;s/},/}/;s/}/}\'$'\n\\\n/; ')
 ```
 
+https://lists.freebsd.org/pipermail/freebsd-questions/2009-March/194500.html - example to safe replace with newlines
+
+    a="This
+     is
+     the
+     input
+     from the
+     web server"
+    b=`echo $a`
+    sed "s/foo/$b/"
+
 [https://taoofmac.com/space/cli/sed](https://taoofmac.com/space/cli/sed) - examples
-
-
 
 ## awk
 
