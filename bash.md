@@ -49,7 +49,7 @@ tokens=$(echo "$tokens" | sed ' /^[[:space:]]*}/a \
 tokens=$(echo "${tokens}" | sed ' /^\s*$/d;s/},/}/;s/}/}\'$'\n\\\n/; ')
 ```
 
-https://lists.freebsd.org/pipermail/freebsd-questions/2009-March/194500.html - example to safe replace with newlines
+[https://lists.freebsd.org/pipermail/freebsd-questions/2009-March/194500.html](https://lists.freebsd.org/pipermail/freebsd-questions/2009-March/194500.html) - example to safe replace with newlines
 
     a="This
      is
@@ -61,6 +61,8 @@ https://lists.freebsd.org/pipermail/freebsd-questions/2009-March/194500.html - e
     sed "s/foo/$b/"
 
 [https://taoofmac.com/space/cli/sed](https://taoofmac.com/space/cli/sed) - examples
+
+https://stackoverflow.com/questions/29613304/is-it-possible-to-escape-regex-metacharacters-reliably-with-sed - more whitespacing issues
 
 ## awk
 
