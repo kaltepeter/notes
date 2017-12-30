@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Linux Commands](basics.md)
+* [pi/README.md](/pi/README.md "Raspberry Pi")
 * [Prep SD card with image](format-an-sd-card.md)
 * [Setting up Sublime](setting-up-sublime-for-python-dev.md)
 * [ssh keys for pi](ssh-keys-for-pi.md)
@@ -19,4 +20,6 @@
 * [css](css.md)
 * [Vagrant](vagrant.md)
 * [Bash](bash.md)
+
+
 
