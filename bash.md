@@ -62,7 +62,7 @@ tokens=$(echo "${tokens}" | sed ' /^\s*$/d;s/},/}/;s/}/}\'$'\n\\\n/; ')
 
 [https://taoofmac.com/space/cli/sed](https://taoofmac.com/space/cli/sed) - examples
 
-https://stackoverflow.com/questions/29613304/is-it-possible-to-escape-regex-metacharacters-reliably-with-sed - more whitespacing issues
+[https://stackoverflow.com/questions/29613304/is-it-possible-to-escape-regex-metacharacters-reliably-with-sed](https://stackoverflow.com/questions/29613304/is-it-possible-to-escape-regex-metacharacters-reliably-with-sed) - more whitespacing issues
 
 ## awk
 

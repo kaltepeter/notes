@@ -6,8 +6,6 @@ mirroring: [https://help.github.com/articles/duplicating-a-repository/](https://
 
 [https://help.github.com/articles/about-github-mirrors/](https://help.github.com/articles/about-github-mirrors/)
 
-
-
 ### clean history
 
 ```
@@ -16,5 +14,7 @@ mirroring: [https://help.github.com/articles/duplicating-a-repository/](https://
 --prune-empty --tag-name-filter cat -- --all
 ```
 
+### p4merge
 
+https://gist.github.com/tony4d/3454372
 
