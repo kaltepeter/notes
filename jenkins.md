@@ -46,3 +46,30 @@ only defined step is 'Test'. declarative auto created steps
 
 
 
+#### groovy tricks
+
+https://github.com/cloudbees/jenkins-scripts
+
+
+
+```
+println Jenkins.instance.metaClass.methods*.name.sort().unique()
+```
+
+```
+Jenkins.instance.getItems().each {it -> 
+  println it.name
+}
+Jenkins.instance.getComputers().eachWithIndex{ it, index ->
+  println it.name
+  println it.description
+  println it.getAllExecutors()
+  
+  println it.metaClass.methods*.name.sort().unique()
+}
+println Jenkins.instance.metaClass.methods*.name.sort().unique()
+
+```
+
+
+
