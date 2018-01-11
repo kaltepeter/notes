@@ -84,3 +84,17 @@ $(ip route show 0.0.0.0/0 dev eth0 | cut -d\  -f3)
 
 **nginx template vars: **[https://docs.docker.com/samples/library/nginx/\#using-environment-variables-in-nginx-configuration](https://docs.docker.com/samples/library/nginx/#using-environment-variables-in-nginx-configuration)
 
+
+
+## phantomjs 
+
+http://fabiorehm.com/blog/2015/07/22/building-a-minimum-viable-phantomjs-2-docker-image/
+
+alpine linux won't build phantom:
+
+https://github.com/Overbryd/docker-phantomjs-alpine
+
+
+
+
+
