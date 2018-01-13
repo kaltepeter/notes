@@ -13,3 +13,7 @@ vmstat 5 3 # run 3 times every 5 sec
 
 list vm stats. memory, disk, etc
 
+#### 
+
+
+
