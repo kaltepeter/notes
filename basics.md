@@ -23,13 +23,11 @@
 | ip route show 0.0.0.0/0 dev eth0 \| cut -d  -f3 | find gateway ip | [https://serverfault.com/questions/31170/how-to-find-the-gateway-ip-address-in-linux](https://serverfault.com/questions/31170/how-to-find-the-gateway-ip-address-in-linux) |
 | $\(ip route \| grep default \| cut -d ' ' -f 3\) | find gateway ip for default |  |
 | hostname -i | find ip address for host |  |
+| vmstat | vm stats such as disk, memory, etc |  |
 |  |  |  |
-
-
+|  |  |  |
 
 ### File permissions
 
 [http://www.tldp.org/LDP/intro-linux/html/sect\_03\_04.html](http://www.tldp.org/LDP/intro-linux/html/sect_03_04.html)
-
-
 
