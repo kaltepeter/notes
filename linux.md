@@ -60,13 +60,20 @@ lsof -i # list network
 
 ```
 sudo iptables -nvL # show data in/out
-
 ```
 
 #### watch
 
 ```
 watch -d sudo iptables -nvL # show every 2 sec and highlight changes
+```
+
+#### systat
+
+```
+apt-get install sysstat
+sudo vi /etc/default/sysstat # turn it on with boolean
+cat /etc/cron.d/sysstat # list cron jobs
 
 ```
 
