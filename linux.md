@@ -13,7 +13,14 @@ vmstat 5 3 # run 3 times every 5 sec
 
 list vm stats. memory, disk, etc
 
-#### 
+#### who
+
+```
+who
+who -l # who is logged in and process
+who -T # is messaging turned on
+mesg # send message to user
+```
 
 
 

@@ -26,6 +26,9 @@
 | vmstat | vm stats such as disk, memory, etc |  |
 | free -m | show free memory |  |
 | uptime | machine up time, users, avg load |  |
+| who | who is logged on | alias: w |
+|  |  |  |
+|  |  |  |
 |  |  |  |
 
 ### File permissions
