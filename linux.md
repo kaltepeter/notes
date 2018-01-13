@@ -28,6 +28,7 @@ mesg # send message to user
 netstat -alt # list tcp/udp active ports
 netstat -alx # list all tcp/udp/sockets
 netstat -i # list interfaces
+netstat -s # 
 ```
 
 #### top
@@ -47,6 +48,12 @@ ps all # list all process
 
 ```
 pstree #show systemd tree
+```
+
+#### lsof
+
+```
+lsof -i # list network
 ```
 
 
