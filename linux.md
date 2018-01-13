@@ -76,6 +76,9 @@ sudo vi /etc/default/sysstat # turn it on with boolean
 cat /etc/cron.d/sysstat # list cron jobs
 
 sar # command to review sysstat
+sar -q 1 3 # display load avg 3 times 1 sec int
+sar -q -f /var/log/sysstat/sa15 # ubuntu read day 15
+
 ```
 
 
