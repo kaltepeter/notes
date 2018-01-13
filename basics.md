@@ -24,7 +24,7 @@
 | $\(ip route \| grep default \| cut -d ' ' -f 3\) | find gateway ip for default |  |
 | hostname -i | find ip address for host |  |
 | vmstat | vm stats such as disk, memory, etc |  |
-|  |  |  |
+| free -m | show free memory |  |
 |  |  |  |
 
 ### File permissions
