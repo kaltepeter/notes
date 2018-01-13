@@ -75,6 +75,7 @@ apt-get install sysstat
 sudo vi /etc/default/sysstat # turn it on with boolean
 cat /etc/cron.d/sysstat # list cron jobs
 
+sar # command to review sysstat
 ```
 
 
