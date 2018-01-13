@@ -22,5 +22,32 @@ who -T # is messaging turned on
 mesg # send message to user
 ```
 
+#### netstat
+
+```
+netstat -alt # list tcp/udp active ports
+netstat -alx # list all tcp/udp/sockets
+```
+
+#### top
+
+```
+top
+
+```
+
+#### ps
+
+```
+ps # list process
+ps all # list all process
+```
+
+#### pstree
+
+```
+pstree #show systemd tree
+```
+
 
 
