@@ -79,6 +79,12 @@ sar # command to review sysstat
 sar -q 1 3 # display load avg 3 times 1 sec int
 sar -q -f /var/log/sysstat/sa15 # ubuntu read day 15
 
+sar -w # context switch per sec
+sar -n DEv # network interface stats
+sar -b # overall activity
+sar -q -s 10:00:00 -e 11:00:00 # between times for today
+
+
 ```
 
 
