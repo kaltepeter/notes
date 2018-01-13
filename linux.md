@@ -28,7 +28,7 @@ mesg # send message to user
 netstat -alt # list tcp/udp active ports
 netstat -alx # list all tcp/udp/sockets
 netstat -i # list interfaces
-netstat -s # 
+netstat -s #
 ```
 
 #### top
@@ -54,6 +54,20 @@ pstree #show systemd tree
 
 ```
 lsof -i # list network
+```
+
+#### iptables
+
+```
+sudo iptables -nvL # show data in/out
+
+```
+
+#### watch
+
+```
+watch -d sudo iptables -nvL # show every 2 sec and highlight changes
+
 ```
 
 
