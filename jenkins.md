@@ -16,6 +16,10 @@
 
 {jenkins\_server}/cli/ - cli docs
 
+
+
+[https://github.com/jenkinsci/job-dsl-plugin/wiki](https://github.com/jenkinsci/job-dsl-plugin/wiki) - example dsl configuartions
+
 #### credentials
 
 [http://www.greenreedtech.com/creating-jenkins-credentials-via-the-rest-api/](http://www.greenreedtech.com/creating-jenkins-credentials-via-the-rest-api/) - create credentials via REST
