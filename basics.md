@@ -27,7 +27,7 @@
 | free -m | show free memory |  |
 | uptime | machine up time, users, avg load |  |
 | who | who is logged on | alias: w |
-|  |  |  |
+| ps aux \| grep ngrok | find app and filter by name 'ngrok' |  |
 |  |  |  |
 |  |  |  |
 
