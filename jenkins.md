@@ -18,7 +18,7 @@
 
 [https://github.com/jenkinsci/job-dsl-plugin/wiki](https://github.com/jenkinsci/job-dsl-plugin/wiki) - example dsl configuartions
 
-http://unethicalblogger.com/2017/07/24/groovy-automation-for-jenkins.html - groovy jenkins config
+[http://unethicalblogger.com/2017/07/24/groovy-automation-for-jenkins.html](http://unethicalblogger.com/2017/07/24/groovy-automation-for-jenkins.html) - groovy jenkins config
 
 #### credentials
 
