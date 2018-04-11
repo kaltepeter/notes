@@ -1,8 +1,6 @@
 # Angular Schematics
 
-https://astexplorer.net/ - ast explorer
-
-
+[https://astexplorer.net/](https://astexplorer.net/) - ast explorer
 
 
 
