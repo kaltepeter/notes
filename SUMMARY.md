@@ -22,4 +22,5 @@
 * [linux](linux.md)
 * [zsh](zsh.md)
 * [Angular Schematics](angular-schematics.md)
+* [groovy](groovy.md)
 
