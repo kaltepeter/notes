@@ -96,11 +96,11 @@ alpine linux won't build phantom:
 
 [http://play-with-docker.com](http://play-with-docker.com)
 
-
-
 # Volumes
 
 * mount points are owned by root, may have implications when mounting user home
+  * create a VOLUME and run ls -la /home
+  * add a volume at run to /home/username and run ls -la /home to see diff
 
 
 
