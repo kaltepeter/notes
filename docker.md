@@ -102,5 +102,26 @@ alpine linux won't build phantom:
   * create a VOLUME and run ls -la /home
   * add a volume at run to /home/username and run ls -la /home to see diff
 
+## Alpine linux
+
+docs: [https://docs.docker.com/samples/library/alpine/ ](https://docs.docker.com/samples/library/alpine/)
+
+creating users: [https://github.com/mhart/alpine-node/issues/48 ](https://github.com/mhart/alpine-node/issues/48)
+
+```
+RUN addgroup -g 1000 -S username && \
+    adduser -u 1000 -S username -G username
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
