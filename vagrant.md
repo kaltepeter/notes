@@ -25,19 +25,11 @@ When using astatic IP address on a local machine, we'll want to ensure that we a
 
 When assigning static IPs in a Vagrantfile, choose one of these ranges to assign IPs in. More specifically, you'll likely want to assign ranges in either the`172`or`192`ranges, many corporate \(or even home\) networks use the`10`range for resources located within the wider network by default. Your hypervisor software will typically alert you if you are running into an IP address conflict.
 
-
-
 ## Provisioning
 
 ### setup custom user and home
 
 [https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77](https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77) - setting up local linux environment
-
-
-
-
-
-
 
 
 
