@@ -16,17 +16,24 @@
 
 1. `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
-
-
 ## material theme for shell
 
 [https://github.com/carloscuesta/materialshell](https://github.com/carloscuesta/materialshell)
 
-[https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes\#macos](https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes#macos) follow this 
+[https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes\#macos](https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes#macos) follow this
 
-1. `mkdir "$HOME/.oh-my-zsh/custom/materialshell.zsh-theme" `
+1. `mkdir "$HOME/.oh-my-zsh/custom/materialshell.zsh-theme"`
 2. `curl -fsSL -o "$HOME/.oh-my-zsh/custom/materialshell.zsh-theme/materialshell.zsh" https://raw.githubusercontent.com/carloscuesta/materialshell/master/materialshell.zsh`
 3. Modify `.zshrc` to enable the theme with `ZSH_THEME="materialshell"`
+
+
+
+## vars
+
+https://wiki.archlinux.org/index.php/environment\_variables
+
+1. put them in ~/.profile
+2. add `source ~/.profile` to `~/.zshrc` and `~/.bash_profile`
 
 
 
