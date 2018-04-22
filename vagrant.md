@@ -35,3 +35,15 @@ When assigning static IPs in a Vagrantfile, choose one of these ranges to assign
 
 [https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77](https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77) - setting up local linux environment
 
+
+
+## testing
+
+### serverspec
+
+https://serverspec.org/resource\_types.html\#file
+
+
+
+
+
