@@ -1,5 +1,9 @@
 # Vagrant
 
+## getting started
+
+build a box start to finish - [https://www.engineyard.com/blog/building-a-vagrant-box](https://www.engineyard.com/blog/building-a-vagrant-box)
+
 ## Networking
 
 [https://www.vagrantup.com/docs/networking/basic\_usage.html](https://www.vagrantup.com/docs/networking/basic_usage.html) - docs
@@ -30,6 +34,4 @@ When assigning static IPs in a Vagrantfile, choose one of these ranges to assign
 ### setup custom user and home
 
 [https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77](https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77) - setting up local linux environment
-
-
 
