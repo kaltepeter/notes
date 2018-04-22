@@ -35,6 +35,8 @@ When assigning static IPs in a Vagrantfile, choose one of these ranges to assign
 
 [https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77](https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77) - setting up local linux environment
 
+https://www.engineyard.com/blog/building-a-vagrant-box-from-start-to-finish - setting up base box guide
+
 ## testing
 
 ### serverspec
