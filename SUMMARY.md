@@ -24,4 +24,5 @@
 * [Angular Schematics](angular-schematics.md)
 * [groovy](groovy.md)
 * [testing](testing.md)
+* [npm](npm.md)
 
