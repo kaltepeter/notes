@@ -4,3 +4,13 @@ enable http2 - [https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&
 
 
 
+### upload
+
+pass output to &gt; /dev/null or file to see progress
+
+https://stackoverflow.com/questions/43197581/curl-upload-download-speed-test
+
+
+
+
+
