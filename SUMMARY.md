@@ -25,4 +25,5 @@
 * [groovy](groovy.md)
 * [testing](testing.md)
 * [npm](npm.md)
+* [curl](curl.md)
 
