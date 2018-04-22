@@ -35,15 +35,24 @@ When assigning static IPs in a Vagrantfile, choose one of these ranges to assign
 
 [https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77](https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77) - setting up local linux environment
 
-
-
 ## testing
 
 ### serverspec
 
-https://serverspec.org/resource\_types.html\#file
+[https://serverspec.org/resource\_types.html\#file](https://serverspec.org/resource_types.html#file)
 
+example spec
 
+```
+  it 'should have a gradle home dir for docker containers' do
+    expect(file('/home/vagrant/gradle')).to be_directory
+    expect(file('/home/vagrant/gradle')).to be_owned_by 'vagrant'
+    expect(file('/home/vagrant/gradle')).to be_owned_by 'be_grouped_into'
+    expect(file('/home/vagrant/gradle')).to be_readable_by 'vagrant'
+    expect(file('/home/vagrant/gradle')).to be_writable_by 'vagrant'
+    expect(file('/home/vagrant/gradle')).to be_executable 'vagrant'
+  end
+```
 
 
 
