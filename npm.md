@@ -22,7 +22,16 @@ Run local package
 
 ```
 npx ng
-# npx -c ng
+```
+
+> But wait! npx has yet another trick up its sleeve: when you use the
+>
+> `-c`
+>
+> option, the script written inside the string argument will have full access to the same env variables as a regular run script!
+
+```
+npx -c ng
 ```
 
 
