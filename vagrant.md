@@ -2,7 +2,7 @@
 
 ## Networking
 
-https://www.vagrantup.com/docs/networking/basic\_usage.html - docs
+[https://www.vagrantup.com/docs/networking/basic\_usage.html](https://www.vagrantup.com/docs/networking/basic_usage.html) - docs
 
 from: [https://www.safaribooksonline.com/library/view/vagrant-virtual-development/9781784393748/ch05s02.html](https://www.safaribooksonline.com/library/view/vagrant-virtual-development/9781784393748/ch05s02.html)
 
@@ -24,4 +24,20 @@ When using astatic IP address on a local machine, we'll want to ensure that we a
   \(192.168/16 prefix\)
 
 When assigning static IPs in a Vagrantfile, choose one of these ranges to assign IPs in. More specifically, you'll likely want to assign ranges in either the`172`or`192`ranges, many corporate \(or even home\) networks use the`10`range for resources located within the wider network by default. Your hypervisor software will typically alert you if you are running into an IP address conflict.
+
+
+
+## Provisioning
+
+### setup custom user and home
+
+[https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77](https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77) - setting up local linux environment
+
+
+
+
+
+
+
+
 
