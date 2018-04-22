@@ -113,15 +113,13 @@ RUN addgroup -g 1000 -S username && \
     adduser -u 1000 -S username -G username
 ```
 
+## montoring
 
+[http://fuzzyblog.io/blog/docker/2017/06/25/docker-tutorial-understanding-container-memory-usage.html](http://fuzzyblog.io/blog/docker/2017/06/25/docker-tutorial-understanding-container-memory-usage.html)
 
-
-
-
-
-
-
-
+```
+docker stats
+```
 
 
 
