@@ -22,6 +22,7 @@ Run local package
 
 ```
 npx ng
+# npx -c ng
 ```
 
 
