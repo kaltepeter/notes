@@ -16,5 +16,13 @@ mirroring: [https://help.github.com/articles/duplicating-a-repository/](https://
 
 ### p4merge
 
-https://gist.github.com/tony4d/3454372
+[https://gist.github.com/tony4d/3454372](https://gist.github.com/tony4d/3454372)
+
+## bots and push
+
+https://platform.github.community/t/repositories-which-have-protected-branches-with-push-restrictions-have-no-ability-to-grant-push-rights-to-integrations/1376
+
+
+
+
 
