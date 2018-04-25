@@ -8,7 +8,11 @@ graphql playground: [https://github.com/graphcool/graphql-playground](https://gi
 
 \_\_resolveType = apollo based resolver
 
+mongo graphql project -&gt; AST
+
+dataloader batches and caches
 
 
-mongo graphql project -&gt; AST 
+
+
 
