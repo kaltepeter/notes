@@ -16,7 +16,5 @@ dataloader batches and caches
 
 [https://dev-blog.apollodata.com/persisted-graphql-queries-with-apollo-client-119fd7e6bba5](https://dev-blog.apollodata.com/persisted-graphql-queries-with-apollo-client-119fd7e6bba5)
 
-https://www.apollographql.com/engine
-
-
+[https://www.apollographql.com/engine](https://www.apollographql.com/engine) - caching and edge gateway
 
