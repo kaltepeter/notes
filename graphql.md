@@ -6,7 +6,9 @@ graphql yoga: [https://www.npmjs.com/package/graphql-yoga](https://www.npmjs.com
 
 graphql playground: [https://github.com/graphcool/graphql-playground](https://github.com/graphcool/graphql-playground)
 
-
-
 \_\_resolveType = apollo based resolver
+
+
+
+mongo graphql project -&gt; AST 
 
