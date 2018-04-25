@@ -2,7 +2,9 @@
 
 beginner tutorial: [https://www.howtographql.com](https://www.howtographql.com)
 
-graphql yoga: https://www.npmjs.com/package/graphql-yoga
+graphql yoga: [https://www.npmjs.com/package/graphql-yoga](https://www.npmjs.com/package/graphql-yoga)
+
+graphql playground: https://github.com/graphcool/graphql-playground
 
 
 
