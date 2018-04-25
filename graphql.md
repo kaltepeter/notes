@@ -16,5 +16,7 @@ dataloader batches and caches
 
 
 
+https://dev-blog.apollodata.com/persisted-graphql-queries-with-apollo-client-119fd7e6bba5
+
 
 
