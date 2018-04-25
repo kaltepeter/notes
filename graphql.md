@@ -12,7 +12,9 @@ mongo graphql project -&gt; AST
 
 dataloader batches and caches
 
+[https://www.prisma.io](https://www.prisma.io) - database interactions
 
 
-https://www.prisma.io - 
+
+
 
