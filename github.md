@@ -20,9 +20,11 @@ mirroring: [https://help.github.com/articles/duplicating-a-repository/](https://
 
 ## bots and push
 
-https://platform.github.community/t/repositories-which-have-protected-branches-with-push-restrictions-have-no-ability-to-grant-push-rights-to-integrations/1376
+[https://platform.github.community/t/repositories-which-have-protected-branches-with-push-restrictions-have-no-ability-to-grant-push-rights-to-integrations/1376](https://platform.github.community/t/repositories-which-have-protected-branches-with-push-restrictions-have-no-ability-to-grant-push-rights-to-integrations/1376)
 
 
+
+## mirror
 
 
 
