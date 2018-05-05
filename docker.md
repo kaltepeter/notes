@@ -121,7 +121,21 @@ RUN addgroup -g 1000 -S username && \
 docker stats
 ```
 
-https://dzone.com/articles/monitoring-docker-containers-docker-stats-cadvisor-1
+[https://dzone.com/articles/monitoring-docker-containers-docker-stats-cadvisor-1](https://dzone.com/articles/monitoring-docker-containers-docker-stats-cadvisor-1)
+
+##### using cAdvisor
+
+This will run in a docker container and expose a web view at: localhost:8080
+
+```
+#!/usr/bin/env bash
+docker run -d --name=cadvisor \
+	-p 8080:8080 \
+	--volume=/var/run:/var/run:rw \
+	--volume=/sys:/sys:ro \
+	--volume=/var/lib/docker/:/var/lib/docker:ro \
+	google/cadvisor:latest
+```
 
 
 
