@@ -121,5 +121,7 @@ RUN addgroup -g 1000 -S username && \
 docker stats
 ```
 
+https://dzone.com/articles/monitoring-docker-containers-docker-stats-cadvisor-1
+
 
 
