@@ -117,6 +117,8 @@ RUN addgroup -g 1000 -S username && \
 
 [http://fuzzyblog.io/blog/docker/2017/06/25/docker-tutorial-understanding-container-memory-usage.html](http://fuzzyblog.io/blog/docker/2017/06/25/docker-tutorial-understanding-container-memory-usage.html)
 
+docker stats is a live 1sec view that streams
+
 ```
 docker stats
 ```
@@ -130,11 +132,11 @@ This will run in a docker container and expose a web view at: localhost:8080
 ```
 #!/usr/bin/env bash
 docker run -d --name=cadvisor \
-	-p 8080:8080 \
-	--volume=/var/run:/var/run:rw \
-	--volume=/sys:/sys:ro \
-	--volume=/var/lib/docker/:/var/lib/docker:ro \
-	google/cadvisor:latest
+    -p 8080:8080 \
+    --volume=/var/run:/var/run:rw \
+    --volume=/sys:/sys:ro \
+    --volume=/var/lib/docker/:/var/lib/docker:ro \
+    google/cadvisor:latest
 ```
 
 
