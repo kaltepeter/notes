@@ -117,7 +117,7 @@ RUN addgroup -g 1000 -S username && \
 
 [http://fuzzyblog.io/blog/docker/2017/06/25/docker-tutorial-understanding-container-memory-usage.html](http://fuzzyblog.io/blog/docker/2017/06/25/docker-tutorial-understanding-container-memory-usage.html)
 
-##### docker stats 
+##### docker stats
 
 is a live 1sec view that streams
 
@@ -129,7 +129,7 @@ docker stats
 
 ##### docker remote api
 
-https://docs.docker.com/develop/sdk/
+[https://docs.docker.com/develop/sdk/](https://docs.docker.com/develop/sdk/)
 
 
 
