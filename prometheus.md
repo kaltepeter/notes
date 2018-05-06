@@ -9,8 +9,10 @@ Use docker instead of local:
 ```
 #!/usr/bin/env bash
 docker run \
-	-t -d --rm \
+	-d --rm \
 	-p 9090:9090 \
+	-v ${curDir}/prometheus-data:/prometheus \
+	-v ${curDir}/prometheus.yml:/etc/prometheus/prometheus.yml \
 	--name prometheus \
 	quay.io/prometheus/prometheus
 ```
