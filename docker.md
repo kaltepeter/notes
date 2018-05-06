@@ -131,9 +131,7 @@ docker stats
 
 [https://docs.docker.com/develop/sdk/](https://docs.docker.com/develop/sdk/) - sdk for interacting
 
-https://docs.docker.com/engine/api/v1.37/ - api docs
-
-
+[https://docs.docker.com/engine/api/v1.37/](https://docs.docker.com/engine/api/v1.37/) - api docs
 
 ##### using cAdvisor
 
@@ -149,5 +147,6 @@ docker run -d --name=cadvisor \
     google/cadvisor:latest
 ```
 
-
+Gives you host and container metrics such as:  
+![](/assets/cadvisor-docker-container-metrics.png)
 
