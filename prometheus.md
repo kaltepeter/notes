@@ -19,13 +19,11 @@ docker run \
     quay.io/prometheus/prometheus
 ```
 
-https://github.com/vegasbrianc/prometheus - starter project for prometheus and grafana
+[https://github.com/vegasbrianc/prometheus](https://github.com/vegasbrianc/prometheus) - starter project for prometheus and grafana
 
 ## docker
 
 [https://www.ctl.io/developers/blog/post/monitoring-docker-services-with-prometheus/](https://www.ctl.io/developers/blog/post/monitoring-docker-services-with-prometheus/) - outdated but very detailed use case of cadvisor and prometheus
-
-
 
 ## monitoring jenkins
 
@@ -64,6 +62,10 @@ example config:
           - targets: ['172.17.0.1:8082']
             labels:
               group: 'slave'
+
+## grafana
+
+https://github.com/vegasbrianc/grafana\_dashboard - example dashboard
 
 
 
