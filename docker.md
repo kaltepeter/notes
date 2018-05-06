@@ -117,7 +117,7 @@ RUN addgroup -g 1000 -S username && \
 
 [http://fuzzyblog.io/blog/docker/2017/06/25/docker-tutorial-understanding-container-memory-usage.html](http://fuzzyblog.io/blog/docker/2017/06/25/docker-tutorial-understanding-container-memory-usage.html)
 
-https://dzone.com/articles/monitoring-docker-containers-docker-stats-cadvisor-1 - breakdown of four types of monitoring including: stats, cadvisor, remote api, and universal control plane
+[https://dzone.com/articles/monitoring-docker-containers-docker-stats-cadvisor-1](https://dzone.com/articles/monitoring-docker-containers-docker-stats-cadvisor-1) - breakdown of four types of monitoring including: stats, cadvisor, remote api, and universal control plane
 
 ##### docker stats
 
@@ -126,8 +126,6 @@ is a live 1sec view that streams
 ```
 docker stats
 ```
-
-[https://dzone.com/articles/monitoring-docker-containers-docker-stats-cadvisor-1](https://dzone.com/articles/monitoring-docker-containers-docker-stats-cadvisor-1)
 
 ##### docker remote api
 
