@@ -150,9 +150,7 @@ docker run -d --name=cadvisor \
 Gives you host and container metrics such as:  
 ![](/assets/cadvisor-docker-container-metrics.png)
 
-Can be used with other tools for storage and retrival. docs: https://github.com/google/cadvisor/blob/master/docs/storage/README.md 
-
-
+Can be used with other tools for storage and retrieval. docs: [https://github.com/google/cadvisor/blob/master/docs/storage/README.md](https://github.com/google/cadvisor/blob/master/docs/storage/README.md)
 
 
 
