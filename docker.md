@@ -72,6 +72,12 @@ hostname -i
 $(ip route show 0.0.0.0/0 dev eth0 | cut -d\  -f3)
 ```
 
+or
+
+```
+ip route|awk '/default/ { print $3 }'
+```
+
 \*\* Use docker compose/stacks to network containers. old way was link. using the gateway address will also do it.
 
 ## tutorials
@@ -151,6 +157,4 @@ Gives you host and container metrics such as:
 ![](/assets/cadvisor-docker-container-metrics.png)
 
 Can be used with other tools for storage and retrieval. docs: [https://github.com/google/cadvisor/blob/master/docs/storage/README.md](https://github.com/google/cadvisor/blob/master/docs/storage/README.md)
-
-
 
