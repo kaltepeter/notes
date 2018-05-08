@@ -30,5 +30,11 @@ mirroring: [https://help.github.com/articles/duplicating-a-repository/](https://
 git ls-files | xargs wc -l
 ```
 
+## monitoring
+
+https://github.com/vegasbrianc/github-monitoring - grafana montioring
+
+
+
 
 
