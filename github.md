@@ -32,7 +32,11 @@ git ls-files | xargs wc -l
 
 ## monitoring
 
-https://github.com/vegasbrianc/github-monitoring - grafana montioring
+[https://github.com/vegasbrianc/github-monitoring](https://github.com/vegasbrianc/github-monitoring) - grafana montioring
+
+## hooks
+
+https://github.com/typicode/husky/issues/124 - skipping hooks for CICD
 
 
 
