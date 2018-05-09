@@ -67,5 +67,7 @@ example config:
 
 [https://github.com/vegasbrianc/grafana\_dashboard](https://github.com/vegasbrianc/grafana_dashboard) - example dashboard
 
-https://finestructure.co/blog/2016/5/16/monitoring-with-prometheus-grafana-docker-part-1
+[https://finestructure.co/blog/2016/5/16/monitoring-with-prometheus-grafana-docker-part-1](https://finestructure.co/blog/2016/5/16/monitoring-with-prometheus-grafana-docker-part-1)
+
+https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-send-to-grafana - azure monitor solution
 
