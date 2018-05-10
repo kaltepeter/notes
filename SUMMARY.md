@@ -28,4 +28,5 @@
 * [curl](curl.md)
 * [graphql](graphql.md)
 * [prometheus](prometheus.md)
+* [python](python.md)
 
