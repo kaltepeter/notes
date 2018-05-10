@@ -29,4 +29,5 @@
 * [graphql](graphql.md)
 * [prometheus](prometheus.md)
 * [python](python.md)
+* [linux services / automation](linux-services-automation.md)
 
