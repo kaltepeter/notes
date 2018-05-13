@@ -21,7 +21,13 @@
 
 [https://github.com/carloscuesta/materialshell](https://github.com/carloscuesta/materialshell)
 
-[https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes\#macos](https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes#macos) follow this
+1. `curl -o ~/Downloads/material-dark.terminal https://raw.githubusercontent.com/carloscuesta/materialshell/master/shell-color-themes/macOS/terminal/materialshell-dark.terminal`
+
+2. `curl -o ~/Downloads/material-oceanic.terminal https://raw.githubusercontent.com/carloscuesta/materialshell/master/shell-color-themes/macOS/terminal/materialshell-oceanic.terminal`
+
+3. [https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes\#macos](#)
+
+   follow this  
 
 1. `mkdir "$HOME/.oh-my-zsh/custom/materialshell.zsh-theme"`
 2. `curl -fsSL -o "$HOME/.oh-my-zsh/custom/themes/materialshell.zsh-theme" https://raw.githubusercontent.com/carloscuesta/materialshell/master/materialshell.zsh`
