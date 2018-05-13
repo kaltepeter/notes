@@ -4,11 +4,12 @@
 
 [https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
 
-1. `brew install zsh zsh-completions`
-2. `zsh --version`
-3. `sudo echo "$(which zsh)" >> /etc/shells`
-4. `chsh -s $(which zsh)`
-5. restart terminals
+1. `sudo xcodebuild -license accept`
+2. `brew install zsh zsh-completions`
+3. `zsh --version`
+4. `sudo echo "$(which zsh)" >> /etc/shells`
+5. `chsh -s $(which zsh)`
+6. restart terminals
 
 ## oh-my-zsh
 
@@ -26,11 +27,9 @@
 2. `curl -fsSL -o "$HOME/.oh-my-zsh/custom/materialshell.zsh-theme/materialshell.zsh" https://raw.githubusercontent.com/carloscuesta/materialshell/master/materialshell.zsh`
 3. Modify `.zshrc` to enable the theme with `ZSH_THEME="materialshell"`
 
-
-
 ## vars
 
-https://wiki.archlinux.org/index.php/environment\_variables
+[https://wiki.archlinux.org/index.php/environment\_variables](https://wiki.archlinux.org/index.php/environment_variables)
 
 1. put them in ~/.profile
 2. add `source ~/.profile` to `~/.zshrc` and `~/.bash_profile`
