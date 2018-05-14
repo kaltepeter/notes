@@ -8,7 +8,9 @@ webstorm key bindings: [https://marketplace.visualstudio.com/items?itemName=isud
 
 ruby support: [https://github.com/rubyide/vscode-ruby](https://github.com/rubyide/vscode-ruby)
 
-rubocop: https://github.com/misogi/vscode-ruby-rubocop
+rubocop: [https://github.com/misogi/vscode-ruby-rubocop](https://github.com/misogi/vscode-ruby-rubocop)
+
+cucumber: https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete
 
 ## customizations
 
