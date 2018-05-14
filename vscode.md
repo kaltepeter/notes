@@ -6,6 +6,8 @@ material theme: [https://equinsuocha.io/projects/material-theme/](https://equins
 
 webstorm key bindings: [https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings](https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings)
 
+ruby support: https://github.com/rubyide/vscode-ruby
+
 ## customizations
 
 ### zsh
@@ -25,7 +27,6 @@ webstorm key bindings: [https://marketplace.visualstudio.com/items?itemName=isud
 "editor.lineHeight": 24,
 "terminal.integrated.lineHeight": 1.5,
 "editor.fontLigatures": true,
-
 ```
 
 ### theme
