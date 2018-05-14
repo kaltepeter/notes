@@ -4,12 +4,18 @@
 
 ## installing on mac
 
-https://hackercodex.com/guide/python-development-environment-on-mac-osx/
+[https://hackercodex.com/guide/python-development-environment-on-mac-osx/](https://hackercodex.com/guide/python-development-environment-on-mac-osx/)
 
 update from default install
 
 ```
 brew install python3
+```
+
+to update pip3
+
+```
+pip3 install --upgrade pip setuptools wheel
 ```
 
 
