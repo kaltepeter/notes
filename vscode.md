@@ -4,9 +4,7 @@
 
 material theme: [https://equinsuocha.io/projects/material-theme/](https://equinsuocha.io/projects/material-theme/)
 
-webstorm key bindings: https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings
-
-
+webstorm key bindings: [https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings](https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings)
 
 ## customizations
 
@@ -14,6 +12,13 @@ webstorm key bindings: https://marketplace.visualstudio.com/items?itemName=isudo
 
 ```
     "terminal.integrated.shell.osx": "/bin/zsh",
+```
+
+### font
+
+```
+"editor.fontSize": 14,
+
 ```
 
 
