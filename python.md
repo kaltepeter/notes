@@ -18,5 +18,23 @@ to update pip3
 pip3 install --upgrade pip setuptools wheel
 ```
 
+### virtual env
+
+```
+pip3 install virtualenv
+mkdir -p ~/Projects ~/Virtualenvs ~/Library/Application\ Support/pip
+vim ~/Library/Application\ Support/pip/pip.conf
+```
+
+add to file
+
+```
+[install]
+require-virtualenv = true
+
+[uninstall]
+require-virtualenv = true
+```
+
 
 
