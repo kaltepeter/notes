@@ -6,7 +6,9 @@ material theme: [https://equinsuocha.io/projects/material-theme/](https://equins
 
 webstorm key bindings: [https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings](https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings)
 
-ruby support: https://github.com/rubyide/vscode-ruby
+ruby support: [https://github.com/rubyide/vscode-ruby](https://github.com/rubyide/vscode-ruby)
+
+rubocop: https://github.com/misogi/vscode-ruby-rubocop
 
 ## customizations
 
