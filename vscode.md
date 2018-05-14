@@ -18,7 +18,25 @@ webstorm key bindings: [https://marketplace.visualstudio.com/items?itemName=isud
 
 ```
 "editor.fontSize": 14,
+"editor.fontFamily": "Fira Code",
+"terminal.integrated.fontFamily":  "Menlo, Monaco, 'Courier New', monospace",
+"editor.fontSize": 14,
+"terminal.integrated.fontSize": 14,
+"editor.lineHeight": 24,
+"terminal.integrated.lineHeight": 1.5,
+"editor.fontLigatures": true,
 
+```
+
+### theme
+
+```
+"editor.minimap.enabled": false,
+"explorer.decorations.badges": false,
+"editor.renderWhitespace": "none",
+"editor.renderControlCharacters": false,
+"workbench.colorTheme": "Material Theme Darker",
+"workbench.iconTheme": "eq-material-theme-icons"
 ```
 
 
