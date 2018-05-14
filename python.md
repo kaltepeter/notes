@@ -4,6 +4,8 @@
 
 ## installing on mac
 
+https://hackercodex.com/guide/python-development-environment-on-mac-osx/
+
 update from default install
 
 ```
