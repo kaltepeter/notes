@@ -36,5 +36,11 @@ require-virtualenv = true
 require-virtualenv = true
 ```
 
+create env
+
+```
+virtualenv -p python3 foobar-py3
+```
+
 
 
