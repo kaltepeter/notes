@@ -48,5 +48,11 @@ update or install global packages
 gpip install --upgrade pip setuptools wheel virtualenv
 ```
 
+activate virtualenv
+
+```
+source bin/activate
+```
+
 
 
