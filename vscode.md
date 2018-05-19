@@ -10,7 +10,11 @@ ruby support: [https://github.com/rubyide/vscode-ruby](https://github.com/rubyid
 
 rubocop: [https://github.com/misogi/vscode-ruby-rubocop](https://github.com/misogi/vscode-ruby-rubocop)
 
-cucumber: https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete
+cucumber: [https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete](https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete)
+
+gitlens: https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
+
+
 
 ## customizations
 

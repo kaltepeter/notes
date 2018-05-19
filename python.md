@@ -57,9 +57,7 @@ source bin/activate
 
 ## package dependencies
 
-http://docs.python-guide.org/en/latest/dev/virtualenvs/
-
-
+[http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
 
 
