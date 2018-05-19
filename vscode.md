@@ -12,9 +12,9 @@ rubocop: [https://github.com/misogi/vscode-ruby-rubocop](https://github.com/miso
 
 cucumber: [https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete](https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete)
 
-gitlens: https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
+gitlens: [https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
-
+python: https://marketplace.visualstudio.com/items?itemName=ms-python.python
 
 ## customizations
 
