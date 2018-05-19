@@ -51,6 +51,7 @@ gpip install --upgrade pip setuptools wheel virtualenv
 activate virtualenv
 
 ```
+cd foobar-py3
 source bin/activate
 ```
 
