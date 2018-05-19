@@ -55,5 +55,11 @@ cd foobar-py3
 source bin/activate
 ```
 
+## package dependencies
+
+http://docs.python-guide.org/en/latest/dev/virtualenvs/
+
+
+
 
 
