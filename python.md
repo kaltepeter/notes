@@ -42,5 +42,11 @@ create env
 virtualenv -p python3 foobar-py3
 ```
 
+update or install global packages
+
+```
+gpip install --upgrade pip setuptools wheel virtualenv
+```
+
 
 
