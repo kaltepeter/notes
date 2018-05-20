@@ -4,6 +4,12 @@
 
 ## installing on mac
 
+## system wide python3
+
+https://www.python.org/downloads/
+
+
+
 ### older option
 
 [https://hackercodex.com/guide/python-development-environment-on-mac-osx/](https://hackercodex.com/guide/python-development-environment-on-mac-osx/)
