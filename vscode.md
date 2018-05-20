@@ -14,7 +14,7 @@ cucumber: [https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucum
 
 gitlens: [https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
-python: https://marketplace.visualstudio.com/items?itemName=ms-python.python
+python: [https://marketplace.visualstudio.com/items?itemName=ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
 ## customizations
 
@@ -47,6 +47,12 @@ python: https://marketplace.visualstudio.com/items?itemName=ms-python.python
 "workbench.colorTheme": "Material Theme Darker",
 "workbench.iconTheme": "eq-material-theme-icons"
 ```
+
+## config
+
+### python
+
+https://code.visualstudio.com/docs/python/environments
 
 
 
