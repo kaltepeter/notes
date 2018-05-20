@@ -48,11 +48,15 @@ python: [https://marketplace.visualstudio.com/items?itemName=ms-python.python](h
 "workbench.iconTheme": "eq-material-theme-icons"
 ```
 
+### python
+
+```
+    "python.venvPath": "./.pyenv",
+```
+
 ## config
 
 ### python
 
-https://code.visualstudio.com/docs/python/environments
-
-
+[https://code.visualstudio.com/docs/python/environments](https://code.visualstudio.com/docs/python/environments)
 
