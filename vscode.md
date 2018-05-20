@@ -51,7 +51,8 @@ python: [https://marketplace.visualstudio.com/items?itemName=ms-python.python](h
 ### python
 
 ```
-    "python.venvPath": "./.pyenv",
+    "python.venvPath": "${workspaceFolder}/.pyenv",
+    "python.pythonPath": "${workspaceFolder}/.pyenv/bin/python"
 ```
 
 ## config

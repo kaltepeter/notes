@@ -59,3 +59,13 @@ source bin/activate
 
 [http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
+
+
+## tools
+
+pylint: `pip install pylint`
+
+
+
+
+
