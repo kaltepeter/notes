@@ -4,6 +4,8 @@
 
 ## installing on mac
 
+### older option
+
 [https://hackercodex.com/guide/python-development-environment-on-mac-osx/](https://hackercodex.com/guide/python-development-environment-on-mac-osx/)
 
 update from default install
@@ -18,7 +20,7 @@ to update pip3
 pip3 install --upgrade pip setuptools wheel
 ```
 
-### virtual env
+#### virtual env
 
 ```
 pip3 install virtualenv
