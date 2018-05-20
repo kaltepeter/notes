@@ -63,3 +63,5 @@ python: [https://marketplace.visualstudio.com/items?itemName=ms-python.python](h
 
 [https://code.visualstudio.com/docs/python/environments](https://code.visualstudio.com/docs/python/environments)
 
+linting guide: https://code.visualstudio.com/docs/python/linting
+
