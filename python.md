@@ -77,11 +77,14 @@ pyocr: `pip install pyocr`
 
 ### install imagemagick for wand
 
-https://stackoverflow.com/questions/37011291/python-wand-image-is-not-recognized
+[https://stackoverflow.com/questions/37011291/python-wand-image-is-not-recognized](https://stackoverflow.com/questions/37011291/python-wand-image-is-not-recognized)
 
 use version 6 until 7 is ready
 
-`brew install imagemagick@6`
+```
+brew install imagemagick@6
+pip install Wand
+```
 
 add following to .profile or .zshrc, .bashrc, etch
 
