@@ -52,7 +52,8 @@ python: [https://marketplace.visualstudio.com/items?itemName=ms-python.python](h
 
 ```
     "python.venvPath": "${workspaceFolder}/.pyenv",
-    "python.pythonPath": "${workspaceFolder}/.pyenv/bin/python"
+    "python.pythonPath": "${workspaceFolder}/.pyenv/bin/python",
+    "python.linting.enabled": true
 ```
 
 ## config
