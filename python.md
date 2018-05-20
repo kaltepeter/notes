@@ -73,3 +73,5 @@ pep8: `pip install pep8`
 
 autopep8: `pip install autopep8`
 
+pyocr: `pip install pyocr`
+
