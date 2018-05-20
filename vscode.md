@@ -16,6 +16,8 @@ gitlens: [https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens](h
 
 python: [https://marketplace.visualstudio.com/items?itemName=ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
+gitignore: https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore\#overview
+
 ## customizations
 
 ### zsh
@@ -63,5 +65,5 @@ python: [https://marketplace.visualstudio.com/items?itemName=ms-python.python](h
 
 [https://code.visualstudio.com/docs/python/environments](https://code.visualstudio.com/docs/python/environments)
 
-linting guide: https://code.visualstudio.com/docs/python/linting
+linting guide: [https://code.visualstudio.com/docs/python/linting](https://code.visualstudio.com/docs/python/linting)
 
