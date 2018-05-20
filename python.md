@@ -61,9 +61,13 @@ source bin/activate
 
 ## tools
 
+### linting
+
+https://blog.sideci.com/about-style-guide-of-python-and-linter-tool-pep8-pyflakes-flake8-haking-pyling-7fdbe163079d
+
+### packages
+
 pylint: `pip install pylint`
 
 pep8: `pip install pep8`
-
-
 
