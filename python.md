@@ -75,3 +75,21 @@ autopep8: `pip install autopep8`
 
 pyocr: `pip install pyocr`
 
+
+
+### install imagemagick for wand
+
+use version 6 until 7 is ready
+
+`brew install imagemagick@6`
+
+add following to .profile or .zshrc, .bashrc, etch
+
+```
+export MAGICK_HOME="/usr/local/opt/imagemagick@6"
+
+export PATH="$MAGICK_HOME/bin:$PATH"
+```
+
+
+
