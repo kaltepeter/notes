@@ -39,7 +39,7 @@ require-virtualenv = true
 create env
 
 ```
-virtualenv -p python3 foobar-py3
+virtualenv -p python3 .pyenv
 ```
 
 update or install global packages
@@ -51,13 +51,11 @@ gpip install --upgrade pip setuptools wheel virtualenv
 activate virtualenv
 
 ```
-cd foobar-py3
+cd .pyenv
 source bin/activate
 ```
 
 ## package dependencies
 
 [http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
-
-
 
