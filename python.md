@@ -83,6 +83,7 @@ use version 6 until 7 is ready
 
 ```
 brew install imagemagick@6
+brew link imagemagick@6 --force
 pip install Wand
 ```
 
@@ -94,5 +95,7 @@ export MAGICK_HOME="/usr/local/opt/imagemagick@6"
 export PATH="$MAGICK_HOME/bin:$PATH"
 ```
 
+symlink lib
 
+`ln -s $MAGICK_HOME/lib/libMagickWand-6.Q16.dylib /usr/local/lib/libMagickWand.dylib`
 
