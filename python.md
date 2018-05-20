@@ -75,9 +75,9 @@ autopep8: `pip install autopep8`
 
 pyocr: `pip install pyocr`
 
-
-
 ### install imagemagick for wand
+
+https://stackoverflow.com/questions/37011291/python-wand-image-is-not-recognized
 
 use version 6 until 7 is ready
 
