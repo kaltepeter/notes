@@ -4,9 +4,9 @@
 
 ## installing on mac
 
-## system wide python3
+### system wide python3
 
-https://www.python.org/downloads/
+[https://www.python.org/downloads/](https://www.python.org/downloads/)
 
 
 
