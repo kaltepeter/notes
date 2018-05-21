@@ -4,21 +4,19 @@
 
 ## installing on mac
 
-### system wide python3
-
-[https://www.python.org/downloads/](https://www.python.org/downloads/)
-
-
-
-### older option
-
-[https://hackercodex.com/guide/python-development-environment-on-mac-osx/](https://hackercodex.com/guide/python-development-environment-on-mac-osx/)
+Install with brew
 
 update from default install
 
 ```
 brew install python3
 ```
+
+
+
+### older option
+
+[https://hackercodex.com/guide/python-development-environment-on-mac-osx/](https://hackercodex.com/guide/python-development-environment-on-mac-osx/)
 
 to update pip3
 
