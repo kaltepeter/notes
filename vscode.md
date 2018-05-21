@@ -64,12 +64,13 @@ for virtualenv
     "python.pythonPath": "${workspaceFolder}/.pyenv/bin/python",
 ```
 
-for pyvenv
+for pyvenv:
 
-```
-"python.venvPath": "${workspaceFolder}/env",
-"python.pythonPath": "${workspaceFolder}/env/bin/python"
-```
+no special things necesary
+
+
+
+
 
 ## config
 
