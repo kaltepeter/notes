@@ -4,7 +4,7 @@
 
 ## installing on mac
 
-https://realpython.com/python-virtual-environments-a-primer/
+[https://realpython.com/python-virtual-environments-a-primer/](https://realpython.com/python-virtual-environments-a-primer/)
 
 install pyenv
 
@@ -138,5 +138,5 @@ export PATH="$MAGICK_HOME/bin:$PATH"
 
 symlink lib
 
-`ln -s $MAGICK_HOME/lib/libMagickWand-6.Q16.dylib /usr/local/lib/libMagickWand.dylib`
+ln -s $MAGICK\_HOME/lib/libMagickWand-6.Q16.dylib /usr/local/lib/libMagickWand.dylib
 
