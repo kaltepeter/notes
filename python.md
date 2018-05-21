@@ -140,3 +140,16 @@ symlink lib
 
 ln -s $MAGICK\_HOME/lib/libMagickWand-6.Q16.dylib /usr/local/lib/libMagickWand.dylib
 
+
+
+install ghostscript
+
+```
+brew install ghostscript
+
+```
+
+
+
+
+
