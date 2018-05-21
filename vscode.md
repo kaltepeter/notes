@@ -16,7 +16,7 @@ gitlens: [https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens](h
 
 python: [https://marketplace.visualstudio.com/items?itemName=ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
-gitignore: https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore\#overview
+gitignore: [https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore\#overview](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore#overview)
 
 ## customizations
 
@@ -53,10 +53,16 @@ gitignore: https://marketplace.visualstudio.com/items?itemName=codezombiech.giti
 ### python
 
 ```
+"python.linting.enabled": true,
+    "python.linting.pep8Enabled": true
+```
+
+for virtualenv
+
+```
     "python.venvPath": "${workspaceFolder}/.pyenv",
     "python.pythonPath": "${workspaceFolder}/.pyenv/bin/python",
-    "python.linting.enabled": true,
-    "python.linting.pep8Enabled": true
+    
 ```
 
 ## config
