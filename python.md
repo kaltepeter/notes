@@ -12,6 +12,25 @@ update from default install
 brew install python3
 ```
 
+install pyenv
+
+```
+brew install pyenv
+```
+
+install python versions
+
+```
+pyenv install 3.5.0 
+pyenv install 3.6.5 
+```
+
+create venv
+
+```
+python3 -m venv env
+```
+
 
 
 ### older option
