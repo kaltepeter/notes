@@ -4,14 +4,6 @@
 
 ## installing on mac
 
-Install with brew
-
-update from default install
-
-```
-brew install python3
-```
-
 install pyenv
 
 ```
@@ -22,7 +14,7 @@ install python versions
 
 ```
 pyenv install 3.5.0 
-pyenv install 3.6.5 
+pyenv install 3.6.5
 ```
 
 create venv
@@ -31,11 +23,15 @@ create venv
 python3 -m venv env
 ```
 
-
-
 ### older option
 
 [https://hackercodex.com/guide/python-development-environment-on-mac-osx/](https://hackercodex.com/guide/python-development-environment-on-mac-osx/)
+
+update from default install
+
+```
+brew install python3
+```
 
 to update pip3
 
