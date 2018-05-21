@@ -54,7 +54,7 @@ gitignore: [https://marketplace.visualstudio.com/items?itemName=codezombiech.git
 
 ```
 "python.linting.enabled": true,
-    "python.linting.pep8Enabled": true
+"python.linting.pep8Enabled": true
 ```
 
 for virtualenv
@@ -62,7 +62,6 @@ for virtualenv
 ```
     "python.venvPath": "${workspaceFolder}/.pyenv",
     "python.pythonPath": "${workspaceFolder}/.pyenv/bin/python",
-    
 ```
 
 ## config
