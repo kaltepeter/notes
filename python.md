@@ -4,6 +4,8 @@
 
 ## installing on mac
 
+https://realpython.com/python-virtual-environments-a-primer/
+
 install pyenv
 
 ```
@@ -38,8 +40,6 @@ create venv
 ```
 python -m venv env
 ```
-
-
 
 ### 
 
