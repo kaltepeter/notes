@@ -36,8 +36,12 @@ set project version
 create venv
 
 ```
-python3 -m venv env
+python -m venv env
 ```
+
+
+
+### 
 
 ### older option
 
