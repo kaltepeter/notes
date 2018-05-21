@@ -8,7 +8,17 @@ install pyenv
 
 ```
 brew install pyenv
+# run init to complete auto load and follow instructions
+pyenv init
 ```
+
+example output says add the following to your profile:
+
+```
+eval "$(pyenv init -)"
+```
+
+This will auto load correct python version in project directories
 
 install python versions
 
