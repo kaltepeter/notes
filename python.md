@@ -17,6 +17,12 @@ pyenv install 3.5.0
 pyenv install 3.6.5
 ```
 
+set project version
+
+```
+ pyenv local 3.5.0
+```
+
 create venv
 
 ```
