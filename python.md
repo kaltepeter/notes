@@ -140,14 +140,15 @@ symlink lib
 
 ln -s $MAGICK\_HOME/lib/libMagickWand-6.Q16.dylib /usr/local/lib/libMagickWand.dylib
 
-
-
 install ghostscript
 
 ```
 brew install ghostscript
-
 ```
+
+## PDFs
+
+tutorials: http://stanford.edu/~mgorkove/cgi-bin/rpython\_tutorials/tutorials.php
 
 
 
