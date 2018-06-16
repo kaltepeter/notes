@@ -2,9 +2,9 @@
 
 ## zulu vs openjdk vs oracle versions
 
-https://javapapers.com/java/oracle-jdk-vs-openjdk-and-java-jdk-development-process/
+[https://javapapers.com/java/oracle-jdk-vs-openjdk-and-java-jdk-development-process/](https://javapapers.com/java/oracle-jdk-vs-openjdk-and-java-jdk-development-process/)
 
-**openjdk**: open source implementation of oracle jdk. bug fixes may happen here and push back to oracle. 
+**openjdk**: open source implementation of oracle jdk. bug fixes may happen here and push back to oracle.
 
 * easy install
 * on ubuntu
@@ -20,7 +20,9 @@ https://javapapers.com/java/oracle-jdk-vs-openjdk-and-java-jdk-development-proce
 
 * libraries tend to be closed source
 
-**zulu: **
+**zulu: **open source bundle of openjdk + binaries
 
-https://www.azul.com/products/zulu-and-zulu-enterprise/key-features-benefits/
+* tested and certified
+* 
+[https://www.azul.com/products/zulu-and-zulu-enterprise/key-features-benefits/](https://www.azul.com/products/zulu-and-zulu-enterprise/key-features-benefits/)
 
