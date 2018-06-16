@@ -33,4 +33,5 @@
 * [vscode](vscode.md)
 * [johnny5](johnny5.md)
 * [wget and curl](wget-and-curl.md)
+* [java](java.md)
 
