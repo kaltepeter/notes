@@ -23,6 +23,15 @@
 **zulu: **open source bundle of openjdk + binaries
 
 * tested and certified
-* 
-[https://www.azul.com/products/zulu-and-zulu-enterprise/key-features-benefits/](https://www.azul.com/products/zulu-and-zulu-enterprise/key-features-benefits/)
+* [https://www.azul.com/products/zulu-and-zulu-enterprise/key-features-benefits/](https://www.azul.com/products/zulu-and-zulu-enterprise/key-features-benefits/)
+
+## multiple versions
+
+SDKMan to the rescue! https://sdkman.io/
+
+https://wpanas.github.io/tools/2017/12/25/sdkman.html
+
+
+
+
 
