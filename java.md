@@ -27,11 +27,21 @@
 
 ## multiple versions
 
-SDKMan to the rescue! https://sdkman.io/
+SDKMan to the rescue! [https://sdkman.io/](https://sdkman.io/)
 
-https://wpanas.github.io/tools/2017/12/25/sdkman.html
+[https://wpanas.github.io/tools/2017/12/25/sdkman.html](https://wpanas.github.io/tools/2017/12/25/sdkman.html)
 
+#### install
 
+```
+sdk install java
+```
+
+#### list
+
+```
+sdk list java
+```
 
 
 
