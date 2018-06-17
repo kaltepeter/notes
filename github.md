@@ -40,7 +40,9 @@ git ls-files | xargs wc -l
 
 ## migrating directories with history
 
-http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/
+[http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/](http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/)
+
+http://blog.neutrino.es/2012/git-copy-a-file-or-directory-from-another-repository-preserving-history/
 
 
 
