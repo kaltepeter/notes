@@ -56,5 +56,14 @@ cd to new repo
 git am $DESTINATIONPATH/*.patch
 ```
 
+fix diverged histories
+
+```
+git fetch upstream
+git branch -u upstream/master
+
+git rebase --onto upstream/master
+```
+
 
 
