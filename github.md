@@ -42,7 +42,13 @@ git ls-files | xargs wc -l
 
 [http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/](http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/)
 
-http://blog.neutrino.es/2012/git-copy-a-file-or-directory-from-another-repository-preserving-history/
+[http://blog.neutrino.es/2012/git-copy-a-file-or-directory-from-another-repository-preserving-history/](http://blog.neutrino.es/2012/git-copy-a-file-or-directory-from-another-repository-preserving-history/)
+
+```
+DESTINATIONPATH=~/tmp/mergepatchs
+SOURCE=node
+git format-patch -o $DESTINATIONPATH --root $SOURCE
+```
 
 
 
