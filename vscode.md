@@ -18,6 +18,8 @@ python: [https://marketplace.visualstudio.com/items?itemName=ms-python.python](h
 
 gitignore: [https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore\#overview](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore#overview)
 
+docker: https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker
+
 ## customizations
 
 ### zsh
@@ -67,10 +69,6 @@ for virtualenv
 for pyvenv:
 
 no special things necesary
-
-
-
-
 
 ## config
 
