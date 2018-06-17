@@ -50,5 +50,11 @@ SOURCE=node
 git format-patch -o $DESTINATIONPATH --root $SOURCE
 ```
 
+cd to new repo
+
+```
+git am $DESTINATIONPATH/*.patch
+```
+
 
 
