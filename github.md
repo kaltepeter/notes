@@ -36,7 +36,9 @@ git ls-files | xargs wc -l
 
 ## hooks
 
-https://github.com/typicode/husky/issues/124 - skipping hooks for CICD
+[https://github.com/typicode/husky/issues/124](https://github.com/typicode/husky/issues/124) - skipping hooks for CICD
+
+## migrating directories with history
 
 
 
