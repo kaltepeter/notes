@@ -53,6 +53,7 @@ git format-patch -o $DESTINATIONPATH --root $SOURCE
 cd to new repo
 
 ```
+git checkout -b init
 git am $DESTINATIONPATH/*.patch
 ```
 
