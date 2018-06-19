@@ -158,15 +158,15 @@ Gives you host and container metrics such as:
 
 Can be used with other tools for storage and retrieval. docs: [https://github.com/google/cadvisor/blob/master/docs/storage/README.md](https://github.com/google/cadvisor/blob/master/docs/storage/README.md)
 
-
-
 ## Caching/Layers
 
-https://thenewstack.io/understanding-the-docker-cache-for-faster-builds/
+[https://thenewstack.io/understanding-the-docker-cache-for-faster-builds/](https://thenewstack.io/understanding-the-docker-cache-for-faster-builds/)
 
-https://docs.docker.com/develop/develop-images/dockerfile\_best-practices/\#run
+[https://docs.docker.com/develop/develop-images/dockerfile\_best-practices/\#run](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run)
 
+brute force: –no-cache during build
 
+use multi-stage builds and separate layers correctly
 
 
 
