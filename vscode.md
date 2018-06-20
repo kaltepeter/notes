@@ -20,9 +20,9 @@ gitignore: [https://marketplace.visualstudio.com/items?itemName=codezombiech.git
 
 docker: [https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
 
-diff tool: https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff
+diff tool: [https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff)
 
-
+vagrant: https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant
 
 ## customizations
 
