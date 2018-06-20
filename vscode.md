@@ -18,7 +18,11 @@ python: [https://marketplace.visualstudio.com/items?itemName=ms-python.python](h
 
 gitignore: [https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore\#overview](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore#overview)
 
-docker: https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker
+docker: [https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
+
+diff tool: https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff
+
+
 
 ## customizations
 
