@@ -14,7 +14,11 @@
 
 [https://github.com/aperezdc/perezdecastro.org/blob/master/stash/using-boolean-variables-in-bash.markdown](https://github.com/aperezdc/perezdecastro.org/blob/master/stash/using-boolean-variables-in-bash.markdown) - flag variables in bourne shell
 
-http://spf13.com/post/easy-bash-scripting-with-shflags/ - documentation module
+[http://spf13.com/post/easy-bash-scripting-with-shflags/](http://spf13.com/post/easy-bash-scripting-with-shflags/) - documentation module
+
+https://kvz.io/blog/2013/11/21/bash-best-practices/ - boiler plate and best practice guide
+
+
 
 ### Bash 4
 
