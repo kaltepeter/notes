@@ -2,6 +2,8 @@
 
 [https://www.computerhope.com/issues/ch001721.htm](https://www.computerhope.com/issues/ch001721.htm) - extracting text
 
+http://docopt.org - cli doc generation
+
 ## installing on mac
 
 [https://realpython.com/python-virtual-environments-a-primer/](https://realpython.com/python-virtual-environments-a-primer/)
@@ -148,9 +150,5 @@ brew install ghostscript
 
 ## PDFs
 
-tutorials: http://stanford.edu/~mgorkove/cgi-bin/rpython\_tutorials/tutorials.php
-
-
-
-
+tutorials: [http://stanford.edu/~mgorkove/cgi-bin/rpython\_tutorials/tutorials.php](http://stanford.edu/~mgorkove/cgi-bin/rpython_tutorials/tutorials.php)
 
