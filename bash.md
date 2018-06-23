@@ -103,9 +103,11 @@ grep '^'"${APP_NAME}"''
 
 ## lint/static analysis
 
-https://github.com/koalaman/shellcheck
+[https://github.com/koalaman/shellcheck](https://github.com/koalaman/shellcheck)
 
-
+```
+brew install shellcheck
+```
 
 
 
