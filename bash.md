@@ -109,5 +109,11 @@ grep '^'"${APP_NAME}"''
 brew install shellcheck
 ```
 
+execute
+
+```
+shellcheck script.sh
+```
+
 
 
