@@ -88,13 +88,18 @@ grep '^'"${APP_NAME}"''
 
 [http://spf13.com/post/easy-bash-scripting-with-shflags/](#) - documentation module
 
-
-
 #### shflags
 
-https://github.com/kward/shflags
+[https://github.com/kward/shflags](https://github.com/kward/shflags)
 
+##### Install
 
+1. Download
+2. link to path
+   ```
+   ln ~/data/tools/shflags-1.2.2/shflags /usr/local/bin/shflags
+   ```
+3. execute
 
 
 
