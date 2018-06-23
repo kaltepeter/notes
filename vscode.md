@@ -24,7 +24,7 @@ diff tool: [https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-d
 
 vagrant: [https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant](https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant)
 
-shellcheck: https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck
+shellcheck: [https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)
 
 ## customizations
 
@@ -83,4 +83,12 @@ no special things necesary
 [https://code.visualstudio.com/docs/python/environments](https://code.visualstudio.com/docs/python/environments)
 
 linting guide: [https://code.visualstudio.com/docs/python/linting](https://code.visualstudio.com/docs/python/linting)
+
+## snippets
+
+https://code.visualstudio.com/docs/editor/userdefinedsnippets
+
+
+
+
 
