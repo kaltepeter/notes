@@ -101,5 +101,11 @@ grep '^'"${APP_NAME}"''
    ```
 3. execute
 
+## lint/static analysis
+
+https://github.com/koalaman/shellcheck
+
+
+
 
 
