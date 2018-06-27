@@ -168,5 +168,3 @@ brute force: –no-cache during build
 
 use multi-stage builds and separate layers correctly
 
-
-
