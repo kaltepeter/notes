@@ -26,7 +26,7 @@ vagrant: [https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant](
 
 shellcheck: [https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)
 
-graphql : https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode
+graphql : https://marketplace.visualstudio.com/items?itemName=Prisma.vscode-graphql
 
 ## customizations
 
