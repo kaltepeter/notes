@@ -26,6 +26,8 @@ vagrant: [https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant](
 
 shellcheck: [https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)
 
+graphql : https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode
+
 ## customizations
 
 ### zsh
@@ -86,9 +88,5 @@ linting guide: [https://code.visualstudio.com/docs/python/linting](https://code.
 
 ## snippets
 
-https://code.visualstudio.com/docs/editor/userdefinedsnippets
-
-
-
-
+[https://code.visualstudio.com/docs/editor/userdefinedsnippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 
