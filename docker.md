@@ -110,7 +110,7 @@ alpine linux won't build phantom:
 
 ### Mac OS
 
-https://docs.docker.com/docker-for-mac/osxfs/\#namespaces
+[https://docs.docker.com/docker-for-mac/osxfs/\#namespaces](https://docs.docker.com/docker-for-mac/osxfs/#namespaces)
 
 
 
