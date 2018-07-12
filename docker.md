@@ -108,6 +108,12 @@ alpine linux won't build phantom:
   * create a VOLUME and run ls -la /home
   * add a volume at run to /home/username and run ls -la /home to see diff
 
+### Mac OS
+
+https://docs.docker.com/docker-for-mac/osxfs/\#namespaces
+
+
+
 ## Alpine linux
 
 docs: [https://docs.docker.com/samples/library/alpine/ ](https://docs.docker.com/samples/library/alpine/)
