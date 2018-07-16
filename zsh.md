@@ -7,7 +7,7 @@
 1. `sudo xcodebuild -license accept`
 2. `brew install zsh zsh-completions`
 3. `zsh --version`
-4. `sudo echo "$(which zsh)" >> /etc/shells`
+4. `sudo echo "$(which zsh)" >> /etc/shells (brew may do this for you)`
 5. `chsh -s $(which zsh)`
 6. restart terminals
 
@@ -27,11 +27,12 @@
 
 3. [https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes\#macos](#)
 
-   follow this  
+   follow this
 
-1. `mkdir "$HOME/.oh-my-zsh/custom/materialshell.zsh-theme"`
-2. `curl -fsSL -o "$HOME/.oh-my-zsh/custom/themes/materialshell.zsh-theme" https://raw.githubusercontent.com/carloscuesta/materialshell/master/materialshell.zsh`
-3. Modify `.zshrc` to enable the theme with `ZSH_THEME="materialshell"`
+4. `mkdir "$HOME/.oh-my-zsh/custom/materialshell.zsh-theme"`
+
+5. `curl -fsSL -o "$HOME/.oh-my-zsh/custom/themes/materialshell.zsh-theme" https://raw.githubusercontent.com/carloscuesta/materialshell/master/materialshell.zsh`
+6. Modify `.zshrc` to enable the theme with `ZSH_THEME="materialshell"`
 
 ## vars
 
