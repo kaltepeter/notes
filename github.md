@@ -54,7 +54,7 @@ cd to new repo
 
 ```
 git checkout -b init
-git am $DESTINATIONPATH/*.patch
+git am --ignore-space-change --ignore-whitespace --3way $DESTINATIONPATH/*.patch
 ```
 
 fix diverged histories
