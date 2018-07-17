@@ -65,6 +65,11 @@ git fetch upstream
 git branch -u upstream/master
 
 git rebase --onto upstream/master
+
+# or
+
+git pull --allow-unrelated-histories upstream master
+
 ```
 
 
