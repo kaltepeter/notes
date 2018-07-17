@@ -69,6 +69,14 @@ git rebase --onto upstream/master
 # or
 
 git pull --allow-unrelated-histories upstream master
+```
+
+#### restore deleted file
+
+https://stackoverflow.com/questions/953481/find-and-restore-a-deleted-file-in-a-git-repository?rq=1
+
+```
+git rev-list -n 1 HEAD -- <path>
 
 ```
 
