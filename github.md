@@ -54,6 +54,7 @@ cd to new repo
 
 ```
 git checkout -b init
+SOURCE=node
 git am --ignore-space-change --ignore-whitespace --3way $DESTINATIONPATH/*.patch
 ```
 
