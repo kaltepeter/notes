@@ -73,11 +73,13 @@ git pull --allow-unrelated-histories upstream master
 
 #### restore deleted file
 
-https://stackoverflow.com/questions/953481/find-and-restore-a-deleted-file-in-a-git-repository?rq=1
+[https://stackoverflow.com/questions/953481/find-and-restore-a-deleted-file-in-a-git-repository?rq=1](https://stackoverflow.com/questions/953481/find-and-restore-a-deleted-file-in-a-git-repository?rq=1)
 
 ```
 git rev-list -n 1 HEAD -- <path>
-
+git checkout <deleting_commit>^ -- <file_path>
+# git checkout $(git rev-list -n 1 HEAD -- "$file")^ -- "$file"
+# git checkout $(git rev-list -n 1 HEAD -- "$file")~1 -- "$file"
 ```
 
 
