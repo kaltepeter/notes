@@ -14,6 +14,5 @@ simple and built in
 
 `initializer`in this case is an npm package named`create-<initializer>`, which will be installed by[`npx`](https://docs.npmjs.com/cli/npx), and then have its main bin executed -- presumably creating or updating`package.json`and running any other initialization-related operations.
 
-  
 
 
