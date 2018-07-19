@@ -26,7 +26,9 @@ vagrant: [https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant](
 
 shellcheck: [https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)
 
-graphql : https://marketplace.visualstudio.com/items?itemName=stpn.vscode-graphql
+graphql : [https://marketplace.visualstudio.com/items?itemName=stpn.vscode-graphql](https://marketplace.visualstudio.com/items?itemName=stpn.vscode-graphql)
+
+sort typescript imports: https://marketplace.visualstudio.com/items?itemName=miclo.sort-typescript-imports
 
 ## customizations
 
