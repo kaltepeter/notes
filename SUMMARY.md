@@ -1,4 +1,4 @@
-# Summary
+# Table of contents
 
 * [Introduction](README.md)
 * [Linux Commands](basics.md)
@@ -9,7 +9,7 @@
 * [pi networking](pi-networking.md)
 * [configure VNC for Pi](configure-vnc-for-pi.md)
 * [docker](docker.md)
-* [Spring Boot ](spring-boot.md)
+* [Spring Boot](spring-boot.md)
 * [Jasmine: typesafe stubs for container component tests](jasmine-typesafe-stubs-for-container-component-tests.md)
 * [ngrx](ngrx.md)
 * [nginx](nginx.md)

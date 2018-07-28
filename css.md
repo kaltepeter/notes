@@ -1,4 +1,4 @@
-# CSS
+# css
 
 ## CSS Mastery
 
@@ -12,9 +12,9 @@
 
 [http://specifishity.com/specifishity.pdf](http://specifishity.com/specifishity.pdf) - specificity reference pdf
 
-##### Selectors API
+#### Selectors API
 
-```
+```text
 var el   = document.querySelector('#bar');
 
 var chil = el.querySelectorAll('.foo');
@@ -22,23 +22,23 @@ var chil = el.querySelectorAll('.foo');
 
 select elements matching css class
 
-##### Attribute Selectors
+#### Attribute Selectors
 
-```
+```text
 a[href^=mailto] {background-image: url(emailicon.gif);}
 a[href^=http]:after {content: " (" attr(href) ")";}
 ```
 
 print or progressive enhancement to types of links
 
-```
+```text
 a[href$=pdf] {background-image: url(pdficon.gif);}
 a[href$=pdf]:after {content: " (PDF)";}
 ```
 
 decorate links of type
 
-```
+```text
 input[type=checkbox i]
 ```
 
@@ -46,7 +46,7 @@ case insensitivity
 
 [https://codepen.io/estelle/pen/lEGev](https://codepen.io/estelle/pen/lEGev)
 
-```
+```text
 @media print{
   abbr[title]:after {
     content: "(" attr(title) ")";
@@ -59,9 +59,9 @@ case insensitivity
 
 print abbr title
 
-##### UI selectors
+#### UI selectors
 
-```
+```text
 :default
 :valid
 :invalid
@@ -80,9 +80,9 @@ print abbr title
 :user-error or :user-invalid
 ```
 
-##### pseudo classes
+#### pseudo classes
 
-```
+```text
 body {counter-reset: invalidCount;}
 :invalid {
   background-color: pink;
@@ -95,9 +95,9 @@ p:before {
 
 css counters
 
-##### structural selectors
+#### structural selectors
 
-```
+```text
 :root
 ```
 
@@ -105,9 +105,9 @@ use :rem units for root fonts
 
 [https://estelle.github.io/wtf/](https://estelle.github.io/wtf/)
 
-##### pseudo elements
+#### pseudo elements
 
-```
+```text
 ::first-line
 ::first-letter
 ::selection (not in specification)
@@ -117,7 +117,7 @@ use :rem units for root fonts
 
 two :: is correct, : worked
 
-```
+```text
 .scrollbar ::-webkit-scrollbar {
   margin-right: 5px;
   background-color: #f36;
@@ -152,11 +152,11 @@ style webkit scrollbar
 
 shadow-dom
 
-#### generating content
+### generating content
 
-##### quotes
+#### quotes
 
-```
+```text
 /* Specify pairs of quotes for two levels in two languages */
 :lang(en) > q { quotes: '"' '"' "'" "'" }
 :lang(fr) > q { quotes: "«" "»" "’" "’" }
@@ -172,9 +172,9 @@ dynamically insert language specific quotes
 
 [https://codepen.io/estelle/pen/aVWYyZ](https://codepen.io/estelle/pen/aVWYyZ) - no closing quote for multiple paragraphs
 
-##### links
+#### links
 
-```
+```text
 a[href^=http]:hover {
    position: relative;
 }
@@ -190,9 +190,9 @@ a[href^=http]:hover:after {
 }
 ```
 
-##### counter
+#### counter
 
-```
+```text
 body {counter-reset: invalidCount;}
 :invalid {
   background-color: pink;
@@ -208,24 +208,24 @@ body - reload page and set count
 
 bump count when an invalid field is hit
 
-##### material design icon
+#### material design icon
 
-```
+```text
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 ```
 
-##### accessibility
+#### accessibility
 
 Improved Accessibility \(future\)
 
-```
+```text
 content: url(question.svg) / "More Information";
 ```
 
 Purely decorative
 
-```
+```text
 content: "\25BA" / "";
 ```
 
@@ -233,39 +233,34 @@ content: "\25BA" / "";
 
 don't mix content vs. presentation. i.e. generated content is extra, not required as it is presentation
 
-##### shapes
+#### shapes
 
 [https://css-tricks.com/examples/ShapesOfCSS/](https://css-tricks.com/examples/ShapesOfCSS/)
 
 [https://css-tricks.com/pseudo-element-roundup/](https://css-tricks.com/pseudo-element-roundup/)
 
-#### media queries
+### media queries
 
 [https://estelle.github.io/cssmastery/media/\#slide2](https://estelle.github.io/cssmastery/media/#slide2)
 
 [https://developer.mozilla.org/en-US/docs/Web/CSS/@media\#Media\_features](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features) - media query specs
 
-##### resolution
+#### resolution
 
 **dpi**
 
 * : dots per inch \(72, 96\)
-
-* **dpcm**  
-  : dots per centimeter \(1dpcm ≈ 2.54dpi\)
-
+* **dpcm** : dots per centimeter \(1dpcm ≈ 2.54dpi\)
 * **dppx**  
   : dots per pixel
 
   1dppx = 96dpi \(default resolution of images\)
 
----
-
 Note: 0 is invalid. O is not equal to 0dpi, 0dpcm, or 0dppx.
 
-#### @supports
+### @supports
 
-```
+```text
 @supports (display: flex){
   /* rules for browsers supporting unprefixed flex box */
 }
@@ -275,9 +270,9 @@ feature detection without js
 
 [https://codepen.io/estelle/pen/ihsny](https://codepen.io/estelle/pen/ihsny) - css feature detection
 
-##### viewport
+#### viewport
 
-```
+```text
 <meta name="viewport" content="width=device-width,
             initial-scale=1, maximum-scale=1"/>
 ```
@@ -285,17 +280,17 @@ feature detection without js
 * always include
 * don't disable scaling
 
-##### svg
+#### svg
 
 [view-source:https://estelle.github.io/cssmastery/media/files/circle.svg](view-source:https://estelle.github.io/cssmastery/media/files/circle.svg)
 
-##### colors
+#### colors
 
 [http://www.standardista.com/hsla-color-picker/](http://www.standardista.com/hsla-color-picker/)
 
-###### RRGGBBAA
+**RRGGBBAA**
 
-```
+```text
 100% — FF
  95% — F2
  90% — E6
@@ -319,11 +314,11 @@ feature detection without js
  0% — 00
 ```
 
-##### appearance
+#### appearance
 
 [https://opensource.apple.com/source/WebCore/WebCore-1889.1/css/mediaControls.css.auto.html](https://opensource.apple.com/source/WebCore/WebCore-1889.1/css/mediaControls.css.auto.html)
 
-#### flexbox
+### flexbox
 
 [https://caniuse.com/\#search=flexbox](https://caniuse.com/#search=flexbox) - caniuse flexbox
 
@@ -331,44 +326,51 @@ feature detection without js
 
 [https://estelle.github.io/cssmastery/flexbox/files/pagelayout.html](https://estelle.github.io/cssmastery/flexbox/files/pagelayout.html) - holy grail layout example
 
-###### steps
+**steps**
 
 Add
 
 1. `display: flex;`
+
    to the parent of the elements to be flexed.
+
 2. Set
+
    `flex-direction`
+
    to horizontal or vertical
+
 3. Set
+
    `flex-wrap`
+
    to control wrap direction
 
-##### display properties
+#### display properties
 
 inline \| block \| list-item \| inline-list-item \| inline-block \| flex \| inline-flex \| grid \| inline-grid \| table \| inline-table \| table-row-group \| table-header-group \| table-footer-group \| table-row \| table-cell \| table-column-group \| table-column \| table-caption \| ruby \| ruby-base \| ruby-text \| ruby-base-container \| ruby-text-container \| contents \| none \| flow \| flow-root
 
-##### changed props
+#### changed props
 
 * floats are not impacted. use as fallback
 * `margin`: adjacent flex items margins do not collapse
 * `min-width`& `min-height`: default is auto, not 0
 * `visibility: collapse;`
 
-###### ignored:
+**ignored:**
 
 1. column-\* properties
 2. float
 3. clear
 4. vertical-align
 
-##### axis
+#### axis
 
 [https://estelle.github.io/cssmastery/flexbox/files/axes.html](https://estelle.github.io/cssmastery/flexbox/files/axes.html)
 
-#### Tables
+### Tables
 
-```
+```text
 <table>
   <caption>Table Caption</caption>
   <colgroup>
@@ -380,7 +382,7 @@ inline \| block \| list-item \| inline-list-item \| inline-block \| flex \| inli
 </table>
 ```
 
-```
+```text
 display: table;
 display: table-row-group;
 display: table-header-group;
@@ -392,7 +394,7 @@ display: table-column;
 display: table-caption;
 ```
 
-```
+```text
  <colgroup>
     <col class="week"/>
     <col class="player"/>
@@ -401,7 +403,7 @@ display: table-caption;
   </colgroup>
 ```
 
-```
+```text
 td, th { padding: .5em 1em; border: 2px solid #999; }
 table { border-collapse: collapse;}
 col.week {}
@@ -419,11 +421,11 @@ a {color: #0bb; text-decoration: none;}
 a:hover {text-decoration: underline; }
 ```
 
-#### Grids
+### Grids
 
 IE 10 support with different syntax
 
-```
+```text
 ol { 
   display: grid;
 list-style: none;
@@ -438,7 +440,7 @@ li:nth-of-type(24n + 7) { background: #ccc; }
 li:nth-of-type(24n + 8) { background: #ccc; }
 ```
 
-```
+```text
 body {
 display: grid;
 grid-template-columns: 3fr 3fr 3fr 4fr;
@@ -479,7 +481,7 @@ grid-row: 5/6;
 }
 ```
 
-```
+```text
 body {
 display: grid;
 grid-gap: 1em;
@@ -508,7 +510,7 @@ style {grid-area: s;}
 
 [http://labs.jensimmons.com/](http://labs.jensimmons.com/)
 
-```
+```text
 .slide {
   background-color: #0dd;
 background-image:
@@ -528,15 +530,11 @@ background-size: 300px 150px;
 }
 ```
 
-#### animations
+### animations
 
 [http://cubic-bezier.com/\#.27,.61,1,.58](http://cubic-bezier.com/#.27,.61,1,.58)
 
 [https://estelle.github.io/cssmastery/animations/files/cubicbezierprint.html](https://estelle.github.io/cssmastery/animations/files/cubicbezierprint.html)
-
-
-
-
 
 [http://estelle.github.io/input-masking/indexcss.html](http://estelle.github.io/input-masking/indexcss.html)
 

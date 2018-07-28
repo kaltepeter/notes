@@ -1,4 +1,4 @@
-# GraphQL
+# graphql
 
 beginner tutorial: [https://www.howtographql.com](https://www.howtographql.com)
 

@@ -1,8 +1,8 @@
-# Linux
+# linux
 
-#### vmstat
+## vmstat
 
-```
+```text
 vmstat
 vmstat -S M # show in MB
 free -m ; sync # show free mem and write current
@@ -13,64 +13,64 @@ vmstat 5 3 # run 3 times every 5 sec
 
 list vm stats. memory, disk, etc
 
-#### who
+## who
 
-```
+```text
 who
 who -l # who is logged in and process
 who -T # is messaging turned on
 mesg # send message to user
 ```
 
-#### netstat
+## netstat
 
-```
+```text
 netstat -alt # list tcp/udp active ports
 netstat -alx # list all tcp/udp/sockets
 netstat -i # list interfaces
 netstat -s #
 ```
 
-#### top
+## top
 
-```
+```text
 top
 ```
 
-#### ps
+## ps
 
-```
+```text
 ps # list process
 ps all # list all process
 ```
 
-#### pstree
+## pstree
 
-```
+```text
 pstree #show systemd tree
 ```
 
-#### lsof
+## lsof
 
-```
+```text
 lsof -i # list network
 ```
 
-#### iptables
+## iptables
 
-```
+```text
 sudo iptables -nvL # show data in/out
 ```
 
-#### watch
+## watch
 
-```
+```text
 watch -d sudo iptables -nvL # show every 2 sec and highlight changes
 ```
 
-#### systat
+## systat
 
-```
+```text
 apt-get install sysstat
 sudo vi /etc/default/sysstat # turn it on with boolean
 cat /etc/cron.d/sysstat # list cron jobs
@@ -83,9 +83,5 @@ sar -w # context switch per sec
 sar -n DEv # network interface stats
 sar -b # overall activity
 sar -q -s 10:00:00 -e 11:00:00 # between times for today
-
-
 ```
-
-
 

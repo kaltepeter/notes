@@ -1,4 +1,4 @@
-# ZSH
+# zsh
 
 ## install zsh
 
@@ -22,15 +22,12 @@
 [https://github.com/carloscuesta/materialshell](https://github.com/carloscuesta/materialshell)
 
 1. `curl -o ~/Downloads/material-dark.terminal https://raw.githubusercontent.com/carloscuesta/materialshell/master/shell-color-themes/macOS/terminal/materialshell-dark.terminal`
-
 2. `curl -o ~/Downloads/material-oceanic.terminal https://raw.githubusercontent.com/carloscuesta/materialshell/master/shell-color-themes/macOS/terminal/materialshell-oceanic.terminal`
-
-3. [https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes\#macos](#)
+3. [https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes\#macos](zsh.md)
 
    follow this
 
 4. `mkdir "$HOME/.oh-my-zsh/custom/materialshell.zsh-theme"`
-
 5. `curl -fsSL -o "$HOME/.oh-my-zsh/custom/themes/materialshell.zsh-theme" https://raw.githubusercontent.com/carloscuesta/materialshell/master/materialshell.zsh`
 6. Modify `.zshrc` to enable the theme with `ZSH_THEME="materialshell"`
 
@@ -40,6 +37,4 @@
 
 1. put them in ~/.profile
 2. add `source ~/.profile` to `~/.zshrc` and `~/.bash_profile`
-
-
 

@@ -1,22 +1,24 @@
-# Docker
+# docker
+
+## Docker
 
 `docker exec -it vibrant_bell sh`
 
 > run shell on container vibrant\_bell
 
-## Healthchecks
+### Healthchecks
 
 **documentation**: [https://docs.docker.com/engine/reference/builder/\#healthcheck](https://docs.docker.com/engine/reference/builder/#healthcheck)
 
 [https://ryaneschinger.com/blog/using-docker-native-health-checks/](https://ryaneschinger.com/blog/using-docker-native-health-checks/)
 
-**health check samples: **[https://github.com/docker-library/healthcheck](https://github.com/docker-library/healthcheck)
+**health check samples:** [https://github.com/docker-library/healthcheck](https://github.com/docker-library/healthcheck)
 
-## Startup dependencies
+### Startup dependencies
 
 [https://docs.docker.com/compose/startup-order/](https://docs.docker.com/compose/startup-order/)
 
-## compose / stack
+### compose / stack
 
 compose is legacy
 
@@ -28,7 +30,7 @@ start stack
 
 `docker stack deploy -c docker-compose.yml javelin`
 
-## ENV vars
+### ENV vars
 
 how entry points work: [https://stackoverflow.com/questions/41512237/how-to-execute-a-shell-command-before-the-entrypoint-via-the-dockerfile](https://stackoverflow.com/questions/41512237/how-to-execute-a-shell-command-before-the-entrypoint-via-the-dockerfile)
 
@@ -36,16 +38,19 @@ vars in dockerfile: [https://stackoverflow.com/questions/19537645/get-environmen
 
 environment replacement doc: [https://docs.docker.com/engine/reference/builder/\#environment-replacement](https://docs.docker.com/engine/reference/builder/#environment-replacement)
 
-#### how to run command to set env var
+**how to run command to set env var**
 
 1. Create dockerrun.sh script to set as entry point with the following
-   ```
+
+   ```text
    GATEWAY=$(ip route show 0.0.0.0/0 dev eth0 | cut -d\  -f3)
    SPRING_CONFIG_URI=http://$GATEWAY:8888
    java $JAVA_OPTS -DSPRING_CONFIG_URI=$SPRING_CONFIG_URI -Djava.security.egd=file:/dev/./urandom -Dserver.port=8081 -jar /app.jar
    ```
+
 2. edit Dockerfile
-   ```
+
+   ```text
    FROM openjdk:8-jdk-alpine
    VOLUME /tmp
    EXPOSE 8081
@@ -54,43 +59,43 @@ environment replacement doc: [https://docs.docker.com/engine/reference/builder/\
    ENV JAVA_OPTS=""
    ENTRYPOINT exec sh ./dockerrun.sh
    ```
-3. ## 
 
-## Networking
+3. 
+### Networking
 
 docs: [https://docs.docker.com/engine/userguide/networking/work-with-networks/\#basic-container-networking-example](https://docs.docker.com/engine/userguide/networking/work-with-networks/#basic-container-networking-example)
 
-#### get container ip
+**get container ip**
 
-```
+```text
 hostname -i
 ```
 
-#### get container gateway
+**get container gateway**
 
-```
+```text
 $(ip route show 0.0.0.0/0 dev eth0 | cut -d\  -f3)
 ```
 
 or
 
-```
+```text
 ip route|awk '/default/ { print $3 }'
 ```
 
 \*\* Use docker compose/stacks to network containers. old way was link. using the gateway address will also do it.
 
-## tutorials
+### tutorials
 
-**getting started for java: **[https://github.com/docker/labs/tree/master/developer-tools/java/](https://github.com/docker/labs/tree/master/developer-tools/java/)
+**getting started for java:** [https://github.com/docker/labs/tree/master/developer-tools/java/](https://github.com/docker/labs/tree/master/developer-tools/java/)
 
 **getting started for spring boot:** [https://spring.io/guides/gs/spring-boot-docker/](https://spring.io/guides/gs/spring-boot-docker/)
 
-**host multiple websites on single host docker: **[https://blog.florianlopes.io/host-multiple-websites-on-single-host-docker/](https://blog.florianlopes.io/host-multiple-websites-on-single-host-docker/)
+**host multiple websites on single host docker:** [https://blog.florianlopes.io/host-multiple-websites-on-single-host-docker/](https://blog.florianlopes.io/host-multiple-websites-on-single-host-docker/)
 
-**nginx template vars: **[https://docs.docker.com/samples/library/nginx/\#using-environment-variables-in-nginx-configuration](https://docs.docker.com/samples/library/nginx/#using-environment-variables-in-nginx-configuration)
+**nginx template vars:** [https://docs.docker.com/samples/library/nginx/\#using-environment-variables-in-nginx-configuration](https://docs.docker.com/samples/library/nginx/#using-environment-variables-in-nginx-configuration)
 
-## phantomjs
+### phantomjs
 
 [http://fabiorehm.com/blog/2015/07/22/building-a-minimum-viable-phantomjs-2-docker-image/](http://fabiorehm.com/blog/2015/07/22/building-a-minimum-viable-phantomjs-2-docker-image/)
 
@@ -98,58 +103,56 @@ alpine linux won't build phantom:
 
 [https://github.com/Overbryd/docker-phantomjs-alpine](https://github.com/Overbryd/docker-phantomjs-alpine)
 
-## Playground
+### Playground
 
 [http://play-with-docker.com](http://play-with-docker.com)
 
-# Volumes
+## Volumes
 
 * mount points are owned by root, may have implications when mounting user home
   * create a VOLUME and run ls -la /home
   * add a volume at run to /home/username and run ls -la /home to see diff
 
-### Mac OS
+#### Mac OS
 
 [https://docs.docker.com/docker-for-mac/osxfs/\#namespaces](https://docs.docker.com/docker-for-mac/osxfs/#namespaces)
 
-
-
-## Alpine linux
+### Alpine linux
 
 docs: [https://docs.docker.com/samples/library/alpine/ ](https://docs.docker.com/samples/library/alpine/)
 
 creating users: [https://github.com/mhart/alpine-node/issues/48 ](https://github.com/mhart/alpine-node/issues/48)
 
-```
+```text
 RUN addgroup -g 1000 -S username && \
     adduser -u 1000 -S username -G username
 ```
 
-## montoring
+### montoring
 
 [http://fuzzyblog.io/blog/docker/2017/06/25/docker-tutorial-understanding-container-memory-usage.html](http://fuzzyblog.io/blog/docker/2017/06/25/docker-tutorial-understanding-container-memory-usage.html)
 
 [https://dzone.com/articles/monitoring-docker-containers-docker-stats-cadvisor-1](https://dzone.com/articles/monitoring-docker-containers-docker-stats-cadvisor-1) - breakdown of four types of monitoring including: stats, cadvisor, remote api, and universal control plane
 
-##### docker stats
+**docker stats**
 
 is a live 1sec view that streams
 
-```
+```text
 docker stats
 ```
 
-##### docker remote api
+**docker remote api**
 
 [https://docs.docker.com/develop/sdk/](https://docs.docker.com/develop/sdk/) - sdk for interacting
 
 [https://docs.docker.com/engine/api/v1.37/](https://docs.docker.com/engine/api/v1.37/) - api docs
 
-##### using cAdvisor
+**using cAdvisor**
 
 This will run in a docker container and expose a web view at: localhost:8080
 
-```
+```text
 #!/usr/bin/env bash
 docker run -d --name=cadvisor \
     -p 8081:8080 \
@@ -160,11 +163,11 @@ docker run -d --name=cadvisor \
 ```
 
 Gives you host and container metrics such as:  
-![](/assets/cadvisor-docker-container-metrics.png)
+![](.gitbook/assets/cadvisor-docker-container-metrics.png)
 
 Can be used with other tools for storage and retrieval. docs: [https://github.com/google/cadvisor/blob/master/docs/storage/README.md](https://github.com/google/cadvisor/blob/master/docs/storage/README.md)
 
-## Caching/Layers
+### Caching/Layers
 
 [https://thenewstack.io/understanding-the-docker-cache-for-faster-builds/](https://thenewstack.io/understanding-the-docker-cache-for-faster-builds/)
 

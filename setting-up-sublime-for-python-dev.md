@@ -1,8 +1,4 @@
 # Setting up Sublime
 
-### Python
-
-
-
-
+## Python
 

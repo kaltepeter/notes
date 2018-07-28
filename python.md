@@ -2,7 +2,7 @@
 
 [https://www.computerhope.com/issues/ch001721.htm](https://www.computerhope.com/issues/ch001721.htm) - extracting text
 
-http://docopt.org - cli doc generation
+[http://docopt.org](http://docopt.org) - cli doc generation
 
 ## installing on mac
 
@@ -10,7 +10,7 @@ http://docopt.org - cli doc generation
 
 install pyenv
 
-```
+```text
 brew install pyenv
 # run init to complete auto load and follow instructions
 pyenv init
@@ -18,7 +18,7 @@ pyenv init
 
 example output says add the following to your profile:
 
-```
+```text
 eval "$(pyenv init -)"
 ```
 
@@ -26,24 +26,22 @@ This will auto load correct python version in project directories
 
 install python versions
 
-```
+```text
 pyenv install 3.5.0 
 pyenv install 3.6.5
 ```
 
 set project version
 
-```
+```text
  pyenv local 3.5.0
 ```
 
 create venv
 
-```
+```text
 python -m venv env
 ```
-
-### 
 
 ### older option
 
@@ -51,19 +49,19 @@ python -m venv env
 
 update from default install
 
-```
+```text
 brew install python3
 ```
 
 to update pip3
 
-```
+```text
 pip3 install --upgrade pip setuptools wheel
 ```
 
 #### virtual env
 
-```
+```text
 pip3 install virtualenv
 mkdir -p ~/Projects ~/Virtualenvs ~/Library/Application\ Support/pip
 vim ~/Library/Application\ Support/pip/pip.conf
@@ -71,7 +69,7 @@ vim ~/Library/Application\ Support/pip/pip.conf
 
 add to file
 
-```
+```text
 [install]
 require-virtualenv = true
 
@@ -81,19 +79,19 @@ require-virtualenv = true
 
 create env
 
-```
+```text
 virtualenv -p python3 .pyenv
 ```
 
 update or install global packages
 
-```
+```text
 gpip install --upgrade pip setuptools wheel virtualenv
 ```
 
 activate virtualenv
 
-```
+```text
 cd .pyenv
 source bin/activate
 ```
@@ -124,7 +122,7 @@ pyocr: `pip install pyocr`
 
 use version 6 until 7 is ready
 
-```
+```text
 brew install imagemagick@6
 brew link imagemagick@6 --force
 pip install Wand
@@ -132,7 +130,7 @@ pip install Wand
 
 add following to .profile or .zshrc, .bashrc, etch
 
-```
+```text
 export MAGICK_HOME="/usr/local/opt/imagemagick@6"
 
 export PATH="$MAGICK_HOME/bin:$PATH"
@@ -144,7 +142,7 @@ ln -s $MAGICK\_HOME/lib/libMagickWand-6.Q16.dylib /usr/local/lib/libMagickWand.d
 
 install ghostscript
 
-```
+```text
 brew install ghostscript
 ```
 

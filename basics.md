@@ -17,7 +17,7 @@
 | cat /proc/version | see kernel and gcc version |  |
 | fdisk -l \| grep Disk | The fdisk command is partition table manipulator for Linux. But it can be used to display total hard disk size | [https://www.cyberciti.biz/faq/howto-find-out-or-learn-harddisk-size-in-linux-or-unix/](https://www.cyberciti.biz/faq/howto-find-out-or-learn-harddisk-size-in-linux-or-unix/) |
 | fdisk /dev/mmcblk0 | open fdisk to change partition | [https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html](https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html) |
-| parted /dev/mmcblk0 | partition manager for mmcblk0 partition | [https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html](/    https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html) |
+| parted /dev/mmcblk0 | partition manager for mmcblk0 partition | [https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html](https://github.com/kaltepeter/notes/tree/cfd36b59cb201b8ecf6d88b3f15e467d17968139/%20%20%20%20https:/www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html) |
 | resize2fs /dev/mmcblk0p2 | resize partition | [https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html](https://www.safaribooksonline.com/library/view/penetration-testing-with/9781787126138/ch01s06.html) |
 | tar -xzf file.tar.gz | extract tar |  |
 | ip route show 0.0.0.0/0 dev eth0 \| cut -d  -f3 | find gateway ip | [https://serverfault.com/questions/31170/how-to-find-the-gateway-ip-address-in-linux](https://serverfault.com/questions/31170/how-to-find-the-gateway-ip-address-in-linux) |
@@ -31,7 +31,7 @@
 | ssh-keygen -R {hostname} | remove {hostname} from known hosts | [https://www.cyberciti.biz/faq/mac-os-x-remove-known-host/ ](https://www.cyberciti.biz/faq/mac-os-x-remove-known-host/) |
 |  |  |  |
 
-### File permissions
+## File permissions
 
 [http://www.tldp.org/LDP/intro-linux/html/sect\_03\_04.html](http://www.tldp.org/LDP/intro-linux/html/sect_03_04.html)
 

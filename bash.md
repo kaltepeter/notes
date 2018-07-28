@@ -24,9 +24,9 @@ Post upgrade to use bash 4 in script. change shebang line
 
 `#!/usr/local/bin/bash`
 
-##### Configure terminal to use it
+**Configure terminal to use it**
 
-```
+```text
 # Add the new shell to the list of allowed shells
 sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 # Change to the new shell
@@ -37,30 +37,32 @@ chsh -s /usr/local/bin/bash
 
 appending newlines with mac: [https://stackoverflow.com/questions/16576197/how-to-add-new-line-using-sed-mac](https://stackoverflow.com/questions/16576197/how-to-add-new-line-using-sed-mac)
 
-```
+```text
 echo foo | sed 's/f/f\'$'\n/'
 ```
 
-```
+```text
 tokens=$(echo "$tokens" | sed ' /^[[:space:]]*}/a \
  \
   ')
 ```
 
-```
+```text
 tokens=$(echo "${tokens}" | sed ' /^\s*$/d;s/},/}/;s/}/}\'$'\n\\\n/; ')
 ```
 
 [https://lists.freebsd.org/pipermail/freebsd-questions/2009-March/194500.html](https://lists.freebsd.org/pipermail/freebsd-questions/2009-March/194500.html) - example to safe replace with newlines
 
-    a="This
-     is
-     the
-     input
-     from the
-     web server"
-    b=`echo $a`
-    sed "s/foo/$b/"
+```text
+a="This
+ is
+ the
+ input
+ from the
+ web server"
+b=`echo $a`
+sed "s/foo/$b/"
+```
 
 [https://taoofmac.com/space/cli/sed](https://taoofmac.com/space/cli/sed) - examples
 
@@ -68,7 +70,7 @@ tokens=$(echo "${tokens}" | sed ' /^\s*$/d;s/},/}/;s/}/}\'$'\n\\\n/; ')
 
 ## awk
 
-```
+```text
 echo "${tokens}" | awk 'BEGIN { RS=""; FS=/,/; }; $0 ~ "jane@github.com" { print }'
 ```
 
@@ -78,7 +80,7 @@ echo "${tokens}" | awk 'BEGIN { RS=""; FS=/,/; }; $0 ~ "jane@github.com" { print
 
 wrap with single quote and expand variable
 
-```
+```text
 grep '^'"${APP_NAME}"''
 ```
 
@@ -86,34 +88,34 @@ grep '^'"${APP_NAME}"''
 
 [https://argbash.io/generate](https://argbash.io/generate)
 
-[http://spf13.com/post/easy-bash-scripting-with-shflags/](#) - documentation module
+[http://spf13.com/post/easy-bash-scripting-with-shflags/](bash.md) - documentation module
 
 #### shflags
 
 [https://github.com/kward/shflags](https://github.com/kward/shflags)
 
-##### Install
+**Install**
 
 1. Download
 2. link to path
-   ```
+
+   ```text
    ln ~/data/tools/shflags-1.2.2/shflags /usr/local/bin/shflags
    ```
+
 3. execute
 
 ## lint/static analysis
 
 [https://github.com/koalaman/shellcheck](https://github.com/koalaman/shellcheck)
 
-```
+```text
 brew install shellcheck
 ```
 
 execute
 
-```
+```text
 shellcheck script.sh
 ```
-
-
 

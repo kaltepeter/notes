@@ -1,6 +1,6 @@
 # ngrx
 
-#### adding store
+### adding store
 
 ## package structure {#workingwithngrx-packagestructure}
 
@@ -22,7 +22,7 @@
 * core
   * +state
     * feature-flag
-    * navigation 
+    * navigation 
     * project-info
     * router
     * core.actions.ts
@@ -39,9 +39,6 @@
   * permissions-data-table
   * permissions-detail-panel
 
-  
-
-
 ## naming {#workingwithngrx-naming}
 
 top level object keys of your interface should have a matching package in +state
@@ -56,12 +53,7 @@ initial state file is .init.ts and should be of type top level interface
 
 initial state should provide defaults for all reducer state
 
-  
-
-
 ## Adding new store/state to permissions model {#workingwithngrx-Addingnewstore/statetopermissionsmodel}
 
 1. models first. i.e. start with init, interfaces, types and or actions
-
-
 

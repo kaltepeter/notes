@@ -1,4 +1,4 @@
-# Github
+# github
 
 Migrations: [https://help.github.com/enterprise/2.11/admin/guides/migrations/](https://help.github.com/enterprise/2.11/admin/guides/migrations/)
 
@@ -8,7 +8,7 @@ mirroring: [https://help.github.com/articles/duplicating-a-repository/](https://
 
 ### clean history
 
-```
+```text
  git filter-branch --force --index-filter \
 'git rm --cached --ignore-unmatch PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA' \
 --prune-empty --tag-name-filter cat -- --all
@@ -26,7 +26,7 @@ mirroring: [https://help.github.com/articles/duplicating-a-repository/](https://
 
 ## count lines of code
 
-```
+```text
 git ls-files | xargs wc -l
 ```
 
@@ -44,7 +44,7 @@ git ls-files | xargs wc -l
 
 [http://blog.neutrino.es/2012/git-copy-a-file-or-directory-from-another-repository-preserving-history/](http://blog.neutrino.es/2012/git-copy-a-file-or-directory-from-another-repository-preserving-history/)
 
-```
+```text
 DESTINATIONPATH=~/tmp/mergepatchs
 SOURCE=node
 git format-patch -o $DESTINATIONPATH --root $SOURCE
@@ -52,7 +52,7 @@ git format-patch -o $DESTINATIONPATH --root $SOURCE
 
 cd to new repo
 
-```
+```text
 git checkout -b init
 SOURCE=node
 git am --ignore-space-change --ignore-whitespace --3way $DESTINATIONPATH/*.patch
@@ -60,7 +60,7 @@ git am --ignore-space-change --ignore-whitespace --3way $DESTINATIONPATH/*.patch
 
 fix diverged histories
 
-```
+```text
 git fetch upstream
 git branch -u upstream/master
 
@@ -75,12 +75,10 @@ git pull --allow-unrelated-histories upstream master
 
 [https://stackoverflow.com/questions/953481/find-and-restore-a-deleted-file-in-a-git-repository?rq=1](https://stackoverflow.com/questions/953481/find-and-restore-a-deleted-file-in-a-git-repository?rq=1)
 
-```
+```text
 git rev-list -n 1 HEAD -- <path>
 git checkout <deleting_commit>^ -- <file_path>
 # git checkout $(git rev-list -n 1 HEAD -- "$file")^ -- "$file"
 # git checkout $(git rev-list -n 1 HEAD -- "$file")~1 -- "$file"
 ```
-
-
 

@@ -28,19 +28,21 @@ shellcheck: [https://marketplace.visualstudio.com/items?itemName=timonwong.shell
 
 graphql : [https://marketplace.visualstudio.com/items?itemName=stpn.vscode-graphql](https://marketplace.visualstudio.com/items?itemName=stpn.vscode-graphql)
 
-sort typescript imports: https://marketplace.visualstudio.com/items?itemName=miclo.sort-typescript-imports
+sort typescript imports: [https://marketplace.visualstudio.com/items?itemName=miclo.sort-typescript-imports](https://marketplace.visualstudio.com/items?itemName=miclo.sort-typescript-imports)
+
+gitignore tool: [https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore)
 
 ## customizations
 
 ### zsh
 
-```
+```text
     "terminal.integrated.shell.osx": "/bin/zsh",
 ```
 
 ### font
 
-```
+```text
 "editor.fontSize": 14,
 "editor.fontFamily": "Fira Code",
 "terminal.integrated.fontFamily":  "Menlo, Monaco, 'Courier New', monospace",
@@ -53,7 +55,7 @@ sort typescript imports: https://marketplace.visualstudio.com/items?itemName=mic
 
 ### theme
 
-```
+```text
 "editor.minimap.enabled": false,
 "explorer.decorations.badges": false,
 "editor.renderWhitespace": "none",
@@ -64,14 +66,14 @@ sort typescript imports: https://marketplace.visualstudio.com/items?itemName=mic
 
 ### python
 
-```
+```text
 "python.linting.enabled": true,
 "python.linting.pep8Enabled": true
 ```
 
 for virtualenv
 
-```
+```text
     "python.venvPath": "${workspaceFolder}/.pyenv",
     "python.pythonPath": "${workspaceFolder}/.pyenv/bin/python",
 ```
