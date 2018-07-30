@@ -32,6 +32,8 @@ sort typescript imports: [https://marketplace.visualstudio.com/items?itemName=mi
 
 gitignore tool: [https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore)
 
+ascii doc: [https://marketplace.visualstudio.com/items?itemName=stayfool.vscode-asciidoc](https://marketplace.visualstudio.com/items?itemName=stayfool.vscode-asciidoc)
+
 ## customizations
 
 ### zsh
