@@ -82,3 +82,22 @@ git checkout <deleting_commit>^ -- <file_path>
 # git checkout $(git rev-list -n 1 HEAD -- "$file")~1 -- "$file"
 ```
 
+### pages
+
+{% embed data="{\"url\":\"http://mgreau.com/posts/2016/03/28/asciidoc-to-gh-pages-with-travis-ci-docker-asciidoctor.html\",\"type\":\"link\",\"title\":\"Convert AsciiDoc to HTML/PDF & publish to GitHub Pages with Travis CI and Asciidoctor Docker containers\",\"description\":\"Purpose This blog post presents a simple way to automatically convert your AsciiDoc content to HTML and PDF, then publish those files to a public website on each commit. There are many way to do it, maybe you have already used Jekyll or other static site generator like that. The\",\"icon\":{\"type\":\"icon\",\"url\":\"http://mgreau.com/apple-touch-icon-precomposed.png\",\"aspectRatio\":0}}" %}
+
+#### using gitbook cli
+
+{% embed data="{\"url\":\"https://toolchain.gitbook.com/setup.html\",\"type\":\"link\",\"title\":\"Installation and Setup · GitBook Toolchain Documentation\",\"icon\":{\"type\":\"icon\",\"url\":\"https://toolchain.gitbook.com/gitbook/images/apple-touch-icon-precomposed-152.png\",\"width\":152,\"height\":152,\"aspectRatio\":1}}" %}
+
+Great for local writing and serving.
+
+All i needed was:
+
+```text
+gitbook build
+gitbook serve
+```
+
+
+
