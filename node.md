@@ -18,6 +18,8 @@ simple and built in
 
 ### testing locally
 
+#### using local npm server
+
 {% embed data="{\"url\":\"https://blog.strapi.io/testing-npm-package-before-releasing-it-using-verdaccio-and-ngrok/\",\"type\":\"link\",\"title\":\"Testing your npm package before releasing it using Verdaccio + ngrok\",\"description\":\"Making sure that your npm package works as expected after publishing on npm can be a nightmare. Since it can have several different working environments, it may behave differently on your machine than on a server. Actually, fixing a bug involves publishing again your package thus bumping up its version\",\"icon\":{\"type\":\"icon\",\"url\":\"https://blog.strapi.io/favicon.ico\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"http://blog.strapi.io/content/images/2018/01/strapi-sinopia.png\",\"width\":1420,\"height\":640,\"aspectRatio\":0.4507042253521127}}" %}
 
 ```text
@@ -39,6 +41,34 @@ run
 
 ```text
 npm publish
+```
+
+#### npm link FTW
+
+with typescript watch. it will auto build and link is still good
+
+{% code-tabs %}
+{% code-tabs-item title="package.json" %}
+```javascript
+"name": "@scope/create-myapp",
+"version": "1.0.0",
+"description": "starter template for building deliverable apps/libs",
+"bin": {
+  "create-myapp": "./dist/index.js"
+},
+"scripts": {
+     "watch": "npm run build -- -w"
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+```bash
+npm run watch
+npm link
+
+# from anywhere else use a cli app
+create-myapp <args> [options]
 ```
 
 
