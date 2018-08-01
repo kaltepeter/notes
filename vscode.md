@@ -34,7 +34,7 @@ gitignore tool: [https://marketplace.visualstudio.com/items?itemName=codezombiec
 
 ascii doc: [https://marketplace.visualstudio.com/items?itemName=stayfool.vscode-asciidoc](https://marketplace.visualstudio.com/items?itemName=stayfool.vscode-asciidoc)
 
-typscript auto import: [https://marketplace.visualstudio.com/items?itemName=steoates.autoimport](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)
+~~typscript auto import:~~ [~~https://marketplace.visualstudio.com/items?itemName=steoates.autoimport~~](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)~~~~
 
 ## customizations
 
