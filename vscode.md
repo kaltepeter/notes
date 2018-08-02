@@ -32,9 +32,11 @@ sort typescript imports: [https://marketplace.visualstudio.com/items?itemName=mi
 
 gitignore tool: [https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore)
 
-ascii doc: [https://marketplace.visualstudio.com/items?itemName=stayfool.vscode-asciidoc](https://marketplace.visualstudio.com/items?itemName=stayfool.vscode-asciidoc)
+ascii doc: [https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode](https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode)
 
 ~~typscript auto import:~~ [~~https://marketplace.visualstudio.com/items?itemName=steoates.autoimport~~](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)~~~~
+
+scratchpad: [https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode](https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode)
 
 ## customizations
 
