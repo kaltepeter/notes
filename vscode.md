@@ -38,6 +38,11 @@ ascii doc: [https://marketplace.visualstudio.com/items?itemName=joaompinto.ascii
 
 scratchpad: [https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode](https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode)
 
+jira: [https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin](https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin)
+
+~~~~[~~https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira~~](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira)  
+~~~~
+
 ## customizations
 
 ### zsh
