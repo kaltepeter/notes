@@ -85,3 +85,7 @@ sar -b # overall activity
 sar -q -s 10:00:00 -e 11:00:00 # between times for today
 ```
 
+### parallel execution
+
+[https://www.gnu.org/software/parallel/](https://www.gnu.org/software/parallel/)
+

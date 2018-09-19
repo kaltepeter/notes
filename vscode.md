@@ -40,7 +40,13 @@ scratchpad: [https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokk
 
 jira: [https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin](https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin)
 
-~~~~[~~https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira~~](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira)  
+~~~~[~~https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira~~](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira)~~~~
+
+markdownlint: [https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)~~~~
+
+xml: [https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
+
+  
 ~~~~
 
 ## customizations
