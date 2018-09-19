@@ -46,6 +46,8 @@ markdownlint: [https://marketplace.visualstudio.com/items?itemName=DavidAnson.vs
 
 xml: [https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
 
+puppet: [https://marketplace.visualstudio.com/items?itemName=jpogran.puppet-vscode](https://marketplace.visualstudio.com/items?itemName=jpogran.puppet-vscode)
+
   
 ~~~~
 
