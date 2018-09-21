@@ -48,6 +48,10 @@ xml: [https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml](ht
 
 puppet: [https://marketplace.visualstudio.com/items?itemName=jpogran.puppet-vscode](https://marketplace.visualstudio.com/items?itemName=jpogran.puppet-vscode)
 
+c/c++: [https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+
+
+
   
 ~~~~
 
