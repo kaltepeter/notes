@@ -99,7 +99,7 @@ gitbook build
 gitbook serve
 ```
 
-### tips and tricks
+## tips and tricks
 
 {% embed data="{\"url\":\"http://blog.virtuacreative.com.br/markdown-tips-tricks-part2.html\",\"type\":\"link\",\"title\":\"Markdown Tips & Tricks - Part 2\",\"description\":\"Part 2 - Embedding videos.\",\"icon\":{\"type\":\"icon\",\"url\":\"http://git.virtuacreative.com.br/img/favicon.ico\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"http://goo.gl/zcwqIN\",\"width\":1600,\"height\":840,\"aspectRatio\":0.525}}" %}
 
@@ -110,4 +110,6 @@ gitbook serve
 {% embed data="{\"url\":\"http://www.getyoutubevideothumbnail.com\",\"type\":\"link\",\"title\":\"Get Free YouTube Video Thumbnail Image \| YouTube Video Thumbnail Image \| YouTube Thumbnail Image Downloader\",\"icon\":{\"type\":\"icon\",\"url\":\"http://www.getyoutubevideothumbnail.com/favicon.ico\",\"aspectRatio\":0}}" %}
 
 {% embed data="{\"url\":\"http://www.getyoutubevideothumbnail.com/add-play-button-to-image\",\"type\":\"link\",\"title\":\"Add Play Button to Image Online \| Add Play Button to YouTube Video Thumbnail Image Online \| play button image\",\"description\":\"add play button to image, play button image, play button on image, add play button to image online, youtube thumbnail generator with play button, play button overlay,transparent play button overlay, overlay play button on image, video play button overlay, add play button to image\",\"icon\":{\"type\":\"icon\",\"url\":\"http://www.getyoutubevideothumbnail.com/favicon.ico\",\"aspectRatio\":0}}" %}
+
+{% embed data="{\"url\":\"https://www.markdownguide.org/cheat-sheet\",\"type\":\"link\",\"title\":\"Cheat Sheet \| Markdown Guide\",\"description\":\"A quick reference to the Markdown syntax.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://www.markdownguide.org/assets/favicons/apple-touch-icon.png\",\"width\":180,\"height\":180,\"aspectRatio\":1}}" %}
 
