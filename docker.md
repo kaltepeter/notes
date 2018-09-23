@@ -113,7 +113,7 @@ alpine linux won't build phantom:
   * create a VOLUME and run ls -la /home
   * add a volume at run to /home/username and run ls -la /home to see diff
   * paths on host must be absolute.
-  * non-existent paths created?
+  * non-existent paths are created
 
 #### Mac OS
 
