@@ -77,3 +77,13 @@ EXPOSE 9292
 WORKDIR /app
 ```
 
+{% embed data="{\"url\":\"https://medium.com/magnetis-backstage/how-to-cache-bundle-install-with-docker-7bed453a5800\",\"type\":\"link\",\"title\":\"How to cache bundle install with Docker\",\"description\":\"While dockering a Rails app, the first problem that comes out is the slow bundle install command while building the app’s image.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://cdn-images-1.medium.com/fit/c/304/304/1\*VK-kp1F25uS52edx5GwEdQ.png\",\"width\":152,\"height\":152,\"aspectRatio\":1},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://cdn-images-1.medium.com/max/2000/1\*zJ1bSOdQOf35dMOP1atQYA.jpeg\",\"width\":2000,\"height\":1333,\"aspectRatio\":0.6665}}" %}
+
+```text
+
+```
+
+working with jekyll
+
+[https://github.com/BretFisher/jekyll-serve/blob/master/Dockerfile](https://github.com/BretFisher/jekyll-serve/blob/master/Dockerfile)
+
