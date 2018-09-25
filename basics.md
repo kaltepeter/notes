@@ -30,7 +30,7 @@
 | who | who is logged on | alias: w |
 | ps aux \| grep ngrok | find app and filter by name 'ngrok' |  |
 | ssh-keygen -R {hostname} | remove {hostname} from known hosts | [https://www.cyberciti.biz/faq/mac-os-x-remove-known-host/ ](https://www.cyberciti.biz/faq/mac-os-x-remove-known-host/) |
-|  |  |  |
+| jps -lvm | get startup params of jvm |  |
 
 ## File permissions
 
