@@ -24,7 +24,9 @@ diff tool: [https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-d
 
 vagrant: [https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant](https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant)
 
-shellcheck: [https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)
+shellcheck: [~~https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck~~](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)~~~~
+
+[https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 
 graphql : [https://marketplace.visualstudio.com/items?itemName=stpn.vscode-graphql](https://marketplace.visualstudio.com/items?itemName=stpn.vscode-graphql)
 
