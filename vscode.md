@@ -52,6 +52,12 @@ puppet: [https://marketplace.visualstudio.com/items?itemName=jpogran.puppet-vsco
 
 c/c++: [https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
+powershell: [https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
+
+dotenv: [https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
+
+docker: [https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
+
 
 
   
