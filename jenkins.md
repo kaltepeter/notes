@@ -60,6 +60,8 @@ only defined step is 'Test'. declarative auto created steps
 
 [https://github.com/tkrzeminski/jenkins-groovy-scripts](https://github.com/tkrzeminski/jenkins-groovy-scripts)
 
+[https://github.com/samrocketman/jenkins-bootstrap-shared/tree/master/scripts](https://github.com/samrocketman/jenkins-bootstrap-shared/tree/master/scripts)
+
 [https://github.com/edx/jenkins-configuration/tree/master/src/main/groovy](https://github.com/edx/jenkins-configuration/tree/master/src/main/groovy)
 
 [https://github.com/docker/jenkins-pipeline-scripts/tree/master/vars](https://github.com/docker/jenkins-pipeline-scripts/tree/master/vars)
