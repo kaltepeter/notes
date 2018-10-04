@@ -89,3 +89,10 @@ sar -q -s 10:00:00 -e 11:00:00 # between times for today
 
 [https://www.gnu.org/software/parallel/](https://www.gnu.org/software/parallel/)
 
+### get sshkey fingerprints
+
+https://stackoverflow.com/questions/9607295/how-do-i-find-my-rsa-key-fingerprint
+
+```bash
+ssh-keygen -E md5 -lf ~/.ssh/id_dsa.pub
+```
