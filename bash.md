@@ -119,3 +119,24 @@ execute
 shellcheck script.sh
 ```
 
+## list directory structure
+
+https://stackoverflow.com/questions/3455625/linux-command-to-print-directory-structure-in-the-form-of-a-tree
+
+```bash
+ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+```
+
+outputs
+```bash
+   |-jobs
+   |---PCF-Upgrade
+   |-----jobs
+   |-------Bulk-Build-Pipelines
+   |---------jobs
+```
+
+count directories
+```bash
+ls -R | grep ":$" | wc -l
+```

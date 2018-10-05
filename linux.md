@@ -96,3 +96,11 @@ https://stackoverflow.com/questions/9607295/how-do-i-find-my-rsa-key-fingerprint
 ```bash
 ssh-keygen -E md5 -lf ~/.ssh/id_dsa.pub
 ```
+
+## tail process
+
+https://unix.stackexchange.com/questions/58550/how-to-view-the-output-of-a-running-process-in-another-bash-session
+
+```bash
+tail -f /proc/<pid>/fd/1
+```

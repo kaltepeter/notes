@@ -508,3 +508,15 @@ https://jenkins.io/projects/jenkins-x/
 ### concurrency
 
 https://jenkins.io/blog/2016/10/16/stage-lock-milestone
+
+### cleanup/backup
+
+recreate jenkins config structure only
+```bash
+find . -name 'config.xml' -exec cp --parents \{\} ~/temp/jenkinstest \;
+```
+
+find string in directory and log it
+```bash
+grep -R --line-buffered -e 'utils/util' . > findutil.log
+```
