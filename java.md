@@ -42,3 +42,9 @@ sdk install java
 sdk list java
 ```
 
+## get info on running jvm
+
+```bash
+jps -lvm
+```
+
