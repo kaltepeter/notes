@@ -520,3 +520,15 @@ find string in directory and log it
 ```bash
 grep -R --line-buffered -e 'utils/util' . > findutil.log
 ```
+
+### hooks
+
+https://issues.jenkins-ci.org/browse/JENKINS-43561
+
+```
+Checking pull request #1044
+    (not from a trusted source)
+      ‘Jenkinsfile’ found
+    Met criteria
+Scheduled build for branch: PR-1044
+```
