@@ -167,3 +167,13 @@ https://www.kinamo.be/en/support/faq/efficiently-remove-a-zillion-files-on-linux
 ```bash
 rsync -a --delete empty_dir/ dir_to_delete
 ```
+
+## move vs. copy vs. delete
+
+cp -> slow
+
+mv -> faster
+
+delete -> fast as mv
+
+mv (rename in place) -> fastest
