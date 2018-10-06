@@ -140,3 +140,30 @@ count directories
 ```bash
 ls -R | grep ":$" | wc -l
 ```
+
+show structure
+
+```bash
+ls -la | xargs ls -la \{\}
+ls -lrt -d -1 $PWD/* | xargs ls -la \{\}
+```
+
+find by dir name
+
+```bash
+find . -type d -name builds -exec rm -rf {} \;
+```
+
+find string in directory
+
+```bash
+grep -rnw /var/lib/jenkins -e 'utils/util'
+```
+
+## delete fast
+
+https://www.kinamo.be/en/support/faq/efficiently-remove-a-zillion-files-on-linux-servers
+
+```bash
+rsync -a --delete empty_dir/ dir_to_delete
+```
