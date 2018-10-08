@@ -27,7 +27,7 @@
 
    follow this
 4. https://github.com/robbyrussell/oh-my-zsh/wiki/Customization
-   1. `curl -fsSL -o "$HOME/.oh-my-zsh/themes/materialshell.zsh-theme" https://raw.githubusercontent.com/carloscuesta/materialshell/master/materialshell.zsh`
+   1. `curl -fsSL -o "$HOME/.oh-my-zsh/custom/themes/materialshell.zsh-theme" https://raw.githubusercontent.com/carloscuesta/materialshell/master/materialshell.zsh`
    1. Modify `.zshrc` to enable the theme with `ZSH_THEME="materialshell"`
 
 ## vars
