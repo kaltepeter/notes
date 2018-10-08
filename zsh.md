@@ -23,7 +23,7 @@
 
 1. `curl -o ~/Downloads/material-dark.terminal https://raw.githubusercontent.com/carloscuesta/materialshell/master/shell-color-themes/macOS/terminal/materialshell-dark.terminal`
 2. `curl -o ~/Downloads/material-oceanic.terminal https://raw.githubusercontent.com/carloscuesta/materialshell/master/shell-color-themes/macOS/terminal/materialshell-oceanic.terminal`
-3. [https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes\#macos](zsh.md)
+3. https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes#macos
 
    follow this
 
