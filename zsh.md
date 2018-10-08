@@ -26,10 +26,9 @@
 3. https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes#macos
 
    follow this
-
-4. `mkdir "$HOME/.oh-my-zsh/custom/materialshell.zsh-theme"`
-5. `curl -fsSL -o "$HOME/.oh-my-zsh/custom/themes/materialshell.zsh-theme" https://raw.githubusercontent.com/carloscuesta/materialshell/master/materialshell.zsh`
-6. Modify `.zshrc` to enable the theme with `ZSH_THEME="materialshell"`
+4. https://github.com/robbyrussell/oh-my-zsh/wiki/Customization
+   1. `curl -fsSL -o "$HOME/.oh-my-zsh/themes/materialshell.zsh-theme" https://raw.githubusercontent.com/carloscuesta/materialshell/master/materialshell.zsh`
+   1. Modify `.zshrc` to enable the theme with `ZSH_THEME="materialshell"`
 
 ## vars
 
