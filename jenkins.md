@@ -469,6 +469,10 @@ https://github.com/jenkinsci/pipeline-model-definition-plugin/wiki/Parametrized-
 
 https://devops.datenkollektiv.de/from-plain-groovy-to-jenkins-job-dsl-a-quantum-jump.html
 
+http://engineering.curalate.com/2016/09/29/programmatic-jenkins-jobs.html
+
+https://github.com/SweSri31/JobDsl/blob/b5146c81ce204dec18cb8b898e35994a24d383a8/job-dsl-core/src/test/groovy/javaposse/jobdsl/dsl/DslScriptLoaderSpec.groovy
+
 ```groovy
 import javaposse.jobdsl.dsl.DslScriptLoader
 import javaposse.jobdsl.plugin.JenkinsJobManagement

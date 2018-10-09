@@ -73,3 +73,6 @@ scrape_configs:
 
 [https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-send-to-grafana](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-send-to-grafana) - azure monitor solution
 
+## reload config
+
+https://www.robustperception.io/reloading-prometheus-configuration
