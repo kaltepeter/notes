@@ -177,3 +177,13 @@ mv -> faster
 delete -> fast as mv
 
 mv (rename in place) -> fastest
+
+## cli inputs / help
+
+https://github.com/kward/shflags/wiki/Documentation12x
+
+## styleguide
+
+https://google.github.io/styleguide/shell.xml#Builtin_Commands_vs._External_Commands
+
+https://www.chromium.org/chromium-os/shell-style-guidelines#TOC-Default-Assignments
