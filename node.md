@@ -20,7 +20,7 @@ simple and built in
 
 #### using local npm server
 
-{% embed data="{\"url\":\"https://blog.strapi.io/testing-npm-package-before-releasing-it-using-verdaccio-and-ngrok/\",\"type\":\"link\",\"title\":\"Testing your npm package before releasing it using Verdaccio + ngrok\",\"description\":\"Making sure that your npm package works as expected after publishing on npm can be a nightmare. Since it can have several different working environments, it may behave differently on your machine than on a server. Actually, fixing a bug involves publishing again your package thus bumping up its version\",\"icon\":{\"type\":\"icon\",\"url\":\"https://blog.strapi.io/favicon.ico\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"http://blog.strapi.io/content/images/2018/01/strapi-sinopia.png\",\"width\":1420,\"height\":640,\"aspectRatio\":0.4507042253521127}}" %}
+https://blog.strapi.io/testing-npm-package-before-releasing-it-using-verdaccio-and-ngrok
 
 ```text
 npm install -g verdaccio  
@@ -47,8 +47,6 @@ npm publish
 
 with typescript watch. it will auto build and link is still good
 
-{% code-tabs %}
-{% code-tabs-item title="package.json" %}
 ```javascript
 "name": "@scope/create-myapp",
 "version": "1.0.0",
@@ -60,8 +58,6 @@ with typescript watch. it will auto build and link is still good
      "watch": "npm run build -- -w"
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 ```bash
 npm run watch
@@ -71,5 +67,38 @@ npm link
 create-myapp <args> [options]
 ```
 
+## shell, exec, execFile, fork
 
+https://zaiste.net/nodejs-child-process-spawn-exec-fork-async-await/
 
+https://nodejs.org/api/child_process.html
+
+### exec example
+
+```javascript
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
+
+const getVars = async () => {
+    const getVar = async (varName) => {
+        const { stdout, stderr } = await exec(`zsh -c '. ~/.zshrc; echo $${varName}'`);
+        if (stderr) return reject(stderr);
+        return stdout.toString().trim();
+    };
+
+    const [currentThemeRes, zshCustomRes] = await Promise.all(
+        [getVar('ZSH_THEME'), getVar('ZSH_CUSTOM')]);
+    return [currentThemeRes, zshCustomRes];
+};
+
+try {
+  const [currentTheme, zshCustom] = await getVars();
+  console.log(`vars: ${currenttheme} ${zshCustom}`)
+} catch(err) {
+  console.log('err: ', err);
+}
+```
+
+## fs
+
+https://dev.to/mrm8488/from-callbacks-to-fspromises-to-handle-the-file-system-in-nodejs-56p2
