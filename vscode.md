@@ -24,7 +24,7 @@ diff tool: [https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-d
 
 vagrant: [https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant](https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant)
 
-shellcheck: [~~https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck~~](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)~~~~
+shellcheck: [~~https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck~~](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)
 
 [https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 
@@ -36,7 +36,7 @@ gitignore tool: [https://marketplace.visualstudio.com/items?itemName=codezombiec
 
 ascii doc: [https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode](https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode)
 
-~~typscript auto import:~~ [~~https://marketplace.visualstudio.com/items?itemName=steoates.autoimport~~](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)~~~~
+~~typscript auto import:~~ [~~https://marketplace.visualstudio.com/items?itemName=steoates.autoimport~~](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)
 
 scratchpad: [https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode](https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode)
 
@@ -44,7 +44,10 @@ jira: [https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin](h
 
 ~~~~[~~https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira~~](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira)~~~~
 
-markdownlint: [https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)~~~~
+markdownlint: [https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+
+markdown table prettifier:
+[https://marketplace.visualstudio.com/items?itemName=darkriszty.markdown-table-prettify](https://marketplace.visualstudio.com/items?itemName=darkriszty.markdown-table-prettify)
 
 xml: [https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
 

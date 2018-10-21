@@ -1,6 +1,23 @@
 # *nix
 
-## vmstat
+## file permissions (chmod)
+
+https://www.tutorialspoint.com/unix/unix-file-permission.htm
+
+| num | permission         | Ref |
+|-----|--------------------|-----|
+| 0   | No permission      | --- |
+| 1   | Execute permission | --x |
+| 2   | Write permission   | -w- |
+| 4   | Read permission    | r-- |
+
+The rest is math. e.g. 6 is:
+
+> Read and write permission: 4 (read) + 2 (write) = 6
+
+## commands
+
+### vmstat
 
 ```text
 vmstat
@@ -13,7 +30,7 @@ vmstat 5 3 # run 3 times every 5 sec
 
 list vm stats. memory, disk, etc
 
-## who
+### who
 
 ```text
 who
@@ -22,7 +39,7 @@ who -T # is messaging turned on
 mesg # send message to user
 ```
 
-## netstat
+### netstat
 
 ```text
 netstat -alt # list tcp/udp active ports
@@ -31,44 +48,44 @@ netstat -i # list interfaces
 netstat -s #
 ```
 
-## top
+### top
 
 ```text
 top
 ```
 
-## ps
+### ps
 
 ```text
 ps # list process
 ps all # list all process
 ```
 
-## pstree
+### pstree
 
 ```text
 pstree #show systemd tree
 ```
 
-## lsof
+### lsof
 
 ```text
 lsof -i # list network
 ```
 
-## iptables
+### iptables
 
 ```text
 sudo iptables -nvL # show data in/out
 ```
 
-## watch
+### watch
 
 ```text
 watch -d sudo iptables -nvL # show every 2 sec and highlight changes
 ```
 
-## systat
+### systat
 
 ```text
 apt-get install sysstat
@@ -85,15 +102,15 @@ sar -b # overall activity
 sar -q -s 10:00:00 -e 11:00:00 # between times for today
 ```
 
-### parallel execution
+#### parallel execution
 
 [https://www.gnu.org/software/parallel/](https://www.gnu.org/software/parallel/)
 
-## ssh keys
+### ssh keys
 
 https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Public_Key_Authentication#Downloading_keys
 
-### get sshkey fingerprints
+#### get sshkey fingerprints
 
 https://stackoverflow.com/questions/9607295/how-do-i-find-my-rsa-key-fingerprint
 
@@ -101,7 +118,7 @@ https://stackoverflow.com/questions/9607295/how-do-i-find-my-rsa-key-fingerprint
 ssh-keygen -E md5 -lf ~/.ssh/id_dsa.pub
 ```
 
-## tail process
+### tail process
 
 https://unix.stackexchange.com/questions/58550/how-to-view-the-output-of-a-running-process-in-another-bash-session
 
