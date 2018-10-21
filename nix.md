@@ -1,4 +1,4 @@
-# linux
+# *nix
 
 ## vmstat
 
