@@ -15,6 +15,14 @@ The rest is math. e.g. 6 is:
 
 > Read and write permission: 4 (read) + 2 (write) = 6
 
+It's binary.
+
+--- represents 3 positions of a binary number, max 7.
+
+There are three groups of these. Representing : user - group - everyone else
+
+Max permission is: 777. rwx for all three groups.
+
 ## commands
 
 ### vmstat
