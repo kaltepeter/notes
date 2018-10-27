@@ -37,3 +37,30 @@
 1. put them in ~/.profile
 2. add `source ~/.profile` to `~/.zshrc` and `~/.bash_profile`
 
+## speeding up zsh and oh-my-zsh
+
+https://blog.jonlu.ca/posts/speeding-up-zsh
+
+https://carlosbecker.com/posts/speeding-up-zsh/
+
+raw perf numbers
+
+```bash
+for i in $(seq 1 10); do /usr/bin/time $SHELL -i -c exit; done
+```
+
+edit .zshrc
+
+```zsh
+# top of file
+zmodload zsh/zprof
+
+# end of file
+zprof
+```
+
+test shell startup verbose
+
+```zsh
+zsh -i -c -v -x exit
+```
