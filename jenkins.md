@@ -536,3 +536,7 @@ Checking pull request #1044
     Met criteria
 Scheduled build for branch: PR-1044
 ```
+
+## cloudbees jenkins book
+
+https://go.cloudbees.com/docs/cloudbees-documentation/cje-user-guide/index.html#nectar-intro
