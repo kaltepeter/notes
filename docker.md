@@ -1,5 +1,42 @@
 # docker
 
+## install
+
+https://allysonjulian.com/posts/setting-up-docker-with-xhyve/
+
+https://docs.docker.com/v17.12/docker-for-mac/install/#download-docker-for-mac
+
+```bash
+brew update
+brew install docker docker-compose docker-machine
+```
+
+### ~~xhyve~~
+
+*deprecated, use hyperkit*
+
+```bash
+docker-machine-driver-xhyve
+
+docker-machine env dev
+```
+
+### hyperkit
+
+https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#hyperkit-driver
+
+```bash
+curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-hyperkit \
+&& sudo install -o root -g wheel -m 4755 docker-machine-driver-hyperkit /usr/local/bin/
+```
+
+or 
+
+```bash
+docker-machine-driver-hyperkit
+docker-machine create dev --driver hyperkit
+```
+
 ## Docker
 
 `docker exec -it vibrant_bell sh`

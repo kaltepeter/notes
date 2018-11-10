@@ -62,6 +62,10 @@ dotenv: [https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv](h
 docker: https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker
 
 logstash: https://marketplace.visualstudio.com/items?itemName=RandomChance.logstash
+
+yaml: https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
+
+html preview: https://marketplace.visualstudio.com/items?itemName=tht13.html-preview-vscode
   
 
   ___
