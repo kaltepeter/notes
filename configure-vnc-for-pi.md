@@ -1,2 +1,0 @@
-# configure VNC for Pi
-
