@@ -66,6 +66,10 @@ logstash: https://marketplace.visualstudio.com/items?itemName=RandomChance.logst
 yaml: https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
 
 html preview: https://marketplace.visualstudio.com/items?itemName=tht13.html-preview-vscode
+
+editorconfig: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+
+shell format: https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format
   
 
   ___
