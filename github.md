@@ -38,6 +38,14 @@ git ls-files | xargs wc -l
 
 [https://github.com/typicode/husky/issues/124](https://github.com/typicode/husky/issues/124) - skipping hooks for CICD
 
+https://github.com/github/platform-samples/tree/master/pre-receive-hooks
+
+https://proandroiddev.com/ooga-chaka-git-hooks-to-enforce-code-quality-11ce8d0d23cb
+
+https://githooks.com/
+
+https://github.com/git/git/tree/master/templates
+
 ## migrating directories with history
 
 [http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/](http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/)
