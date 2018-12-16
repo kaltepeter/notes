@@ -216,3 +216,10 @@ brute force: –no-cache during build
 
 use multi-stage builds and separate layers correctly
 
+## fix terminal size
+
+fix issue where terminal has wierd wraps
+
+```bash
+docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -ti mycontainer bash
+```
