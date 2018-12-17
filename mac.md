@@ -40,3 +40,9 @@ https://pandoc.org/demos.html
 ```bash
 brew install pandoc
 ```
+
+## rename files with .js to .tsx
+
+```bash
+find ./src -name "*.js" -exec bash -c 'git mv "$1" "${1%.js}".tsx' - '{}' \;
+```
