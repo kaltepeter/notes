@@ -540,3 +540,19 @@ Scheduled build for branch: PR-1044
 ## cloudbees jenkins book
 
 https://go.cloudbees.com/docs/cloudbees-documentation/cje-user-guide/index.html#nectar-intro
+
+## disk usage
+
+find usage
+
+```bash
+find $JENKINS_HOME -mindepth 2 -maxdepth 2 -type d -exec du -hs {} \; > usage.txt
+```
+
+bulk delete jobs
+
+make sure to reload from disk or restart after
+
+```bash
+seq 0 1 300 | xargs rm -rf {}
+```
