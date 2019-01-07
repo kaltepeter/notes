@@ -70,6 +70,8 @@ html preview: https://marketplace.visualstudio.com/items?itemName=tht13.html-pre
 editorconfig: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
 
 shell format: https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format
+
+scratch: https://marketplace.visualstudio.com/items?itemName=buenon.scratchpads
   
 
   ___
