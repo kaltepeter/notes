@@ -73,6 +73,17 @@ shell format: https://marketplace.visualstudio.com/items?itemName=foxundermoon.s
 
 scratch: https://marketplace.visualstudio.com/items?itemName=buenon.scratchpads
   
+turbo console log: https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log
+
+angular console: https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console
+
+node docs: https://marketplace.visualstudio.com/items?itemName=bengreenier.vscode-node-readme
+
+bracket colorize: https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2
+
+jest: https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest
+
+
 
   ___
 

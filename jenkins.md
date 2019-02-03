@@ -458,8 +458,55 @@ mounting a volume from the jenkins home can cause permissions issues:
 [https://jenkins.io/pipeline/getting-started-pipelines/](https://jenkins.io/pipeline/getting-started-pipelines/) - getting started guide
 
 ### cps/@NonCPS
-
 [https://jenkins.io/blog/2017/02/01/pipeline-scalability-best-practice/](https://jenkins.io/blog/2017/02/01/pipeline-scalability-best-practice/) - guide
+
+https://issues.jenkins-ci.org/browse/JENKINS-45904
+
+Note: When using the @Override chances you will need @NonCPS
+
+#### examples
+
+calling code
+
+```groovy
+  def message = Notifications.getSuccessMessage(env, currentBuild, pipelineParams)
+  println "mesage from slackSend: ${message}"
+//  Message message = new Message(channel: Rooms.NODE_DEFAULT.roomId, text: 'yo3')
+  def payload = JsonOutput.toJson(message)
+  println payload.dump()
+  println payload.toString()
+  
+  // method from message class
+  @Override
+  @NonCPS // added in after example
+  String toString() {
+    "${getClass().getName()}(${text}, ${attachments}, ${channel}, ${channelName})"
+  }
+```
+
+before adding @NonCPS to @Override methods
+
+```bash
+mesage from slackSend: -2014110711
+[Pipeline] echo
+<java.lang.String@a6a49095 value=-2014110711 hash=-1499164523>
+[Pipeline] echo
+-2014110711
+[Pipeline] echo
+slack send failed: java.lang.Exception: slack send res.ok: json_not_object
+```
+
+after adding @NonCPS to @Override methods
+
+```bash
+mesage from slackSend: com.mrll.javelin.slack.Message(CICD-417: adding NonCPS to override methods<br>https://issues.jenkins-ci.org/browse/JENKINS-45904<br>An @Override of a method defined in a binary supertype must also be<br>marked @NonCPS. Doc<br>, [], NODE_DEFAULT, )
+[Pipeline] echo
+<java.lang.String@799ce7f9 value={"attachments":[],"text":"CICD-417: adding NonCPS to override methods<br>https://issues.jenkins-ci.org/browse/JENKINS-45904<br>An @Override of a method defined in a binary supertype must also be<br>marked @NonCPS. Doc<br>","channelName":"","channel":"NODE_DEFAULT"} hash=2040326137>
+[Pipeline] echo
+{"attachments":[],"text":"CICD-417: adding NonCPS to override methods<br>https://issues.jenkins-ci.org/browse/JENKINS-45904<br>An @Override of a method defined in a binary supertype must also be<br>marked @NonCPS. Doc<br>","channelName":"","channel":"NODE_DEFAULT"}
+[Pipeline] echo
+slack send failed: java.lang.Exception: slack send res.ok: channel_not_found
+```
 
 ### parameter types
 
