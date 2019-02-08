@@ -187,3 +187,9 @@ https://github.com/kward/shflags/wiki/Documentation12x
 https://google.github.io/styleguide/shell.xml#Builtin_Commands_vs._External_Commands
 
 https://www.chromium.org/chromium-os/shell-style-guidelines#TOC-Default-Assignments
+
+## use python to get json value
+
+```
+DOMAIN_NAME=$(curl -s http://localhost:4040/api/tunnels/jenkins | python -c 'import sys, json; print json.load(sys.stdin)["public_url"]' | sed 's/http:\/\/\(.*\)/\1/')
+```
