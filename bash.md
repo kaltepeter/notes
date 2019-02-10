@@ -193,3 +193,7 @@ https://www.chromium.org/chromium-os/shell-style-guidelines#TOC-Default-Assignme
 ```
 DOMAIN_NAME=$(curl -s http://localhost:4040/api/tunnels/jenkins | python -c 'import sys, json; print json.load(sys.stdin)["public_url"]' | sed 's/http:\/\/\(.*\)/\1/')
 ```
+
+## colors
+
+https://misc.flogisoft.com/bash/tip_colors_and_formatting
