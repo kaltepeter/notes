@@ -83,6 +83,8 @@ bracket colorize: https://marketplace.visualstudio.com/items?itemName=CoenraadS.
 
 jest: https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest
 
+peacock (colors): https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock
+
 
 
   ___
