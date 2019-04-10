@@ -46,3 +46,24 @@ brew install pandoc
 ```bash
 find ./src -name "*.js" -exec bash -c 'git mv "$1" "${1%.js}".tsx' - '{}' \;
 ```
+
+## terminal tools
+
+nerd fonts: https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
+
+setup: https://medium.com/the-code-review/nerd-fonts-how-to-install-configure-and-remove-programming-fonts-on-a-mac-178833b9daf3
+
+```bash
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
+brew cask install font-hack-nerd-font-mono
+```
+
+### more fonts
+
+https://github.com/Homebrew/homebrew-cask-fonts
+
+```bash
+brew cask install font-firacode-nerd-font
+brew cask install font-firacode-nerd-font-mono
+```

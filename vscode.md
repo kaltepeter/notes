@@ -91,7 +91,7 @@ workspace sort: https://marketplace.visualstudio.com/items?itemName=iciclesoft.w
 
 angular language service: https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
 
-
+tslint - https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin
 
   ___
 
