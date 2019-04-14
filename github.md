@@ -121,3 +121,7 @@ gitbook serve
 
 {% embed data="{\"url\":\"https://www.markdownguide.org/cheat-sheet\",\"type\":\"link\",\"title\":\"Cheat Sheet \| Markdown Guide\",\"description\":\"A quick reference to the Markdown syntax.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://www.markdownguide.org/assets/favicons/apple-touch-icon.png\",\"width\":180,\"height\":180,\"aspectRatio\":1}}" %}
 
+## submodulees
+
+https://github.blog/2016-02-01-working-with-submodules/
+
