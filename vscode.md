@@ -95,6 +95,14 @@ tslint - https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-ty
 
 nginx - https://marketplace.visualstudio.com/items?itemName=william-voyek.vscode-nginx
 
+### karma testing plugins
+
+test-explorer: https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer
+
+angular-karma-test-explorer: https://marketplace.visualstudio.com/items?itemName=raagh.angular-karma-test-explorer
+
+jasmine: https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-jasmine-test-adapter
+
   ___
 
 ## customizations
