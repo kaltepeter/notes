@@ -64,3 +64,8 @@ test shell startup verbose
 ```zsh
 zsh -i -c -v -x exit
 ```
+
+## solarized theme
+
+https://github.com/altercation/solarized
+
