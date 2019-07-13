@@ -93,6 +93,8 @@ angular language service: https://marketplace.visualstudio.com/items?itemName=An
 
 tslint - https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin
 
+nginx - https://marketplace.visualstudio.com/items?itemName=william-voyek.vscode-nginx
+
   ___
 
 ## customizations

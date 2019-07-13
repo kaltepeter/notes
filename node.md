@@ -105,4 +105,6 @@ https://dev.to/mrm8488/from-callbacks-to-fspromises-to-handle-the-file-system-in
 
 ## nvm
 
+## env var
 
+https://medium.com/@maxcbc/mocking-environment-variables-in-node-js-a17a416e127c - mocking
