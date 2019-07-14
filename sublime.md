@@ -1,0 +1,6 @@
+# sublime
+
+## plugins
+
+* editorconfig
+* MarkdownLivePreview

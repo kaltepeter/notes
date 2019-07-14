@@ -188,6 +188,10 @@ https://google.github.io/styleguide/shell.xml#Builtin_Commands_vs._External_Comm
 
 https://www.chromium.org/chromium-os/shell-style-guidelines#TOC-Default-Assignments
 
+## colors
+
+https://misc.flogisoft.com/bash/tip_colors_and_formatting
+
 ## use python to get json value
 
 ```

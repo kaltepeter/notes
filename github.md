@@ -124,3 +124,9 @@ https://www.markdownguide.org/cheat-sheet
 ## hooks
 
 https://www.digitalocean.com/community/tutorials/how-to-use-git-hooks-to-automate-development-and-deployment-tasks
+
+## submodulees
+
+https://github.blog/2016-02-01-working-with-submodules/
+
+
