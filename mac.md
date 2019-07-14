@@ -47,6 +47,31 @@ brew install pandoc
 find ./src -name "*.js" -exec bash -c 'git mv "$1" "${1%.js}".tsx' - '{}' \;
 ```
 
+
+
+## terminal tools
+
+nerd fonts: https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts
+
+setup: https://medium.com/the-code-review/nerd-fonts-how-to-install-configure-and-remove-programming-fonts-on-a-mac-178833b9daf3
+
+```bash
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
+brew cask install font-hack-nerd-font-mono
+```
+
+### more fonts
+
+https://github.com/Homebrew/homebrew-cask-fonts
+
+```bash
+brew cask install font-firacode-nerd-font
+brew cask install font-firacode-nerd-font-mono
+```
+
+
+
 ## cleanup app cache
 
 http://www.techerator.com/2012/10/how-to-delete-application-caches-in-mac-os-x/
@@ -55,7 +80,7 @@ http://www.techerator.com/2012/10/how-to-delete-application-caches-in-mac-os-x/
 
 https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_cmds.html
 
-Use the apple script editor. You can explore dictionaries. 
+Use the apple script editor. You can explore dictionaries.
 
 https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/index.html#//apple_ref/doc/uid/TP40016239-CH56-SW1 - beginner guide
 
@@ -162,6 +187,3 @@ https://natelandau.com/my-mac-osx-bash_profile/
 https://apple.stackexchange.com/questions/49532/change-the-default-application-for-a-file-extension-via-script-command-line
 
 https://apple.stackexchange.com/questions/313454/applescript-find-the-users-set-default-browser
-
-
-

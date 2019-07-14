@@ -40,7 +40,9 @@ ascii doc: [https://marketplace.visualstudio.com/items?itemName=joaompinto.ascii
 
 scratchpad: [https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode](https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode)
 
-jira: [https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin](https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin)
+jira: ~~~~[https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin](https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin)~~~~ - good plugin, lightweight
+
+https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin - full featured like IDEA integration
 
 ~~~~[~~https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira~~](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira)~~~~
 
@@ -83,7 +85,23 @@ bracket colorize: https://marketplace.visualstudio.com/items?itemName=CoenraadS.
 
 jest: https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest
 
+peacock (colors): https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock
 
+workspace sort: https://marketplace.visualstudio.com/items?itemName=iciclesoft.workspacesort
+
+angular language service: https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
+
+tslint - https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin
+
+nginx - https://marketplace.visualstudio.com/items?itemName=william-voyek.vscode-nginx
+
+### karma testing plugins
+
+test-explorer: https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer
+
+angular-karma-test-explorer: https://marketplace.visualstudio.com/items?itemName=raagh.angular-karma-test-explorer
+
+jasmine: https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-jasmine-test-adapter
 
   ___
 

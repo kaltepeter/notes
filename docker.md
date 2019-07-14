@@ -223,3 +223,11 @@ fix issue where terminal has wierd wraps
 ```bash
 docker exec -e COLUMNS="`tput cols`" -e LINES="`tput lines`" -ti mycontainer bash
 ```
+
+## interactive experimenting
+
+run an alipine linux container in interactive shell
+
+```bash
+docker run -it alpine:3.9 /bin/bash
+```
