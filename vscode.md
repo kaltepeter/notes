@@ -40,11 +40,9 @@ ascii doc: [https://marketplace.visualstudio.com/items?itemName=joaompinto.ascii
 
 scratchpad: [https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode](https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode)
 
-jira: ~~~~[https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin](https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin)~~~~ - good plugin, lightweight
+jira: [https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin](https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin) - full featured like IDEA integration
 
-https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin - full featured like IDEA integration
-
-~~~~[~~https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira~~](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira)~~~~
+jira: ~~~~[~~https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira~~](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira)~~~~
 
 markdownlint: [https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 
@@ -74,7 +72,7 @@ editorconfig: https://marketplace.visualstudio.com/items?itemName=EditorConfig.E
 shell format: https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format
 
 scratch: https://marketplace.visualstudio.com/items?itemName=buenon.scratchpads
-  
+
 turbo console log: https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log
 
 angular console: https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console
@@ -103,7 +101,17 @@ angular-karma-test-explorer: https://marketplace.visualstudio.com/items?itemName
 
 jasmine: https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-jasmine-test-adapter
 
-  ___
+cloudfoundry: https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-manifest-yaml
+
+react snippets: ~~https://marketplace.visualstudio.com/items?itemName=EQuimper.react-native-react-redux~~
+
+~~https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets~~
+
+https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets
+
+chrome debugger: https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome
+
+---
 
 ## customizations
 
@@ -166,4 +174,3 @@ linting guide: [https://code.visualstudio.com/docs/python/linting](https://code.
 ## snippets
 
 [https://code.visualstudio.com/docs/editor/userdefinedsnippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
-
