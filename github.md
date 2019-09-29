@@ -129,4 +129,9 @@ https://www.digitalocean.com/community/tutorials/how-to-use-git-hooks-to-automat
 
 https://github.blog/2016-02-01-working-with-submodules/
 
+## diff
+
+using vimidff: https://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/
+
+
 

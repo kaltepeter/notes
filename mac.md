@@ -136,6 +136,7 @@ start with window 1, get entire contents. Than work down.
 ```
 get entire contents of window 1
 get entire contents of scroll area 1 of window 1
+get properties of every menu bar item of menu bar 1
 ```
 
 
