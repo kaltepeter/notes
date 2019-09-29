@@ -2,114 +2,178 @@
 
 ## useful plugins
 
-material theme: [https://equinsuocha.io/projects/material-theme/](https://equinsuocha.io/projects/material-theme/)
+### themes
 
-webstorm key bindings: [https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings](https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings)
+- **material theme:** (equinusocio.vsc-material-theme) https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme
 
-ruby support: [https://github.com/rubyide/vscode-ruby](https://github.com/rubyide/vscode-ruby)
+- **raiju:** (tobiastimm.raiju) https://marketplace.visualstudio.com/items?itemName=TobiasTimm.raiju
 
-rubocop: [https://github.com/misogi/vscode-ruby-rubocop](https://github.com/misogi/vscode-ruby-rubocop)
+- **sapphire:** (Tyriar.theme-sapphire) https://marketplace.visualstudio.com/items?itemName=Tyriar.theme-sapphire
 
-cucumber: [https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete](https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete)
+- **shades of purple:** (ahmadawais.shades-of-purple) https://marketplace.visualstudio.com/items?itemName=ahmadawais.
+shades-of-purple
 
-gitlens: [https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+- **peacock:** (johnpapa.vscode-peacock) https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock
 
-python: [https://marketplace.visualstudio.com/items?itemName=ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- **bracket colorize:** (CoenraadS.bracket-pair-colorizer-2) https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2
 
-gitignore: [https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore\#overview](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore#overview)
 
-docker: [https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
+### key bindings
 
-diff tool: [https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff)
+- **webstorm key bindings:** (k--kato.intellij-idea-keybindings) https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings
 
-vagrant: [https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant](https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant)
 
-shellcheck: [~~https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck~~](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck)
+### linters/quality tools
 
-[https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- **rubocop:** (misogi.ruby-rubocop) https://marketplace.visualstudio.com/items?itemName=misogi.ruby-rubocop
 
-graphql : [https://marketplace.visualstudio.com/items?itemName=stpn.vscode-graphql](https://marketplace.visualstudio.com/items?itemName=stpn.vscode-graphql)
+- **markdownlint:** (DavidAnson.vscode-markdownlint) https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint
 
-sort typescript imports: [https://marketplace.visualstudio.com/items?itemName=miclo.sort-typescript-imports](https://marketplace.visualstudio.com/items?itemName=miclo.sort-typescript-imports)
+- **tslint:** (ms-vscode.vscode-typescript-tslint-plugin) https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin
 
-gitignore tool: [https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore](https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore)
+- **shellcheck:** (timonwong.shellcheck) https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck
 
-ascii doc: [https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode](https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode)
+- **eslint:** (dbaeumer.vscode-eslint) https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 
-~~typscript auto import:~~ [~~https://marketplace.visualstudio.com/items?itemName=steoates.autoimport~~](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)
 
-scratchpad: [https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode](https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode)
+### formatters 
 
-jira: [https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin](https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin) - full featured like IDEA integration
+- **shell format:** (foxundermoon.shell-format) https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format
 
-jira: ~~~~[~~https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira~~](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira)~~~~
+- **editorconfig:** (EditorConfig.EditorConfig) https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
 
-markdownlint: [https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+- **markdown table prettifier:** (darkriszty.markdown-table-prettify) https://marketplace.visualstudio.com/items?itemName=darkriszty.markdown-table-prettify
 
-markdown table prettifier:
-[https://marketplace.visualstudio.com/items?itemName=darkriszty.markdown-table-prettify](https://marketplace.visualstudio.com/items?itemName=darkriszty.markdown-table-prettify)
+- **sort typescript imports:** (miclo.sort-typescript-imports) https://marketplace.visualstudio.com/items?itemName=miclo.sort-typescript-imports
 
-xml: [https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
+- **prettier:** (esbenp.prettier-vscode) https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 
-puppet: [https://marketplace.visualstudio.com/items?itemName=jpogran.puppet-vscode](https://marketplace.visualstudio.com/items?itemName=jpogran.puppet-vscode)
 
-c/c++: [https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+### SCM tools
 
-powershell: [https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
+- **gitlens:** (eamodio.gitlens) https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
 
-dotenv: [https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
+- **gitignore:** (codezombiech.gitignore) https://marketplace.visualstudio.com/items?itemName=codezombiech.gitignore
 
-docker: https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker
+- **git history:** (donjayamanne.githistory) https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory
 
-logstash: https://marketplace.visualstudio.com/items?itemName=RandomChance.logstash
+- **git pull requests:** (vscode-pull-request-github) https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github
 
-yaml: https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
 
-html preview: https://marketplace.visualstudio.com/items?itemName=tht13.html-preview-vscode
+### language support
 
-editorconfig: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+- **ruby support:** (vscode-ruby) https://github.com/rubyide/vscode-ruby
 
-shell format: https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format
+- **cucumber:** (alexkrechik.cucumberautocomplete) https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete
 
-scratch: https://marketplace.visualstudio.com/items?itemName=buenon.scratchpads
+- **python:** (ms-python.python) https://marketplace.visualstudio.com/items?itemName=ms-python.python
 
-turbo console log: https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log
+- **docker:** (ms-azuretools.vscode-docker) https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
 
-angular console: https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console
+- **diff tool:** (ryu1kn.partial-diff) https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff
 
-node docs: https://marketplace.visualstudio.com/items?itemName=bengreenier.vscode-node-readme
+- **vagrant:** (bbenoist.vagrant) https://marketplace.visualstudio.com/items?itemName=bbenoist.vagrant
 
-bracket colorize: https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2
+- **graphql:** (stpn.vscode-graphql) https://marketplace.visualstudio.com/items?itemName=stpn.vscode-graphql
 
-jest: https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest
+- **ascii doc:** (joaompinto.asciidoctor-vscode) https://marketplace.visualstudio.com/items?itemName=joaompinto.asciidoctor-vscode
 
-peacock (colors): https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock
+- ~~typscript auto import: (steoates.autoimport) https://marketplace.visualstudio.com/items?itemName=steoates.autoimport~~
 
-workspace sort: https://marketplace.visualstudio.com/items?itemName=iciclesoft.workspacesort
+- **xml:** (DotJoshJohnson.xml) https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml
 
-angular language service: https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
+- **puppet:** (jpogran.puppet-vscode) https://marketplace.visualstudio.com/items?itemName=jpogran.puppet-vscode
 
-tslint - https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin
+- **c/c++:** (ms-vscode.cpptools) https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools
 
-nginx - https://marketplace.visualstudio.com/items?itemName=william-voyek.vscode-nginx
+- **powershell:** (ms-vscode.PowerShell) https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell
 
-### karma testing plugins
+- **dotenv:** (mikestead.dotenv) https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv
 
-test-explorer: https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer
+- **logstash:** (RandomChance.logstash) https://marketplace.visualstudio.com/items?itemName=RandomChance.logstash
 
-angular-karma-test-explorer: https://marketplace.visualstudio.com/items?itemName=raagh.angular-karma-test-explorer
+- **yaml:** (redhat.vscode-yaml) https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
 
-jasmine: https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-jasmine-test-adapter
+- **node docs:** (bengreenier.vscode-node-readme) https://marketplace.visualstudio.com/items?itemName=bengreenier.vscode-node-readme
 
-cloudfoundry: https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-manifest-yaml
+- **angular language service:** (Angular.ng-template) https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
 
-react snippets: ~~https://marketplace.visualstudio.com/items?itemName=EQuimper.react-native-react-redux~~
+- **nginx:** (william-voyek.vscode-nginx) https://marketplace.visualstudio.com/items?itemName=william-voyek.vscode-nginx
 
-~~https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets~~
+- **cloudfoundry:** (Pivotal.vscode-manifest-yaml) https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-manifest-yaml
 
-https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets
+- **log file highlighter:** (emilast.LogFileHighlighter) https://marketplace.visualstudio.com/items?itemName=emilast.LogFileHighlighter
 
-chrome debugger: https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome
+- **jenkins declaritive support:** (jmMeessen.jenkins-declarative-support) https://marketplace.visualstudio.com/items?itemName=jmMeessen.jenkins-declarative-support
+
+- **mssql:** (ms-mssql.mssql) https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql
+
+- **gradle:** (naco-siren.gradle-language) https://marketplace.visualstudio.com/items?itemName=naco-siren.gradle-language
+
+- **gn file:** (npclaudiu.vscode-gn) https://marketplace.visualstudio.com/items?itemName=npclaudiu.vscode-gn
+
+- **pl/sql:** (xyz.plsql-language) https://marketplace.visualstudio.com/items?itemName=xyz.plsql-language
+
+
+### snippets
+
+- **react snippets:** (burkeholland.simple-react-snippets) https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets
+
+	- ~~(EQuimper.react-native-react-redux) https://marketplace.visualstudio.com/items?itemName=EQuimper.react-native-react-redux~~
+
+	- ~~(xabikos.ReactSnippets) https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets~~
+
+
+### testing plugins
+
+- **test-explorer:** (hbenl.vscode-test-explorer) https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer
+
+- **angular-karma-test-explorer:** (raagh.angular-karma-test-explorer) https://marketplace.visualstudio.com/items?itemName=raagh.angular-karma-test-explorer
+
+- **jasmine:** (hbenl.vscode-jasmine-test-adapter) https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-jasmine-test-adapter
+
+- **jest test explorer:** (rtbenfield.vscode-jest-test-adapter) https://marketplace.visualstudio.com/items?itemName=rtbenfield.vscode-jest-test-adapter
+
+- **jest:** (Orta.vscode-jest) https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest
+
+- **wallabyjs:** (WallabyJs.wallaby-vscode) https://marketplace.visualstudio.com/items?itemName=WallabyJs.wallaby-vscode
+
+
+### dev tools
+
+- **chrome debugger:** (msjsdiag.debugger-for-chrome) https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome
+
+- **turbo console log:** (ChakrounAnas.turbo-console-log) https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log
+
+- **angular console:** (nrwl.angular-console) https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console
+
+- **time converter:** (HaaLeo.timing) https://marketplace.visualstudio.com/items?itemName=HaaLeo.timing
+
+
+### editor tools
+
+- **scratch:** (buenon.scratchpads) https://marketplace.visualstudio.com/items?itemName=buenon.scratchpads
+
+- **scratchpad:** (WallabyJs.quokka-vscode) https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode
+
+- **workspace sort:** (iciclesoft.workspacesort) https://marketplace.visualstudio.com/items?itemName=iciclesoft.workspacesort
+
+- **spell checker:** (streetsidesoftware.code-spell-checker) https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+
+- **html preview:** (tht13.html-preview-vscode) https://marketplace.visualstudio.com/items?itemName=tht13.html-preview-vscode
+
+- **github markdown preview:** (bierner.markdown-preview-github-styles) https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles
+
+- **jira:** (gioboa.jira-plugin) https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin - full featured like IDEA integration
+
+	- ~~(KnisterPeter.vscode-jira) https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira~~
+
+- **local history:** (gayanhewa.local-history) https://marketplace.visualstudio.com/items?itemName=gayanhewa.local-history
+
+- **live share:** (MS-vsliveshare.vsliveshare-pack) https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack
+
+- **partial diff:** (ryu1kn.partial-diff) https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff
+
 
 ---
 
