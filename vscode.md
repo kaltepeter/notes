@@ -168,7 +168,7 @@ shades-of-purple
 
 	- ~~(KnisterPeter.vscode-jira) https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira~~
 
-- **local history:** (gayanhewa.local-history) https://marketplace.visualstudio.com/items?itemName=gayanhewa.local-history
+- **local history:** ~~(gayanhewa.local-history) https://marketplace.visualstudio.com/items?itemName=gayanhewa.local-history~~
 
 - **live share:** (MS-vsliveshare.vsliveshare-pack) https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack
 

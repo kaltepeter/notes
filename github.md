@@ -133,5 +133,19 @@ https://github.blog/2016-02-01-working-with-submodules/
 
 using vimidff: https://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/
 
+## ssh
+
+### use custom ssh id file
+
+https://superuser.com/questions/232373/how-to-tell-git-which-private-key-to-use
+
+```bash
+host github.com
+ HostName github.com
+ IdentityFile ~/.ssh/id_rsa_github
+ User git
+
+chmod 400 ~/.ssh/id_rsa_github
+```
 
 
