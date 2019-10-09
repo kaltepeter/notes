@@ -16,6 +16,8 @@
 
 [https://kvz.io/blog/2013/11/21/bash-best-practices/](https://kvz.io/blog/2013/11/21/bash-best-practices/) - boiler plate and best practice guide
 
+https://explainshell.com/explain - amazing visual explanation
+
 ### Bash 4
 
 [http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/](http://clubmate.fi/upgrade-to-bash-4-in-mac-os-x/)
@@ -201,3 +203,10 @@ DOMAIN_NAME=$(curl -s http://localhost:4040/api/tunnels/jenkins | python -c 'imp
 ## colors
 
 https://misc.flogisoft.com/bash/tip_colors_and_formatting
+
+## rerun with sudo
+
+```bash
+sudo !!
+```
+

@@ -126,10 +126,95 @@ https://stackoverflow.com/questions/9607295/how-do-i-find-my-rsa-key-fingerprint
 ssh-keygen -E md5 -lf ~/.ssh/id_dsa.pub
 ```
 
+
+#### saving passphrase for ssh
+
+https://www.linux.com/tutorials/manage-ssh-key-file-passphrase/
+
+```bash
+# Specify your passphrase here
+export YOUR_PASSPHRASE="XXX"
+
+# Load protected key without prompt
+echo "echo $YOUR_PASSPHRASE" > /tmp/mypass
+chmod 700 /tmp/mypass
+cat id_rsa| SSH_ASKPASS=/tmp/mypass ssh-add -
+
+# Verify loaded certificate
+ssh-add -l
+```
+
 ### tail process
 
 https://unix.stackexchange.com/questions/58550/how-to-view-the-output-of-a-running-process-in-another-bash-session
 
 ```bash
 tail -f /proc/<pid>/fd/1
+```
+
+## security
+
+### fail to ban
+
+https://www.techrepublic.com/article/how-to-install-fail2ban-on-ubuntu-server-18-04/
+
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install fail2ban
+
+sudo systemctl start fail2ban
+sudo systemctl enable fail2ban
+
+sudo vi /etc/fail2ban/jail.local
+```
+
+paste in config: (jail.local)
+
+```
+[sshd]
+enabled = true
+port = 22
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
+```
+
+```bash
+sudo systemctl restart fail2ban
+```
+
+to un-ban:
+
+```bash
+sudo fail2ban-client set sshd unbanip IP_ADDRESS
+38.142.92.122
+```
+
+### chechking invalid auth
+
+```bash
+sudo grep -io 'Invalid user \(.*\) \([0-9\.]\)' /var/log/auth.log | sed 's/[Ii]nvalid user //' > invalid_auth.log 
+```
+
+## port scanning
+
+```bash
+nmap (-sV)
+```
+
+## list standard ports
+
+```bash
+sudo less /etc/services
+```
+
+## firewall
+
+ufw - uncomplicated firewall
+
+```bash
+sudo ufw status
+sudo ufw allow ssh
+sudo ufw enable
 ```
