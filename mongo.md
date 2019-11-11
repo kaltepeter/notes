@@ -7,3 +7,5 @@ https://www.mongodb.com/blog/post/thinking-documents-part-1 - comparision to rel
 http://learnmongodbthehardway.com/schema/schemabasics/
 
 https://cloudnweb.dev/2019/11/learn-mongodb-aggregation-with-real-world-example/ - query help
+
+https://docs.mongodb.com/manual/tutorial/ - official tutorial list
