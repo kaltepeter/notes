@@ -14,8 +14,6 @@ simple and built in
 
 `initializer`in this case is an npm package named`create-<initializer>`, which will be installed by[`npx`](https://docs.npmjs.com/cli/npx), and then have its main bin executed -- presumably creating or updating`package.json`and running any other initialization-related operations.
 
-
-
 ### testing locally
 
 #### using local npm server
@@ -23,10 +21,10 @@ simple and built in
 https://blog.strapi.io/testing-npm-package-before-releasing-it-using-verdaccio-and-ngrok
 
 ```text
-npm install -g verdaccio  
+npm install -g verdaccio
 verdaccio
 
-npm adduser --registry  http://localhost:4873  
+npm adduser --registry  http://localhost:4873
 ```
 
 add to package.json
@@ -76,26 +74,30 @@ https://nodejs.org/api/child_process.html
 ### exec example
 
 ```javascript
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const util = require("util");
+const exec = util.promisify(require("child_process").exec);
 
 const getVars = async () => {
-    const getVar = async (varName) => {
-        const { stdout, stderr } = await exec(`zsh -c '. ~/.zshrc; echo $${varName}'`);
-        if (stderr) return reject(stderr);
-        return stdout.toString().trim();
-    };
+  const getVar = async varName => {
+    const { stdout, stderr } = await exec(
+      `zsh -c '. ~/.zshrc; echo $${varName}'`
+    );
+    if (stderr) return reject(stderr);
+    return stdout.toString().trim();
+  };
 
-    const [currentThemeRes, zshCustomRes] = await Promise.all(
-        [getVar('ZSH_THEME'), getVar('ZSH_CUSTOM')]);
-    return [currentThemeRes, zshCustomRes];
+  const [currentThemeRes, zshCustomRes] = await Promise.all([
+    getVar("ZSH_THEME"),
+    getVar("ZSH_CUSTOM")
+  ]);
+  return [currentThemeRes, zshCustomRes];
 };
 
 try {
   const [currentTheme, zshCustom] = await getVars();
-  console.log(`vars: ${currenttheme} ${zshCustom}`)
-} catch(err) {
-  console.log('err: ', err);
+  console.log(`vars: ${currenttheme} ${zshCustom}`);
+} catch (err) {
+  console.log("err: ", err);
 }
 ```
 
@@ -108,3 +110,9 @@ https://dev.to/mrm8488/from-callbacks-to-fspromises-to-handle-the-file-system-in
 ## env var
 
 https://medium.com/@maxcbc/mocking-environment-variables-in-node-js-a17a416e127c - mocking
+
+## child processes
+
+https://jscomplete.com/learn/node-beyond-basics/child-processes
+
+https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
