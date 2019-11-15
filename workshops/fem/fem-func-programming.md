@@ -4,6 +4,36 @@ https://docs.google.com/presentation/d/1nj5xmsHeJh-6RdjLs1190Hwl8smclvFLePqPCTVs
 
 https://drboolean.gitbooks.io/mostly-adequate-guide-old/content/
 
+## curry trick
+
+```javascript
+const words = function(str) {
+  return split(' ', str);
+ }
+```
+
+```javascript
+const words = (str) => {
+  return split(' ', str);
+ }
+```
+
+```javascript
+const words = split(' ', str);
+```
+
+## compose
+
+same as dot chaining but read right to left. pipe is left to right.
+
+## code pens
+
+curry: https://codepen.io/kaltepeter/pen/KKKGGdb
+compose: https://codepen.io/kaltepeter/pen/gOOBQbq
+box: https://codepen.io/drboolean/pen/poodxOm
+either: https://codepen.io/drboolean/pen/xgoeWR
+task https://codepen.io/drboolean/pen/Mparbp
+
 https://mostly-adequate.gitbooks.io/mostly-adequate-guide/
 
 ## curry trick
