@@ -188,3 +188,7 @@ https://natelandau.com/my-mac-osx-bash_profile/
 https://apple.stackexchange.com/questions/49532/change-the-default-application-for-a-file-extension-via-script-command-line
 
 https://apple.stackexchange.com/questions/313454/applescript-find-the-users-set-default-browser
+
+## touchbar customization
+
+https://pock.dev/
