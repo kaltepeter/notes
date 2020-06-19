@@ -27,3 +27,46 @@ https://dev.to/steveblue/build-angular-like-an-architect-part-1-3ph2
 https://github.com/nrwl/nx/blob/master/packages/angular/src/schematics/application/schema.json
 
 https://github.com/mauriziovitale/angular-plugins/blob/master/libs/lite-serve/src/builders/lite-serve/schema.json
+
+## workspace schematics
+
+`ng g workspace-schematic demo-lib`
+
+## types
+
+`npm i --save-dev json-schema-to-typescript`
+
+json-schema-to-ts.js
+
+```
+const toTypeScript = require('json-schema-to-typescript');
+const fs = require('fs');
+
+toTypeScript
+    .compileFromFile('tools/schematics/domain/schema.json')
+    .then(ts => fs.writeFileSync('tools/schematics/domain/schema.ts', ts));
+```
+
+npm script: `"build:schema": "node tools/schematics/json-schema-to-ts.js"`
+
+Call existing rules:
+
+```
+return chain([
+    externalSchematic('@nrwl/angular', 'lib', {
+      name: 'domain',
+      directory: options.name,
+      tags: `domain:${options.name},type:domain-logic`,
+      style: 'scss',
+    }),
+    (!options.addApp) ? 
+      noop() : 
+      externalSchematic('@nrwl/angular', 'app', {
+        name: options.name,
+        tags: `domain:${options.name},type:app`,
+        style: 'scss',
+      }),
+  ]);
+```
+
+calling: `nx workspace-schematic domain ordering --add-app`
