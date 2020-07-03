@@ -2,7 +2,7 @@
 
 https://www.raspberrypi.org/documentation/installation/installing-images/
 
-1. Download preferred version.
+1. Download preferred version. https://www.raspberrypi.org/downloads/raspberry-pi-os/
    - *desktop*: for a gui/dev env
    - *lite*: for no gui, small system
 1. Download and install etcher: https://etcher.io/
