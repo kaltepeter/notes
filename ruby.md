@@ -29,19 +29,20 @@ rvm list known
 list installed
 
 ```text
-rvm list    
+rvm list
 ```
 
 install ruby
 
 ```text
-rvm install ruby-2.5.1    
+rvm install ruby-2.5.1 # version 2.5.1
+rvm install ruby --latest # latest stable version
 ```
 
 create ruby-version
 
 ```text
-rvm --ruby-version use 2.5.1@my_app
+rvm --ruby-version use 2.5.1@my_app --create
 ```
 
 install bundler && init
@@ -59,7 +60,7 @@ bundle add pkg-config --version="~> 1.1"
 
 ### dockerizing
 
-{% embed data="{\"url\":\"https://blog.kontena.io/dockerizing-ruby-application/\",\"type\":\"link\",\"title\":\"Dockerizing Ruby Application\",\"description\":\"Containers are great and they are gaining more popularity all the time. It’s replacing virtualization by removing hypervisor layer and allowing to run isolated container processes on the shared kernel instead \(Image 1\). The most important benefit of containers is a start time. While a full virtualized system usually\",\"icon\":{\"type\":\"icon\",\"url\":\"https://blog.kontena.io/favicon.png\",\"aspectRatio\":0},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://blog.kontena.io/content/images/2016/06/17207132758\_6c89df1360\_o-2.jpg\",\"width\":1024,\"height\":683,\"aspectRatio\":0.6669921875}}" %}
+[Dockerizing Ruby Application](https://blog.kontena.io/dockerizing-ruby-application/)
 
 ```text
 FROM ruby:2.5.1-alpine
@@ -77,13 +78,96 @@ EXPOSE 9292
 WORKDIR /app
 ```
 
-{% embed data="{\"url\":\"https://medium.com/magnetis-backstage/how-to-cache-bundle-install-with-docker-7bed453a5800\",\"type\":\"link\",\"title\":\"How to cache bundle install with Docker\",\"description\":\"While dockering a Rails app, the first problem that comes out is the slow bundle install command while building the app’s image.\",\"icon\":{\"type\":\"icon\",\"url\":\"https://cdn-images-1.medium.com/fit/c/304/304/1\*VK-kp1F25uS52edx5GwEdQ.png\",\"width\":152,\"height\":152,\"aspectRatio\":1},\"thumbnail\":{\"type\":\"thumbnail\",\"url\":\"https://cdn-images-1.medium.com/max/2000/1\*zJ1bSOdQOf35dMOP1atQYA.jpeg\",\"width\":2000,\"height\":1333,\"aspectRatio\":0.6665}}" %}
+https://medium.com/magnetis-backstage/how-to-cache-bundle-install-with-docker-7bed453a5800 - How to cache bundle install with Docker: While dockerizing a Rails app, the first problem that comes out is the slow bundle install command while building the app’s image.
 
-```text
+[https://github.com/BretFisher/jekyll-serve/blob/master/Dockerfile](https://github.com/BretFisher/jekyll-serve/blob/master/Dockerfile) - working with jekyll
 
-```
+## IDE Support
 
-working with jekyll
+## VSCode
 
-[https://github.com/BretFisher/jekyll-serve/blob/master/Dockerfile](https://github.com/BretFisher/jekyll-serve/blob/master/Dockerfile)
+https://medium.com/better-programming/code-like-a-pro-tooling-to-supercharge-vs-code-for-ruby-bf2ae61df5e3
 
+1. Install vscode extensions:
+
+    - [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby): `rebornix.ruby`
+    - [Ruby Language Colorization](https://marketplace.visualstudio.com/items?itemName=groksrc.ruby): `groksrc.ruby`
+    - [Ruby Solargraph](https://marketplace.visualstudio.com/items?itemName=castwide.solargraph): `castwide.solargraph`
+    - [VSCode Ruby](https://marketplace.visualstudio.com/items?itemName=wingrunr21.vscode-ruby): `wingrunr21.vscode-ruby` - this comes with another plugin as a dependency
+
+1. Install two global gems. These are used by the IDE and have trouble using project level rvn installs.
+
+    ```bash
+    rvm @global do bundle update
+    rvm @global do gem install rubocop
+    rvm @global do gem install solargraph
+    ```
+
+1. Configure VSCode User Settings:
+
+    ```json
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate",
+    "ruby.useBundler": true, //run non-lint commands with bundle exec
+    "ruby.useLanguageServer": true, // use the internal language server (see below)
+    "ruby.lint": {
+        "rubocop": {
+        "useBundler": true // enable rubocop via bundler
+        },
+        "reek": {
+        "useBundler": true // enable reek via bundler
+        }
+    }
+    ```
+
+1. Restart IDE
+
+## Style and Lint
+
+https://rubystyle.guide/#guiding-principles
+
+### Enforcing with rubocop
+
+https://docs.rubocop.org/rubocop/0.87/index.html
+
+https://medium.com/@kirill_shevch/lint-your-ruby-code-with-overcommit-and-static-analysis-tools-bd36d3147d2e
+
+1. Add these gems to your project.
+
+    ```ruby
+        gem 'debase', '~> 0.2.1', group: :development
+        gem 'overcommit', '~> 0.54.0'
+        gem 'rubocop', require: false
+    ```
+
+    Run
+
+    ```bash
+    bundle install
+    ```
+
+1. Configure IDE
+
+1. Setup overcommit
+
+    ```bash
+    overcommit --install
+    overcommit --sign
+    ```
+
+1. Setup rubocop
+
+    ```bash
+    rubocop -a -x
+    ```
+
+1. Edit overcommit config, enable rubocop
+
+    ```yaml
+    PreCommit:
+      RuboCop:
+        enabled: true
+    ```
+
+1. Hooks will now run on commits
