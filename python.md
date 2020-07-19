@@ -8,6 +8,8 @@
 
 [https://realpython.com/python-virtual-environments-a-primer/](https://realpython.com/python-virtual-environments-a-primer/)
 
+https://www.integralist.co.uk/posts/python-management/#managing-dependencies - covers pyenv and versioning
+
 install pyenv
 
 ```text
@@ -149,4 +151,8 @@ brew install ghostscript
 ## PDFs
 
 tutorials: [http://stanford.edu/~mgorkove/cgi-bin/rpython\_tutorials/tutorials.php](http://stanford.edu/~mgorkove/cgi-bin/rpython_tutorials/tutorials.php)
+
+## dependency management
+
+https://python-poetry.org/
 
