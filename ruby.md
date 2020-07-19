@@ -159,6 +159,7 @@ https://medium.com/@kirill_shevch/lint-your-ruby-code-with-overcommit-and-static
 1. Setup rubocop
 
     ```bash
+    rubocop --auto-gen-config
     rubocop -a -x
     ```
 
