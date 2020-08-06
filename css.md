@@ -12,6 +12,8 @@
 
 [http://specifishity.com/specifishity.pdf](http://specifishity.com/specifishity.pdf) - specificity reference pdf
 
+https://medium.com/@js_tut/the-complete-guide-to-scss-sass-30053c266b23 - sass guide
+
 #### Selectors API
 
 ```text
@@ -325,6 +327,8 @@ feature detection without js
 [https://drafts.csswg.org/css-flexbox/](https://drafts.csswg.org/css-flexbox/) - spec
 
 [https://estelle.github.io/cssmastery/flexbox/files/pagelayout.html](https://estelle.github.io/cssmastery/flexbox/files/pagelayout.html) - holy grail layout example
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/ - great visual guide
 
 **steps**
 
