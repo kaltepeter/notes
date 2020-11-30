@@ -1,23 +1,43 @@
 import {
   AppBar,
-  Box,
   fade,
   IconButton,
   InputBase,
   makeStyles,
   Toolbar,
   Typography,
+  useScrollTrigger,
 } from "@material-ui/core"
 import MenuIcon from "@material-ui/icons/Menu"
 import SearchIcon from "@material-ui/icons/Search"
 import React, { ReactElement } from "react"
-import NotesIcon from "../images/notes.svg"
+import NotesLogo from "../images/logo.svg"
+import NotesIcon from "../images/notes-icon.svg"
 import ElevationScroll from "./elevation-scroll"
+import HideOnScroll from "./hide-on-scroll"
 import theme from "./theme"
+
+const cutSize = `${theme.spacing(3)}px`;
 
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
+    right: "auto",
+    left: 0,
+  },
+  rootScrolled: {
+    width: "200px",
+    clipPath: `polygon(
+      0% 0%, 
+      100% 0%, 
+      100% calc(100% - ${cutSize}), 
+      calc(100% - ${cutSize}) 100%, 
+      0% 100%
+    )`,
+
+    search: {
+      display: "none",
+    },
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -26,18 +46,17 @@ const useStyles = makeStyles({
     flexGrow: 1,
     display: "none",
     [theme.breakpoints.up("sm")]: {
-      display: "block",
+      display: "flex",
     },
+    alignItems: "center",
+    padding: theme.spacing(2, 0),
   },
   notesIcon: {
-    width: "32px",
-    height: "32px",
-    overflow: "hidden",
-
-    "& svg": {
-      width: "32px",
-      height: "32px",
-    },
+    height: "20px",
+    paddingRight: theme.spacing(1),
+  },
+  notesLogo: {
+    height: "20px",
   },
   search: {
     position: "relative",
@@ -84,13 +103,21 @@ const defaultProps = {
   siteTitle: "",
 }
 
-type HeaderProps = {} & typeof defaultProps
+type HeaderProps = {
+  window?: () => Window
+  children: React.ReactElement
+} & typeof defaultProps
 
-const Header = ({ siteTitle }: HeaderProps): ReactElement => {
+const Header = ({ siteTitle, window }: HeaderProps): ReactElement => {
   const classes = useStyles()
+  const trigger = useScrollTrigger({ target: window ? window() : undefined })
+
   return (
     <ElevationScroll>
-      <AppBar color="primary" className={classes.root}>
+      <AppBar
+        color="primary"
+        className={`${classes.root} ${trigger ? classes.rootScrolled : ""}`}
+      >
         <Toolbar>
           <IconButton
             edge="start"
@@ -100,29 +127,32 @@ const Header = ({ siteTitle }: HeaderProps): ReactElement => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            noWrap
-            className={classes.title}
-          >
+          <Typography noWrap className={classes.title} component="h1">
             <img src={NotesIcon} className={classes.notesIcon} />
-            {siteTitle}
-          </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
+            <img
+              src={NotesLogo}
+              className={classes.notesLogo}
+              alt={siteTitle}
             />
-          </div>
+          </Typography>
+          <HideOnScroll>
+            <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+              <InputBase
+                placeholder="Search…"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+                inputProps={{ "aria-label": "search" }}
+              />
+            </div>
+          </HideOnScroll>
         </Toolbar>
       </AppBar>
-      </ElevationScroll>
+    </ElevationScroll>
   )
 }
 

@@ -4,7 +4,13 @@
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
-
+import "fontsource-merriweather/900-italic.css";
+import "fontsource-merriweather/700-italic.css";
+import "fontsource-merriweather/400.css";
+import "fontsource-libre-franklin/700-normal.css";
+import "fontsource-libre-franklin/500-normal.css";
+import "fontsource-libre-franklin/400.css";
+import "fontsource-libre-franklin/300-normal.css";
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -12,7 +18,6 @@ import Header from "./header"
 import Container from "@material-ui/core/Container/Container"
 import { Box, CssBaseline, ThemeProvider, Toolbar } from "@material-ui/core"
 import theme from "./theme"
-import ElevationScroll from "./elevation-scroll"
 
 const Layout: React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`

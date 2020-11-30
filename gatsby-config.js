@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `KA Writes It Down`,
+    title: `Notes`,
     description: `
       How do we remember things? How do we solidify our understandings? How do we free up our minds? How do we organize thoughts? We should write it down, anyway that works for you.
     `,
@@ -43,7 +43,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/notes.svg`, // This path is relative to the root of the site.
+        icon: `src/images/notes-icon.svg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

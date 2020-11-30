@@ -4,7 +4,7 @@ import { Link, PageProps } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { Box } from "@material-ui/core"
+import { Box, Button, Typography } from "@material-ui/core"
 
 // Please note that you can use https://github.com/dotansimha/graphql-code-generator
 // to generate all types from graphQL schema
