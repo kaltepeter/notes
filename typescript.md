@@ -158,3 +158,15 @@ console.log(n.toString(2)) // 10110101
 console.log(clearBit(n,2).toString(2)) // 10110001
 
 ```
+
+Bitwise find in array
+
+```typescript
+const foundIndex = (index: number) => {
+  return Boolean(~index);
+}
+
+console.log(foundIndex(arr.indexOf(9))); // false
+console.log(foundIndex(arr.indexOf(100))); // false
+console.log(foundIndex(arr.indexOf(3))); // true
+```
