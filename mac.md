@@ -192,3 +192,9 @@ https://apple.stackexchange.com/questions/313454/applescript-find-the-users-set-
 ## touchbar customization
 
 https://pock.dev/
+
+## see defaults
+
+```bash
+sudo defaults read
+```
