@@ -8,6 +8,8 @@
 
 [http://www.stuartellis.name/articles/rake/\#using-other-ruby-libraries-in-rake-tasks](http://www.stuartellis.name/articles/rake/#using-other-ruby-libraries-in-rake-tasks) - rake tasks
 
+[https://apidock.com/ruby/OptionParser](https://apidock.com/ruby/OptionParser) - options parser doc
+
 ### GSUB
 
 [https://stackoverflow.com/questions/16579223/using-named-capture-groups-inside-ruby-gsub-blocks-regex](https://stackoverflow.com/questions/16579223/using-named-capture-groups-inside-ruby-gsub-blocks-regex) - capture groups in gsub
@@ -172,3 +174,24 @@ https://medium.com/@kirill_shevch/lint-your-ruby-code-with-overcommit-and-static
     ```
 
 1. Hooks will now run on commits
+
+## Files, I/O
+
+- https://medium.com/@jagiweb/how-to-read-write-files-in-ruby-8201fb77c2d4
+
+## Blocks, Procs & Lamdas
+
+- https://www.rubyguides.com/2016/02/ruby-procs-and-lambdas/#Lambdas_vs_Procs
+
+## Special operators
+
+- https://dev.to/junko911/ruby-iteration-shortcut-with-ampersand-operator-923 - `&:`
+
+```ruby
+[[1,2,3,4],[1,2,3,4],[1,2,3,4]].map(&:join)
+#  => ["1234", "1234", "1234"] 
+
+# same as: 
+[[1,2,3,4],[1,2,3,4],[1,2,3,4]].map { |v| v.join('') }
+#  => ["1234", "1234", "1234"] 
+```
