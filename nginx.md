@@ -45,3 +45,24 @@ proxy_set_header Host $host;
 
 [https://www.nginx.com/blog/building-microservices-using-an-api-gateway/](https://www.nginx.com/blog/building-microservices-using-an-api-gateway/)
 
+## install on ubuntu 14.04 (trsusty)
+
+https://www.phusionpassenger.com/library/install/nginx/install/oss/trusty/
+
+```bash
+sudo apt-get install -y dirmngr gnupg
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+#sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 16126D3A3E5C1192
+
+sudo apt-get install -y apt-transport-https ca-certificates
+
+#sudo sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main > /etc/apt/sources.list.d/passenger.list'
+
+sudo sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger/4 trusty main > /etc/apt/sources.list.d/passenger.list'
+
+
+sudo apt-get update
+
+#sudo apt-get install nginx-common
+sudo apt-get install nginx nginx-extras passenger
+```
