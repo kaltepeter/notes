@@ -3,6 +3,7 @@ import {
   fade,
   IconButton,
   InputBase,
+  Link,
   makeStyles,
   Toolbar,
   Typography,
@@ -105,7 +106,7 @@ const defaultProps = {
 
 type HeaderProps = {
   window?: () => Window
-  children: React.ReactElement
+  children?: React.ReactElement
 } & typeof defaultProps
 
 const Header = ({ siteTitle, window }: HeaderProps): ReactElement => {
@@ -127,14 +128,14 @@ const Header = ({ siteTitle, window }: HeaderProps): ReactElement => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography noWrap className={classes.title} component="h1">
+          <Link noWrap className={classes.title} href="/" variant="h1">
             <img src={NotesIcon} className={classes.notesIcon} />
             <img
               src={NotesLogo}
               className={classes.notesLogo}
               alt={siteTitle}
             />
-          </Typography>
+          </Link>
           <HideOnScroll>
             <div className={classes.search}>
               <div className={classes.searchIcon}>

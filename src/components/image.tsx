@@ -1,22 +1,33 @@
-import React, { ReactElement } from "react"
-import { useStaticQuery, graphql, StaticQueryProps } from "gatsby"
-import Img, { GatsbyImageFluidProps } from "gatsby-image"
-import imageStyles from './image.module.css';
+import Img from 'gatsby-image';
+import React, { ReactElement } from 'react';
+import theme from './theme';
+import { Box, makeStyles, Typography } from '@material-ui/core';
+import { graphql, useStaticQuery } from 'gatsby';
 
-/*
- * This component is built using `gatsby-image` to automatically serve optimized
- * images with lazy loading and reduced file sizes. The image is loaded using a
- * `useStaticQuery`, which allows us to load the image from directly within this
- * component, rather than having to pass the image data down from pages.
- *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.com/docs/use-static-query/
- */
+const useStyles = makeStyles({
+  root: {
+    position: "relative",
+    top: '-15vh',
+  },
+  overlay: {
+    display: "none",
+    backgroundColor: theme.palette.secondary.main,
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    opacity: "50%",
+  },
+})
+
 const Image = (): ReactElement => {
+  const classes = useStyles()
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "notebook-laptop-unsplash.jpg" }) {
+      placeholderImage: file(
+        relativePath: { eq: "notebook-laptop-unsplash.jpg" }
+      ) {
         childImageSharp {
           fluid(maxWidth: 3456, maxHeight: 4087) {
             ...GatsbyImageSharpFluid
@@ -31,11 +42,28 @@ const Image = (): ReactElement => {
   }
 
   return (
-    <div className={imageStyles.heroImage}>
-    <Img fluid={data.placeholderImage.childImageSharp.fluid} alt="Notebook and laptop image" />
-    <span>Photo by <a href="https://unsplash.com/@tracycodes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tracy Adams</a> on <a href="https://unsplash.com/s/photos/note-taking?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
-    </div>
-  );
+    <>
+      <Box className={classes.root}>
+        <a href="#">
+          <Img
+            fluid={data.placeholderImage.childImageSharp.fluid}
+            alt="Notebook and laptop image"
+          />
+          <div className={classes.overlay}></div>
+        </a>
+      </Box>
+      <Typography variant="caption">
+        Photo by{" "}
+        <a href="https://unsplash.com/@tracycodes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+          Tracy Adams
+        </a>{" "}
+        on{" "}
+        <a href="https://unsplash.com/s/photos/note-taking?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+          Unsplash
+        </a>
+      </Typography>
+    </>
+  )
 }
 
 export default Image

@@ -1,41 +1,56 @@
-exports.createPages = async ({ actions, graphql, reporter }) => {
-    const { createPage } = actions
-  
-    const noteTemplate = require.resolve(`./src/templates/note-template.tsx`)
-  
-    const result = await graphql(`
-      {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              frontmatter {
-                date(formatString: "MMMM DD, YYYY")
-                path
-                title
-              }
+const { createFilePath } = require(`gatsby-source-filesystem`)
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `markdown-pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  // **Note:** The graphql function call returns a Promise
+  // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
+  const result = await graphql(`
+    query {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              date(formatString: "MMMM DD, YYYY")
+              title
+              tags
             }
           }
         }
       }
-    `)
-  
-    // Handle errors
-    if (result.errors) {
-      reporter.panicOnBuild(`Error while running GraphQL query.`)
-      return
     }
-  
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: noteTemplate,
-        context: {
-          // additional data can be passed via context
-          title: node.frontmatter.title,
-        },
-      })
-    })
+  `)
+
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
   }
+
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: require.resolve(`./src/templates/note-template.tsx`),
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.fields.slug,
+      },
+    })
+  })
+}

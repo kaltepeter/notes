@@ -1,4 +1,10 @@
-# NX
+---
+title: NX
+date: 2020-01-14
+tags:
+- nx
+- ui
+---
 
 jenkins example: https://github.com/nrwl/nx-jenkins-build
 
@@ -7,7 +13,6 @@ jenkins example: https://github.com/nrwl/nx-jenkins-build
 [How to never build or test the same code twice - Nrwl](https://blog.nrwl.io/how-to-never-build-or-test-the-same-code-twice-2dc58e413279)
 
 [nx-plugins/libs/nx-deploy-it at master · Dev-Thought/nx-plugins · GitHub](https://github.com/Dev-Thought/nx-plugins/tree/master/libs/nx-deploy-it)
-
 
 `nx list`: show list of available plugins
 
