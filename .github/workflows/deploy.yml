@@ -39,6 +39,11 @@ jobs:
           npm run build
 
       - name: Deploy 🚀
+        env:
+          username: kaltepeter
+          email: ${{ secrets.GH_EMAIL }}
         run: |
-          git remote set-url origin https://kaltepeter:${{ secrets.TOKEN }}@github.com/kaltepeter/notes.git
-          npm run deploy -- --repo "https://github.com/kaltepeter/notes.git" --user "github-actions <github-actions@github.com>"
+          git config user.name $username
+          git config user.email $email
+          git remote set-url origin https://$username:${{ secrets.TOKEN }}@github.com/kaltepeter/notes.git
+          npm run deploy
