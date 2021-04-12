@@ -24,10 +24,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Configure Git
         uses: actions/checkout@v2
-        env:
-          GITHUB_PAT: ${{ secrets.TOKEN }}
         with:
-          token: ${{ secrets.GITHUB_PAT }}
+          token: ${{ secrets.TOKEN }}
       
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.5
