@@ -40,4 +40,4 @@ jobs:
 
       - name: Deploy 🚀
         run: |
-          npm run deploy -- --repo "https://github.com/kaltepeter/notes.git" --user "github-actions github-actions@github.com"
+          npm run deploy -- --repo "https://github.com/kaltepeter/notes.git" --user "github-actions <github-actions@github.com>"
