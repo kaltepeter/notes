@@ -40,4 +40,5 @@ jobs:
 
       - name: Deploy 🚀
         run: |
+          git remote set-url origin https://kaltepeter:${{ secrets.TOKEN }}@github.com/kaltepeter/notes.git
           npm run deploy -- --repo "https://github.com/kaltepeter/notes.git" --user "github-actions <github-actions@github.com>"
