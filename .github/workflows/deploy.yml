@@ -40,6 +40,4 @@ jobs:
 
       - name: Deploy 🚀
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          npm run deploy
+          npm run deploy -- --repo "https://github.com/kaltepeter/notes.git" --user "github-actions github-actions@github.com"
