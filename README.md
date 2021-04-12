@@ -1,3 +1,5 @@
+[![DEPLOY](https://github.com/kaltepeter/notes/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/kaltepeter/notes/actions/workflows/deploy.yml)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
