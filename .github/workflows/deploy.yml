@@ -24,9 +24,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Configure Git
         uses: actions/checkout@v2
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
       
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.5
@@ -40,4 +37,7 @@ jobs:
           npm run build
 
       - name: Deploy 🚀
-        run: npm run deploy
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          npm run deploy
