@@ -3,7 +3,6 @@ import {
   fade,
   IconButton,
   InputBase,
-  Link,
   makeStyles,
   Toolbar,
   Typography,
@@ -11,6 +10,7 @@ import {
 } from "@material-ui/core"
 import MenuIcon from "@material-ui/icons/Menu"
 import SearchIcon from "@material-ui/icons/Search"
+import { Link } from "gatsby"
 import React, { ReactElement } from "react"
 import NotesLogo from "../images/logo.svg"
 import NotesIcon from "../images/notes-icon.svg"
@@ -18,7 +18,7 @@ import ElevationScroll from "./elevation-scroll"
 import HideOnScroll from "./hide-on-scroll"
 import theme from "./theme"
 
-const cutSize = `${theme.spacing(3)}px`;
+const cutSize = `${theme.spacing(3)}px`
 
 const useStyles = makeStyles({
   root: {
@@ -51,6 +51,9 @@ const useStyles = makeStyles({
     },
     alignItems: "center",
     padding: theme.spacing(2, 0),
+    '& a': {
+      display: 'inline-flex'
+    }
   },
   notesIcon: {
     height: "20px",
@@ -128,14 +131,16 @@ const Header = ({ siteTitle, window }: HeaderProps): ReactElement => {
           >
             <MenuIcon />
           </IconButton>
-          <Link noWrap className={classes.title} href="/" variant="h1">
-            <img src={NotesIcon} className={classes.notesIcon} />
-            <img
-              src={NotesLogo}
-              className={classes.notesLogo}
-              alt={siteTitle}
-            />
-          </Link>
+          <Typography noWrap variant="h1" component="span" className={classes.title}>
+            <Link to={"/"}>
+              <img src={NotesIcon} className={classes.notesIcon} />
+              <img
+                src={NotesLogo}
+                className={classes.notesLogo}
+                alt={siteTitle}
+              />
+            </Link>
+          </Typography>
           <HideOnScroll>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
