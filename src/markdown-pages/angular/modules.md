@@ -1,4 +1,10 @@
-# Angular Modules
+---
+title: Angular Modules
+date: 2021-04-11
+tags:
+  - ui
+  - angular
+---
 
 ## Export Only vs. Import/Export
 

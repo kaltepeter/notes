@@ -1,6 +1,8 @@
 ---
 title: Curl
-date: 2018-04-02
+date: 2018-04-22
+tags:
+  - nix
 ---
 
 # curl

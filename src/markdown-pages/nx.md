@@ -2,11 +2,11 @@
 title: NX
 date: 2020-01-14
 tags:
-- nx
-- ui
+  - nx
+  - ui
 ---
 
-jenkins example: https://github.com/nrwl/nx-jenkins-build
+Jenkins example: https://github.com/nrwl/nx-jenkins-build
 
 [How to Deploy Nx monorepos to Netlify](https://www.netlify.com/blog/2020/04/21/deploying-nx-monorepos-to-netlify/)
 
