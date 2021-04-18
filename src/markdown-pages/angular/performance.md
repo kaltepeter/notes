@@ -2,8 +2,8 @@
 title: Performance
 date: 2021-04-11
 tags:
-  - ui
-  - angular
+- ui
+- angular
 ---
 
 ## Build Optimizer and Vendor Chunk

@@ -2,7 +2,7 @@
 title: Curl
 date: 2018-04-22
 tags:
-  - nix
+- nix
 ---
 
 # curl

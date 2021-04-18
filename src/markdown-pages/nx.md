@@ -2,8 +2,8 @@
 title: NX
 date: 2020-01-14
 tags:
-  - nx
-  - ui
+- nx
+- ui
 ---
 
 Jenkins example: https://github.com/nrwl/nx-jenkins-build

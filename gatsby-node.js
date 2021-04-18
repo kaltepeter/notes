@@ -28,6 +28,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             frontmatter {
               title
+              date(formatString: "MMMM DD, YYYY")
               tags
             }
           }
