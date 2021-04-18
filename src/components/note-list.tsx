@@ -45,7 +45,8 @@ interface NoteListProps {}
 
 const NoteList: React.FC<NoteListProps> = () => {
   const classes = useStyles()
-  const { notes } = useNoteExcerptList()
+  const { notes } = useNoteExcerptList();
+  // const {modifiedDate, slug} = pageContext;
 
   return (
     <List>

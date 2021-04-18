@@ -48,9 +48,12 @@ interface IndexPageProps extends PageProps {
       }
     }
   }
+  pageContext: {
+    slug: string;
+  }
 }
 
-const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
+const IndexPage: React.FC<IndexPageProps> = ({ data, pageContext }) => {
   const classes = useStyles()
 
   return (

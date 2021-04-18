@@ -1,6 +1,8 @@
 ---
 title: Micro-Frontend
 date: 2020-01-14
+tags:
+- ui
 ---
 
 Webpack federation: https://www.angulararchitects.io/aktuelles/the-microfrontend-revolution-module-federation-in-webpack-5/

@@ -1,4 +1,0 @@
-# Setting up Sublime
-
-## Python
-

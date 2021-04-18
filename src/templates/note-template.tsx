@@ -16,7 +16,7 @@ const useStyles = makeStyles({
   },
   noteHeader: {
     display: "flex",
-    flexDirection: 'column',
+    flexDirection: "column",
   },
   noteContent: {
     padding: theme.spacing(4),
@@ -25,17 +25,17 @@ const useStyles = makeStyles({
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
+  pageContext
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
+  const {modifiedDate} = pageContext;
   const classes = useStyles()
 
   return (
     <Layout>
       <Container className={classes.root}>
-        <Paper
-          className={classes.noteContent}
-        >
+        <Paper className={classes.noteContent}>
           <Box className={classes.noteHeader}>
             <Typography variant="h1">{frontmatter.title}</Typography>
             <Typography variant="overline">{frontmatter.date}</Typography>
