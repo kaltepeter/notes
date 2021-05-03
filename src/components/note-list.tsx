@@ -6,7 +6,6 @@ import {
   ListItemSecondaryAction as ListItemIcon,
   ListItemText,
   makeStyles,
-  Paper,
   Typography,
 } from "@material-ui/core"
 import { Link } from "gatsby"
