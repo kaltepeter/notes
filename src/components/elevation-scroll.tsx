@@ -13,8 +13,8 @@ interface ElevationScrollProps {
 // https://material-ui.com/components/app-bar/#elevate-app-bar
 const ElevationScroll = ({ children, window }: ElevationScrollProps): ReactElement => {
   const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
+    disableHysteresis: false,
+    threshold: 40,
     target: window ? window() : undefined,
   })
 
