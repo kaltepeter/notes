@@ -67,7 +67,7 @@ export const usePageTree = (): {
       .slice(0, -1),
   }))
 
-  let allPaths = { ["root"]: { name: "root", children: {} } }
+  let allPaths = { ["root"]: { name: "root", slug: '/', children: {} } }
   pages.forEach(page => {
     if (page.segments.length > 0) {
       const segmentList = [...page.segments]
@@ -80,10 +80,14 @@ export const usePageTree = (): {
         }
         curParent = curParent.children[segment]
       }
-      curParent.children[page.id] = {
-        name: page.title,
-        slug: page.slug,
-        children: {},
+      if (page.slug.match(/README\/?$/)) {
+        curParent.slug = page.slug;
+      } else {
+        curParent.children[page.id] = {
+          name: page.title,
+          slug: page.slug,
+          children: {},
+        }
       }
     } else {
       allPaths.root.children[page.id] = {
