@@ -55,7 +55,7 @@ const useStyles = makeStyles<Theme, LayoutProps>(theme => ({
 }))
 
 const Layout: React.FC = ({ children }) => {
-  const drawerWidth = 240
+  const drawerWidth = 400;
   const classes = useStyles({ drawerWidth })
 
   const data = useStaticQuery(graphql`

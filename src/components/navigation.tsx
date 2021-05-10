@@ -2,10 +2,13 @@ import {
     createStyles,
     Divider,
     Drawer,
+    fade,
     Hidden,
     ListItemText,
     makeStyles,
     Theme,
+
+    Typography,
 
     useTheme
 } from "@material-ui/core"
@@ -36,6 +39,14 @@ const useStyles = makeStyles<Theme, NavigationProps>((theme) =>
     drawerPaper: {
       width: props => props.drawerWidth,
     },
+    activeNavLink: {
+        color: theme.palette.text.primary,
+        fontWeight: 900
+    },
+    navLink: {
+        color: 'inherit',
+        textDecoration: 'none'
+    },
   })
 )
 
@@ -43,25 +54,25 @@ const Navigation: React.FC<NavigationProps> = props => {
   const { drawerOpen, onToggleDrawer } = props;
   const classes = useStyles(props)
   const theme = useTheme()
-  const { pages, allTags, allPaths } = usePageTree()
+  const { pages, allTags, allPaths } = usePageTree();
+
+  const titleCase = (sentence) => sentence.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
 
   const getTreeLabel = (node: Path) => (
-    <ListItem component="div">
+    <div>
       {node.slug?.length > 0 ? (
-        <Link to={node.slug}>
-          <ListItemText primary={node.name} />
+        <Link to={node.slug} className={classes.navLink} partiallyActive={true} activeClassName={classes.activeNavLink}>
+          {titleCase(node.name)}
         </Link>
-      ) : (
-        <ListItemText primary={node.name} />
-      )}
-    </ListItem>
+      ) : titleCase(node.name)}
+      </div>
   )
 
   const renderTree = (nodes: PathList) => {
     return (
       <>
         {Object.entries(nodes).map(([tId, tPath]) => (
-          <TreeItem key={tId} nodeId={tId} label={getTreeLabel(tPath)}>
+          <TreeItem key={tId} nodeId={tId} label={getTreeLabel(tPath)} className={classes.treeItem}>
             {Object.keys(tPath.children).length > 0
               ? Object.entries(tPath.children).map(([id, node]) =>
                   renderTree({ [id]: { ...node } })
@@ -98,6 +109,7 @@ const Navigation: React.FC<NavigationProps> = props => {
             onClose={onToggleDrawer}
             classes={{
               paper: classes.drawerPaper,
+              modal: classes.modal
             }}
             ModalProps={{
               keepMounted: true, // Better open performance on mobile.
@@ -110,6 +122,7 @@ const Navigation: React.FC<NavigationProps> = props => {
           <Drawer
             classes={{
               paper: classes.drawerPaper,
+              modal: classes.modal
             }}
             variant="permanent"
             open

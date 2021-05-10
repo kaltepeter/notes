@@ -1,5 +1,5 @@
-import { red } from "@material-ui/core/colors"
-import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles"
+import { red, grey } from "@material-ui/core/colors"
+import { createMuiTheme, fade, responsiveFontSizes } from "@material-ui/core/styles"
 
 const merriweatherBase = {
   fontFamily: "'Merriweather', serif",
@@ -97,7 +97,7 @@ const typography = {
   caption: {
     ...merriweather.regular,
     fontSize: ".75rem",
-    fontStyle: 'italic',
+    fontStyle: "italic",
   },
   overline: {
     ...libreFranklin.bold,
@@ -105,11 +105,30 @@ const typography = {
   },
 }
 
+const baseSpacing = createMuiTheme();
+
+const labOverrides = {
+  MuiTreeItem: {
+    content: {
+      padding: baseSpacing.spacing(1)
+    },
+    label: {
+      ...typography.h5,
+      color: grey[900]
+    },
+    group: {
+      '& .MuiTreeItem-label': {
+      color: grey[700]
+      }
+    }
+  },
+};
+
 // A custom theme for this app
 const baseTheme = createMuiTheme({
   palette: {
     primary: {
-      main: "#ffffff",
+      main: grey[50],
     },
     secondary: {
       main: "#6b38fb",
@@ -120,6 +139,10 @@ const baseTheme = createMuiTheme({
     background: {
       default: "#fff",
     },
+    text: {
+      primary: grey[900],
+      secondary: grey[700],
+    }
   },
   overrides: {
     // TODO: why both Typography and global css baseline override needed?
@@ -139,8 +162,15 @@ const baseTheme = createMuiTheme({
         ...typography.button,
       },
     },
+    MuiBackdrop: {
+      root: {
+        backgroundColor: fade(grey[50], .5),
+      },
+    },
+    ...labOverrides,
   },
-})
+
+});
 
 const theme = responsiveFontSizes(baseTheme)
 
