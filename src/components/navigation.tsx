@@ -60,7 +60,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
       ) : (
         titleCase(node.name)
       )}
-    </div>
+      </div>
   );
 
   const renderTree = (nodes: PathList) => {
@@ -95,37 +95,37 @@ const Navigation: React.FC<NavigationProps> = (props) => {
 
   return (
     <>
-      <nav className={classes.drawer} aria-label="notes">
-        <Hidden smUp implementation="css">
-          <Drawer
-            variant="temporary"
-            anchor={theme.direction === "rtl" ? "right" : "left"}
-            open={drawerOpen}
-            onClose={onToggleDrawer}
-            classes={{
-              paper: classes.drawerPaper,
+    <nav className={classes.drawer} aria-label="notes">
+      <Hidden smUp implementation="css">
+        <Drawer
+          variant="temporary"
+          anchor={theme.direction === "rtl" ? "right" : "left"}
+          open={drawerOpen}
+          onClose={onToggleDrawer}
+          classes={{
+            paper: classes.drawerPaper,
               modal: classes.modal,
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            {drawerChildren()}
-          </Drawer>
-        </Hidden>
+          }}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+        >
+          {drawerChildren()}
+        </Drawer>
+      </Hidden>
         <Hidden mdDown implementation="css">
-          <Drawer
-            classes={{
-              paper: classes.drawerPaper,
+        <Drawer
+          classes={{
+            paper: classes.drawerPaper,
               modal: classes.modal,
-            }}
-            variant="permanent"
-            open
-          >
-            {drawerChildren()}
-          </Drawer>
-        </Hidden>
-      </nav>
+          }}
+          variant="permanent"
+          open
+        >
+          {drawerChildren()}
+        </Drawer>
+      </Hidden>
+    </nav>
     </>
   );
 };
