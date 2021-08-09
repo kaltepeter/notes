@@ -39,6 +39,7 @@ const useStyles = makeStyles<LayoutProps>({ name: "Layout" })(
         padding: _theme.spacing(3),
       },
       flexDirection: "column",
+    height: "100%",
     },
     content: {
       flexGrow: 1,
@@ -63,7 +64,7 @@ const muiCache = makeMuiCache();
 
 // This component exists because of https://mui.com/material-ui/migration/migration-v4/#set-up-themeprovider
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const drawerWidth = 400;
+  const drawerWidth = 300;
   const { classes } = useStyles({ drawerWidth });
 
   const data = useStaticQuery(graphql`

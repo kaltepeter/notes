@@ -19,6 +19,7 @@ const useStyles = makeStyles({ name: "IndexPage" })((_theme) => ({
   root: {
     flexGrow: 1,
     padding: _theme.spacing(0, 4),
+    height: "100%",
   },
   featureText: {
     paddingBottom: _theme.spacing(2),
@@ -48,9 +49,8 @@ interface IndexPageProps extends PageProps {
     };
   };
   pageContext: {
-    slug: string;
-  };
-}
+    slug: string
+  }
 
 const IndexPage: React.FC<IndexPageProps> = () => {
   const { classes } = useStyles();
@@ -65,7 +65,7 @@ const IndexPage: React.FC<IndexPageProps> = () => {
         spacing={4}
         className={classes.root}
       >
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={12} md={5}>
           <Paper className={classes.featureImage}>
             <Image />
           </Paper>
@@ -102,7 +102,7 @@ const IndexPage: React.FC<IndexPageProps> = () => {
         <Hidden lgDown>
           <Divider orientation="vertical" flexItem component="span" />
         </Hidden>
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} sm={12} md={6}>
           <NoteList />
         </Grid>
       </Grid>
