@@ -24,7 +24,7 @@ export default function Template<PageProps>({
 }) {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
-  const { modifiedDate } = pageContext;
+  const { modifiedDate } = pageContext
   const { classes } = useStyles();
 
   return (
@@ -35,7 +35,16 @@ export default function Template<PageProps>({
             <Typography variant="h1">{frontmatter.title}</Typography>
             <Typography variant="overline">{frontmatter.date}</Typography>
           </Box>
+          {/* <MDXProvider
+            components={{
+              // Map HTML element tag to React component
+              h1: Typography,
+              // Or define component inline
+              p: props => <p {...props} style={{ color: "rebeccapurple" }} />,
+            }}
+          > */}
           <Box dangerouslySetInnerHTML={{ __html: html }} />
+          {/* </MDXProvider> */}
         </Paper>
       </Container>
     </Layout>
@@ -43,7 +52,7 @@ export default function Template<PageProps>({
 }
 
 export const pageQuery = graphql`
-  query ($slug: String!) {
+  query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
