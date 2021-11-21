@@ -29,7 +29,7 @@ export const Template = ({
   }
 
   const { frontmatter, html } = markdownRemark;
-  // const { modifiedDate } = pageContext;
+  const { modifiedDate } = pageContext;
   const { classes } = useStyles();
 
   const data = {
@@ -46,7 +46,16 @@ export const Template = ({
             <Typography variant="h1">{data.title}</Typography>
             <Typography variant="overline">{data.date}</Typography>
           </Box>
+          {/* <MDXProvider
+            components={{
+              // Map HTML element tag to React component
+              h1: Typography,
+              // Or define component inline
+              p: props => <p {...props} style={{ color: "rebeccapurple" }} />,
+            }}
+          > */}
           <Box dangerouslySetInnerHTML={{ __html: data.html }} />
+          {/* </MDXProvider> */}
         </Paper>
       </Container>
     </LayoutWrapper>
