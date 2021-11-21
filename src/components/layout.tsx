@@ -39,7 +39,7 @@ const useStyles = makeStyles<LayoutProps>({ name: "Layout" })(
         padding: _theme.spacing(3),
       },
       flexDirection: "column",
-    height: "100%",
+      height: "100%",
     },
     content: {
       flexGrow: 1,
@@ -84,7 +84,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         siteTitle={data.site.siteMetadata?.title || `Title`}
       />
       {/* <Toolbar>
-          </Toolbar> */}
+        </Toolbar> */}
       <Box my={2} component="main" className={classes.content}>
         {children}
       </Box>
