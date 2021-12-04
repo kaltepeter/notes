@@ -16,6 +16,12 @@ const useStyles = makeStyles({ name: "Template" })((_theme) => ({
   noteContent: {
     padding: _theme.spacing(4),
   },
+  noteStyles: {
+    padding: theme.spacing(2),
+    "&pre code": {
+      padding: theme.spacing(4),
+    },
+  },
 }));
 
 export const Template = ({
