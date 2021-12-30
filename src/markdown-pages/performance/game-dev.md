@@ -4,29 +4,29 @@ date: 2021-04-11
 tags:
 ---
 
-- https://github.com/armytricks/GameOfLife/blob/master -- graphics black book
+- <https://github.com/armytricks/GameOfLife/blob/master> -- graphics black book
 
+<http://downloads.gamedev.net/pdf/gpbb>
 
 ## Game of Life
 
-https://github.com/armytricks/GameOfLife/blob/master/GameOfLifeSimulation/main.cpp
+<https://github.com/armytricks/GameOfLife/blob/master/GameOfLifeSimulation/main.cpp>
 
-Video of Implementation in C -- https://www.youtube.com/watch?v=ndAfWKmKF34
+Video of Implementation in C -- <https://www.youtube.com/watch?v=ndAfWKmKF34>
 
-algorithms -- https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Algorithms
+algorithms -- <https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Algorithms>
 
-https://www.drdobbs.com/jvm/an-algorithm-for-compressing-space-and-t/184406478?pgno=2 -- detailed efficient game of life using hashlife
+<https://www.drdobbs.com/jvm/an-algorithm-for-compressing-space-and-t/184406478?pgno=2> -- detailed efficient game of life using hashlife
 
 ## Books
 
-- The Art of Programming Series by Donald E. Knuth, vol 1: https://learning.oreilly.com/library/view/art-of-computer/9780321635754/
+- The Art of Programming Series by Donald E. Knuth, vol 1: <https://learning.oreilly.com/library/view/art-of-computer/9780321635754/>
 
 - Algorithms Ilumminated Series
 
-- The Algorithm Design Manual -- https://www.algorist.com/index.html
+- The Algorithm Design Manual -- <https://www.algorist.com/index.html>
 
-- Introduction to Algorithms -- https://www.amazon.com/Introduction-Algorithms-third-Thomas-Cormen-ebook-dp-B08FH8N996/dp/B08FH8N996/ref=mt_other?_encoding=UTF8&me=&qid=
-
+- Introduction to Algorithms -- <https://www.amazon.com/Introduction-Algorithms-third-Thomas-Cormen-ebook-dp-B08FH8N996/dp/B08FH8N996/ref=mt_other?_encoding=UTF8&me=&qid>=
 
 ## Rob Pike's 5 Rules of Programming
 
@@ -41,4 +41,13 @@ https://www.drdobbs.com/jvm/an-algorithm-for-compressing-space-and-t/184406478?p
 - Rule 5. Data dominates. If you've chosen the right data structures and organized things well, the algorithms will almost always be self-evident. Data structures, not algorithms, are central to programming.
 
 > Pike's rules 1 and 2 restate Tony Hoare's famous maxim "Premature optimization is the root of all evil." Ken Thompson rephrased Pike's rules 3 and 4 as "When in doubt, use brute force.". Rules 3 and 4 are instances of the design philosophy KISS. Rule 5 was previously stated by Fred Brooks in The Mythical Man-Month. Rule 5 is often shortened to "write stupid code that uses smart objects".
-> -- https://users.ece.utexas.edu/~adnan/pike.html
+> -- <https://users.ece.utexas.edu/~adnan/pike.html>
+
+## Red Blob Games
+
+Really great visuals and walk-through on algorithms and math subjects focussed around game dev.
+
+<https://www.redblobgames.com/>
+
+- <https://www.redblobgames.com/pathfinding/a-star/introduction.html>
+- <https://www.redblobgames.com/pathfinding/a-star/implementation.html>
