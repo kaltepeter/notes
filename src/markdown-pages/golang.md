@@ -1,7 +1,7 @@
 ---
 title: GO
-date: 2021-12-4
-tags: 
+date: 2021-12-04
+tags:
 - language
 ---
 
@@ -64,7 +64,7 @@ type ByteSize float64
 // implicitly apply a function to get correct values
 const (
     _           = iota // ignore first value by assigning to blank identifier
-    KB ByteSize = 1 << (10 * iota) 
+    KB ByteSize = 1 << (10 * iota)
     MB
     GB
     TB
@@ -272,11 +272,11 @@ func (p *Packet) String() string {
 Output:
 
 ```bash
-[Packet] Version: 3 TypeId: 0 Value: 10000000001000000000000000000101100001000101010110001011001000100000000010000100011000111000110100 
-SubPacket: [Packet] Version: 0 TypeId: 0 Value: 00000000000101100001000101010110001011001000100000000010000100011000111000110100 
-SubPacket: [Packet] Version: 0 TypeId: 4 Value: 01010101100010111010 
-SubPacket: [Packet] Version: 5 TypeId: 4 Value: 010111011 
-SubPacket: [Packet] Version: 0 TypeId: 0 Value:  
+[Packet] Version: 3 TypeId: 0 Value: 10000000001000000000000000000101100001000101010110001011001000100000000010000100011000111000110100
+SubPacket: [Packet] Version: 0 TypeId: 0 Value: 00000000000101100001000101010110001011001000100000000010000100011000111000110100
+SubPacket: [Packet] Version: 0 TypeId: 4 Value: 01010101100010111010
+SubPacket: [Packet] Version: 5 TypeId: 4 Value: 010111011
+SubPacket: [Packet] Version: 0 TypeId: 0 Value:
 SubPacket: <nil>
 ```
 
@@ -337,7 +337,7 @@ func Println2(x interface{}) {
     default:
         fmt.Print("Unknown type")
     }
- 
+
     fmt.Print("\n")
 }
 ```
@@ -366,11 +366,11 @@ Regular recusion:
 
 ```go
 package main
- 
+
 import (
     "fmt"
 )
- 
+
 func fib(n int) int {
     if (n == 0) {
         return 0
@@ -380,7 +380,7 @@ func fib(n int) int {
         return fib(n-1) + fib(n-2)
     }
 }
- 
+
 func main() {
     fmt.Println(fib(10))  // 55
 }
@@ -390,11 +390,11 @@ Tail recursion:
 
 ```go
 package main
- 
+
 import (
     "fmt"
 )
- 
+
 func f(v int) {
     if(v == 0) {
         fmt.Println("Zero")
@@ -404,10 +404,10 @@ func f(v int) {
         f(v-1)               // tail-recursive call
     }
 }
- 
+
 func main() {
     f(5)
-     
+
     // output:
     // 5
     // 4
