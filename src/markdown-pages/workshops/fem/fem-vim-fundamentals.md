@@ -1,3 +1,11 @@
+---
+title: FEM functional programming
+date: 2022-01-28
+tags:
+- workshop
+- front-end-masters
+---
+
 # VIM Fundamentals
 
 https://theprimeagen.github.io/vim-fundamentals/
