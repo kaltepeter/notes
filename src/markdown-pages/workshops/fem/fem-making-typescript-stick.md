@@ -1,3 +1,11 @@
+---
+title: Making Typescript Stick
+date: 2022-03-23
+tags:
+- workshop
+- front-end-masters
+---
+
 # Making Typescript Stick
 
 Make it stick book --> using to write onboarding
