@@ -264,3 +264,24 @@ mv ~/Desktop/Monterey.cdr ~/Desktop/Monterey.iso
 1. Follow setup configuration wizard
     - skip migration assistant
     - skip apple profile setup
+
+## Automation with Security Settings
+
+<https://ss64.com/osx/tccutil.html>
+
+```bash
+tccutil reset All com.apple.Terminal
+```
+
+<https://scriptingosx.com/2020/09/avoiding-applescript-security-and-privacy-requests/>
+
+The following will get approval for terminal and system events.
+
+```bash
+osascript <<EndOfScript
+    tell application "System Events"
+        activate
+        display dialog "Hello, World!"
+    end tell
+EndOfScript
+```
