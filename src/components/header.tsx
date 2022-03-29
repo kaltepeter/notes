@@ -18,6 +18,7 @@ import NotesIcon from "../images/notes-icon.svg";
 import ElevationScroll from "./elevation-scroll";
 import HideOnScroll from "./hide-on-scroll";
 import { Navigation } from "./navigation";
+import { useFlexSearch } from "flexsearch"
 
 const useStyles = makeStyles<HeaderProps>({ name: "Header" })((
   _theme,
@@ -25,93 +26,93 @@ const useStyles = makeStyles<HeaderProps>({ name: "Header" })((
 ) => {
   const cutSize = _theme.spacing(3);
 
-  return {
-    root: {
-      flexGrow: 1,
-      right: "auto",
-      left: 0,
-      [_theme.breakpoints.up("sm")]: {
-        marginLeft: drawerWidth,
+    return {
+      root: {
+        flexGrow: 1,
+        right: "auto",
+        left: 0,
+        [_theme.breakpoints.up("sm")]: {
+          marginLeft: drawerWidth,
+        },
       },
-    },
-    rootUnscrolled: {
-      [_theme.breakpoints.up("sm")]: {
-        width: `calc(100% - ${drawerWidth}px)`,
+      rootUnscrolled: {
+        [_theme.breakpoints.up("sm")]: {
+          width: `calc(100% - ${drawerWidth}px)`,
+        },
       },
-    },
-    rootScrolled: {
-      [_theme.breakpoints.up("sm")]: {
-        width: "200px",
-      },
-      clipPath: `polygon(
+      rootScrolled: {
+        [_theme.breakpoints.up("sm")]: {
+          width: "200px",
+        },
+        clipPath: `polygon(
       0% 0%, 
       100% 0%, 
       100% calc(100% - ${cutSize}), 
       calc(100% - ${cutSize}) 100%, 
       0% 100%
     )`,
-    },
-    menuButton: {
-      marginRight: _theme.spacing(2),
-    },
-    title: {
-      flexGrow: 1,
-      display: "none",
-      [_theme.breakpoints.up("sm")]: {
-        display: "flex",
       },
-      alignItems: "center",
-      padding: _theme.spacing(2, 0),
-      "& a": {
-        display: "inline-flex",
+      menuButton: {
+        marginRight: _theme.spacing(2),
       },
-    },
-    notesIcon: {
-      height: "20px",
-      paddingRight: _theme.spacing(1),
-    },
-    notesLogo: {
-      height: "20px",
-    },
-    search: {
-      position: "relative",
-      borderRadius: _theme.shape.borderRadius,
-      backgroundColor: alpha(_theme.palette.common.white, 0.15),
-      "&:hover": {
-        backgroundColor: alpha(_theme.palette.common.white, 0.25),
-      },
-      marginLeft: 0,
-      width: "100%",
-      [_theme.breakpoints.up("sm")]: {
-        marginLeft: _theme.spacing(1),
-        width: "auto",
-      },
-    },
-    searchIcon: {
-      padding: _theme.spacing(0, 2),
-      height: "100%",
-      position: "absolute",
-      pointerEvents: "none",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    inputRoot: {
-      color: "inherit",
-    },
-    inputInput: {
-      padding: _theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${_theme.spacing(4)})`,
-      transition: _theme.transitions.create("width"),
-      width: "100%",
-      [_theme.breakpoints.up("sm")]: {
-        width: "12ch",
-        "&:focus": {
-          width: "20ch",
+      title: {
+        flexGrow: 1,
+        display: "none",
+        [_theme.breakpoints.up("sm")]: {
+          display: "flex",
+        },
+        alignItems: "center",
+        padding: _theme.spacing(2, 0),
+        "& a": {
+          display: "inline-flex",
         },
       },
-    },
+      notesIcon: {
+        height: "20px",
+        paddingRight: _theme.spacing(1),
+      },
+      notesLogo: {
+        height: "20px",
+      },
+      search: {
+        position: "relative",
+        borderRadius: _theme.shape.borderRadius,
+        backgroundColor: alpha(_theme.palette.common.white, 0.15),
+        "&:hover": {
+          backgroundColor: alpha(_theme.palette.common.white, 0.25),
+        },
+        marginLeft: 0,
+        width: "100%",
+        [_theme.breakpoints.up("sm")]: {
+          marginLeft: _theme.spacing(1),
+          width: "auto",
+        },
+      },
+      searchIcon: {
+        padding: _theme.spacing(0, 2),
+        height: "100%",
+        position: "absolute",
+        pointerEvents: "none",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      },
+      inputRoot: {
+        color: "inherit",
+      },
+      inputInput: {
+        padding: _theme.spacing(1, 1, 1, 0),
+        // vertical padding + font size from searchIcon
+        paddingLeft: `calc(1em + ${_theme.spacing(4)})`,
+        transition: _theme.transitions.create("width"),
+        width: "100%",
+        [_theme.breakpoints.up("sm")]: {
+          width: "12ch",
+          "&:focus": {
+            width: "20ch",
+          },
+        },
+      },
   };
 });
 
@@ -135,8 +136,23 @@ const Header = (props: HeaderProps): ReactElement => {
     setDrawerOpen(!drawerOpen);
   };
 
-  return (
-    <>
+  const queryData = useStaticQuery(graphql`
+    query {
+      localSearchPages {
+        index
+        store
+      }
+    }
+  `)
+  const index = queryData.localSearchPages.index
+  console.log("🚀 ~ file: header.tsx ~ line 145 ~ Header ~ index", index)
+  const store = queryData.localSearchPages.store
+  console.log("🚀 ~ file: header.tsx ~ line 147 ~ Header ~ store", store)
+
+  const [query, setQuery] = useState("")
+  const results = useFlexSearch(query, index, store)
+
+  return <>
       <ElevationScroll>
         <AppBar
           position="fixed"
@@ -185,6 +201,8 @@ const Header = (props: HeaderProps): ReactElement => {
                     input: classes.inputInput,
                   }}
                   inputProps={{ "aria-label": "search" }}
+                  value={query}
+                  onChange={event => setQuery(event.target.value)}
                 />
               </div>
             </HideOnScroll>
