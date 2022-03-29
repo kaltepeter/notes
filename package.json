@@ -32,7 +32,8 @@
     "postcss": "^8.4.26",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tss-react": "^4.8.8"
+    "tss-react": "^4.8.8",
+	  "react-use-flexsearch": "^0.1.1"
   },
   "devDependencies": {
     "@emotion/cache": "^11.11.0",
