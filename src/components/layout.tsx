@@ -11,13 +11,13 @@ import {
   Theme,
   ThemeProvider,
 } from "@material-ui/core"
-import "fontsource-libre-franklin/300-normal.css"
-import "fontsource-libre-franklin/400.css"
-import "fontsource-libre-franklin/500-normal.css"
-import "fontsource-libre-franklin/700-normal.css"
-import "fontsource-merriweather/400.css"
-import "fontsource-merriweather/700-italic.css"
-import "fontsource-merriweather/900-italic.css"
+import "@fontsource/libre-franklin/300.css"
+import "@fontsource/libre-franklin/400.css"
+import "@fontsource/libre-franklin/500.css"
+import "@fontsource/libre-franklin/700.css"
+import "@fontsource/merriweather/400.css"
+import "@fontsource/merriweather/700-italic.css"
+import "@fontsource/merriweather/900-italic.css"
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import Header from "./header"
@@ -55,7 +55,7 @@ const useStyles = makeStyles<Theme, LayoutProps>(theme => ({
 }))
 
 const Layout: React.FC = ({ children }) => {
-  const drawerWidth = 400;
+  const drawerWidth = 400
   const classes = useStyles({ drawerWidth })
 
   const data = useStaticQuery(graphql`
