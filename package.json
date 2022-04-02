@@ -31,7 +31,7 @@
   "devDependencies": {
     "@types/react-helmet": "6.1.5",
     "gh-pages": "3.2.3",
-    "prettier": "2.1.2",
+    "prettier": "2.6.1",
     "typescript": "^4.6.3"
   },
   "keywords": [
