@@ -29,7 +29,7 @@
     "remark-mdx": "^2.0.0-next.8"
   },
   "devDependencies": {
-    "@types/react-helmet": "6.1.0",
+    "@types/react-helmet": "6.1.5",
     "gh-pages": "3.0.0",
     "prettier": "2.1.2",
     "typescript": "^4.6.3"
