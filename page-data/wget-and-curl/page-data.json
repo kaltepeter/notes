@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-note-template-tsx","path":"/wget-and-curl/","result":{"data":{"markdownRemark":{"html":"<p><a href=\"https://www.geoffstratton.com/wget-and-curl\">https://www.geoffstratton.com/wget-and-curl</a> - comparison</p>","frontmatter":{"date":"June 12, 2018","title":"WGET / CURL","tags":["nix"]}}},"pageContext":{"slug":"/wget-and-curl/"}},"staticQueryHashes":["1929983096","3649515864"]}
+{
+    "componentChunkName": "component---src-templates-note-template-tsx",
+    "path": "/wget-and-curl/",
+    "result": {"data":{"markdownRemark":{"html":"<p><a href=\"https://www.geoffstratton.com/wget-and-curl\">https://www.geoffstratton.com/wget-and-curl</a> - comparison</p>","frontmatter":{"date":"June 12, 2018","title":"WGET / CURL","tags":["nix"]}}},"pageContext":{"slug":"/wget-and-curl/"}},
+    "staticQueryHashes": ["1929983096","3649515864"]}

@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-note-template-tsx","path":"/angular/fundamentals/","result":{"data":{"markdownRemark":{"html":"<p><a href=\"https://github.com/kaltepeter/angular9-fundamentals-workshop\">Github Repo</a></p>","frontmatter":{"date":"January 13, 2021","title":"Angular 9 Fundamentals","tags":["ui","framework"]}}},"pageContext":{"slug":"/angular/fundamentals/"}},"staticQueryHashes":["1929983096","3649515864"]}
+{
+    "componentChunkName": "component---src-templates-note-template-tsx",
+    "path": "/angular/fundamentals/",
+    "result": {"data":{"markdownRemark":{"html":"<p><a href=\"https://github.com/kaltepeter/angular9-fundamentals-workshop\">Github Repo</a></p>","frontmatter":{"date":"January 13, 2021","title":"Angular 9 Fundamentals","tags":["ui","framework"]}}},"pageContext":{"slug":"/angular/fundamentals/"}},
+    "staticQueryHashes": ["1929983096","3649515864"]}
