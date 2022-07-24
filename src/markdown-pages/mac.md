@@ -285,3 +285,11 @@ osascript <<EndOfScript
     end tell
 EndOfScript
 ```
+
+## MAS
+
+Great CLI for interacting with app store.
+
+Several issues with login: <https://github.com/mas-cli/mas#%EF%B8%8F-known-issues>
+
+example: <https://github.com/tiiiecherle/osx_install_config/blob/master/03_homebrew_casks_and_mas/3b_homebrew_casks_and_mas_install/6_mas_appstore.sh>

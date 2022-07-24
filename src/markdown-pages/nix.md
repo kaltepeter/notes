@@ -7,7 +7,7 @@ tags:
 
 ## file permissions (chmod)
 
-https://www.tutorialspoint.com/unix/unix-file-permission.htm
+<https://www.tutorialspoint.com/unix/unix-file-permission.htm>
 
 | num | permission         | Ref |
 |-----|--------------------|-----|
@@ -121,20 +121,34 @@ sar -q -s 10:00:00 -e 11:00:00 # between times for today
 
 ### ssh keys
 
-https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Public_Key_Authentication#Downloading_keys
+General things. SSH keys identify and provide access. I am not a fan of sharing keys for the identifying access. It's not hard to automate keys and use a separate key per user. I also tend to want a separate key per machine, to split permissions and access, say work separate from home.
+
+#### Generating Secure Keys
+
+**Which algorithm?**
+
+<https://goteleport.com/blog/comparing-ssh-keys/>
+
+> The short answer to this is: as long as the key strength is good enough for the foreseeable future, it doesn't really matter. Because here we are considering a signature for authentication within an SSH session. The cryptographic strength of the signature just needs to withstand the current, state-of-the-art attacks.
+-- <https://blog.peterruppel.de/ed25519-for-ssh/>
+
+While GitHub used to recommend RSA, they now recommend 'ed25519' in their guide. They have one of the best guides and most common use of SSH so I prefer to keep aligned with that.
+
+<https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>
+
+<https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Public_Key_Authentication#Downloading_keys>
 
 #### get sshkey fingerprints
 
-https://stackoverflow.com/questions/9607295/how-do-i-find-my-rsa-key-fingerprint
+<https://stackoverflow.com/questions/9607295/how-do-i-find-my-rsa-key-fingerprint>
 
 ```bash
 ssh-keygen -E md5 -lf ~/.ssh/id_dsa.pub
 ```
 
-
 #### saving passphrase for ssh
 
-https://www.linux.com/tutorials/manage-ssh-key-file-passphrase/
+<https://www.linux.com/tutorials/manage-ssh-key-file-passphrase/>
 
 ```bash
 # Specify your passphrase here
@@ -151,7 +165,7 @@ ssh-add -l
 
 ### tail process
 
-https://unix.stackexchange.com/questions/58550/how-to-view-the-output-of-a-running-process-in-another-bash-session
+<https://unix.stackexchange.com/questions/58550/how-to-view-the-output-of-a-running-process-in-another-bash-session>
 
 ```bash
 tail -f /proc/<pid>/fd/1
@@ -161,7 +175,7 @@ tail -f /proc/<pid>/fd/1
 
 ### fail to ban
 
-https://www.techrepublic.com/article/how-to-install-fail2ban-on-ubuntu-server-18-04/
+<https://www.techrepublic.com/article/how-to-install-fail2ban-on-ubuntu-server-18-04/>
 
 ```bash
 sudo apt update
@@ -199,7 +213,7 @@ sudo fail2ban-client set sshd unbanip IP_ADDRESS
 ### chechking invalid auth
 
 ```bash
-sudo grep -io 'Invalid user \(.*\) \([0-9\.]\)' /var/log/auth.log | sed 's/[Ii]nvalid user //' > invalid_auth.log 
+sudo grep -io 'Invalid user \(.*\) \([0-9\.]\)' /var/log/auth.log | sed 's/[Ii]nvalid user //' > invalid_auth.log
 ```
 
 ## port scanning
