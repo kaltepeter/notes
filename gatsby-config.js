@@ -87,7 +87,7 @@ module.exports = {
         index: ["title", "body"],
         store: ["id", "path", "title"],
         normalizer: ({ data }) =>
-          data.allMarkdownRemark.nodes.map(node => ({
+          data.allMarkdownRemark.nodes.map((node) => ({
             id: node.id,
             path: node.frontmatter.path,
             title: node.frontmatter.title,
