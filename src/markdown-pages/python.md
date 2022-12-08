@@ -231,3 +231,154 @@ Prettier plugin deprecated for black
 ```bash
 pip install black
 ```
+
+## Enums
+
+```python
+class NodeType(Enum):
+    F = "FILE"
+    D = "DIR"
+
+print(NodeType.F)
+```
+
+## Tuple
+
+`('root',)` is valid
+`('root')` is not valid, the comma makes the tuple
+
+remove last item (<https://www.geeksforgeeks.org/python-program-to-remove-last-element-from-tuple/>)
+
+```python
+tu = (1, 2, 3, 4, 5)
+tu = list(tu)
+tu.pop()
+tu = tuple(tu)
+print(tu) # (1, 2, 3, 4)
+```
+
+### append
+
+```python
+tu = (1,2,3,4)
+tu += (5,)
+print(tu) # 
+```
+
+## Dict
+
+Using a tuple as key:
+
+```python
+list = {('root', 'a', 'b'): 80, ('root', 'a'): 20, ('root',): 100}
+```
+
+has item
+
+```python
+list = {('root', 'a', 'b'): 80, ('root', 'a'): 20, ('root',): 100}
+if ('root', 'a') in list:
+    print("found")
+```
+
+Merging
+
+<https://peps.python.org/pep-0584/>
+
+```python
+d = {'spam': 1, 'eggs': 2, 'cheese': 3}
+e = {'cheese': 'cheddar', 'aardvark': 'Ethel'}
+print(d | e) # {'spam': 1, 'eggs': 2, 'cheese': 'cheddar', 'aardvark': 'Ethel'}
+print(e | d) # {'cheese': 3, 'aardvark': 'Ethel', 'spam': 1, 'eggs': 2}
+
+d |= e # in place
+print(d) # {'spam': 1, 'eggs': 2, 'cheese': 'cheddar', 'aardvark': 'Ethel'}
+```
+
+getting a value deep in dict (<https://pypi.org/project/dpath/>)
+
+```bash
+pip install dpath
+```
+
+```python
+import dpath
+from enum import Enum
+
+
+class NodeType(Enum):
+    F = "FILE"
+    D = "DIR"
+
+
+file_tree = {
+        "root": {
+        "name": "root",
+        "size": 0,
+        "type": NodeType.D,
+        "children": {
+            "a": {
+                "name": "a",
+                "size": 0,
+                "type": NodeType.D,
+                "children": {
+                    "e": {
+                        "name": "e",
+                        "size": 0,
+                        "type": NodeType.D,
+                        "children": {
+                            "i": {
+                                "name": "i",
+                                "size": 584,
+                                "type": NodeType.F,
+                                "children": {},
+                            },
+                        },
+                    },
+                }
+            }
+        }
+    }
+}
+
+cur_path = ['root', 'a', 'e']
+
+target_node = dpath.get(file_tree, "/children/".join(cur_path))["children"]
+print(target_node) # {'i': {'name': 'i', 'size': 584, 'type': <NodeType.F: 'FILE'>, 'children': {}}}
+```
+
+### TypeError 'set' object does not support item assignment
+
+<https://stackoverflow.com/questions/40553742/typeerror-set-object-does-not-support-item-assignment>
+
+Both dictionaries and sets use the same syntax. Be careful when initializing them.
+
+## Typing
+
+Tuple with variable length `Tuple[int, ...]`
+
+## Loops
+
+loop through list while reducing
+
+```python
+guest = ['john', 'phil', 'andy', 'mark', 'frank', 'joe']
+while len(guest) > 2:
+    popped_guest = guest.pop()
+```
+
+loop through dict
+
+```python
+items = { 'A': 'Geeks', 'B': 4, 'C': 'Geeks' }
+for key, value in items.items():
+    print(f"k: {key}, v: {value}")
+```
+
+## destructuring
+
+```python
+head, *tail = [1, 2, 3, 4, 5]
+print(head)  # 1
+print(tail)  # [2, 3, 4, 5]
+```
