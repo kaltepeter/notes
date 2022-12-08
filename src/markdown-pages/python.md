@@ -58,7 +58,7 @@ python3 -m pip install --user SomeProject
 
 [https://realpython.com/python-virtual-environments-a-primer/](https://realpython.com/python-virtual-environments-a-primer/)
 
-https://www.integralist.co.uk/posts/python-management/#managing-dependencies - covers pyenv and versioning
+<https://www.integralist.co.uk/posts/python-management/#managing-dependencies> - covers pyenv and versioning
 
 install pyenv
 
@@ -113,6 +113,17 @@ pip3 install --upgrade pip setuptools wheel
 
 #### virtual env
 
+Python 3 uses venv
+
+[Upgrade process](https://stackoverflow.com/questions/71106411/how-to-upgrade-python-venv-version)
+
+##### Workflow
+
+1. cd into working directory
+1. Create `python3.10 -m venv venv --prompt .`
+1. Activate `source venv/bin/activate`
+1. Deactivate when done `deactivate`
+
 ```text
 pip3 install virtualenv
 mkdir -p ~/Projects ~/Virtualenvs ~/Library/Application\ Support/pip
@@ -150,7 +161,12 @@ source bin/activate
 
 ## package dependencies
 
-[http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+~~[http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/)~~
+
+```bash
+pip freeze > requirements.txt # freeze all
+pip install -r requirements.txt # install all fresh
+```
 
 ## tools
 
@@ -204,5 +220,14 @@ tutorials: [http://stanford.edu/~mgorkove/cgi-bin/rpython\_tutorials/tutorials.p
 
 ## dependency management
 
-https://python-poetry.org/
+<https://python-poetry.org/>
 
+## Formatting
+
+Prettier plugin deprecated for black
+
+<https://github.com/psf/black>
+
+```bash
+pip install black
+```
