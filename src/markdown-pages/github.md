@@ -43,19 +43,21 @@ git ls-files | xargs wc -l
 
 [https://github.com/typicode/husky/issues/124](https://github.com/typicode/husky/issues/124) - skipping hooks for CICD
 
-https://github.com/github/platform-samples/tree/master/pre-receive-hooks
+<https://github.com/github/platform-samples/tree/master/pre-receive-hooks>
 
-https://proandroiddev.com/ooga-chaka-git-hooks-to-enforce-code-quality-11ce8d0d23cb
+<https://proandroiddev.com/ooga-chaka-git-hooks-to-enforce-code-quality-11ce8d0d23cb>
 
-https://githooks.com/
+<https://githooks.com/>
 
-https://github.com/git/git/tree/master/templates
+<https://github.com/git/git/tree/master/templates>
 
 ## migrating directories with history
 
 [http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/](http://gbayer.com/development/moving-files-from-one-git-repository-to-another-preserving-history/)
 
 [http://blog.neutrino.es/2012/git-copy-a-file-or-directory-from-another-repository-preserving-history/](http://blog.neutrino.es/2012/git-copy-a-file-or-directory-from-another-repository-preserving-history/)
+
+<https://bneijt.nl/blog/merge-a-subdirectory-of-another-repository-with-git/>
 
 ```text
 DESTINATIONPATH=~/tmp/mergepatchs
@@ -114,7 +116,7 @@ gitbook serve
 
 ## tips and tricks
 
-http://blog.virtuacreative.com.br/markdown-tips-tricks-part2.html - Markdown Tips & Tricks - Part 2
+<http://blog.virtuacreative.com.br/markdown-tips-tricks-part2.html> - Markdown Tips & Tricks - Part 2
 
 ```text
 [![Dr. Nicole Forsgren](https://i1.ytimg.com/vi/R9izKUqPCiU/maxresdefault.jpg)](https://www.youtube-nocookie.com/embed/R9izKUqPCiU?start=1019 "Devops/JenkinsWorld Closing Keynote")
@@ -124,25 +126,25 @@ http://blog.virtuacreative.com.br/markdown-tips-tricks-part2.html - Markdown Tip
 
 {% embed data="{\"url\":\"http://www.getyoutubevideothumbnail.com/add-play-button-to-image\",\"type\":\"link\",\"title\":\"Add Play Button to Image Online \| Add Play Button to YouTube Video Thumbnail Image Online \| play button image\",\"description\":\"add play button to image, play button image, play button on image, add play button to image online, youtube thumbnail generator with play button, play button overlay,transparent play button overlay, overlay play button on image, video play button overlay, add play button to image\",\"icon\":{\"type\":\"icon\",\"url\":\"http://www.getyoutubevideothumbnail.com/favicon.ico\",\"aspectRatio\":0}}" %}
 
-https://www.markdownguide.org/cheat-sheet
+<https://www.markdownguide.org/cheat-sheet>
 
 ## hooks
 
-https://www.digitalocean.com/community/tutorials/how-to-use-git-hooks-to-automate-development-and-deployment-tasks
+<https://www.digitalocean.com/community/tutorials/how-to-use-git-hooks-to-automate-development-and-deployment-tasks>
 
 ## submodulees
 
-https://github.blog/2016-02-01-working-with-submodules/
+<https://github.blog/2016-02-01-working-with-submodules/>
 
 ## diff
 
-using vimidff: https://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/
+using vimidff: <https://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/>
 
 ## ssh
 
 ### use custom ssh id file
 
-https://superuser.com/questions/232373/how-to-tell-git-which-private-key-to-use
+<https://superuser.com/questions/232373/how-to-tell-git-which-private-key-to-use>
 
 ```bash
 host github.com
@@ -152,10 +154,9 @@ host github.com
 
 chmod 400 ~/.ssh/id_rsa_github
 ```
+
 ## actions
 
-https://github-actions-hero.now.sh/ - interactive learning
+<https://github-actions-hero.now.sh/> - interactive learning
 
 lab.github.com
-
-

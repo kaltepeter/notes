@@ -27,3 +27,7 @@ cheatsheet: <https://www.bigocheatsheet.com/>
 
 > An important concept to be understood before learning B+ tree is multilevel indexing. In multilevel indexing, the index of indices is created as in figure below. It makes accessing the data easier and faster.
 -- <https://www.programiz.com/dsa/b-plus-tree>
+
+## Distance Calculations
+
+<https://en.wikipedia.org/wiki/Chebyshev_distance>

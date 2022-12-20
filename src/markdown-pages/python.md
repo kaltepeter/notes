@@ -382,3 +382,37 @@ head, *tail = [1, 2, 3, 4, 5]
 print(head)  # 1
 print(tail)  # [2, 3, 4, 5]
 ```
+
+## Eval
+
+```python
+def get_fn(old: int, op: str) -> int:
+    return eval(op)
+
+print(get_fn(79, "old * old")) # 6241
+```
+
+## Image Generation
+
+<https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.new>
+
+<https://dev.to/petercour/generate-images-with-python-pil-302k>
+
+<https://blog.devgenius.io/ascii-art-library-for-python-b37b45ed72fd>
+
+<https://towardsdatascience.com/create-simple-optical-character-recognition-ocr-with-python-6d90adb82bb8>
+
+## Numbers
+
+<https://stackoverflow.com/questions/2104884/how-does-python-manage-int-and-long>
+
+```python3
+import sys
+sys.maxsize # 9223372036854775807
+```
+
+Too large number:
+
+```bash
+ValueError('Exceeds the limit (4300) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit'
+```
