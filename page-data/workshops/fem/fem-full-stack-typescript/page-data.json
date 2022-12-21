@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-note-template-tsx",
+    "path": "/workshops/fem/fem-full-stack-typescript/",
+    "result": {"data":{"markdownRemark":{"html":"<p><a href=\"https://www.typescript-training.com/course/full-stack-typescript\">https://www.typescript-training.com/course/full-stack-typescript</a></p>\n<p><a href=\"https://github.com/MichalLytek/type-graphql\">https://github.com/MichalLytek/type-graphql</a></p>","frontmatter":{"date":"March 24, 2022","title":"Full Stack Typescript","tags":["workshop","front-end-masters"]}}},"pageContext":{"slug":"/workshops/fem/fem-full-stack-typescript/"}},
+    "staticQueryHashes": ["1929983096","3649515864"]}
