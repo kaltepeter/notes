@@ -13,6 +13,24 @@ example: get all permutations of coords x,y,z for {0,1,2} +- 1
 ```python
 res = [(x, y, z) for x in range(-1,1) for y in range(0,2) for z in range(1,3)]
 print(res)
+
+minX = max(0, x - 1)
+maxX = min(len(line) - 1, x + 1)
+minY = max(0, y - 1)
+maxY = min(len(lines) - 1, y + 1)
+neighbors = [
+    (x, y) for x in range(minX, maxX) for y in range(minY, maxY)
+]
+```
+
+get the min/max of coords (tuple)
+
+```python
+all_vals = list(graph.weights.keys()) + [graph.start_pos, graph.end_pos]
+xs = list(map(lambda val: val[0], all_vals))
+ys = list(map(lambda val: val[1], all_vals))
+min_xy = (min(xs), min(ys))
+max_xy = (max(xs), max(ys))
 ```
 
 ## Umeyama algorithm
