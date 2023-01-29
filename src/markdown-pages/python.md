@@ -599,3 +599,34 @@ zipped = zip_longest(numbers, letters, longest, fillvalue='?')
 print(list(zipped))
 # [(1, 'a', 0), (2, 'b', 1), (3, 'c', 2), ('?', '?', 3), ('?', '?', 4)]
 ```
+
+## Debugging
+
+<https://python.land/python-debugger>
+
+```python
+import pdb
+
+breakpoint()
+```
+
+commands:
+
+```bash
+c # continue
+s # step
+p # print
+pp # pretty print
+n # next
+```
+
+## operators
+
+`//` floor division, same as `math.floor(15/4)`
+
+`15 / 4` = 3.75
+`15 // 4` = 3
+
+## Set
+
+<https://realpython.com/python-sets/>
