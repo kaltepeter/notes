@@ -4,8 +4,13 @@
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
-import { Box, CssBaseline, Theme, ThemeProvider, StyledEngineProvider } from "@mui/material";
-import { makeStyles } from 'tss-react/mui';
+import {
+  Box,
+  CssBaseline,
+  Theme,
+  ThemeProvider,
+} from "@mui/material"
+import { makeStyles } from "tss-react/mui"
 import "@fontsource/libre-franklin/300.css"
 import "@fontsource/libre-franklin/400.css"
 import "@fontsource/libre-franklin/500.css"
@@ -17,19 +22,14 @@ import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import Header from "./header"
 import theme from "./theme"
-
-
-declare module '@mui/styles/defaultTheme' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
-
+import { CacheProvider } from "@emotion/react"
+import { makeMuiCache } from "../theme/cache"
 
 type LayoutProps = {
   drawerWidth?: number
 }
 
-const useStyles = makeStyles<LayoutProps>()((theme, {drawerWidth}) => ({
+const useStyles = makeStyles<LayoutProps>()((theme, { drawerWidth }) => ({
   root: {
     display: "flex",
     padding: theme.spacing(2),
@@ -56,9 +56,11 @@ const useStyles = makeStyles<LayoutProps>()((theme, {drawerWidth}) => ({
   },
 }));
 
+const muiCache = makeMuiCache();
+
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const drawerWidth = 400
-  const { classes } = useStyles({ drawerWidth })
+  const { classes } = useStyles({ drawerWidth });
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -71,7 +73,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   `)
 
   return (
-    <StyledEngineProvider injectFirst>
+    <CacheProvider value={muiCache}>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
@@ -102,8 +104,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </Box>
         </div>
       </ThemeProvider>
-    </StyledEngineProvider>
-  );
+    </CacheProvider>
+  )
 }
 
 export default Layout

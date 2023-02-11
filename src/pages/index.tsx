@@ -2,7 +2,7 @@ import Image from "../components/image"
 import Layout from "../components/layout"
 import React from "react"
 import SEO from "../components/seo"
-import { Box as Paper, Divider, Grid, Hidden, List, ListItem, StyledEngineProvider, Typography } from "@mui/material";
+import { Box as Paper, Divider, Grid, Hidden, List, ListItem,  Typography } from "@mui/material";
 import { makeStyles } from 'tss-react/mui';
 import { graphql, PageProps } from "gatsby"
 import { NoteList } from "../components/note-list"
@@ -48,7 +48,6 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, pageContext }) => {
   const { classes } = useStyles()
 
   return (
-    <StyledEngineProvider injectFirst>
     <Layout>
       <SEO title="Home" />
       <Grid
@@ -105,7 +104,6 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, pageContext }) => {
         </Grid>
       </Grid>
     </Layout>
-    </StyledEngineProvider>
   );
 }
 
