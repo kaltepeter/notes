@@ -125,6 +125,7 @@ const labOverrides = {
 };
 
 // A custom theme for this app
+// TODO: migrate to MUI v5: https://mui.com/material-ui/migration/v5-style-changes/
 const baseTheme = createTheme(adaptV4Theme({
   palette: {
     primary: {

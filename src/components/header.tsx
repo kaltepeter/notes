@@ -8,7 +8,7 @@ import {
   Typography,
   useScrollTrigger,
 } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from 'tss-react/mui';
 import MenuIcon from "@mui/icons-material/Menu"
 import SearchIcon from "@mui/icons-material/Search"
 import { Link } from "gatsby"
@@ -19,7 +19,8 @@ import ElevationScroll from "./elevation-scroll"
 import HideOnScroll from "./hide-on-scroll"
 import { Navigation } from "./navigation"
 
-const useStyles = makeStyles<Theme, HeaderProps>(theme => {
+
+const useStyles = makeStyles<HeaderProps>()((theme, {drawerWidth}) => {
   const cutSize = theme.spacing(3)
 
   return {
@@ -28,12 +29,12 @@ const useStyles = makeStyles<Theme, HeaderProps>(theme => {
       right: "auto",
       left: 0,
       [theme.breakpoints.up("sm")]: {
-        marginLeft: props => props.drawerWidth,
+        marginLeft: drawerWidth,
       },
     },
     rootUnscrolled: {
       [theme.breakpoints.up("sm")]: {
-        width: props => `calc(100% - ${props.drawerWidth}px)`,
+        width: `calc(100% - ${drawerWidth}px)`,
       },
     },
     rootScrolled: {
@@ -110,7 +111,7 @@ const useStyles = makeStyles<Theme, HeaderProps>(theme => {
       },
     },
   };
-})
+});
 
 const defaultProps = {
   siteTitle: "",
@@ -124,7 +125,9 @@ type HeaderProps = {
 
 const Header = (props: HeaderProps): ReactElement => {
   const { siteTitle, window, drawerWidth } = props
-  const classes = useStyles(props)
+  const { classes } = useStyles(props, {
+    props: props
+  })
   const trigger = useScrollTrigger({ target: window ? window() : undefined })
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false)
 

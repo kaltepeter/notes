@@ -7,15 +7,14 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from 'tss-react/mui';
 import { Link } from "gatsby"
 import React from "react"
 import { useNoteExcerptList } from "../hooks/use-note-excerpt-list"
 import { Note } from "../models/note"
 import theme from "./theme"
-import clsx from 'clsx';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles()({
   noteListItem: {
     "& .head": {
       display: "flex",
@@ -38,12 +37,12 @@ const useStyles = makeStyles({
     border: "none",
     borderRadius: 0,
   },
-})
+});
 
 interface NoteListProps {}
 
 const NoteList: React.FC<NoteListProps> = () => {
-  const classes = useStyles()
+  const { classes, cx } = useStyles()
   const { notes } = useNoteExcerptList();
   // const {modifiedDate, slug} = pageContext;
 
@@ -90,7 +89,7 @@ const NoteList: React.FC<NoteListProps> = () => {
                             component="span"
                             color="secondary"
                             label={`#${tag}`}
-                            className={clsx(classes.chip)}
+                            className={cx(classes.chip)}
                           />
                         </Typography>
                       ))}
@@ -107,10 +106,10 @@ const NoteList: React.FC<NoteListProps> = () => {
                 }
               ></ListItemText>
             </ListItem>
-          )
+          );
         })}
     </List>
-  )
+  );
 }
 
 export { NoteList }

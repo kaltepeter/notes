@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 import { Box, CssBaseline, Theme, ThemeProvider, StyledEngineProvider } from "@mui/material";
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from 'tss-react/mui';
 import "@fontsource/libre-franklin/300.css"
 import "@fontsource/libre-franklin/400.css"
 import "@fontsource/libre-franklin/500.css"
@@ -26,10 +26,10 @@ declare module '@mui/styles/defaultTheme' {
 
 
 type LayoutProps = {
-  drawerWidth: number
+  drawerWidth?: number
 }
 
-const useStyles = makeStyles<Theme, LayoutProps>(theme => ({
+const useStyles = makeStyles<LayoutProps>()((theme, {drawerWidth}) => ({
   root: {
     display: "flex",
     padding: theme.spacing(2),
@@ -41,7 +41,7 @@ const useStyles = makeStyles<Theme, LayoutProps>(theme => ({
   content: {
     flexGrow: 1,
     [theme.breakpoints.up("sm")]: {
-      marginLeft: props => props.drawerWidth,
+      marginLeft: drawerWidth,
     },
     padding: theme.spacing(3),
   },
@@ -51,14 +51,14 @@ const useStyles = makeStyles<Theme, LayoutProps>(theme => ({
     padding: theme.spacing(2),
     display: "block",
     [theme.breakpoints.up("sm")]: {
-      marginLeft: props => props.drawerWidth,
+      marginLeft: drawerWidth,
     },
   },
-}))
+}));
 
-const Layout: React.FC = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const drawerWidth = 400
-  const classes = useStyles({ drawerWidth })
+  const { classes } = useStyles({ drawerWidth })
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {

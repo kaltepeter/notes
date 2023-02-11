@@ -2,10 +2,10 @@ import Img from 'gatsby-image';
 import React, { ReactElement } from 'react';
 import theme from './theme';
 import { Box, Typography } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from 'tss-react/mui';
 import { graphql, useStaticQuery } from 'gatsby';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles()({
   root: {
     position: "relative",
     top: '-15vh',
@@ -20,10 +20,10 @@ const useStyles = makeStyles({
     right: 0,
     opacity: "50%",
   },
-})
+});
 
 const Image = (): ReactElement => {
-  const classes = useStyles()
+  const { classes } = useStyles()
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(

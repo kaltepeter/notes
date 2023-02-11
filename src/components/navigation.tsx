@@ -1,6 +1,6 @@
 import { Divider, Drawer, alpha, Hidden, ListItemText, Theme, Typography, useTheme } from "@mui/material";
 import createStyles from '@mui/styles/createStyles';
-import makeStyles from '@mui/styles/makeStyles';
+import { makeStyles } from 'tss-react/mui';
 import ListItem from "@mui/material/ListItem"
 import ChevronRightIcon from "@mui/icons-material/ChevronRight"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
@@ -16,7 +16,7 @@ interface NavigationProps {
   drawerWidth: number
 }
 
-const useStyles = makeStyles<Theme, NavigationProps>((theme) =>
+const useStyles = makeStyles()((theme) =>
   createStyles({
     drawer: {
       [theme.breakpoints.up("sm")]: {
@@ -36,12 +36,13 @@ const useStyles = makeStyles<Theme, NavigationProps>((theme) =>
         color: 'inherit',
         textDecoration: 'none'
     },
-  })
-)
+  }));
 
 const Navigation: React.FC<NavigationProps> = props => {
   const { drawerOpen, onToggleDrawer } = props;
-  const classes = useStyles(props)
+  const { classes } = useStyles(props, {
+    props: props
+  })
   const theme = useTheme()
   const { pages, allTags, allPaths } = usePageTree();
 
