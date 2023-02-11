@@ -4,13 +4,8 @@
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
-import {
-  Box,
-  CssBaseline,
-  makeStyles,
-  Theme,
-  ThemeProvider,
-} from "@material-ui/core"
+import { Box, CssBaseline, Theme, ThemeProvider, StyledEngineProvider } from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 import "@fontsource/libre-franklin/300.css"
 import "@fontsource/libre-franklin/400.css"
 import "@fontsource/libre-franklin/500.css"
@@ -22,6 +17,13 @@ import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import Header from "./header"
 import theme from "./theme"
+
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
+
 
 type LayoutProps = {
   drawerWidth: number
@@ -69,37 +71,39 @@ const Layout: React.FC = ({ children }) => {
   `)
 
   return (
-    <ThemeProvider theme={theme}>
-      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-      <CssBaseline />
-      <div className={classes.root}>
-        <Header
-          drawerWidth={drawerWidth}
-          siteTitle={data.site.siteMetadata?.title || `Title`}
-        />
-        {/* <Toolbar>
-      </Toolbar> */}
-        <Box my={2} component="main" className={classes.content}>
-          {children}
-        </Box>
-        <Box component="footer" className={classes.footer}>
-          © {new Date().getFullYear()} Kayla Altepeter, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-          <div>
-            Icons made by{" "}
-            <a href="http://www.freepik.com/" title="Freepik">
-              Freepik
-            </a>{" "}
-            from{" "}
-            <a href="https://www.flaticon.com/" title="Flaticon">
-              www.flaticon.com
-            </a>
-          </div>
-        </Box>
-      </div>
-    </ThemeProvider>
-  )
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+        <CssBaseline />
+        <div className={classes.root}>
+          <Header
+            drawerWidth={drawerWidth}
+            siteTitle={data.site.siteMetadata?.title || `Title`}
+          />
+          {/* <Toolbar>
+        </Toolbar> */}
+          <Box my={2} component="main" className={classes.content}>
+            {children}
+          </Box>
+          <Box component="footer" className={classes.footer}>
+            © {new Date().getFullYear()} Kayla Altepeter, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.com">Gatsby</a>
+            <div>
+              Icons made by{" "}
+              <a href="http://www.freepik.com/" title="Freepik">
+                Freepik
+              </a>{" "}
+              from{" "}
+              <a href="https://www.flaticon.com/" title="Flaticon">
+                www.flaticon.com
+              </a>
+            </div>
+          </Box>
+        </div>
+      </ThemeProvider>
+    </StyledEngineProvider>
+  );
 }
 
 export default Layout

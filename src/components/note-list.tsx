@@ -5,9 +5,9 @@ import {
   ListItem,
   ListItemSecondaryAction as ListItemIcon,
   ListItemText,
-  makeStyles,
   Typography,
-} from "@material-ui/core"
+} from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 import { Link } from "gatsby"
 import React from "react"
 import { useNoteExcerptList } from "../hooks/use-note-excerpt-list"

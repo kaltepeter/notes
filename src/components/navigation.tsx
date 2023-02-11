@@ -1,22 +1,11 @@
-import {
-    createStyles,
-    Divider,
-    Drawer,
-    fade,
-    Hidden,
-    ListItemText,
-    makeStyles,
-    Theme,
-
-    Typography,
-
-    useTheme
-} from "@material-ui/core"
-import ListItem from "@material-ui/core/ListItem"
-import ChevronRightIcon from "@material-ui/icons/ChevronRight"
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
-import { TreeItem } from "@material-ui/lab"
-import TreeView from "@material-ui/lab/TreeView"
+import { Divider, Drawer, alpha, Hidden, ListItemText, Theme, Typography, useTheme } from "@mui/material";
+import createStyles from '@mui/styles/createStyles';
+import makeStyles from '@mui/styles/makeStyles';
+import ListItem from "@mui/material/ListItem"
+import ChevronRightIcon from "@mui/icons-material/ChevronRight"
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
+import { TreeItem } from "@mui/lab"
+import TreeView from "@mui/lab/TreeView"
 import { Link } from "gatsby"
 import React from "react"
 import { Path, PathList, usePageTree } from "../hooks/use-page-tree"
@@ -98,41 +87,39 @@ const Navigation: React.FC<NavigationProps> = props => {
     </>
   )
 
-  return (
-    <>
-      <nav className={classes.drawer} aria-label="notes">
-        <Hidden smUp implementation="css">
-          <Drawer
-            variant="temporary"
-            anchor={theme.direction === "rtl" ? "right" : "left"}
-            open={drawerOpen}
-            onClose={onToggleDrawer}
-            classes={{
-              paper: classes.drawerPaper,
-              modal: classes.modal
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            {drawerChildren()}
-          </Drawer>
-        </Hidden>
-        <Hidden xsDown implementation="css">
-          <Drawer
-            classes={{
-              paper: classes.drawerPaper,
-              modal: classes.modal
-            }}
-            variant="permanent"
-            open
-          >
-            {drawerChildren()}
-          </Drawer>
-        </Hidden>
-      </nav>
-    </>
-  )
+  return <>
+    <nav className={classes.drawer} aria-label="notes">
+      <Hidden smUp implementation="css">
+        <Drawer
+          variant="temporary"
+          anchor={theme.direction === "rtl" ? "right" : "left"}
+          open={drawerOpen}
+          onClose={onToggleDrawer}
+          classes={{
+            paper: classes.drawerPaper,
+            modal: classes.modal
+          }}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+        >
+          {drawerChildren()}
+        </Drawer>
+      </Hidden>
+      <Hidden smDown implementation="css">
+        <Drawer
+          classes={{
+            paper: classes.drawerPaper,
+            modal: classes.modal
+          }}
+          variant="permanent"
+          open
+        >
+          {drawerChildren()}
+        </Drawer>
+      </Hidden>
+    </nav>
+  </>;
 }
 
 export { Navigation }

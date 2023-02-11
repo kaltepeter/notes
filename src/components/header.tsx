@@ -1,16 +1,16 @@
-import { Hidden, Theme } from "@material-ui/core"
+import { Hidden, Theme } from "@mui/material"
 import {
   AppBar,
-  fade,
+  alpha,
   IconButton,
   InputBase,
-  makeStyles,
   Toolbar,
   Typography,
   useScrollTrigger,
-} from "@material-ui/core"
-import MenuIcon from "@material-ui/icons/Menu"
-import SearchIcon from "@material-ui/icons/Search"
+} from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
+import MenuIcon from "@mui/icons-material/Menu"
+import SearchIcon from "@mui/icons-material/Search"
 import { Link } from "gatsby"
 import React, { ReactElement, useState } from "react"
 import NotesLogo from "../images/logo.svg"
@@ -20,7 +20,7 @@ import HideOnScroll from "./hide-on-scroll"
 import { Navigation } from "./navigation"
 
 const useStyles = makeStyles<Theme, HeaderProps>(theme => {
-  const cutSize = `${theme.spacing(3)}px`
+  const cutSize = theme.spacing(3)
 
   return {
     root: {
@@ -73,9 +73,9 @@ const useStyles = makeStyles<Theme, HeaderProps>(theme => {
     search: {
       position: "relative",
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: fade(theme.palette.common.white, 0.15),
+      backgroundColor: alpha(theme.palette.common.white, 0.15),
       "&:hover": {
-        backgroundColor: fade(theme.palette.common.white, 0.25),
+        backgroundColor: alpha(theme.palette.common.white, 0.25),
       },
       marginLeft: 0,
       width: "100%",
@@ -99,7 +99,7 @@ const useStyles = makeStyles<Theme, HeaderProps>(theme => {
     inputInput: {
       padding: theme.spacing(1, 1, 1, 0),
       // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create("width"),
       width: "100%",
       [theme.breakpoints.up("sm")]: {
@@ -109,7 +109,7 @@ const useStyles = makeStyles<Theme, HeaderProps>(theme => {
         },
       },
     },
-  }
+  };
 })
 
 const defaultProps = {
@@ -132,68 +132,66 @@ const Header = (props: HeaderProps): ReactElement => {
     setDrawerOpen(!drawerOpen)
   }
 
-  return (
-    <>
-      <ElevationScroll>
-        <AppBar
-          position="fixed"
-          color="primary"
-          className={`${classes.root} ${
-            trigger ? classes.rootScrolled : classes.rootUnscrolled
-          }`}
-        >
-          <Toolbar>
-            <Hidden smUp implementation="css">
-              <IconButton
-                edge="start"
-                className={classes.menuButton}
-                onClick={e => handleDrawerToggle()}
-                color="inherit"
-                aria-label="open drawer"
-              >
-                <MenuIcon />
-              </IconButton>
-            </Hidden>
-            <Typography
-              noWrap
-              variant="h1"
-              component="span"
-              className={classes.title}
-            >
-              <Link to={"/"}>
-                <img src={NotesIcon} className={classes.notesIcon} />
-                <img
-                  src={NotesLogo}
-                  className={classes.notesLogo}
-                  alt={siteTitle}
-                />
-              </Link>
-            </Typography>
-            <HideOnScroll>
-              <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                  <SearchIcon />
-                </div>
-                <InputBase
-                  placeholder="Search…"
-                  classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput,
-                  }}
-                  inputProps={{ "aria-label": "search" }}
-                />
+  return <>
+    <ElevationScroll>
+      <AppBar
+        position="fixed"
+        color="primary"
+        className={`${classes.root} ${
+          trigger ? classes.rootScrolled : classes.rootUnscrolled
+        }`}
+      >
+        <Toolbar>
+          <Hidden smUp implementation="css">
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              onClick={e => handleDrawerToggle()}
+              color="inherit"
+              aria-label="open drawer"
+              size="large">
+              <MenuIcon />
+            </IconButton>
+          </Hidden>
+          <Typography
+            noWrap
+            variant="h1"
+            component="span"
+            className={classes.title}
+          >
+            <Link to={"/"}>
+              <img src={NotesIcon} className={classes.notesIcon} />
+              <img
+                src={NotesLogo}
+                className={classes.notesLogo}
+                alt={siteTitle}
+              />
+            </Link>
+          </Typography>
+          <HideOnScroll>
+            <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
               </div>
-            </HideOnScroll>
-          </Toolbar>
-        </AppBar>
-      </ElevationScroll>
-      <Navigation
-        drawerWidth={drawerWidth}
-        onToggleDrawer={handleDrawerToggle}
-        drawerOpen={drawerOpen}
-      />
-    </>
-  )
+              <InputBase
+                placeholder="Search…"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+                inputProps={{ "aria-label": "search" }}
+              />
+            </div>
+          </HideOnScroll>
+        </Toolbar>
+      </AppBar>
+    </ElevationScroll>
+    <Navigation
+      drawerWidth={drawerWidth}
+      onToggleDrawer={handleDrawerToggle}
+      drawerOpen={drawerOpen}
+    />
+  </>;
 }
 
 export default Header

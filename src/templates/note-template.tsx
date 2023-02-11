@@ -1,13 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import {
-  Box,
-  Container,
-  makeStyles,
-  Paper,
-  Typography,
-} from "@material-ui/core"
+import { Box, Container, Paper, Typography } from "@mui/material";
+import makeStyles from '@mui/styles/makeStyles';
 import theme from "../components/theme"
 
 const useStyles = makeStyles({

@@ -1,7 +1,8 @@
 import Img from 'gatsby-image';
 import React, { ReactElement } from 'react';
 import theme from './theme';
-import { Box, makeStyles, Typography } from '@material-ui/core';
+import { Box, Typography } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import { graphql, useStaticQuery } from 'gatsby';
 
 const useStyles = makeStyles({
