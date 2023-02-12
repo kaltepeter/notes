@@ -1,5 +1,5 @@
-import { red, grey } from "@material-ui/core/colors"
-import { createMuiTheme, fade, responsiveFontSizes } from "@material-ui/core/styles"
+import { red, grey } from "@mui/material/colors"
+import { createTheme, alpha, responsiveFontSizes, adaptV4Theme } from "@mui/material/styles";
 
 const merriweatherBase = {
   fontFamily: "'Merriweather', serif",
@@ -105,7 +105,7 @@ const typography = {
   },
 }
 
-const baseSpacing = createMuiTheme();
+const baseSpacing = createTheme();
 
 const labOverrides = {
   MuiTreeItem: {
@@ -125,7 +125,8 @@ const labOverrides = {
 };
 
 // A custom theme for this app
-const baseTheme = createMuiTheme({
+// TODO: migrate to MUI v5: https://mui.com/material-ui/migration/v5-style-changes/
+const baseTheme = createTheme(adaptV4Theme({
   palette: {
     primary: {
       main: grey[50],
@@ -164,13 +165,13 @@ const baseTheme = createMuiTheme({
     },
     MuiBackdrop: {
       root: {
-        backgroundColor: fade(grey[50], .5),
+        backgroundColor: alpha(grey[50], .5),
       },
     },
     ...labOverrides,
   },
 
-});
+}));
 
 const theme = responsiveFontSizes(baseTheme)
 

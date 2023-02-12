@@ -3,7 +3,7 @@ path: "/exercise-2"
 title: "insert"
 order: "71A"
 section: "Misc Content"
-description: "Insertion!  There are many ways to go into INSERT mode."
+description: "Insertion! There are many ways to go into INSERT mode."
 ---
 
 ## Exercise 2: Insert mode
@@ -18,5 +18,3 @@ o: insert new line below line and go into insert mode
 O: insert new line above line and go into insert mode
 
 lets play around
-
-

@@ -26,7 +26,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.1.0
         with:
-          node-version: 14.x
+          node-version: 16.x
 
       # Runs a single command using the runners shell
       - name: Run a one-line script

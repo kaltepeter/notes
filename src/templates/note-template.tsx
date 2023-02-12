@@ -1,16 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import {
-  Box,
-  Container,
-  makeStyles,
-  Paper,
-  Typography,
-} from "@material-ui/core"
+import { Box, Container, Paper, Typography } from "@mui/material";
+import { makeStyles } from 'tss-react/mui';
 import theme from "../components/theme"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles()({
   root: {
     padding: theme.spacing(4),
   },
@@ -21,7 +16,7 @@ const useStyles = makeStyles({
   noteContent: {
     padding: theme.spacing(4),
   },
-})
+});
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -30,7 +25,7 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   const {modifiedDate} = pageContext;
-  const classes = useStyles()
+  const { classes } = useStyles()
 
   return (
     <Layout>

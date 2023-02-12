@@ -2,21 +2,12 @@ import Image from "../components/image"
 import Layout from "../components/layout"
 import React from "react"
 import SEO from "../components/seo"
-import {
-  Box as Paper,
-  Divider,
-  Grid,
-  Hidden,
-  List,
-  ListItem,
-  makeStyles,
-  Typography,
-} from "@material-ui/core"
+import { Box as Paper, Divider, Grid, Hidden, List, ListItem,  Typography } from "@mui/material";
+import { makeStyles } from 'tss-react/mui';
 import { graphql, PageProps } from "gatsby"
 import { NoteList } from "../components/note-list"
-import theme from "../components/theme"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles()((theme) => ({
   root: {
     flexGrow: 1,
     padding: theme.spacing(0, 4),
@@ -36,7 +27,7 @@ const useStyles = makeStyles({
     maxHeight: "40vh",
     overflow: "hidden",
   },
-})
+}));
 
 // Please note that you can use https://github.com/dotansimha/graphql-code-generator
 // to generate all types from graphQL schema
@@ -54,7 +45,7 @@ interface IndexPageProps extends PageProps {
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ data, pageContext }) => {
-  const classes = useStyles()
+  const { classes } = useStyles()
 
   return (
     <Layout>
@@ -62,7 +53,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, pageContext }) => {
       <Grid
         container
         direction="row"
-        justify="space-between"
+        justifyContent="space-between"
         alignItems="stretch"
         spacing={4}
         className={classes.root}
@@ -101,7 +92,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, pageContext }) => {
             </List>
           </Paper>
         </Grid>
-        <Hidden smDown>
+        <Hidden mdDown>
           <Divider
             orientation="vertical"
             flexItem
@@ -113,7 +104,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, pageContext }) => {
         </Grid>
       </Grid>
     </Layout>
-  )
+  );
 }
 
 export default IndexPage

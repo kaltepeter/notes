@@ -7,15 +7,10 @@ module.exports = {
     `,
     author: `@kaltepeter`,
   },
+  // flags: {
+  //   DEV_SSR: true
+  // },
   plugins: [
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        stylesProvider: {
-          injectFirst: true,
-        },
-      },
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -31,8 +26,19 @@ module.exports = {
         path: `${__dirname}/src/markdown-pages`,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-svgr-svgo`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {}
+          }
+        ]
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -46,7 +52,7 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/notes-icon.svg`, // This path is relative to the root of the site.
       },
-    },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
