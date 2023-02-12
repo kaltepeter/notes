@@ -11,8 +11,8 @@
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.10.5",
-    "@fontsource/libre-franklin": "4.5.5",
-    "@fontsource/merriweather": "4.5.8",
+    "@fontsource/libre-franklin": "4.5.11",
+    "@fontsource/merriweather": "4.5.14",
     "@mui/icons-material": "^5.11.0",
     "@mui/lab": "^5.0.0-alpha.119",
     "@mui/material": "^5.11.8",
