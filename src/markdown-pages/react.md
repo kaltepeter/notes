@@ -57,5 +57,7 @@ Tips:
 
 - [Recoil](https://recoiljs.org/docs/basic-tutorial/intro)
 
+### Performance Monitoring
 
+- [React Production Performance](https://kentcdodds.com/blog/react-production-performance-monitoring)
 
