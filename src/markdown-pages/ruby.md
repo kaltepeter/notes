@@ -194,9 +194,64 @@ https://medium.com/@kirill_shevch/lint-your-ruby-code-with-overcommit-and-static
 
 ```ruby
 [[1,2,3,4],[1,2,3,4],[1,2,3,4]].map(&:join)
-#  => ["1234", "1234", "1234"] 
+#  => ["1234", "1234", "1234"]
 
-# same as: 
+# same as:
 [[1,2,3,4],[1,2,3,4],[1,2,3,4]].map { |v| v.join('') }
-#  => ["1234", "1234", "1234"] 
+#  => ["1234", "1234", "1234"]
+```
+
+## Printing
+
+`puts`
+
+- Special side effect of returning nil after printing
+- Adds newline
+- `puts "yo".inspect` is the same as `p "yo"` and will return the value after printing
+
+`print`
+
+- print string without extra line
+
+`inspect` returns a string of the object
+
+## Method Conventions
+
+`?` methods that end in ? return a boolean
+
+## Control Flow
+
+`if`, `else`, `elsif` basic if
+`puts "Strings are empty" if x.empty?` inline if statement
+
+## Boolean
+
+`!`, `!!`, `&&`, `||` boolean tests
+`!!nil` will return false, it is the only object that will do that
+`!!0` will return true, like most
+
+## symbols and hash rocket
+
+`:name` is a symbol
+`name:` is only valid in a literal hash
+`{ :name => 'blah'}` is the hash rocket syntax
+`{ name: 'blah' }` is a literal hash
+`"data-turbo-track": "reload"` and `{ "data-turbo-track": "reload" }` are same, `{}` are optional, like parenthesis
+
+## Whitespace
+
+Ruby doesn't distinguish between whitespace and others like '\n', you can break lines on char length
+
+## Classes
+
+`<` inheritance
+`self` is optional in a class.
+
+## Lambda
+
+`->` stabby lambda
+
+```ruby
+-> { puts "foo" } # proc output
+-> { puts "foo" }.call # foo, returns nil
 ```
