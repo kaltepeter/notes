@@ -202,3 +202,49 @@ By default, Rails expects a foreign key of the form `<class>_id`
 <https://www.learnenough.com/action-cable>
 
 `&:to_s` shorthand for `{ |i| i.to_s }`, use with map for example
+
+<http://railscasts.com/episodes/274-remember-me-reset-password>
+
+As a general rule, if a method doesn’t need an instance of an object, it should be a class method
+
+Class methods
+
+```ruby
+def self.digest(string)
+end
+
+def User.digest(string)
+end
+
+class << self
+def digest(string)
+end
+end
+```
+
+`if (user_id = session[:user_id])` if session id exists, ,assing to user_id. () is a convention to denote assignment
+
+pushing to heroku with maintenence mode
+
+```bash
+heroku maintenance:on
+git push heroku
+heroku run rails db:migrate
+heroku maintenance:off
+```
+
+`before_create :create_activation_digest` method reference, calls the method create_activation_digest
+
+```ruby
+# mutliple db calls
+# update_attribute(:activated,    true)
+# update_attribute(:activated_at, Time.zone.now)
+
+# single db call
+update_columns(activated: true, activated_at: Time.zone.now)
+```
+
+`heroku addons:create sendgrid:starter` sendgrid addon
+`grep heroku .git/config` show config
+
+<https://docs.sendgrid.com/ui/sending-email/sender-verification>
