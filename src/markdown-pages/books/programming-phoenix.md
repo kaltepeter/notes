@@ -36,10 +36,23 @@ psql --version
 ## Getting Started
 
 ```bash
+brew install postgresql@14
+brew install --cask pgadmin4
+brew services start postgresql@15
+psql postgres
+
+```
+
+The `psql postgres` command may have done this
+
+```pql
+CREATE ROLE postgres WITH LOGIN PASSWORD 'postgres';
+ALTER ROLE postgres CREATEDB;
+```
+
+```bash
 mix phx.new hello
 cd hello
-cd assets
-npm i
-cd ..
-
+mix ecto.create
+mix phx.server
 ```
