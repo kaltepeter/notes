@@ -5,16 +5,30 @@ tags:
 - IOT
 ---
 
-https://www.raspberrypi.org/documentation/installation/installing-images/
+## Using Etcher
 
-1. Download preferred version. https://www.raspberrypi.org/downloads/raspberry-pi-os/
+1. Download preferred version. <https://www.raspberrypi.org/downloads/raspberry-pi-os/>
    - *desktop*: for a gui/dev env
    - *lite*: for no gui, small system
-1. Download and install etcher: https://etcher.io/
+1. Download and install etcher: <https://etcher.io/>
+    1. `brew install --cask balenaetcher`
 1. Run etcher
     1. Point the image to the downloaded zip
     1. Point the media to the sdcard to install on
     1. Click flash
+
+## Using Raspberry Pi Imager
+
+- <https://raspberrytips.com/raspberry-pi-imager-guide/>
+- <https://www.raspberrypi.org/documentation/installation/installing-images/>
+
+```bash
+brew install --cask raspberry-pi-imager
+```
+
+1. Run the program
+1. Select your Raspberry Pi Image, Media
+1. Optionally configure settings to pre-configure wifi, ssh, etc.
 
 ## Desktop setup
 
@@ -39,7 +53,7 @@ sudo vi /etc/hosts
 
 ## disable auto login
 
-https://raspberrypi.stackexchange.com/questions/47823/how-to-prevent-autologin-of-gui
+<https://raspberrypi.stackexchange.com/questions/47823/how-to-prevent-autologin-of-gui>
 
 ```bash
 sudo sed -i.old -e 's:autologin-user=.*:autologin-user= :g' /etc/lightdm/lightdm.conf
@@ -54,5 +68,4 @@ systemctl set-default multi-user.target
 
 ## custom splash screen
 
-https://yingtongli.me/blog/2016/12/21/splash.html
-
+<https://yingtongli.me/blog/2016/12/21/splash.html>
