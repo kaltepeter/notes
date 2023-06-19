@@ -343,3 +343,8 @@ write_to_csv(filename, overwrite: overwrite) do |csv|
     ] if overwrite
 end
 ```
+
+## Exceptions
+
+<https://rollbar.com/guides/ruby/how-to-handle-exceptions-in-ruby/>
+

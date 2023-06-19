@@ -2,9 +2,9 @@
 title: Ruby on Rails
 date: 2023-5-28
 tags:
-- ruby
-- Ruby on Rails
-- framework
+  - ruby
+  - Ruby on Rails
+  - framework
 ---
 
 ## Active Record
@@ -133,8 +133,6 @@ Or `bundle exec rails db:migrate:reset` which is `db:drop`, `db:create`, `db:mig
 
 ### Stats
 
-
-
 ## Queries
 
 `Model.order(Arel.sql('RANDOM()')).first` will select the first random record in rails 6+
@@ -225,8 +223,6 @@ raise 'You cannot run this in test, use the factories instead' if Rails.env.test
 - <https://blog.arkency.com/2014/11/dont-forget-about-eager-load-when-extending-autoload/>
 - <https://guides.rubyonrails.org/v5.2/autoloading_and_reloading_constants.html>
 
-
-
 ```ruby
 # workers/fake_data.rb
 module FakeData
@@ -309,4 +305,83 @@ check connections `bundle exec rails dbconsole`
 
 ```sql
 select count(*) from pg_stat_activity where pid <> pg_backend_pid() and usename = current_user;
+```
+
+## Routing
+
+<https://guides.rubyonrails.org/routing.html>
+
+`resource` vs. `resources` is acting on one record vs many.
+
+`resource` skips the index route and usually skips passing ids through.
+
+## Active Record
+
+### Finding
+
+- <https://www.rubyguides.com/2019/07/rails-where-method/>
+
+- `find_by`, `find_by_<key>` returns a single record or nil
+- `where` returns `ActiveRecord::Relation`
+- `find` a single record found by primary key, raise an exception if not found
+
+### Scopes
+
+- <https://www.sitepoint.com/dynamically-chain-scopes-to-clean-up-large-sql-queries/>
+- <https://guides.rubyonrails.org/active_record_querying.html#scopes>
+
+A scope is a way to add custom lookups/finders outside the defaults. They can be chained.
+
+```ruby
+# model
+scope :my_follows, ->(user_id) { where(user_id: user_id) }
+
+# controller
+Follow.my_follows(current_user.id)
+```
+
+### Validations
+
+- <https://guides.rubyonrails.org/v2.3.8/activerecord_validations_callbacks.html>
+- <https://edgeguides.rubyonrails.org/active_record_validations.html#using-a-symbol-with-if-and-unless>
+
+### Custom Validations
+
+- <https://guides.rubyonrails.org/v2.3.8/activerecord_validations_callbacks.html#creating-custom-validation-methods>
+- <https://betterprogramming.pub/how-to-implement-custom-activerecord-validations-235543f5dd8c>
+- <https://api.rubyonrails.org/classes/ActiveModel/Errors.html#method-i-key-3F>
+
+```ruby
+validate :resource_must_exist, unless: lambda {
+  errors.messages.include?(:resource_type) || errors.messages.include?(:resource_id)
+}
+
+def resource_must_exist
+  resource
+end
+
+def resource
+  resource_type.constantize.find_by!(id: resource_id)
+end
+```
+
+## Controllers
+
+### Custom hooks
+
+`before_action` fires by default for all actions, can be limited to specific.
+
+```ruby
+before_action :validate_resource_id
+
+def validate_resource_id
+    return if permitted_params[:resource_id] && permitted_params[:resource_type]
+
+    return unless permitted_params[:resource_id] && !permitted_params[:resource_type]
+
+    render status: :bad_request,
+            json: {
+                errors: ['resource_type is required']
+            }
+end
 ```
