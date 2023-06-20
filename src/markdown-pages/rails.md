@@ -385,3 +385,45 @@ def validate_resource_id
             }
 end
 ```
+
+## CORS
+
+- <https://github.com/cyu/rack-cors>
+
+
+`config.enforce_ssl` should be enabled in higher environments if not all.
+
+If you absolutely must exclude a route or set of routes you can exclude the path. This may be something like health/liveness checks.
+
+If you make a request to an SSL enforced api it will complain about invalid requests or mismatch of protocol.
+
+```ruby
+config.force_ssl = true
+
+# skip ssl for 'skipssl' path
+config.ssl_options = {
+redirect: {
+    exclude: -> request { request.path =~ /skipssl/ }
+}
+}
+```
+
+Allow cross site requests from various origins.
+
+```ruby
+# config/initializers/cors.rb
+use Rack::Cors do
+  allow do
+    origins 'localhost:3000', '127.0.0.1:3000',
+            /\Ahttp:\/\/192\.168\.0\.\d{1,3}(:\d+)?\z/
+            # regular expressions can be used here
+    resource '*',
+             headers: :any,
+             methods: %i(get post put patch delete options head)
+  end
+end
+```
+
+In Rails make sure the origin header does not have a traling slash. An origin header is required for CORS.
+
+
