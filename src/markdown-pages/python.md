@@ -9,6 +9,51 @@ tags:
 
 [http://docopt.org](http://docopt.org) - cli doc generation
 
+## Working with pip and default pythons
+
+Mac currently comes with both python2 and python 3 installed. Python2 is mapped to the python command. In general avoid depending on system python, however, during machine bootstrapping it's a good start.
+
+<https://docs.python-guide.org/starting/install3/osx/> - convert mac to python3 default
+
+```bash
+python --version
+python3 --version
+```
+
+## setup pip
+
+```bash
+python3 -m pip --version # check for pip
+python3 -m ensurepip --default-pip # install default pip
+python3 -m pip install --upgrade pip setuptools wheel # get latest versions
+
+```
+
+<https://packaging.python.org/en/latest/tutorials/installing-packages/#id21>
+
+## create virtual env
+
+```bash
+python3 -m venv tutorial_env
+source tutorial_env/bin/activate
+```
+
+<https://packaging.python.org/en/latest/tutorials/installing-packages/#creating-virtual-environments>
+
+## Install to user site
+
+This works with non sudo permissions
+
+```bash
+python3 -m pip install --user SomeProject
+```
+
+## Access pip modules not on path
+
+```bash
+ "$(python3 -m site --user-base)"/bin/ansible-playbook
+ ```
+
 ## installing on mac
 
 [https://realpython.com/python-virtual-environments-a-primer/](https://realpython.com/python-virtual-environments-a-primer/)
@@ -34,7 +79,7 @@ This will auto load correct python version in project directories
 install python versions
 
 ```text
-pyenv install 3.5.0 
+pyenv install 3.5.0
 pyenv install 3.6.5
 ```
 
