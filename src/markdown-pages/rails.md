@@ -1,6 +1,6 @@
 ---
 title: Ruby on Rails
-date: 2023-5-28
+date: 2023-05-28
 tags:
   - ruby
   - Ruby on Rails

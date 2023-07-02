@@ -1,6 +1,6 @@
 ---
 title: Factory Bot
-date: 20023-06-19
+date: 2023-06-19
 tags:
 - framework
 - ruby

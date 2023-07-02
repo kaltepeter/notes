@@ -1,6 +1,6 @@
 ---
 title: Rspec
-date: 20023-06-18
+date: 2023-06-18
 tags:
 - framework
 - ruby
