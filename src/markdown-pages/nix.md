@@ -146,6 +146,12 @@ While GitHub used to recommend RSA, they now recommend 'ed25519' in their guide.
 ssh-keygen -E md5 -lf ~/.ssh/id_dsa.pub
 ```
 
+#### Which algorithm?
+
+<https://goteleport.com/blog/comparing-ssh-keys/>
+
+Use `Ed25519` when possible, `RSA 2048/4096` are more compatible but slower.
+
 #### saving passphrase for ssh
 
 <https://www.linux.com/tutorials/manage-ssh-key-file-passphrase/>
