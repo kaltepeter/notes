@@ -8,9 +8,109 @@
 lerna add @types/node
 lerna add @types/react
 lerna add @types/react-dom
-lerna add react 
+lerna add react
 lerna add react-dom
 lerna add react-scripts
-lerna add typescript 
+lerna add typescript
 lerna add tslint
-</code></pre></div></div></div></main><footer class="MuiBox-root mui-117bf1d-footer">© <!-- -->2023<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/react/";window.___webpackCompilationHash="cfd89ff5fa8bed1e7463";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-4718f0fec20e0d09d7f5.js"],"app":["/app-12bc51766f7e571cf02a.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-ebb73e8e9c4fd92ecdce.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-9b9e7716ff5d8af15d49.js"],"component---src-templates-note-template-tsx":["/component---src-templates-note-template-tsx-dd9dc1753859209555d3.js"]};/*]]>*/</script><script src="/notes/polyfill-4718f0fec20e0d09d7f5.js" nomodule=""></script><script src="/notes/component---src-templates-note-template-tsx-dd9dc1753859209555d3.js" async=""></script><script src="/notes/commons-728d84649be8d129a21c.js" async=""></script><script src="/notes/app-12bc51766f7e571cf02a.js" async=""></script><script src="/notes/framework-4e8d5d534a82762d090f.js" async=""></script><script src="/notes/webpack-runtime-3c77282659a5d31d8f1a.js" async=""></script></body></html>
+</code></pre>
+<h2>Performance</h2>
+<h3>Context</h3>
+<blockquote>
+<p>The way that context works is that whenever the provided value changes from one render to another, it triggers a re-render of all the consuming components (which will re-render whether or not they're memoized).</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/kentcdodds/old-kentcdodds.com/blob/319db97260078ea4c263e75166f05e2cea21ccd1/content/blog/how-to-optimize-your-context-value/index.md">How to Optimize your Context Value</a></li>
+</ul>
+<p>When:</p>
+<ul>
+<li>Your context value changes frequently</li>
+<li>Your context has many consumers</li>
+<li>You are bothering to use React.memo (because things are legit slow)</li>
+<li>You've actually measured things and you know it's slow and needs to be optimized</li>
+</ul>
+<p>Tips:</p>
+<ul>
+<li>Slice context up when possible</li>
+<li>Use memo within context if needed</li>
+</ul>
+<h3>Large App State</h3>
+<ul>
+<li><a href="https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster">State Colocation will make your React app faster</a></li>
+</ul>
+<p><img src="https://res.cloudinary.com/kentcdodds-com/image/upload/f_auto,q_auto,dpr_2.0,w_1600/v1625033349/kentcdodds.com/content/blog/state-colocation-will-make-your-react-app-faster/where-to-put-state.png" alt="State Decision Tree"></p>
+<ul>
+<li>
+<p>Use HOC to handle memoization</p>
+</li>
+<li>
+<p><a href="https://recoiljs.org/docs/basic-tutorial/intro">Recoil</a></p>
+</li>
+</ul>
+<h3>Performance Monitoring</h3>
+<ul>
+<li><a href="https://kentcdodds.com/blog/react-production-performance-monitoring">React Production Performance</a></li>
+</ul>
+<h2>Async (Suspense)</h2>
+<ul>
+<li>React renders components in try/catch, if you throw a promise during render if it's not ready it will update when ready</li>
+</ul>
+<pre><code class="language-typescript">const pokemonPromise = fetchPokemon("pikachu").then(
+  pokemonData => (pokemon = pokemonData)
+)
+
+function PokemonInfo() {
+  if (!pokemon) {
+    throw pokemonPromise
+  }
+
+  return (
+    &#x3C;div>
+      &#x3C;div className="pokemon-info__img-wrapper">
+        &#x3C;img src={pokemon.image} alt={pokemon.name} />
+      &#x3C;/div>
+      &#x3C;PokemonDataView pokemon={pokemon} />
+    &#x3C;/div>
+  )
+}
+</code></pre>
+<h3>Error Handling</h3>
+<pre><code class="language-typescript">  if (pokemonError) {
+    throw pokemonError;
+  }
+
+
+&#x3C;ErrorBoundary>
+  &#x3C;React.Suspense fallback={&#x3C;div>loading...&#x3C;/div>}>Yo&#x3C;/React.Suspense>
+&#x3C;/ErrorBoundary>
+</code></pre>
+<h3>Promises inside render</h3>
+<ul>
+<li>Dangerous, don't assume render called only once</li>
+<li>Use a cache to resolve</li>
+</ul>
+<pre><code class="language-typescript">const promiseCache = {}
+function MySuspendingComponent({value}) {
+  let resource = promiseCache[value]
+  if (!resource) {
+    resource = doAsyncThing(value)
+    promiseCache[value] = resource // &#x3C;-- this is very important
+  }
+  return &#x3C;div>{resource.read()}&#x3C;/div>
+}
+</code></pre>
+<p>✅ ⚠️ ⛔</p>
+<h3>Fetch on Render (default)</h3>
+<p>✅ benefits from colocation
+✅ fetch when component renders
+⛔ User may see empty content
+⛔ Takes time</p>
+<h3>Fetch than render</h3>
+<p>⛔ empty content</p>
+<h3>Render as fetch</h3>
+<p>✅ Fetch data and assets as soon as you have the assets you need (preload)
+⚠️ Lose the benefits of colocation unless split into two files (data and component)</p>
+<h3>Suspense List</h3>
+<ul>
+<li><a href="https://17.reactjs.org/docs/concurrent-mode-reference.html#suspenselist">Suspense List</a></li>
+</ul></div></div></div></main><footer class="MuiBox-root mui-117bf1d-footer">© <!-- -->2023<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/react/";window.___webpackCompilationHash="cfd89ff5fa8bed1e7463";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-4718f0fec20e0d09d7f5.js"],"app":["/app-12bc51766f7e571cf02a.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-ebb73e8e9c4fd92ecdce.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-9b9e7716ff5d8af15d49.js"],"component---src-templates-note-template-tsx":["/component---src-templates-note-template-tsx-dd9dc1753859209555d3.js"]};/*]]>*/</script><script src="/notes/polyfill-4718f0fec20e0d09d7f5.js" nomodule=""></script><script src="/notes/component---src-templates-note-template-tsx-dd9dc1753859209555d3.js" async=""></script><script src="/notes/commons-728d84649be8d129a21c.js" async=""></script><script src="/notes/app-12bc51766f7e571cf02a.js" async=""></script><script src="/notes/framework-4e8d5d534a82762d090f.js" async=""></script><script src="/notes/webpack-runtime-3c77282659a5d31d8f1a.js" async=""></script></body></html>
