@@ -10,6 +10,36 @@ dynamic imports:
 * https://mariusschulz.com/blog/typescript-2-4-dynamic-import-expressions
 * http://2ality.com/2017/01/import-operator.html
 
+## Nullish Coalescing Operator
+
+Checks the left-hand side of the operator for `undefined` or `null`. It will return the left hand side if it is falsy but not `undefined` or `null`.
+
+- https://atomizedobjects.com/blog/javascript/nullish-coalescing-vs-or-javascript-operators/
+
+```typescript
+null ?? "Hello World" // “Hello World”
+false ?? "Hello World" // false
+0 ?? "Hello World" // 0
+undefined ?? "Hello World" // “Hello World”
+"" ?? "Hello World" // ''
+```
+
+## Logical OR Operator
+
+Checks the left-hand side of the operator for a falsy value. It will return the right hand side if falsy.
+
+- https://atomizedobjects.com/blog/javascript/nullish-coalescing-vs-or-javascript-operators/
+
+```typescript
+null || "Hello World" // “Hello World”
+false || "Hello World" // “Hello World”
+0 || "Hello World" // “Hello World”
+undefined || "Hello World" // “Hello World”
+10 || "Hello World" // 10
+true || "Hello World" // true
+"" || "Hello World" // 'Hello World'
+```
+
 ## async
 
 async IIFE
