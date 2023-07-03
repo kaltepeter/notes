@@ -112,6 +112,9 @@ sar -q -s 10:00:00 -e 11:00:00 # between times for today
 <p><a href="https://stackoverflow.com/questions/9607295/how-do-i-find-my-rsa-key-fingerprint">https://stackoverflow.com/questions/9607295/how-do-i-find-my-rsa-key-fingerprint</a></p>
 <pre><code class="language-bash">ssh-keygen -E md5 -lf ~/.ssh/id_dsa.pub
 </code></pre>
+<h4>Which algorithm?</h4>
+<p><a href="https://goteleport.com/blog/comparing-ssh-keys/">https://goteleport.com/blog/comparing-ssh-keys/</a></p>
+<p>Use <code>Ed25519</code> when possible, <code>RSA 2048/4096</code> are more compatible but slower.</p>
 <h4>saving passphrase for ssh</h4>
 <p><a href="https://www.linux.com/tutorials/manage-ssh-key-file-passphrase/">https://www.linux.com/tutorials/manage-ssh-key-file-passphrase/</a></p>
 <pre><code class="language-bash"># Specify your passphrase here
