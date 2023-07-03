@@ -1,7 +1,7 @@
+---
 title: Git In-Depth
 date: 2022-01-28
 tags:
-
 - course
 
 ---
@@ -135,7 +135,7 @@ git tag -a v1.0 -m "Version 1.0 of my blog"
 ```
 
 ```bash
-git tag 
+git tag
 git show-ref --tags
 git tag --points-at <commit>
 git show <tag-name>
@@ -258,7 +258,7 @@ git branch --no-merged master # branches not merged into master
 ```bash
 git reset --soft HEAD~ # moves head pointer back one commit, has a dangling commit
 git reset --mixed HEAD~ # moves head pointer back one commit, moves files to staging area (un-stage command)
-git reset --hard HEAD~ # destructive, move head, copies files to stage and working. 
+git reset --hard HEAD~ # destructive, move head, copies files to stage and working.
 git reset ORIG_HEAD # reset to original head
 ```
 
@@ -299,7 +299,7 @@ git rebase -i --autosquash <SHA>^
 - never rewrite public history
 
 ```bash
-git rebase -i <commit-to-fix>^ 
+git rebase -i <commit-to-fix>^
 git rebase -i --exec "run tests" <commit> # run command after every rebase
 git rebase --abort # abandon ship
 ```
