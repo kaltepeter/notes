@@ -11,7 +11,8 @@ tags:
 
 Run these on the machine accessing your pi:
 
-`ssh-keygen -t rsa -C pi@raspberrypi -f ~/.ssh/raspberrypi`
+Replace 'user' with your login and host with the hostname.
 
-`cat ~/.ssh/raspberrypi.pub | ssh pi@raspberrypi 'cat >> .ssh/authorized_keys'`
+`ssh-keygen -t ed25519 -C user@host -f ~/.ssh/raspberrypi`
 
+`cat ~/.ssh/raspberrypi.pub | ssh user@host 'cat >> .ssh/authorized_keys'`
