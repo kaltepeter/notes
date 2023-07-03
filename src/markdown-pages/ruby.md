@@ -194,9 +194,157 @@ https://medium.com/@kirill_shevch/lint-your-ruby-code-with-overcommit-and-static
 
 ```ruby
 [[1,2,3,4],[1,2,3,4],[1,2,3,4]].map(&:join)
-#  => ["1234", "1234", "1234"] 
+#  => ["1234", "1234", "1234"]
 
-# same as: 
+# same as:
 [[1,2,3,4],[1,2,3,4],[1,2,3,4]].map { |v| v.join('') }
-#  => ["1234", "1234", "1234"] 
+#  => ["1234", "1234", "1234"]
 ```
+
+## Printing
+
+`puts`
+
+- Special side effect of returning nil after printing
+- Adds newline
+- `puts "yo".inspect` is the same as `p "yo"` and will return the value after printing
+
+`print`
+
+- print string without extra line
+
+`inspect` returns a string of the object
+
+## Method Conventions
+
+`?` methods that end in ? return a boolean
+
+## Safe Navigation
+
+- `account&.owner&.address` will get the address if owner exists on account
+
+## Control Flow
+
+- `if`, `else`, `elsif` basic if
+- `puts "Strings are empty" if x.empty?` inline if statement
+- `unless` is a negated `if`, or opposite of if.
+
+## Boolean
+
+- `!`, `!!`, `&&`, `||` boolean tests
+- `!!nil` will return false, it is the only object that will do that
+- `!!0` will return true, like most
+
+## symbols and hash rocket
+
+- `:name` is a symbol
+- `name:` is only valid in a literal hash
+- `{ :name => 'blah'}` is the hash rocket syntax
+- `{ name: 'blah' }` is a literal hash
+- `"data-turbo-track": "reload"` and `{ "data-turbo-track": "reload" }` are same, `{}` are optional, like parenthesis
+
+## *Splat and Double **Splat
+
+- <https://www.freecodecamp.org/news/rubys-splat-and-double-splat-operators-ceb753329a78/>
+
+Destructure array, object, hash
+
+```ruby
+arr = [1,2,3]
+first, second, third = *arr
+pp first # 1
+pp second # 2
+first, *rest, last = [1,2,3,4,5]
+pp first # 1
+pp rest # [2,3,4]
+pp last # 5
+```
+
+```ruby
+h = ["first": 1, "second": 2, "third": 3]
+first, second, third = **h
+pp first # 1
+pp second # 2
+```
+
+## Whitespace
+
+Ruby doesn't distinguish between whitespace and others like '\n', you can break lines on char length
+
+## Classes
+
+`<` inheritance
+`self` is optional in a class.
+
+## Lambda
+
+`->` stabby lambda
+
+```ruby
+-> { puts "foo" } # proc output
+-> { puts "foo" }.call # foo, returns nil
+```
+
+## Math
+
+When working with numbers if any number is a float it will use float precision.
+
+- `3 / 2` returns `1`
+- `3 / 2` returns `1.5`
+
+### Stats
+
+- <https://andycroll.com/ruby/calculate-the-standard-deviation-of-a-ruby-array/>
+- <https://andycroll.com/ruby/calculate-a-mean-average-from-a-ruby-array/>
+
+
+```ruby
+def calc_stats(array, round_digits = 2)
+  n = array.size
+  mean = array.sum.to_f / n.to_f
+  squared_differences = array.map { |x| (x - mean) ** 2 }
+  variance = squared_differences.sum / n
+
+  {
+    min: array.min.round(round_digits),
+    max: array.max.round(round_digits),
+    mean: mean.round(round_digits),
+    standard_deviation: Math.sqrt(variance).round(round_digits)
+  }
+end
+```
+
+## Looping over arrays
+
+- `[*(1..20)].each_slice(3) { |c| pp c }` will break the array into groups of 3 and loop through. The last value will have two items.
+
+## Writing Files
+
+```ruby
+def write_to_csv(filename, overwrite: true)
+  file = "tmp/data-details/#{filename}"
+  Dir.mkdir("tmp/data-details") unless File.exists?("tmp/data-details")
+  mode = overwrite ? "w+" : "a+"
+  action_text = overwrite ? "Writing" : "Appending"
+
+  puts "#{action_text} to #{file}"
+  CSV.open(file, mode, headers: true, converters: [:float, :integer, :date]) do |csv|
+    yield csv
+  end
+end
+
+write_to_csv(filename, overwrite: overwrite) do |csv|
+    csv << [
+      "Name",
+      "Min",
+      "Max",
+      "Mean",
+      "Standard Deviation"
+    ] if overwrite
+end
+```
+
+## Exceptions
+
+<https://rollbar.com/guides/ruby/how-to-handle-exceptions-in-ruby/>
+

@@ -243,3 +243,10 @@ sudo ufw status
 sudo ufw allow ssh
 sudo ufw enable
 ```
+
+## Versions
+
+- <https://www.debian.org/releases/>
+- <https://www.debian.org/doc/manuals/debian-faq/choosing.en.html>
+
+
