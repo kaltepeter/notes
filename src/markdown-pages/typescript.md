@@ -514,3 +514,10 @@ console.log(testSet.size); // 5
 console.log(testSet.has([1,1,2].toString())); // true
 console.log(testSet.has(newPoint.toString())); // true
 ```
+
+## Performance
+
+- [How to make TypeScript Blazingly Fast](https://www.youtube.com/watch?v=Sp5_d6coiqU)
+  - [How To Run Perf](https://github.com/ThePrimeagen/tyrone-biggums#how-to-run-perf)
+
+`--perf-basic-profs` flame graph
