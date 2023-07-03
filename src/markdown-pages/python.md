@@ -58,7 +58,7 @@ python3 -m pip install --user SomeProject
 
 [https://realpython.com/python-virtual-environments-a-primer/](https://realpython.com/python-virtual-environments-a-primer/)
 
-https://www.integralist.co.uk/posts/python-management/#managing-dependencies - covers pyenv and versioning
+<https://www.integralist.co.uk/posts/python-management/#managing-dependencies> - covers pyenv and versioning
 
 install pyenv
 
@@ -113,6 +113,17 @@ pip3 install --upgrade pip setuptools wheel
 
 #### virtual env
 
+Python 3 uses venv
+
+[Upgrade process](https://stackoverflow.com/questions/71106411/how-to-upgrade-python-venv-version)
+
+##### Workflow
+
+1. cd into working directory
+1. Create `python3.10 -m venv venv --prompt .`
+1. Activate `source venv/bin/activate`
+1. Deactivate when done `deactivate`
+
 ```text
 pip3 install virtualenv
 mkdir -p ~/Projects ~/Virtualenvs ~/Library/Application\ Support/pip
@@ -150,7 +161,12 @@ source bin/activate
 
 ## package dependencies
 
-[http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+~~[http://docs.python-guide.org/en/latest/dev/virtualenvs/](http://docs.python-guide.org/en/latest/dev/virtualenvs/)~~
+
+```bash
+pip freeze > requirements.txt # freeze all
+pip install -r requirements.txt # install all fresh
+```
 
 ## tools
 
@@ -204,5 +220,413 @@ tutorials: [http://stanford.edu/~mgorkove/cgi-bin/rpython\_tutorials/tutorials.p
 
 ## dependency management
 
-https://python-poetry.org/
+<https://python-poetry.org/>
 
+## Formatting
+
+Prettier plugin deprecated for black
+
+<https://github.com/psf/black>
+
+```bash
+pip install black
+```
+
+## Enums
+
+```python
+class NodeType(Enum):
+    F = "FILE"
+    D = "DIR"
+
+print(NodeType.F)
+```
+
+## Tuple
+
+`('root',)` is valid
+`('root')` is not valid, the comma makes the tuple
+
+remove last item (<https://www.geeksforgeeks.org/python-program-to-remove-last-element-from-tuple/>)
+
+```python
+tu = (1, 2, 3, 4, 5)
+tu = list(tu)
+tu.pop()
+tu = tuple(tu)
+print(tu) # (1, 2, 3, 4)
+```
+
+### append
+
+```python
+tu = (1,2,3,4)
+tu += (5,)
+print(tu) # 
+```
+
+## Dict
+
+Using a tuple as key:
+
+```python
+list = {('root', 'a', 'b'): 80, ('root', 'a'): 20, ('root',): 100}
+```
+
+has item
+
+```python
+list = {('root', 'a', 'b'): 80, ('root', 'a'): 20, ('root',): 100}
+if ('root', 'a') in list:
+    print("found")
+```
+
+Merging
+
+<https://peps.python.org/pep-0584/>
+
+```python
+d = {'spam': 1, 'eggs': 2, 'cheese': 3}
+e = {'cheese': 'cheddar', 'aardvark': 'Ethel'}
+print(d | e) # {'spam': 1, 'eggs': 2, 'cheese': 'cheddar', 'aardvark': 'Ethel'}
+print(e | d) # {'cheese': 3, 'aardvark': 'Ethel', 'spam': 1, 'eggs': 2}
+
+d |= e # in place
+print(d) # {'spam': 1, 'eggs': 2, 'cheese': 'cheddar', 'aardvark': 'Ethel'}
+```
+
+getting a value deep in dict (<https://pypi.org/project/dpath/>)
+
+```bash
+pip install dpath
+```
+
+```python
+import dpath
+from enum import Enum
+
+
+class NodeType(Enum):
+    F = "FILE"
+    D = "DIR"
+
+
+file_tree = {
+        "root": {
+        "name": "root",
+        "size": 0,
+        "type": NodeType.D,
+        "children": {
+            "a": {
+                "name": "a",
+                "size": 0,
+                "type": NodeType.D,
+                "children": {
+                    "e": {
+                        "name": "e",
+                        "size": 0,
+                        "type": NodeType.D,
+                        "children": {
+                            "i": {
+                                "name": "i",
+                                "size": 584,
+                                "type": NodeType.F,
+                                "children": {},
+                            },
+                        },
+                    },
+                }
+            }
+        }
+    }
+}
+
+cur_path = ['root', 'a', 'e']
+
+target_node = dpath.get(file_tree, "/children/".join(cur_path))["children"]
+print(target_node) # {'i': {'name': 'i', 'size': 584, 'type': <NodeType.F: 'FILE'>, 'children': {}}}
+```
+
+### TypeError 'set' object does not support item assignment
+
+<https://stackoverflow.com/questions/40553742/typeerror-set-object-does-not-support-item-assignment>
+
+Both dictionaries and sets use the same syntax. Be careful when initializing them.
+
+## Typing
+
+Tuple with variable length `Tuple[int, ...]`
+
+## Loops
+
+loop through list while reducing
+
+```python
+guest = ['john', 'phil', 'andy', 'mark', 'frank', 'joe']
+while len(guest) > 2:
+    popped_guest = guest.pop()
+```
+
+loop through dict
+
+```python
+items = { 'A': 'Geeks', 'B': 4, 'C': 'Geeks' }
+for key, value in items.items():
+    print(f"k: {key}, v: {value}")
+```
+
+## destructuring
+
+```python
+head, *tail = [1, 2, 3, 4, 5]
+print(head)  # 1
+print(tail)  # [2, 3, 4, 5]
+```
+
+## Eval
+
+```python
+def get_fn(old: int, op: str) -> int:
+    return eval(op)
+
+print(get_fn(79, "old * old")) # 6241
+```
+
+## Image Generation
+
+<https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.new>
+
+<https://dev.to/petercour/generate-images-with-python-pil-302k>
+
+<https://blog.devgenius.io/ascii-art-library-for-python-b37b45ed72fd>
+
+<https://towardsdatascience.com/create-simple-optical-character-recognition-ocr-with-python-6d90adb82bb8>
+
+## Numbers
+
+<https://stackoverflow.com/questions/2104884/how-does-python-manage-int-and-long>
+
+```python3
+import sys
+sys.maxsize # 9223372036854775807
+```
+
+Too large number:
+
+```bash
+ValueError('Exceeds the limit (4300) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit'
+```
+
+## Functools
+
+<https://www.geeksforgeeks.org/functools-module-in-python/>
+
+## Higher order functions (Partial)
+
+```python
+def get_fn(op: Tuple[str, str, str]) -> Callable[[str | int, str | int], int]:
+    left_item = int(op[0]) if op[0] != "old" else None
+    right_item = int(op[2]) if op[2] != "old" else None
+    match op[1]:
+        case "*":
+            return partial(multiply, a=left_item, b=right_item)
+        case "+":
+            return partial(add, a=left_item, b=right_item)
+        case _:
+            raise ValueError(f"Unknown instruction {op[1]}")
+
+def test_get_fn():
+    monkey_0_op = get_fn(("old", "*", "19"))
+    monkey_1_op = get_fn(("old", "+", "6"))
+    monkey_2_op = get_fn(("old", "*", "old"))
+    assert monkey_0_op(a=79) == 1501
+    assert monkey_1_op(a=54) == 60
+    assert monkey_2_op(a=79, b=79) == 6241
+```
+
+## Performance
+
+- <https://medium.com/analytics-vidhya/python-efficiency-reduce-computing-time-and-memory-usage-72129e94ff64>
+- <https://www.geeksforgeeks.org/memory-profiling-in-python-using-memory_profiler/>
+- <https://www.python.org/doc/essays/list2str/>
+- <https://wiki.python.org/moin/PythonSpeed/PerformanceTips>
+- <https://towardsdatascience.com/profiling-and-analyzing-performance-of-python-programs-3bf3b41acd16>
+
+### Use Numpy for large number math
+
+slow:
+
+```python
+def multiply(a: int, b: int) -> int:
+    return a * b
+
+
+def add(a: int, b: int) -> int:
+    return a + b
+```
+
+significantly faster:
+
+```python
+def multiply(a: int, b: int) -> int:
+    return np.multiply(a, b)
+
+
+def add(a: int, b: int) -> int:
+    return np.add(a, b)
+```
+
+### Use caching
+
+```python
+from functools import lru_cache, partial
+
+@lru_cache(maxsize=None)
+def run_fn_with_args(
+    item: int, op: Callable[[str | int, str | int], int], args: Tuple[str, ...]
+) -> int:
+    new = 0
+    if ("a",) == args:
+        new = op(a=item)
+    elif ("b",) == args:
+        new = op(b=item)
+    elif (
+        "a",
+        "b",
+    ) == args:
+        new = op(a=item, b=item)
+    else:
+        raise ValueError(f"Unknown args {op['old_args']}")
+
+    return new
+
+ new = run_fn_with_args(item, op, monkey["old_args"])
+```
+
+## Immutable Data
+
+```python
+from copy import deepcopy
+monkeys = process_input(os.path.join(base_path, "input.txt"))
+deepcopy(monkeys)
+```
+
+## list of things
+
+```python
+from itertools import chain
+
+print([a for a in range(ord('a'), ord('z')+1)])
+# [97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122]
+print([chr(a) for a in range(ord('a'), ord('z')+1)])
+# ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+# flatten list
+test_list = ['gfg', 1, [5, 6, 'geeks'], 67.4, [5], 'best']
+res = list(chain(*[ele if isinstance(ele, list)
+                   else [ele] for ele in test_list]))
+print(res)
+# [‘gfg’, 1, 5, 6, ‘geeks’, 67.4, 5, ‘best’]
+```
+
+## Packages and Imports
+
+<https://towardsdatascience.com/understanding-python-imports-init-py-and-pythonpath-once-and-for-all-4c5249ab6355>
+
+<https://stackoverflow.com/questions/54598292/modulenotfounderror-when-trying-to-import-module-from-imported-package>
+
+<https://realpython.com/absolute-vs-relative-python-imports/>
+
+1. Create a `__init__.py` in each dir.
+1. export pythonpath var
+
+```bash
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+```
+
+## sorting
+
+<https://learnpython.com/blog/python-custom-sort-function/>
+
+Custom sort function. As of python3 use cmp_to_key to pass function.
+
+return 1 if pair1 > pair2
+return 0 if x == y
+return -1 if pair1 < pair2
+
+```python
+from functools import cmp_to_key
+ 
+def compare(pair1, pair2):
+    number1, word1 = pair1
+    number2, word2 = pair2
+    if number1 == number2:
+        if word1 < word2:
+            return -1
+        else:
+            return 1
+    if number1 < number2:
+        return -1
+    else:
+        return 1
+ 
+compare_key = cmp_to_key(compare)
+s_list = sorted(my_list, key=compare_key)
+```
+
+## Zip
+
+Unequal lists default to ignored, it stops processing. Pass `strict=True` to raise exception.
+
+```python
+integers = [1, 2, 3]
+letters = ['a', 'b', 'c']
+floats = [4.0, 5.0, 6.0]
+zipped = zip(integers, letters, floats)
+print(list(zipped))
+# [(1, 'a', 4.0), (2, 'b', 5.0), (3, 'c', 6.0)]
+```
+
+To keep all pairs with uneven, use `zip_longest`
+
+```python
+from itertools import zip_longest
+
+numbers = [1, 2, 3]
+letters = ['a', 'b', 'c']
+longest = range(5)
+zipped = zip_longest(numbers, letters, longest, fillvalue='?')
+print(list(zipped))
+# [(1, 'a', 0), (2, 'b', 1), (3, 'c', 2), ('?', '?', 3), ('?', '?', 4)]
+```
+
+## Debugging
+
+<https://python.land/python-debugger>
+
+```python
+import pdb
+
+breakpoint()
+```
+
+commands:
+
+```bash
+c # continue
+s # step
+p # print
+pp # pretty print
+n # next
+```
+
+## operators
+
+`//` floor division, same as `math.floor(15/4)`
+
+`15 / 4` = 3.75
+`15 // 4` = 3
+
+## Set
+
+<https://realpython.com/python-sets/>
