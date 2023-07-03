@@ -3,6 +3,30 @@
 <li><a href="https://mariusschulz.com/blog/typescript-2-4-dynamic-import-expressions">https://mariusschulz.com/blog/typescript-2-4-dynamic-import-expressions</a></li>
 <li><a href="http://2ality.com/2017/01/import-operator.html">http://2ality.com/2017/01/import-operator.html</a></li>
 </ul>
+<h2>Nullish Coalescing Operator</h2>
+<p>Checks the left-hand side of the operator for <code>undefined</code> or <code>null</code>. It will return the left hand side if it is falsy but not <code>undefined</code> or <code>null</code>.</p>
+<ul>
+<li><a href="https://atomizedobjects.com/blog/javascript/nullish-coalescing-vs-or-javascript-operators/">https://atomizedobjects.com/blog/javascript/nullish-coalescing-vs-or-javascript-operators/</a></li>
+</ul>
+<pre><code class="language-typescript">null ?? "Hello World" // “Hello World”
+false ?? "Hello World" // false
+0 ?? "Hello World" // 0
+undefined ?? "Hello World" // “Hello World”
+"" ?? "Hello World" // ''
+</code></pre>
+<h2>Logical OR Operator</h2>
+<p>Checks the left-hand side of the operator for a falsy value. It will return the right hand side if falsy.</p>
+<ul>
+<li><a href="https://atomizedobjects.com/blog/javascript/nullish-coalescing-vs-or-javascript-operators/">https://atomizedobjects.com/blog/javascript/nullish-coalescing-vs-or-javascript-operators/</a></li>
+</ul>
+<pre><code class="language-typescript">null || "Hello World" // “Hello World”
+false || "Hello World" // “Hello World”
+0 || "Hello World" // “Hello World”
+undefined || "Hello World" // “Hello World”
+10 || "Hello World" // 10
+true || "Hello World" // true
+"" || "Hello World" // 'Hello World'
+</code></pre>
 <h2>async</h2>
 <p>async IIFE</p>
 <pre><code class="language-typescript">(async () => {
