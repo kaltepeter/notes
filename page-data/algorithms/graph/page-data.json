@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-note-template-tsx",
+    "path": "/algorithms/graph/",
+    "result": {"data":{"markdownRemark":{"html":"<p><a href=\"https://www.programiz.com/dsa/graph\">https://www.programiz.com/dsa/graph</a> good basic overviews.</p>","frontmatter":{"date":"December 01, 2021","title":"Graph","tags":null}}},"pageContext":{"slug":"/algorithms/graph/"}},
+    "staticQueryHashes": ["1929983096","3649515864"]}
