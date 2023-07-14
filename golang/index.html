@@ -320,14 +320,14 @@ func main() {
 <li>If returning error, use pointers for value. makes returning nil possible and easier to handle. If value you would have to construct and empty Foo.</li>
 </ul>
 <pre><code class="language-go">func CreateFoo(fail bool) (*Foo, error) {
-	if fail {
-		return nil, fmt.Errorf("this is an error with value ")
-	}
-	return &#x26;Foo{}, nil
+ if fail {
+  return nil, fmt.Errorf("this is an error with value ")
+ }
+ return &#x26;Foo{}, nil
 }
 
 func main() {
-	foo, err := CreateFoo(false)
+ foo, err := CreateFoo(false)
 }
 </code></pre>
 <h2>File Handling</h2>
