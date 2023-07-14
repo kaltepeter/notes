@@ -360,7 +360,7 @@ Another example from AOC 2021 Day 16. This sets the var `p` to the valid type as
 
 ## Recursion
 
-https://golangdocs.com/recursion-in-golang
+<https://golangdocs.com/recursion-in-golang>
 
 Regular recusion:
 
@@ -424,18 +424,16 @@ func main() {
 
 ```go
 func CreateFoo(fail bool) (*Foo, error) {
-	if fail {
-		return nil, fmt.Errorf("this is an error with value ")
-	}
-	return &Foo{}, nil
+ if fail {
+  return nil, fmt.Errorf("this is an error with value ")
+ }
+ return &Foo{}, nil
 }
 
 func main() {
-	foo, err := CreateFoo(false)
+ foo, err := CreateFoo(false)
 }
 ```
-
-
 
 ## File Handling
 
