@@ -89,6 +89,12 @@ set project version
  pyenv local 3.5.0
 ```
 
+set global version
+
+```bash
+pyenv global 3.9
+```
+
 create venv
 
 ```text
