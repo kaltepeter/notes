@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
+    "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.10.5",
     "@fontsource/libre-franklin": "4.5.5",
     "@fontsource/merriweather": "4.5.8",
