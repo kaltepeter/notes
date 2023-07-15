@@ -3,18 +3,16 @@ import {
   Chip,
   List,
   ListItem,
-  ListItemSecondaryAction as ListItemIcon,
   ListItemText,
   Typography,
-} from "@mui/material";
-import { makeStyles } from 'tss-react/mui';
+} from "@mui/material"
 import { Link } from "gatsby"
 import React from "react"
+import { makeStyles } from "tss-react/mui"
 import { useNoteExcerptList } from "../hooks/use-note-excerpt-list"
 import { Note } from "../models/note"
-import theme from "./theme"
 
-const useStyles = makeStyles()({
+const useStyles = makeStyles({ name: "NoteList" })(_theme => ({
   noteListItem: {
     "& .head": {
       display: "flex",
@@ -30,20 +28,20 @@ const useStyles = makeStyles()({
     justifyContent: "left",
     flexWrap: "wrap",
     listStyle: "none",
-    padding: theme.spacing(0.5),
+    padding: _theme.spacing(0.5),
     margin: 0,
   },
   chip: {
     border: "none",
     borderRadius: 0,
   },
-});
+}))
 
 interface NoteListProps {}
 
 const NoteList: React.FC<NoteListProps> = () => {
   const { classes, cx } = useStyles()
-  const { notes } = useNoteExcerptList();
+  const { notes } = useNoteExcerptList()
   // const {modifiedDate, slug} = pageContext;
 
   return (
@@ -64,7 +62,7 @@ const NoteList: React.FC<NoteListProps> = () => {
                   className: "head",
                 }}
                 secondaryTypographyProps={{
-                  component: 'div'
+                  component: "div",
                 }}
                 primary={
                   <>
@@ -82,7 +80,11 @@ const NoteList: React.FC<NoteListProps> = () => {
                   <>
                     <Box component="ul" className={classes.chipList}>
                       {note.frontmatter.tags?.map((tag, index) => (
-                        <Typography component="li" variant="subtitle1" key={index}>
+                        <Typography
+                          component="li"
+                          variant="subtitle1"
+                          key={index}
+                        >
                           <Chip
                             size="medium"
                             variant="outlined"
@@ -106,10 +108,10 @@ const NoteList: React.FC<NoteListProps> = () => {
                 }
               ></ListItemText>
             </ListItem>
-          );
+          )
         })}
     </List>
-  );
+  )
 }
 
 export { NoteList }

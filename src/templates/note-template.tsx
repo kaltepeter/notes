@@ -1,30 +1,29 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { Box, Container, Paper, Typography } from "@mui/material";
-import { makeStyles } from 'tss-react/mui';
-import theme from "../components/theme"
+import { Box, Container, Paper, Typography } from "@mui/material"
+import { makeStyles } from "tss-react/mui"
 
-const useStyles = makeStyles()({
+const useStyles = makeStyles({ name: "Template" })(_theme => ({
   root: {
-    padding: theme.spacing(4),
+    padding: _theme.spacing(4),
   },
   noteHeader: {
     display: "flex",
     flexDirection: "column",
   },
   noteContent: {
-    padding: theme.spacing(4),
+    padding: _theme.spacing(4),
   },
-});
+}))
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
-  pageContext
+  pageContext,
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
-  const {modifiedDate} = pageContext;
+  const { modifiedDate } = pageContext
   const { classes } = useStyles()
 
   return (
@@ -43,7 +42,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

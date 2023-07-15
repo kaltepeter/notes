@@ -1,33 +1,41 @@
+import {
+  Divider,
+  Grid,
+  Hidden,
+  List,
+  ListItem,
+  Box as Paper,
+  Typography,
+} from "@mui/material"
+import { PageProps } from "gatsby"
+import React from "react"
+import { makeStyles } from "tss-react/mui"
 import Image from "../components/image"
 import Layout from "../components/layout"
-import React from "react"
-import SEO from "../components/seo"
-import { Box as Paper, Divider, Grid, Hidden, List, ListItem,  Typography } from "@mui/material";
-import { makeStyles } from 'tss-react/mui';
-import { graphql, PageProps } from "gatsby"
 import { NoteList } from "../components/note-list"
+import SEO from "../components/seo"
 
-const useStyles = makeStyles()((theme) => ({
+const useStyles = makeStyles({ name: "IndexPage" })(_theme => ({
   root: {
     flexGrow: 1,
-    padding: theme.spacing(0, 4),
+    padding: _theme.spacing(0, 4),
   },
   featureText: {
-    paddingBottom: theme.spacing(2),
+    paddingBottom: _theme.spacing(2),
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     "& h3": {
       textAlign: "right",
-      paddingRight: theme.spacing(2),
+      paddingRight: _theme.spacing(2),
     },
   },
   featureImage: {
     maxHeight: "40vh",
     overflow: "hidden",
   },
-}));
+}))
 
 // Please note that you can use https://github.com/dotansimha/graphql-code-generator
 // to generate all types from graphQL schema
@@ -40,7 +48,7 @@ interface IndexPageProps extends PageProps {
     }
   }
   pageContext: {
-    slug: string;
+    slug: string
   }
 }
 
@@ -92,19 +100,15 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, pageContext }) => {
             </List>
           </Paper>
         </Grid>
-        <Hidden mdDown>
-          <Divider
-            orientation="vertical"
-            flexItem
-            component="span"
-          />
+        <Hidden lgDown>
+          <Divider orientation="vertical" flexItem component="span" />
         </Hidden>
         <Grid item xs={12} sm={5}>
           <NoteList />
         </Grid>
       </Grid>
     </Layout>
-  );
+  )
 }
 
 export default IndexPage
