@@ -17,7 +17,7 @@
     "@mui/icons-material": "^5.14.0",
     "@mui/lab": "^5.0.0-alpha.119",
     "@mui/material": "^5.14.0",
-    "@svgr/webpack": "6.2.1",
+    "@svgr/webpack": "6.5.1",
     "gatsby": "4.11.2",
     "gatsby-image": "3.11.0",
     "gatsby-plugin-image": "^2.25.0",
