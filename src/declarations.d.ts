@@ -16,12 +16,3 @@ declare module "*.ttf" {
   const content: { [className: string]: string }
   export default content
 }
-
-declare module "@mui/styles" {
-  interface DefaultTheme extends Theme {}
-}
-
-declare module "@mui/styles/defaultTheme" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}

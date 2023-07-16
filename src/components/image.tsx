@@ -1,18 +1,17 @@
-import Img from 'gatsby-image';
-import React, { ReactElement } from 'react';
-import theme from './theme';
-import { Box, Typography } from '@mui/material';
-import { makeStyles } from 'tss-react/mui';
-import { graphql, useStaticQuery } from 'gatsby';
+import Img from "gatsby-image"
+import React, { ReactElement } from "react"
+import { Box, Typography } from "@mui/material"
+import { makeStyles } from "tss-react/mui"
+import { graphql, useStaticQuery } from "gatsby"
 
-const useStyles = makeStyles()({
+const useStyles = makeStyles({ name: "Image" })(_theme => ({
   root: {
     position: "relative",
-    top: '-15vh',
+    top: "-15vh",
   },
   overlay: {
     display: "none",
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: _theme.palette.secondary.main,
     position: "absolute",
     top: 0,
     bottom: 0,
@@ -20,7 +19,7 @@ const useStyles = makeStyles()({
     right: 0,
     opacity: "50%",
   },
-});
+}))
 
 const Image = (): ReactElement => {
   const { classes } = useStyles()

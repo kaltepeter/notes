@@ -1,5 +1,5 @@
 import { red, grey } from "@mui/material/colors"
-import { createTheme, alpha, responsiveFontSizes, adaptV4Theme } from "@mui/material/styles";
+import { createTheme, alpha, responsiveFontSizes } from "@mui/material/styles"
 
 const merriweatherBase = {
   fontFamily: "'Merriweather', serif",
@@ -105,28 +105,29 @@ const typography = {
   },
 }
 
-const baseSpacing = createTheme();
+const baseSpacing = createTheme()
 
 const labOverrides = {
   MuiTreeItem: {
-    content: {
-      padding: baseSpacing.spacing(1)
+    styleOverrides: {
+      content: {
+        padding: baseSpacing.spacing(1),
+      },
+      label: {
+        ...typography.h5,
+        color: grey[900],
+      },
+      group: {
+        "& .MuiTreeItem-label": {
+          color: grey[700],
+        },
+      },
     },
-    label: {
-      ...typography.h5,
-      color: grey[900]
-    },
-    group: {
-      '& .MuiTreeItem-label': {
-      color: grey[700]
-      }
-    }
   },
-};
+}
 
 // A custom theme for this app
-// TODO: migrate to MUI v5: https://mui.com/material-ui/migration/v5-style-changes/
-const baseTheme = createTheme(adaptV4Theme({
+const baseTheme = createTheme({
   palette: {
     primary: {
       main: grey[50],
@@ -143,15 +144,17 @@ const baseTheme = createTheme(adaptV4Theme({
     text: {
       primary: grey[900],
       secondary: grey[700],
-    }
+    },
   },
-  overrides: {
+  components: {
     // TODO: why both Typography and global css baseline override needed?
     MuiTypography: {
-      ...typography,
+      styleOverrides: {
+        ...typography,
+      },
     },
     MuiCssBaseline: {
-      "@global": {
+      styleOverrides: {
         body: {
           ...bodyBase,
         },
@@ -159,19 +162,22 @@ const baseTheme = createTheme(adaptV4Theme({
       },
     },
     MuiButton: {
-      root: {
-        ...typography.button,
+      styleOverrides: {
+        root: {
+          ...typography.button,
+        },
       },
     },
     MuiBackdrop: {
-      root: {
-        backgroundColor: alpha(grey[50], .5),
+      styleOverrides: {
+        root: {
+          backgroundColor: alpha(grey[50], 0.5),
+        },
       },
     },
     ...labOverrides,
   },
-
-}));
+})
 
 const theme = responsiveFontSizes(baseTheme)
 

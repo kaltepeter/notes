@@ -3,7 +3,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 import { TreeItem } from "@mui/lab"
 import TreeView from "@mui/lab/TreeView"
 import { Divider, Drawer, Hidden, useTheme } from "@mui/material"
-import createStyles from "@mui/styles/createStyles"
 import { Link } from "gatsby"
 import React from "react"
 import { makeStyles } from "tss-react/mui"
@@ -15,20 +14,20 @@ interface NavigationProps {
   drawerWidth: number
 }
 
-const useStyles = makeStyles()(theme =>
-  createStyles({
+const useStyles = makeStyles<NavigationProps>({ name: "Navigation" })(
+  (_theme, { drawerWidth }) => ({
     drawer: {
-      [theme.breakpoints.up("sm")]: {
-        width: props => props.drawerWidth,
+      [_theme.breakpoints.up("sm")]: {
+        width: `${drawerWidth}px`,
         flexShrink: 0,
       },
     },
-    toolbar: theme.mixins.toolbar,
+    toolbar: _theme.mixins.toolbar,
     drawerPaper: {
-      width: props => props.drawerWidth,
+      width: `${drawerWidth}px`,
     },
     activeNavLink: {
-      color: theme.palette.text.primary,
+      color: _theme.palette.text.primary,
       fontWeight: 900,
     },
     navLink: {
@@ -40,9 +39,7 @@ const useStyles = makeStyles()(theme =>
 
 const Navigation: React.FC<NavigationProps> = props => {
   const { drawerOpen, onToggleDrawer } = props
-  const { classes } = useStyles(props, {
-    props: props,
-  })
+  const { classes } = useStyles(props)
   const theme = useTheme()
   const { pages, allTags, allPaths } = usePageTree()
 
@@ -121,7 +118,7 @@ const Navigation: React.FC<NavigationProps> = props => {
             {drawerChildren()}
           </Drawer>
         </Hidden>
-        <Hidden smDown implementation="css">
+        <Hidden mdDown implementation="css">
           <Drawer
             classes={{
               paper: classes.drawerPaper,
