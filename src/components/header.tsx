@@ -1,4 +1,4 @@
-import { Hidden, Theme } from "@mui/material"
+import { Hidden } from "@mui/material"
 import {
   AppBar,
   alpha,

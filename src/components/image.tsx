@@ -1,4 +1,4 @@
-import Img from "gatsby-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import React, { ReactElement } from "react"
 import { Box, Typography } from "@mui/material"
 import { makeStyles } from "tss-react/mui"
@@ -23,30 +23,14 @@ const useStyles = makeStyles({ name: "Image" })(_theme => ({
 
 const Image = (): ReactElement => {
   const { classes } = useStyles()
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(
-        relativePath: { eq: "notebook-laptop-unsplash.jpg" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 3456, maxHeight: 4087) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-  if (!data?.placeholderImage?.childImageSharp?.fluid) {
-    return <div>Picture not found</div>
-  }
 
   return (
     <>
       <Box className={classes.root}>
         <a href="#">
-          <Img
-            fluid={data.placeholderImage.childImageSharp.fluid}
+          <StaticImage
+            src="../images/notebook-laptop-unsplash.jpg"
+            placeholder="blurred"
             alt="Notebook and laptop image"
           />
           <div className={classes.overlay}></div>

@@ -1,5 +1,3 @@
-import { Theme } from "@mui/material/styles"
-
 declare module "*css" {
   const content: { [className: string]: string }
   export default content

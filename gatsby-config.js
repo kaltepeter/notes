@@ -1,17 +1,24 @@
+// @ts-check
+
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
 module.exports = {
   pathPrefix: "/notes",
+  trailingSlash: "always",
   siteMetadata: {
     title: `Notes`,
     description: `
       How do we remember things? How do we solidify our understandings? How do we free up our minds? How do we organize thoughts? We should write it down, anyway that works for you.
     `,
-    author: `@kaltepeter`,
+    image: "src/images/notes-icon.svg",
+    siteUrl: `https://kaltepeter.github.io/notes`,
+    twitterUsername: `@kaltepeter`,
   },
   // flags: {
   //   DEV_SSR: true
   // },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,14 +40,14 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-images',
-            options: {}
-          }
-        ]
-      }
+            resolve: "gatsby-remark-images",
+            options: {},
+          },
+        ],
+      },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -52,9 +59,9 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/notes-icon.svg`, // This path is relative to the root of the site.
       },
-    }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

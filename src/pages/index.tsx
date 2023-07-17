@@ -6,16 +6,16 @@ import {
   ListItem,
   Box as Paper,
   Typography,
-} from "@mui/material"
-import { PageProps } from "gatsby"
-import React from "react"
-import { makeStyles } from "tss-react/mui"
-import Image from "../components/image"
-import Layout from "../components/layout"
-import { NoteList } from "../components/note-list"
-import SEO from "../components/seo"
+} from "@mui/material";
+import { PageProps } from "gatsby";
+import React from "react";
+import { makeStyles } from "tss-react/mui";
+import Image from "../components/image";
+import Layout from "../components/layout";
+import { NoteList } from "../components/note-list";
+import SEO from "../components/seo";
 
-const useStyles = makeStyles({ name: "IndexPage" })(_theme => ({
+const useStyles = makeStyles({ name: "IndexPage" })((_theme) => ({
   root: {
     flexGrow: 1,
     padding: _theme.spacing(0, 4),
@@ -35,7 +35,7 @@ const useStyles = makeStyles({ name: "IndexPage" })(_theme => ({
     maxHeight: "40vh",
     overflow: "hidden",
   },
-}))
+}));
 
 // Please note that you can use https://github.com/dotansimha/graphql-code-generator
 // to generate all types from graphQL schema
@@ -43,21 +43,20 @@ interface IndexPageProps extends PageProps {
   data: {
     site: {
       siteMetadata: {
-        siteName: string
-      }
-    }
-  }
+        siteName: string;
+      };
+    };
+  };
   pageContext: {
-    slug: string
-  }
+    slug: string;
+  };
 }
 
-const IndexPage: React.FC<IndexPageProps> = ({ data, pageContext }) => {
-  const { classes } = useStyles()
+const IndexPage: React.FC<IndexPageProps> = () => {
+  const { classes } = useStyles();
 
   return (
     <Layout>
-      <SEO title="Home" />
       <Grid
         container
         direction="row"
@@ -108,7 +107,10 @@ const IndexPage: React.FC<IndexPageProps> = ({ data, pageContext }) => {
         </Grid>
       </Grid>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
+export const Head = ({ location }) => (
+  <SEO title="Home" pathname={location.pathname} />
+);
