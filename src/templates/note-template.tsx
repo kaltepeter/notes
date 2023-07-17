@@ -16,6 +16,12 @@ const useStyles = makeStyles({ name: "Template" })((_theme) => ({
   noteContent: {
     padding: _theme.spacing(4),
   },
+  noteStyles: {
+    padding: theme.spacing(2),
+    "&pre code": {
+      padding: theme.spacing(4),
+    },
+  },
 }));
 
 export default function Template<PageProps>({
@@ -35,7 +41,10 @@ export default function Template<PageProps>({
             <Typography variant="h1">{frontmatter.title}</Typography>
             <Typography variant="overline">{frontmatter.date}</Typography>
           </Box>
-          <Box dangerouslySetInnerHTML={{ __html: html }} />
+          <Box
+            className={classes.noteStyles}
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
         </Paper>
       </Container>
     </Layout>
