@@ -21,22 +21,22 @@
 </ul>
 <p>Curry</p>
 <p>example return partial function no curry</p>
-<pre><code class="language-typescript">const rule4 = R.equals('a');
-const rule5 = R.equals('b');
+<pre><code class="language-typescript">const rule4 = R.equals("a");
+const rule5 = R.equals("b");
 
 const rules = new Map();
 rules.set(4, rule4);
 rules.set(5, rule5);
 
-const ruleLookup = rId => (rList) => rList.get(rId);
+const ruleLookup = (rId) => (rList) => rList.get(rId);
 console.log(ruleLookup); // fn(rId)
 console.log(ruleLookup(4)); //fn(rList)
-console.log(ruleLookup(4)(rules)) // fn(equals)
-console.log(ruleLookup(4)(rules)('a')) // true
+console.log(ruleLookup(4)(rules)); // fn(equals)
+console.log(ruleLookup(4)(rules)("a")); // true
 </code></pre>
 <p>curry</p>
-<pre><code class="language-typescript">const rule4 = R.equals('a');
-const rule5 = R.equals('b');
+<pre><code class="language-typescript">const rule4 = R.equals("a");
+const rule5 = R.equals("b");
 
 const rules = new Map();
 rules.set(4, rule4);
@@ -44,19 +44,19 @@ rules.set(5, rule5);
 
 const ruleLookup = curry((rId, rList) => rList.get(rId));
 console.log(ruleLookup); // fn(rId)
-const r4 = ruleLookup(4);  //fn(rList)
+const r4 = ruleLookup(4); //fn(rList)
 console.log(r4);
 const appliedRules = r4(rules);
-console.log(appliedRules) // fn(equals)
-console.log(appliedRules('a')) // true
+console.log(appliedRules); // fn(equals)
+console.log(appliedRules("a")); // true
 
 const genRule = (rList) => map(ruleLookup, rList);
 console.log(genRule);
-rules.set(2, genRule([4,4]));
-console.log(rules.get(2)[0](rules)('a'));
-console.log(rules.get(2)[1](rules)('a'));
+rules.set(2, genRule([4, 4]));
+console.log(rules.get(2)[0](rules)("a"));
+console.log(rules.get(2)[1](rules)("a"));
 
-const fns = map(([fn, v]) => fn(rules)(v), zip(rules.get(2), 'ab'));
+const fns = map(([fn, v]) => fn(rules)(v), zip(rules.get(2), "ab"));
 console.log(fns); // [true, false]
 </code></pre>
 <h2>Basics</h2>
@@ -66,22 +66,22 @@ console.log(fns); // [true, false]
 <h2>Map, Filter, Reduce</h2>
 <p><a href="https://robertwpearce.com/ramda-chops-map-filter-and-reduce.html">https://robertwpearce.com/ramda-chops-map-filter-and-reduce.html</a></p>
 <h3>Map Examples</h3>
-<pre><code class="language-javascript">const rule4 = R.equals('a');
-const rule5 = R.equals('b');
+<pre><code class="language-javascript">const rule4 = R.equals("a");
+const rule5 = R.equals("b");
 
 const rules = new Map();
 rules.set(4, rule4);
 rules.set(5, rule5);
 
 const getRule = (rId) => rules.get(rId);
-const genRule = (rList) => map(rId => rules.get(rId), rList);
-const testGenRule = genRule([4,4]);
-console.log(testGenRule[0]('a')); // true
-console.log(testGenRule[1]('b')); // false
+const genRule = (rList) => map((rId) => rules.get(rId), rList);
+const testGenRule = genRule([4, 4]);
+console.log(testGenRule[0]("a")); // true
+console.log(testGenRule[1]("b")); // false
 </code></pre></div></div></div></main><footer class="MuiBox-root mui-11mcpv2-Layout-footer">© <!-- -->2023<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/ramda/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
             window.___chunkMapping="{\"app\":[\"/app-91067d881dd0c2a37d00.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-66cc4a836ad8844efdbb.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-968636d2fcf070ef833b.js\"],\"component---src-templates-note-template-tsx\":[\"/component---src-templates-note-template-tsx-7adec7af40d04564c029.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e6f832d9e3059fed9ca1";</script><script src="/notes/webpack-runtime-b90ccdd3c6481e069dba.js" async></script><script src="/notes/framework-7fba185ab6dd38e2e7c9.js" async></script><script src="/notes/app-91067d881dd0c2a37d00.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="7df027ecc7ed467c65ae";</script><script src="/notes/webpack-runtime-af0279bb488d48ebc375.js" async></script><script src="/notes/framework-7fba185ab6dd38e2e7c9.js" async></script><script src="/notes/app-91067d881dd0c2a37d00.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

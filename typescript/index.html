@@ -14,29 +14,29 @@
 <ul>
 <li><a href="https://atomizedobjects.com/blog/javascript/nullish-coalescing-vs-or-javascript-operators/">https://atomizedobjects.com/blog/javascript/nullish-coalescing-vs-or-javascript-operators/</a></li>
 </ul>
-<pre><code class="language-typescript">null ?? "Hello World" // “Hello World”
-false ?? "Hello World" // false
-0 ?? "Hello World" // 0
-undefined ?? "Hello World" // “Hello World”
-"" ?? "Hello World" // ''
+<pre><code class="language-typescript">null ?? "Hello World"; // “Hello World”
+false ?? "Hello World"; // false
+0 ?? "Hello World"; // 0
+undefined ?? "Hello World"; // “Hello World”
+"" ?? "Hello World"; // ''
 </code></pre>
 <h2>Logical OR Operator</h2>
 <p>Checks the left-hand side of the operator for a falsy value. It will return the right hand side if falsy.</p>
 <ul>
 <li><a href="https://atomizedobjects.com/blog/javascript/nullish-coalescing-vs-or-javascript-operators/">https://atomizedobjects.com/blog/javascript/nullish-coalescing-vs-or-javascript-operators/</a></li>
 </ul>
-<pre><code class="language-typescript">null || "Hello World" // “Hello World”
-false || "Hello World" // “Hello World”
-0 || "Hello World" // “Hello World”
-undefined || "Hello World" // “Hello World”
-10 || "Hello World" // 10
-true || "Hello World" // true
-"" || "Hello World" // 'Hello World'
+<pre><code class="language-typescript">null || "Hello World"; // “Hello World”
+false || "Hello World"; // “Hello World”
+0 || "Hello World"; // “Hello World”
+undefined || "Hello World"; // “Hello World”
+10 || "Hello World"; // 10
+true || "Hello World"; // true
+"" || "Hello World"; // 'Hello World'
 </code></pre>
 <h2>async</h2>
 <p>async IIFE</p>
 <pre><code class="language-typescript">(async () => {
-    // code goes here
+  // code goes here
 })();
 </code></pre>
 <h2>global definition</h2>
@@ -51,56 +51,57 @@ true || "Hello World" // true
 <li><a href="https://fettblog.eu/boolean-in-javascript-and-typescript/">https://fettblog.eu/boolean-in-javascript-and-typescript/</a></li>
 <li><a href="https://mariusschulz.com/blog/conditional-types-in-typescript">https://mariusschulz.com/blog/conditional-types-in-typescript</a></li>
 </ul>
-<pre><code class="language-javascript">let list = [1,2,3,4,null,7,null,9,'yo'];
-let filteredList = list.filter(Boolean).filter(v => typeof v === 'number');
+<pre><code class="language-javascript">let list = [1, 2, 3, 4, null, 7, null, 9, "yo"];
+let filteredList = list.filter(Boolean).filter((v) => typeof v === "number");
 console.log(filteredList);
 </code></pre>
 <p>Does not work, type error.</p>
-<pre><code class="language-typescript">let list = [1,2,3,4,null,7,null,9, 'yo'];
+<pre><code class="language-typescript">let list = [1, 2, 3, 4, null, 7, null, 9, "yo"];
 let filteredList: NonNullable&#x3C;number>[];
 filteredList = list.filter(Boolean);
 console.log(filteredList);
 </code></pre>
 <p>Works with strict null checks.</p>
-<pre><code class="language-typescript">let list = [1,2,3,4,null,7,null,9, 'yo'];
+<pre><code class="language-typescript">let list = [1, 2, 3, 4, null, 7, null, 9, "yo"];
 let filteredList: NonNullable&#x3C;number>[];
 // filteredList = list.filter&#x3C;NonNullable&#x3C;number>>(Boolean as any); // would remove nulls but allow strings
-filteredList = list.filter&#x3C;NonNullable&#x3C;number>>(Boolean as any).filter(v => typeof v === 'number');
+filteredList = list
+  .filter&#x3C;NonNullable&#x3C;number>>(Boolean as any)
+  .filter((v) => typeof v === "number");
 console.log(filteredList);
 </code></pre>
 <h2>BigInt</h2>
 <ul>
 <li><a href="https://www.smashingmagazine.com/2019/07/essential-guide-javascript-newest-data-type-bigint/">https://www.smashingmagazine.com/2019/07/essential-guide-javascript-newest-data-type-bigint/</a></li>
 </ul>
-<pre><code class="language-typescript">
-  describe.each([
-    [30, 1073741824, '000001000000000000000000000000000000'],
-    [31, 2147483648, '000010000000000000000000000000000000'],
-    [32, 4294967296, '000100000000000000000000000000000000'],
-    [33, 8589934592, '001000000000000000000000000000000000'],
-    [34, 17179869184, '010000000000000000000000000000000000'],
-    [35, 34359738368, '100000000000000000000000000000000000'],
-    // [36, 68719476736, '1000000000000000000000000000000000000'],
-  ])(
-    `JS large number math`,
-    (pos: number, expectedResult: number, expectedBinaryString: string) => {
-      test(`should return ${expectedResult}`, () => {
-        // expect(1 &#x3C;&#x3C; pos).toEqual(expectedResult); // after pos 30 next bit is negative and starts at 1
-        expect(Math.pow(2, pos)).toEqual(expectedResult);
-      });
+<pre><code class="language-typescript">describe.each([
+  [30, 1073741824, "000001000000000000000000000000000000"],
+  [31, 2147483648, "000010000000000000000000000000000000"],
+  [32, 4294967296, "000100000000000000000000000000000000"],
+  [33, 8589934592, "001000000000000000000000000000000000"],
+  [34, 17179869184, "010000000000000000000000000000000000"],
+  [35, 34359738368, "100000000000000000000000000000000000"],
+  // [36, 68719476736, '1000000000000000000000000000000000000'],
+])(
+  `JS large number math`,
+  (pos: number, expectedResult: number, expectedBinaryString: string) => {
+    test(`should return ${expectedResult}`, () => {
+      // expect(1 &#x3C;&#x3C; pos).toEqual(expectedResult); // after pos 30 next bit is negative and starts at 1
+      expect(Math.pow(2, pos)).toEqual(expectedResult);
+    });
 
-      test(`convertToBinaryString(${expectedResult})`, () => {
-        expect(expectedBinaryString.length).toBe(36);
-        expect(convertToBinaryString(BigInt(expectedResult))).toBe(
-          expectedBinaryString
-        );
-      });
+    test(`convertToBinaryString(${expectedResult})`, () => {
+      expect(expectedBinaryString.length).toBe(36);
+      expect(convertToBinaryString(BigInt(expectedResult))).toBe(
+        expectedBinaryString,
+      );
+    });
 
-      test(`parseInt`, () => {
-        expect(parseInt(expectedBinaryString, 2)).toBe(expectedResult);
-      });
-    }
-  );
+    test(`parseInt`, () => {
+      expect(parseInt(expectedBinaryString, 2)).toBe(expectedResult);
+    });
+  },
+);
 </code></pre>
 <h2>Binary &#x26; Bitwise</h2>
 <ul>
@@ -113,52 +114,50 @@ console.log(filteredList);
 </ul>
 <p>Create a zero padded binary number.</p>
 <pre><code class="language-typescript">const convertToBinaryString = (num: bigint) =>
-  num.toString(2).padStart(36, '0');
+  num.toString(2).padStart(36, "0");
 const num = 51331021;
-console.log(convertToBinaryString(BigInt(num))) // 000000000011000011110011111111001101
+console.log(convertToBinaryString(BigInt(num))); // 000000000011000011110011111111001101
 </code></pre>
 <p>Convert a binary string to number.</p>
-<pre><code class="language-typescript">console.log(parseInt("000000000011000011110011111111001101",2)) // 51331021
+<pre><code class="language-typescript">console.log(parseInt("000000000011000011110011111111001101", 2)); // 51331021
 </code></pre>
 <p>Set a bit for 32 bit signed int.</p>
-<pre><code class="language-typescript">1 &#x3C;&#x3C; 4 // 16 or 000000000000000000000000000000010000
+<pre><code class="language-typescript">1 &#x3C;&#x3C; 4; // 16 or 000000000000000000000000000000010000
 </code></pre>
 <p>Get a bit at a location</p>
-<pre><code class="language-typescript">const getBit = (n: number, bitIndex:number) => {
-    const bitMask = 1 &#x3C;&#x3C; bitIndex;
-    const result = n &#x26; bitMask;
-    return result >>> bitIndex;
-}
+<pre><code class="language-typescript">const getBit = (n: number, bitIndex: number) => {
+  const bitMask = 1 &#x3C;&#x3C; bitIndex;
+  const result = n &#x26; bitMask;
+  return result >>> bitIndex;
+};
 
-
-console.log(getBit(n,3)) // 0
-console.log(getBit(n,4)) // 1
-console.log(getBit(n, 5)) // 1
-console.log(getBit(n, 6)) // 0
+console.log(getBit(n, 3)); // 0
+console.log(getBit(n, 4)); // 1
+console.log(getBit(n, 5)); // 1
+console.log(getBit(n, 6)); // 0
 </code></pre>
 <p>Turn on a bit</p>
 <pre><code class="language-typescript">const setBit = (n: number, bitIndex: number) => {
-    const bitMask = 1 &#x3C;&#x3C; bitIndex;
-    return n | bitMask;
-}
+  const bitMask = 1 &#x3C;&#x3C; bitIndex;
+  return n | bitMask;
+};
 
-console.log(0b10110001.toString(2)) // 10110001
-console.log(setBit(0b10110001,2).toString(2)) // 10110101
+console.log((0b10110001).toString(2)); // 10110001
+console.log(setBit(0b10110001, 2).toString(2)); // 10110101
 </code></pre>
 <p>Clear a bit</p>
-<pre><code class="language-typescript">const clearBit = (n:number, bitIndex:number) => {
-    const bitMask = ~(1 &#x3C;&#x3C; bitIndex);
-    return n &#x26; bitMask;
-}
+<pre><code class="language-typescript">const clearBit = (n: number, bitIndex: number) => {
+  const bitMask = ~(1 &#x3C;&#x3C; bitIndex);
+  return n &#x26; bitMask;
+};
 
-console.log(n.toString(2)) // 10110101
-console.log(clearBit(n,2).toString(2)) // 10110001
-
+console.log(n.toString(2)); // 10110101
+console.log(clearBit(n, 2).toString(2)); // 10110001
 </code></pre>
 <p>Bitwise find in array</p>
 <pre><code class="language-typescript">const foundIndex = (index: number) => {
   return Boolean(~index);
-}
+};
 
 console.log(foundIndex(arr.indexOf(9))); // false
 console.log(foundIndex(arr.indexOf(100))); // false
@@ -178,7 +177,7 @@ enum Flags {
   NEIGHBOR6 = 64,
   NEIGHBOR7 = 128,
   NEIGHBOR8 = 256,
-  OTHERDATA = 512
+  OTHERDATA = 512,
 }
 
 const currentFlags = {
@@ -191,24 +190,24 @@ const currentFlags = {
   neighbor6: 0,
   neighbor7: 0,
   neighbor8: 1,
-  otherdata: 1
-}
+  otherdata: 1,
+};
 
 const getNeighborsMask = 0b0111111110;
-	
+
 const isEmpty = (v: number) => !(v > Flags.NONE);
 
 console.log(`Initial value:  ${val} : `, val.toString(2), isEmpty(val));
-console.log('');
+console.log("");
 
 console.log(`***** SETTING *****`);
 // Setting
-Object.entries(currentFlags).forEach(([_,v], i) => {
-  val |= v &#x3C;&#x3C; i
+Object.entries(currentFlags).forEach(([_, v], i) => {
+  val |= v &#x3C;&#x3C; i;
 });
 console.log(`  Final value: ${val} : `, val.toString(2), isEmpty(val));
 
-console.log('');
+console.log("");
 console.log(`***** READING *****`);
 // Reading
 console.log(`self is : ${val &#x26; Flags.SELF}`);
@@ -219,36 +218,36 @@ console.log(`neighbor4 is : ${val &#x26; Flags.NEIGHBOR4}`);
 console.log(`neighbor5 is : ${val &#x26; Flags.NEIGHBOR5}`);
 console.log(`otherData is : ${val &#x26; Flags.OTHERDATA}`);
 
-console.log('');
+console.log("");
 console.log(`     -----     `);
 Object.keys(currentFlags).forEach((k, i) => {
   const key: string = k.toUpperCase();
   const flag: number = Flags[key];
   if (val &#x26; flag) {
     // console.log(`${i} bit is set.`)
-    console.log(`${k} is set.`)
+    console.log(`${k} is set.`);
   } else {
-        console.log(`${k} is not set.`)
+    console.log(`${k} is not set.`);
   }
 });
 
-console.log('');
+console.log("");
 console.log(`     -----     `);
 const cn = val &#x26; getNeighborsMask;
 // console.log(`isAnyNeighborSet: `, val > Flags.SELF); // only if no other data type is after neighbors
 console.log(`isAnyNeighborSet mask: `, !isEmpty(cn));
 
-console.log('');
+console.log("");
 console.log(`***** UNSET *****`);
 
 // unset neighbors only
 Object.keys(currentFlags).forEach((k, i) => {
-    const key: string = k.toUpperCase();
+  const key: string = k.toUpperCase();
   const flag: number = Flags[key];
   if (flag > Flags.SELF &#x26;&#x26; flag &#x3C; Flags.OTHERDATA) {
-    val &#x26;= (~(1 &#x3C;&#x3C; i));
+    val &#x26;= ~(1 &#x3C;&#x3C; i);
   }
-})
+});
 console.log(`self is : ${val &#x26; Flags.SELF}`);
 console.log(`neighbor1 is : ${val &#x26; Flags.NEIGHBOR1}`);
 console.log(`neighbor2 is : ${val &#x26; Flags.NEIGHBOR2}`);
@@ -266,41 +265,41 @@ console.log(`isAnyNeighborSet mask: `, !isEmpty(cn2));
 let val = 0b0;
 var Flags;
 (function (Flags) {
-    Flags[Flags["NONE"] = 0] = "NONE";
-    Flags[Flags["SELF"] = 1] = "SELF";
-    Flags[Flags["NEIGHBOR1"] = 2] = "NEIGHBOR1";
-    Flags[Flags["NEIGHBOR2"] = 4] = "NEIGHBOR2";
-    Flags[Flags["NEIGHBOR3"] = 8] = "NEIGHBOR3";
-    Flags[Flags["NEIGHBOR4"] = 16] = "NEIGHBOR4";
-    Flags[Flags["NEIGHBOR5"] = 32] = "NEIGHBOR5";
-    Flags[Flags["NEIGHBOR6"] = 64] = "NEIGHBOR6";
-    Flags[Flags["NEIGHBOR7"] = 128] = "NEIGHBOR7";
-    Flags[Flags["NEIGHBOR8"] = 256] = "NEIGHBOR8";
-    Flags[Flags["OTHERDATA"] = 512] = "OTHERDATA";
+  Flags[(Flags["NONE"] = 0)] = "NONE";
+  Flags[(Flags["SELF"] = 1)] = "SELF";
+  Flags[(Flags["NEIGHBOR1"] = 2)] = "NEIGHBOR1";
+  Flags[(Flags["NEIGHBOR2"] = 4)] = "NEIGHBOR2";
+  Flags[(Flags["NEIGHBOR3"] = 8)] = "NEIGHBOR3";
+  Flags[(Flags["NEIGHBOR4"] = 16)] = "NEIGHBOR4";
+  Flags[(Flags["NEIGHBOR5"] = 32)] = "NEIGHBOR5";
+  Flags[(Flags["NEIGHBOR6"] = 64)] = "NEIGHBOR6";
+  Flags[(Flags["NEIGHBOR7"] = 128)] = "NEIGHBOR7";
+  Flags[(Flags["NEIGHBOR8"] = 256)] = "NEIGHBOR8";
+  Flags[(Flags["OTHERDATA"] = 512)] = "OTHERDATA";
 })(Flags || (Flags = {}));
 const currentFlags = {
-    self: 1,
-    neighbor1: 0,
-    neighbor2: 1,
-    neighbor3: 1,
-    neighbor4: 0,
-    neighbor5: 1,
-    neighbor6: 0,
-    neighbor7: 0,
-    neighbor8: 1,
-    otherdata: 1
+  self: 1,
+  neighbor1: 0,
+  neighbor2: 1,
+  neighbor3: 1,
+  neighbor4: 0,
+  neighbor5: 1,
+  neighbor6: 0,
+  neighbor7: 0,
+  neighbor8: 1,
+  otherdata: 1,
 };
 const getNeighborsMask = 0b0111111110;
 const isEmpty = (v) => !(v > Flags.NONE);
 console.log(`Initial value:  ${val} : `, val.toString(2), isEmpty(val));
-console.log('');
+console.log("");
 console.log(`***** SETTING *****`);
 // Setting
 Object.entries(currentFlags).forEach(([_, v], i) => {
-    val |= v &#x3C;&#x3C; i;
+  val |= v &#x3C;&#x3C; i;
 });
 console.log(`  Final value: ${val} : `, val.toString(2), isEmpty(val));
-console.log('');
+console.log("");
 console.log(`***** READING *****`);
 // Reading
 console.log(`self is : ${val &#x26; Flags.SELF}`);
@@ -310,33 +309,32 @@ console.log(`neighbor3 is : ${val &#x26; Flags.NEIGHBOR3}`);
 console.log(`neighbor4 is : ${val &#x26; Flags.NEIGHBOR4}`);
 console.log(`neighbor5 is : ${val &#x26; Flags.NEIGHBOR5}`);
 console.log(`otherData is : ${val &#x26; Flags.OTHERDATA}`);
-console.log('');
+console.log("");
 console.log(`     -----     `);
 Object.keys(currentFlags).forEach((k, i) => {
-    const key = k.toUpperCase();
-    const flag = Flags[key];
-    if (val &#x26; flag) {
-        // console.log(`${i} bit is set.`)
-        console.log(`${k} is set.`);
-    }
-    else {
-        console.log(`${k} is not set.`);
-    }
+  const key = k.toUpperCase();
+  const flag = Flags[key];
+  if (val &#x26; flag) {
+    // console.log(`${i} bit is set.`)
+    console.log(`${k} is set.`);
+  } else {
+    console.log(`${k} is not set.`);
+  }
 });
-console.log('');
+console.log("");
 console.log(`     -----     `);
 const cn = val &#x26; getNeighborsMask;
 // console.log(`isAnyNeighborSet: `, val > Flags.SELF); // only if no other data type is after neighbors
 console.log(`isAnyNeighborSet mask: `, !isEmpty(cn));
-console.log('');
+console.log("");
 console.log(`***** UNSET *****`);
 // unset neighbors only
 Object.keys(currentFlags).forEach((k, i) => {
-    const key = k.toUpperCase();
-    const flag = Flags[key];
-    if (flag > Flags.SELF &#x26;&#x26; flag &#x3C; Flags.OTHERDATA) {
-        val &#x26;= (~(1 &#x3C;&#x3C; i));
-    }
+  const key = k.toUpperCase();
+  const flag = Flags[key];
+  if (flag > Flags.SELF &#x26;&#x26; flag &#x3C; Flags.OTHERDATA) {
+    val &#x26;= ~(1 &#x3C;&#x3C; i);
+  }
 });
 console.log(`self is : ${val &#x26; Flags.SELF}`);
 console.log(`neighbor1 is : ${val &#x26; Flags.NEIGHBOR1}`);
@@ -348,7 +346,6 @@ console.log(`otherData is : ${val &#x26; Flags.OTHERDATA}`);
 const cn2 = val &#x26; getNeighborsMask;
 // console.log(`isAnyNeighborSet: `, val > Flags.SELF); // only if no other data type is after neighbors
 console.log(`isAnyNeighborSet mask: `, !isEmpty(cn2));
-
 </code></pre>
 </details>
 <details><summary><b>Compiler Options</b></summary>
@@ -418,29 +415,29 @@ enum Flags {
 <li>Large datasets can have a performance impact, usually very fast</li>
 <li>Values follow object equality rules</li>
 </ul>
-<pre><code class="language-typescript">type point = [number,number,number];
+<pre><code class="language-typescript">type point = [number, number, number];
 const testSet = new Set&#x3C;point>();
-const newPoint = [4,3,2] as point;
-const points: point[] = [[0,1,1], [1,1,2], [3,1,1], [0,2,1], newPoint];
+const newPoint = [4, 3, 2] as point;
+const points: point[] = [[0, 1, 1], [1, 1, 2], [3, 1, 1], [0, 2, 1], newPoint];
 points.forEach((p) => {
-    testSet.add(p);
-})
+  testSet.add(p);
+});
 
 console.log(testSet.size); // 5
-console.log(testSet.has([1,1,2])); // object equality, false
+console.log(testSet.has([1, 1, 2])); // object equality, false
 console.log(testSet.has(newPoint)); // true
 </code></pre>
 <p>workaround for complex lookups</p>
-<pre><code class="language-typescript">type point = [number,number,number];
+<pre><code class="language-typescript">type point = [number, number, number];
 const testSet = new Set&#x3C;string>();
-const newPoint = [4,3,2] as point;
-const points: point[] = [[0,1,1], [1,1,2], [3,1,1], [0,2,1], newPoint];
+const newPoint = [4, 3, 2] as point;
+const points: point[] = [[0, 1, 1], [1, 1, 2], [3, 1, 1], [0, 2, 1], newPoint];
 points.forEach((p) => {
-    testSet.add(p.toString());
-})
+  testSet.add(p.toString());
+});
 
 console.log(testSet.size); // 5
-console.log(testSet.has([1,1,2].toString())); // true
+console.log(testSet.has([1, 1, 2].toString())); // true
 console.log(testSet.has(newPoint.toString())); // true
 </code></pre>
 <h2>Performance</h2>
@@ -457,4 +454,4 @@ console.log(testSet.has(newPoint.toString())); // true
           >
             window.___chunkMapping="{\"app\":[\"/app-91067d881dd0c2a37d00.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-66cc4a836ad8844efdbb.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-968636d2fcf070ef833b.js\"],\"component---src-templates-note-template-tsx\":[\"/component---src-templates-note-template-tsx-7adec7af40d04564c029.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e6f832d9e3059fed9ca1";</script><script src="/notes/webpack-runtime-b90ccdd3c6481e069dba.js" async></script><script src="/notes/framework-7fba185ab6dd38e2e7c9.js" async></script><script src="/notes/app-91067d881dd0c2a37d00.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="7df027ecc7ed467c65ae";</script><script src="/notes/webpack-runtime-af0279bb488d48ebc375.js" async></script><script src="/notes/framework-7fba185ab6dd38e2e7c9.js" async></script><script src="/notes/app-91067d881dd0c2a37d00.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

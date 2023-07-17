@@ -190,7 +190,7 @@ IO.puts("Your ability modifier is #{ability_modifier}")
 <pre><code class="language-elixir">[a,a,a] = [1,1,1] # the list must have three elements with the same value
 [a,b,a] = [1,2,1] # [1,2,1]
 [a,a,a] = ["apples", "apples", "apples"]
-[a, a, "pineapples"] = ["apples", "apples", "pineapples"] 
+[a, a, "pineapples"] = ["apples", "apples", "pineapples"]
 [head | tail] = [:a, :b, :c, :d]
 head # :a
 tail # [:b, :c, :d]
@@ -336,7 +336,7 @@ CheckoutV2.total_cost(42.3, "Hellow, World!") # ArithmeticError
   number, other_number when number >= other_number -> number
   _, other_number -> other_number
 end
-number_compare_v3.(1,2) # 2    
+number_compare_v3.(1,2) # 2
 </code></pre>
 <ul>
 <li><a href="https://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses">Functions/Operators allowed in guard clause</a></li>
@@ -355,7 +355,7 @@ number_compare_v3.(1,2) # 2
   def check(number) when Integer.is_odd(number), do: "odd"
 end
 
-EvenOrOdd.check(42) # "even" 
+EvenOrOdd.check(42) # "even"
 EvenOrOdd.check(43) # "odd"
 </code></pre>
 <ul>
@@ -533,7 +533,7 @@ Sort.ascending([2,2,3,1])  # [1, 2, 2, 3]
   defp factorial_of(0, acc), do: acc
   defp factorial_of(n, acc) when n > 0, do: factorial_of(n - 1, n * acc)
 end
-TrFactorial.of(10000) # returns much faster than the original body recursive 
+TrFactorial.of(10000) # returns much faster than the original body recursive
 </code></pre>
 <h2>unbounded recursion</h2>
 <ul>
@@ -630,7 +630,7 @@ factorial.(5)
 </ul>
 <h2>Higher Order Functions</h2>
 <ul>
-<li>pass a function  into a function</li>
+<li>pass a function into a function</li>
 <li>hides complexity</li>
 </ul>
 <pre><code class="language-elixir">defmodule MyListV2 do
@@ -652,7 +652,7 @@ factorial.(5)
 end
 MyListV2.each(MyListV2.enchanted_items, fn item -> IO.puts item.title end)
 </code></pre>
-<pre><code class="language-elixir">increase_price = fn i -> %{title: i.title, price: i.price * 1.1} end 
+<pre><code class="language-elixir">increase_price = fn i -> %{title: i.title, price: i.price * 1.1} end
 increase_price = fn item -> update_in(item.price, &#x26;(&#x26;1 * 1.1)) end # same as above using built-in higher-order function
 </code></pre>
 <pre><code class="language-elixir">  def reduce([], acc, _function), do: acc
@@ -704,7 +704,7 @@ Enum.group_by(medals, &#x26;(&#x26;1.medal), &#x26;(&#x26;1.player))
 <li>generator function that will assign each item to the list of variable a</li>
 </ul>
 <pre><code class="language-elixir">for a &#x3C;- ["dogs", "cats", "flowers"], do: String.upcase(a)
-for a &#x3C;- ["Willy", "Anna"], b &#x3C;- ["Math", "English"], do: {a,b} # combining 
+for a &#x3C;- ["Willy", "Anna"], b &#x3C;- ["Math", "English"], do: {a,b} # combining
 parseds = for i &#x3C;- ["10", "hot dogs", "20"], do: Integer.parse(i) # [{10, ""}, :error, {20, ""}]
 for {n,_} &#x3C;- parseds, do: n # [10,20]
 for n &#x3C;- [1, 2, 3, 4, 5, 6, 7], n > 3, do: n # [4, 5, 6, 7]
@@ -716,7 +716,7 @@ for n &#x3C;- [1, 2, 3, 4, 5, 6, 7], n > 3, do: n # [4, 5, 6, 7]
   end
 end
 
-import HigherOrderFunctions 
+import HigherOrderFunctions
 first_letter_and_upcase = compose(&#x26;String.upcase/1, &#x26;String.first/1)
 first_letter_and_upcase.("works") # W
 
@@ -1164,4 +1164,4 @@ end
           >
             window.___chunkMapping="{\"app\":[\"/app-91067d881dd0c2a37d00.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-66cc4a836ad8844efdbb.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-968636d2fcf070ef833b.js\"],\"component---src-templates-note-template-tsx\":[\"/component---src-templates-note-template-tsx-7adec7af40d04564c029.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e6f832d9e3059fed9ca1";</script><script src="/notes/webpack-runtime-b90ccdd3c6481e069dba.js" async></script><script src="/notes/framework-7fba185ab6dd38e2e7c9.js" async></script><script src="/notes/app-91067d881dd0c2a37d00.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="7df027ecc7ed467c65ae";</script><script src="/notes/webpack-runtime-af0279bb488d48ebc375.js" async></script><script src="/notes/framework-7fba185ab6dd38e2e7c9.js" async></script><script src="/notes/app-91067d881dd0c2a37d00.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

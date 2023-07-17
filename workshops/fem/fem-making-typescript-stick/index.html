@@ -8,12 +8,12 @@
 <p>Make it stick book --> using to write onboarding</p>
 <p><a href="https://www.typescript-training.com/course/making-typescript-stick">https://www.typescript-training.com/course/making-typescript-stick</a></p>
 <pre><code class="language-tsx">// @errors: 2322 2320
-let first: string &#x26; number
-let second: String &#x26; Number
+let first: string &#x26; number;
+let second: String &#x26; Number;
 
-first = "abc"
-second = "abc"
-second = new String("abc")
+first = "abc";
+second = "abc";
+second = new String("abc");
 </code></pre>
 <p><a href="https://www.typescriptlang.org/play?#code/PTAEAEFMCdoe2gZwFygEwGY1vVgDAFAA2kALqAGYCWSpqip0VAdgOagBkozArgLYAjGMTKhEkAMZxmAE1QBlRi3ZcAcvyHQCBarVABeUACIAhgIlGC4qbIPGzFq5Oky7zSAHdQipmwAUpuZGAJRAA">Playground Link</a></p>
 <ul>
@@ -64,23 +64,23 @@ type SandwichOrder = [
 <pre><code class="language-tsx">function somethingRisky() {}
 // ---cut---
 try {
-  somethingRisky()
+  somethingRisky();
 } catch (err: unknown) {
-  if (err instanceof Error) throw err
-  else throw new Error(`${err}`)
+  if (err instanceof Error) throw err;
+  else throw new Error(`${err}`);
 }
 </code></pre>
 <p><a href="https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABAZzgWwKZQBYzAcwCUZkBrATwAoBKRAbwF8AoAehcQFouIQouOmUAE7l6TRCnRZcBYmSrUmDRBACGUCNkSUMQoQC5E4UmDgB3MLTrjEMYNt1DbYZFFWQMcewFE9cIbQ4QuaIjjYYADbIGIhBIWAYZoi+wUKUAAYAJHSODOmKDEA">Playground Link</a></p>
 <h2>interface vs. type</h2>
 <pre><code class="language-tsx">// @errors: 2300
 type Color = {
-  red: number
-  green: number
-  blue: number
-}
+  red: number;
+  green: number;
+  blue: number;
+};
 
 interface Color {
-  alpha: number
+  alpha: number;
 }
 </code></pre>
 <p><a href="https://www.typescriptlang.org/play?#code/PTAEAEFMCdoe2gZwFygEwGYAMWBQAXATwAdJQBhOAGwVAF5QBvXUUaSAE1QDsBXAWwBGMFqADm7SNx4Dh0UYKq9IMoSIC+uXAEtu+GADMAhgGMylGtCaijVYgAsjqubnVA">Playground Link</a></p>
@@ -101,4 +101,4 @@ type NotEqual&#x3C;X, Y> = true extends Equal&#x3C;X, Y>...
           >
             window.___chunkMapping="{\"app\":[\"/app-91067d881dd0c2a37d00.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-66cc4a836ad8844efdbb.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-968636d2fcf070ef833b.js\"],\"component---src-templates-note-template-tsx\":[\"/component---src-templates-note-template-tsx-7adec7af40d04564c029.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e6f832d9e3059fed9ca1";</script><script src="/notes/webpack-runtime-b90ccdd3c6481e069dba.js" async></script><script src="/notes/framework-7fba185ab6dd38e2e7c9.js" async></script><script src="/notes/app-91067d881dd0c2a37d00.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="7df027ecc7ed467c65ae";</script><script src="/notes/webpack-runtime-af0279bb488d48ebc375.js" async></script><script src="/notes/framework-7fba185ab6dd38e2e7c9.js" async></script><script src="/notes/app-91067d881dd0c2a37d00.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

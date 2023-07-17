@@ -247,18 +247,13 @@ git diff A..B
 git branch --no-merged master # branches not merged into master
 </code></pre>
 <h2>Fixing Mistakes</h2>
-<p><code>git checkout</code> restore working tree or switch branches
-1. Change HEAD to point to the new branch
-1. Copy the commit snapshot to the staging area
-1. Update the working area with the branch commits</p>
+<p><code>git checkout</code> restore working tree or switch branches 1. Change HEAD to point to the new branch 1. Copy the commit snapshot to the staging area 1. Update the working area with the branch commits</p>
 <p><code>git checkout -- &#x3C;file></code> completely overwrite files in working directory without warning</p>
 <p><code>--</code> end of command operation, start of positional parameters</p>
 <p><code>git checkout &#x3C;commit> -- &#x3C;file></code> copies to both staging and working area</p>
 <p><code>git checkout &#x3C;deleting_commit>^ -- &#x3C;file></code> restore deleted file</p>
 <p><code>git clean</code> clear working area of untracked files <code>--dry-run</code>, prompts for changes</p>
-<p><code>git reset</code> by default used 'mixed' mode.
-1. For commit: moves head pointer, optionally modify files
-1. For file path: does not move HEAD pointer, modifies files</p>
+<p><code>git reset</code> by default used 'mixed' mode. 1. For commit: moves head pointer, optionally modify files 1. For file path: does not move HEAD pointer, modifies files</p>
 <pre><code class="language-bash">git reset --soft HEAD~ # moves head pointer back one commit, has a dangling commit
 git reset --mixed HEAD~ # moves head pointer back one commit, moves files to staging area (un-stage command)
 git reset --hard HEAD~ # destructive, move head, copies files to stage and working.
@@ -434,4 +429,4 @@ git push --tags # push tags
           >
             window.___chunkMapping="{\"app\":[\"/app-91067d881dd0c2a37d00.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-66cc4a836ad8844efdbb.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-968636d2fcf070ef833b.js\"],\"component---src-templates-note-template-tsx\":[\"/component---src-templates-note-template-tsx-7adec7af40d04564c029.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e6f832d9e3059fed9ca1";</script><script src="/notes/webpack-runtime-b90ccdd3c6481e069dba.js" async></script><script src="/notes/framework-7fba185ab6dd38e2e7c9.js" async></script><script src="/notes/app-91067d881dd0c2a37d00.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="7df027ecc7ed467c65ae";</script><script src="/notes/webpack-runtime-af0279bb488d48ebc375.js" async></script><script src="/notes/framework-7fba185ab6dd38e2e7c9.js" async></script><script src="/notes/app-91067d881dd0c2a37d00.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
