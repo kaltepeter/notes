@@ -2,8 +2,8 @@
 title: Azure
 date: 2021-01-14
 tags:
-- cloud
-- azure
+  - cloud
+  - azure
 ---
 
 Deploy ng app: https://github.com/Azure/ng-deploy-azure/blob/master/src/builders/deploy.builder.ts

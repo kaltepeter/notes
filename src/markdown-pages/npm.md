@@ -2,7 +2,7 @@
 title: NPM
 date: 2018-07-28
 tags:
-- ui
+  - ui
 ---
 
 Get the npm location
@@ -38,4 +38,3 @@ npx ng
 ```text
 npx -c ng
 ```
-

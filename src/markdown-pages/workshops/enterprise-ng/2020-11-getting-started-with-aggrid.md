@@ -2,9 +2,8 @@
 title: Getting started with Ag Grid
 date: 2020-12-03
 tags:
-- workshop
+  - workshop
 ---
-
 
 https://lookout.dev/home - share learnings publicly
 

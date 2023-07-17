@@ -2,7 +2,7 @@
 title: Rails Tutorial
 date: 2023-03-29
 tags:
-- tutorial
+  - tutorial
 ---
 
 - [Rails Book Tutorial](https://www.railstutorial.org/book)

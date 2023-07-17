@@ -2,8 +2,8 @@
 title: NX
 date: 2020-01-14
 tags:
-- nx
-- ui
+  - nx
+  - ui
 ---
 
 Jenkins example: https://github.com/nrwl/nx-jenkins-build
@@ -16,7 +16,7 @@ Jenkins example: https://github.com/nrwl/nx-jenkins-build
 
 `nx list`: show list of available plugins
 
-> NX  Installed plugins :
+> NX Installed plugins :
 
 ```shell
 @angular-devkit/build-angular (builders)
@@ -31,7 +31,7 @@ Jenkins example: https://github.com/nrwl/nx-jenkins-build
 @schematics/update (schematics)
 ```
 
-> NX  Also available :
+> NX Also available :
 
 ```shell
   @nrwl/nest (builders,schematics)

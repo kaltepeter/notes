@@ -82,9 +82,9 @@ const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 
 const getVars = async () => {
-  const getVar = async varName => {
+  const getVar = async (varName) => {
     const { stdout, stderr } = await exec(
-      `zsh -c '. ~/.zshrc; echo $${varName}'`
+      `zsh -c '. ~/.zshrc; echo $${varName}'`,
     );
     if (stderr) return reject(stderr);
     return stdout.toString().trim();
@@ -92,7 +92,7 @@ const getVars = async () => {
 
   const [currentThemeRes, zshCustomRes] = await Promise.all([
     getVar("ZSH_THEME"),
-    getVar("ZSH_CUSTOM")
+    getVar("ZSH_CUSTOM"),
   ]);
   return [currentThemeRes, zshCustomRes];
 };

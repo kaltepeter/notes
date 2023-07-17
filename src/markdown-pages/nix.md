@@ -2,7 +2,7 @@
 title: \*nix
 date: 2019-10-09
 tags:
-- nix
+  - nix
 ---
 
 ## file permissions (chmod)
@@ -10,7 +10,7 @@ tags:
 <https://www.tutorialspoint.com/unix/unix-file-permission.htm>
 
 | num | permission         | Ref |
-|-----|--------------------|-----|
+| --- | ------------------ | --- |
 | 0   | No permission      | --- |
 | 1   | Execute permission | --x |
 | 2   | Write permission   | -w- |
@@ -130,7 +130,7 @@ General things. SSH keys identify and provide access. I am not a fan of sharing 
 <https://goteleport.com/blog/comparing-ssh-keys/>
 
 > The short answer to this is: as long as the key strength is good enough for the foreseeable future, it doesn't really matter. Because here we are considering a signature for authentication within an SSH session. The cryptographic strength of the signature just needs to withstand the current, state-of-the-art attacks.
--- <https://blog.peterruppel.de/ed25519-for-ssh/>
+> -- <https://blog.peterruppel.de/ed25519-for-ssh/>
 
 While GitHub used to recommend RSA, they now recommend 'ed25519' in their guide. They have one of the best guides and most common use of SSH so I prefer to keep aligned with that.
 
@@ -248,5 +248,3 @@ sudo ufw enable
 
 - <https://www.debian.org/releases/>
 - <https://www.debian.org/doc/manuals/debian-faq/choosing.en.html>
-
-

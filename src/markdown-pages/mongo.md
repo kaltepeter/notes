@@ -2,7 +2,7 @@
 title: Mongo
 date: 2019-11-11
 tags:
-- database
+  - database
 ---
 
 https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-1 - great series on schema design

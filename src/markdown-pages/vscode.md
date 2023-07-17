@@ -2,7 +2,7 @@
 title: VS Code
 date: 2020-01-19
 tags:
-- tools
+  - tools
 ---
 
 ## useful plugins
@@ -16,17 +16,15 @@ tags:
 - **sapphire:** (Tyriar.theme-sapphire) https://marketplace.visualstudio.com/items?itemName=Tyriar.theme-sapphire
 
 - **shades of purple:** (ahmadawais.shades-of-purple) https://marketplace.visualstudio.com/items?itemName=ahmadawais.
-shades-of-purple
+  shades-of-purple
 
 - **peacock:** (johnpapa.vscode-peacock) https://marketplace.visualstudio.com/items?itemName=johnpapa.vscode-peacock
 
 - **bracket colorize:** (CoenraadS.bracket-pair-colorizer-2) https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2
 
-
 ### key bindings
 
 - **webstorm key bindings:** (k--kato.intellij-idea-keybindings) https://marketplace.visualstudio.com/items?itemName=isudox.vscode-jetbrains-keybindings
-
 
 ### linters/quality tools
 
@@ -40,8 +38,7 @@ shades-of-purple
 
 - **eslint:** (dbaeumer.vscode-eslint) https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 
-
-### formatters 
+### formatters
 
 - **shell format:** (foxundermoon.shell-format) https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format
 
@@ -53,7 +50,6 @@ shades-of-purple
 
 - **prettier:** (esbenp.prettier-vscode) https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 
-
 ### SCM tools
 
 - **gitlens:** (eamodio.gitlens) https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
@@ -63,7 +59,6 @@ shades-of-purple
 - **git history:** (donjayamanne.githistory) https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory
 
 - **git pull requests:** (vscode-pull-request-github) https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github
-
 
 ### language support
 
@@ -119,15 +114,13 @@ shades-of-purple
 
 - **pl/sql:** (xyz.plsql-language) https://marketplace.visualstudio.com/items?itemName=xyz.plsql-language
 
-
 ### snippets
 
 - **react snippets:** (burkeholland.simple-react-snippets) https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets
 
-	- ~~(EQuimper.react-native-react-redux) https://marketplace.visualstudio.com/items?itemName=EQuimper.react-native-react-redux~~
+  - ~~(EQuimper.react-native-react-redux) https://marketplace.visualstudio.com/items?itemName=EQuimper.react-native-react-redux~~
 
-	- ~~(xabikos.ReactSnippets) https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets~~
-
+  - ~~(xabikos.ReactSnippets) https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets~~
 
 ### testing plugins
 
@@ -143,7 +136,6 @@ shades-of-purple
 
 - **wallabyjs:** (WallabyJs.wallaby-vscode) https://marketplace.visualstudio.com/items?itemName=WallabyJs.wallaby-vscode
 
-
 ### dev tools
 
 - **chrome debugger:** (msjsdiag.debugger-for-chrome) https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome
@@ -153,7 +145,6 @@ shades-of-purple
 - **angular console:** (nrwl.angular-console) https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console
 
 - **time converter:** (HaaLeo.timing) https://marketplace.visualstudio.com/items?itemName=HaaLeo.timing
-
 
 ### editor tools
 
@@ -171,14 +162,13 @@ shades-of-purple
 
 - **jira:** (gioboa.jira-plugin) https://marketplace.visualstudio.com/items?itemName=gioboa.jira-plugin - full featured like IDEA integration
 
-	- ~~(KnisterPeter.vscode-jira) https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira~~
+  - ~~(KnisterPeter.vscode-jira) https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-jira~~
 
 - **local history:** (gayanhewa.local-history) https://marketplace.visualstudio.com/items?itemName=gayanhewa.local-history
 
 - **live share:** (MS-vsliveshare.vsliveshare-pack) https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack
 
 - **partial diff:** (ryu1kn.partial-diff) https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff
-
 
 ---
 

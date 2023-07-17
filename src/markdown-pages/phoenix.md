@@ -2,7 +2,7 @@
 title: Phoenix
 date: 2023-05-06
 tags:
-- framework
+  - framework
 ---
 
 ## alias vs use vs. import

@@ -2,7 +2,7 @@
 title: Design
 date: 2020-08-06
 tags:
-- design
+  - design
 ---
 
 ## brand colors

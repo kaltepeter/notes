@@ -2,47 +2,47 @@
 title: NGRX
 date: 2018-07-28
 tags:
-- library
+  - library
 ---
 
 ### adding store
 
 ## package structure {#workingwithngrx-packagestructure}
 
-* content
-  * +state
-    * breadcrumbs
-    * container
-    * content-grid
-    * navigation
-    * content.actions.ts
-    * content.effects.ts
-    * content.init.ts
-    * content.interfaces.ts
-    * content.reducer.ts
-    * content.selectors.ts
-  * content-breadcrumb
-  * content-data-table
-  * content-toolbar
-* core
-  * +state
-    * feature-flag
-    * navigation 
-    * project-info
-    * router
-    * core.actions.ts
-    * core.effects.ts
-    * core.init.ts
-    * core.interfaces.ts
-    * core.reducer.ts
-    * core.selectors.ts
-  * feature-flag
-* permissions
-  * +state
-    * permissions.init.ts
-    * permissions.interfaces.ts
-  * permissions-data-table
-  * permissions-detail-panel
+- content
+  - +state
+    - breadcrumbs
+    - container
+    - content-grid
+    - navigation
+    - content.actions.ts
+    - content.effects.ts
+    - content.init.ts
+    - content.interfaces.ts
+    - content.reducer.ts
+    - content.selectors.ts
+  - content-breadcrumb
+  - content-data-table
+  - content-toolbar
+- core
+  - +state
+    - feature-flag
+    - navigation
+    - project-info
+    - router
+    - core.actions.ts
+    - core.effects.ts
+    - core.init.ts
+    - core.interfaces.ts
+    - core.reducer.ts
+    - core.selectors.ts
+  - feature-flag
+- permissions
+  - +state
+    - permissions.init.ts
+    - permissions.interfaces.ts
+  - permissions-data-table
+  - permissions-detail-panel
 
 ## naming {#workingwithngrx-naming}
 
@@ -61,4 +61,3 @@ initial state should provide defaults for all reducer state
 ## Adding new store/state to permissions model {#workingwithngrx-Addingnewstore/statetopermissionsmodel}
 
 1. models first. i.e. start with init, interfaces, types and or actions
-

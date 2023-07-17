@@ -2,9 +2,9 @@
 title: Rspec
 date: 2023-06-18
 tags:
-- framework
-- ruby
-- backend
+  - framework
+  - ruby
+  - backend
 ---
 
 <https://www.rubypigeon.com/posts/rspec-core-cheat-sheet/>

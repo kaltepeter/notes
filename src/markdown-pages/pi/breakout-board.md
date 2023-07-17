@@ -2,8 +2,7 @@
 title: Breakout Board
 date: 2020-07-03
 tags:
-- IOT
+  - IOT
 ---
 
 https://pimylifeup.com/raspberry-pi-gpio/
-

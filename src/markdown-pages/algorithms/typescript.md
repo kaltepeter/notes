@@ -13,29 +13,29 @@ https://github.com/trekhleb/javascript-algorithms
 example: get all permutations of coords x,y,z for {0,1,2} +- 1
 
 ```typescript
-const xRange = [-1,0,1];
-const yRange = [0,1,2];
-const zRange = [1,2,3];
+const xRange = [-1, 0, 1];
+const yRange = [0, 1, 2];
+const zRange = [1, 2, 3];
 
 for (const x of xRange) {
-    for (const y of yRange) {
-        for (const z of zRange) {
-            console.log([x, y, z]);
-        }
+  for (const y of yRange) {
+    for (const z of zRange) {
+      console.log([x, y, z]);
     }
+  }
 }
 ```
 
 ## Manhatten Distance
 
 ```tsx
-let pointA = [1105,-1205,1229]
-let pointB = [-92,-2380,-20]
+let pointA = [1105, -1205, 1229];
+let pointB = [-92, -2380, -20];
 
 function manhattenDist(p1: number[], p2: number[]) {
-    return p1.reduce((acc, v, idx) => {
-        return acc += Math.abs(v - pointB[idx])
-    }, 0)
+  return p1.reduce((acc, v, idx) => {
+    return (acc += Math.abs(v - pointB[idx]));
+  }, 0);
 }
 // ...
 ```

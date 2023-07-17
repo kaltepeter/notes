@@ -2,7 +2,7 @@
 title: CSS
 date: 2020-08-06
 tags:
-- ui
+  - ui
 ---
 
 ## CSS Mastery
@@ -146,7 +146,7 @@ two :: is correct, : worked
   box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
 }
 .scrollbar ::-webkit-scrollbar-thumb:hover {
-  background: royalblue; 
+  background: royalblue;
 }
 .scrollbar pre {
   width: 700px;
@@ -206,7 +206,7 @@ body {counter-reset: invalidCount;}
   counter-increment: invalidCount;
 }
 p:before {
-  content: "You have " 
+  content: "You have "
       counter(invalidCount) " invalid entries";
 }
 ```
@@ -250,15 +250,15 @@ don't mix content vs. presentation. i.e. generated content is extra, not require
 
 [https://estelle.github.io/cssmastery/media/\#slide2](https://estelle.github.io/cssmastery/media/#slide2)
 
-[https://developer.mozilla.org/en-US/docs/Web/CSS/@media\#Media\_features](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features) - media query specs
+[https://developer.mozilla.org/en-US/docs/Web/CSS/@media\#Media_features](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#Media_features) - media query specs
 
 #### resolution
 
 **dpi**
 
-* : dots per inch \(72, 96\)
-* **dpcm** : dots per centimeter \(1dpcm ≈ 2.54dpi\)
-* **dppx**  
+- : dots per inch \(72, 96\)
+- **dpcm** : dots per centimeter \(1dpcm ≈ 2.54dpi\)
+- **dppx**  
   : dots per pixel
 
   1dppx = 96dpi \(default resolution of images\)
@@ -284,8 +284,8 @@ feature detection without js
             initial-scale=1, maximum-scale=1"/>
 ```
 
-* always include
-* don't disable scaling
+- always include
+- don't disable scaling
 
 #### svg
 
@@ -361,10 +361,10 @@ inline \| block \| list-item \| inline-list-item \| inline-block \| flex \| inli
 
 #### changed props
 
-* floats are not impacted. use as fallback
-* `margin`: adjacent flex items margins do not collapse
-* `min-width`& `min-height`: default is auto, not 0
-* `visibility: collapse;`
+- floats are not impacted. use as fallback
+- `margin`: adjacent flex items margins do not collapse
+- `min-width`& `min-height`: default is auto, not 0
+- `visibility: collapse;`
 
 **ignored:**
 
@@ -435,7 +435,7 @@ a:hover {text-decoration: underline; }
 IE 10 support with different syntax
 
 ```text
-ol { 
+ol {
   display: grid;
 list-style: none;
   grid-template-columns: repeat(2, 3fr) 12fr repeat(3, 6fr);
@@ -475,7 +475,7 @@ grid-row: 4/5;
 }
 article:nth-of-type(1){
  grid-row: 3/4;
-grid-column: 1/4; 
+grid-column: 1/4;
 }
 article:nth-of-type(2){
   grid-column: 1/2;
@@ -552,4 +552,3 @@ background-size: 300px 150px;
 [https://css-tricks.com/almanac/properties/b/background-blend-mode/](https://css-tricks.com/almanac/properties/b/background-blend-mode/)
 
 [http://www.axis-praxis.org/specimens/\_\_DEFAULT\_\_](http://www.axis-praxis.org/specimens/__DEFAULT__)
-

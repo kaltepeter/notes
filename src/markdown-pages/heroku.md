@@ -2,7 +2,7 @@
 title: Heroku
 date: 2019-09-08
 tags:
-- platform
+  - platform
 ---
 
 ## Push single directory as app

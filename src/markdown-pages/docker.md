@@ -2,7 +2,7 @@
 title: Docker
 date: 2019-04-10
 tags:
-- nix
+  - nix
 ---
 
 ## install
@@ -18,7 +18,7 @@ brew install docker docker-compose docker-machine
 
 ### ~~xhyve~~
 
-*deprecated, use hyperkit*
+_deprecated, use hyperkit_
 
 ```bash
 docker-machine-driver-xhyve
@@ -35,7 +35,7 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-
 && sudo install -o root -g wheel -m 4755 docker-machine-driver-hyperkit /usr/local/bin/
 ```
 
-or 
+or
 
 ```bash
 docker-machine-driver-hyperkit
@@ -46,7 +46,7 @@ docker-machine create dev --driver hyperkit
 
 `docker exec -it vibrant_bell sh`
 
-> run shell on container vibrant\_bell
+> run shell on container vibrant_bell
 
 ### Healthchecks
 
@@ -102,7 +102,8 @@ environment replacement doc: [https://docs.docker.com/engine/reference/builder/\
    ENTRYPOINT exec sh ./dockerrun.sh
    ```
 
-3. 
+3.
+
 ### Networking
 
 docs: [https://docs.docker.com/engine/userguide/networking/work-with-networks/\#basic-container-networking-example](https://docs.docker.com/engine/userguide/networking/work-with-networks/#basic-container-networking-example)
@@ -151,11 +152,11 @@ alpine linux won't build phantom:
 
 ### Volumes
 
-* mount points are owned by root, may have implications when mounting user home
-  * create a VOLUME and run ls -la /home
-  * add a volume at run to /home/username and run ls -la /home to see diff
-  * paths on host must be absolute.
-  * non-existent paths are created
+- mount points are owned by root, may have implications when mounting user home
+  - create a VOLUME and run ls -la /home
+  - add a volume at run to /home/username and run ls -la /home to see diff
+  - paths on host must be absolute.
+  - non-existent paths are created
 
 #### Mac OS
 
@@ -215,7 +216,7 @@ Can be used with other tools for storage and retrieval. docs: [https://github.co
 
 [https://thenewstack.io/understanding-the-docker-cache-for-faster-builds/](https://thenewstack.io/understanding-the-docker-cache-for-faster-builds/)
 
-[https://docs.docker.com/develop/develop-images/dockerfile\_best-practices/\#run](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run)
+[https://docs.docker.com/develop/develop-images/dockerfile_best-practices/\#run](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#run)
 
 brute force: –no-cache during build
 

@@ -2,7 +2,7 @@
 title: FEM functional programming
 date: 2020-12-04
 tags:
-- workshop
+  - workshop
 ---
 
 https://docs.google.com/presentation/d/1nj5xmsHeJh-6RdjLs1190Hwl8smclvFLePqPCTVsrYw/edit#slide=id.g338d117be_040
@@ -12,19 +12,19 @@ https://drboolean.gitbooks.io/mostly-adequate-guide-old/content/
 ## curry trick
 
 ```javascript
-const words = function(str) {
-  return split(' ', str);
- }
+const words = function (str) {
+  return split(" ", str);
+};
 ```
 
 ```javascript
 const words = (str) => {
-  return split(' ', str);
- }
+  return split(" ", str);
+};
 ```
 
 ```javascript
-const words = split(' ', str);
+const words = split(" ", str);
 ```
 
 ## compose
@@ -44,19 +44,19 @@ https://mostly-adequate.gitbooks.io/mostly-adequate-guide/
 ## curry trick
 
 ```javascript
-const words = function(str) {
-  return split(' ', str);
- }
+const words = function (str) {
+  return split(" ", str);
+};
 ```
 
 ```javascript
 const words = (str) => {
-  return split(' ', str);
- }
+  return split(" ", str);
+};
 ```
 
 ```javascript
-const words = split(' ', str);
+const words = split(" ", str);
 ```
 
 ## compose
@@ -85,7 +85,6 @@ transformers: https://codepen.io/drboolean/pen/NQKByP
 
 `const identity = a => a`
 
-
 ## map of conccepts
 
 https://github.com/fantasyland/fantasy-land/blob/master/figures/dependencies.png
@@ -99,4 +98,3 @@ https://haskellbook.com/
 https://docs.google.com/presentation/d/1L5gxYQz2hyzbVJk5tkyNdDidf_cg4I1BlIGd_Y9jblU/edit#slide=id.g73e75cdd29_0_173
 
 https://folktale.origamitower.com/
-

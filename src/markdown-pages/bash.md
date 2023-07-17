@@ -2,7 +2,7 @@
 title: Bash
 date: 2019-10-09
 tags:
-- nix
+  - nix
 ---
 
 [https://stackoverflow.com/questions/17029902/using-curl-post-with-variables-defined-in-bash-script-functions](https://stackoverflow.com/questions/17029902/using-curl-post-with-variables-defined-in-bash-script-functions)
@@ -135,6 +135,7 @@ ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's
 ```
 
 outputs
+
 ```bash
    |-jobs
    |---PCF-Upgrade
@@ -144,6 +145,7 @@ outputs
 ```
 
 count directories
+
 ```bash
 ls -R | grep ":$" | wc -l
 ```
@@ -214,4 +216,3 @@ https://misc.flogisoft.com/bash/tip_colors_and_formatting
 ```bash
 sudo !!
 ```
-

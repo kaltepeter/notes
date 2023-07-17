@@ -1,17 +1,17 @@
-import ChevronRightIcon from "@mui/icons-material/ChevronRight"
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
-import { TreeItem } from "@mui/lab"
-import TreeView from "@mui/lab/TreeView"
-import { Divider, Drawer, Hidden, useTheme } from "@mui/material"
-import { Link } from "gatsby"
-import React from "react"
-import { makeStyles } from "tss-react/mui"
-import { Path, PathList, usePageTree } from "../hooks/use-page-tree"
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { TreeItem } from "@mui/lab";
+import TreeView from "@mui/lab/TreeView";
+import { Divider, Drawer, Hidden, useTheme } from "@mui/material";
+import { Link } from "gatsby";
+import React from "react";
+import { makeStyles } from "tss-react/mui";
+import { Path, PathList, usePageTree } from "../hooks/use-page-tree";
 
 interface NavigationProps {
-  drawerOpen: boolean
-  onToggleDrawer: () => void
-  drawerWidth: number
+  drawerOpen: boolean;
+  onToggleDrawer: () => void;
+  drawerWidth: number;
 }
 
 const useStyles = makeStyles<NavigationProps>({ name: "Navigation" })(
@@ -34,17 +34,17 @@ const useStyles = makeStyles<NavigationProps>({ name: "Navigation" })(
       color: "inherit",
       textDecoration: "none",
     },
-  })
-)
+  }),
+);
 
-const Navigation: React.FC<NavigationProps> = props => {
-  const { drawerOpen, onToggleDrawer } = props
-  const { classes } = useStyles(props)
-  const theme = useTheme()
-  const { pages, allTags, allPaths } = usePageTree()
+const Navigation: React.FC<NavigationProps> = (props) => {
+  const { drawerOpen, onToggleDrawer } = props;
+  const { classes } = useStyles(props);
+  const theme = useTheme();
+  const { pages, allTags, allPaths } = usePageTree();
 
-  const titleCase = sentence =>
-    sentence.replace(/\w\S*/g, w => w.replace(/^\w/, c => c.toUpperCase()))
+  const titleCase = (sentence) =>
+    sentence.replace(/\w\S*/g, (w) => w.replace(/^\w/, (c) => c.toUpperCase()));
 
   const getTreeLabel = (node: Path) => (
     <div>
@@ -61,7 +61,7 @@ const Navigation: React.FC<NavigationProps> = props => {
         titleCase(node.name)
       )}
     </div>
-  )
+  );
 
   const renderTree = (nodes: PathList) => {
     return (
@@ -75,14 +75,14 @@ const Navigation: React.FC<NavigationProps> = props => {
           >
             {Object.keys(tPath.children).length > 0
               ? Object.entries(tPath.children).map(([id, node]) =>
-                  renderTree({ [id]: { ...node } })
+                  renderTree({ [id]: { ...node } }),
                 )
               : null}
           </TreeItem>
         ))}
       </>
-    )
-  }
+    );
+  };
 
   const drawerChildren = () => (
     <>
@@ -96,7 +96,7 @@ const Navigation: React.FC<NavigationProps> = props => {
         {renderTree(allPaths["root"].children)}
       </TreeView>
     </>
-  )
+  );
 
   return (
     <>
@@ -132,8 +132,8 @@ const Navigation: React.FC<NavigationProps> = props => {
         </Hidden>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export { Navigation }
-export default Navigation
+export { Navigation };
+export default Navigation;

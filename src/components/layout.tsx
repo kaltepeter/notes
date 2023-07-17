@@ -9,26 +9,26 @@ import {
   CssBaseline,
   ThemeProvider,
   StyledEngineProvider,
-} from "@mui/material"
-import { makeStyles } from "tss-react/mui"
-import "@fontsource/libre-franklin/300.css"
-import "@fontsource/libre-franklin/400.css"
-import "@fontsource/libre-franklin/500.css"
-import "@fontsource/libre-franklin/700.css"
-import "@fontsource/merriweather/400.css"
-import "@fontsource/merriweather/700-italic.css"
-import "@fontsource/merriweather/900-italic.css"
-import { graphql, useStaticQuery } from "gatsby"
-import React, { ReactNode } from "react"
-import Header from "./header"
-import { CacheProvider } from "@emotion/react"
-import { makeMuiCache } from "../theme/cache"
-import theme from "./theme"
+} from "@mui/material";
+import { makeStyles } from "tss-react/mui";
+import "@fontsource/libre-franklin/300.css";
+import "@fontsource/libre-franklin/400.css";
+import "@fontsource/libre-franklin/500.css";
+import "@fontsource/libre-franklin/700.css";
+import "@fontsource/merriweather/400.css";
+import "@fontsource/merriweather/700-italic.css";
+import "@fontsource/merriweather/900-italic.css";
+import { graphql, useStaticQuery } from "gatsby";
+import React, { ReactNode } from "react";
+import Header from "./header";
+import { CacheProvider } from "@emotion/react";
+import { makeMuiCache } from "../theme/cache";
+import theme from "./theme";
 
 type LayoutProps = {
-  drawerWidth?: number
-  children?: React.ReactNode
-}
+  drawerWidth?: number;
+  children?: React.ReactNode;
+};
 
 const useStyles = makeStyles<LayoutProps>({ name: "Layout" })(
   (_theme, { drawerWidth }) => ({
@@ -56,15 +56,15 @@ const useStyles = makeStyles<LayoutProps>({ name: "Layout" })(
         marginLeft: drawerWidth,
       },
     },
-  })
-)
+  }),
+);
 
-const muiCache = makeMuiCache()
+const muiCache = makeMuiCache();
 
 // This component exists because of https://mui.com/material-ui/migration/migration-v4/#set-up-themeprovider
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const drawerWidth = 400
-  const { classes } = useStyles({ drawerWidth })
+  const drawerWidth = 400;
+  const { classes } = useStyles({ drawerWidth });
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -74,7 +74,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <div className={classes.root}>
@@ -103,8 +103,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </Box>
     </div>
-  )
-}
+  );
+};
 
 const LayoutWrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
@@ -116,8 +116,8 @@ const LayoutWrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
         </ThemeProvider>
       </StyledEngineProvider>
     </CacheProvider>
-  )
-}
+  );
+};
 
-export { LayoutWrapper as Layout }
-export default LayoutWrapper
+export { LayoutWrapper as Layout };
+export default LayoutWrapper;

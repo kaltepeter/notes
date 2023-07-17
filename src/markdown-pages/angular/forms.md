@@ -56,10 +56,9 @@ tags:
 - Leave validation logic to the parent form component
 - CVA can be used with any form API
 
-
 ### Implementation
 
-1.  Add a lookup to the NgControl to the custructor of your custom control. 
+1.  Add a lookup to the NgControl to the custructor of your custom control.
 
     **NOTE**: Alternate approach is using [`NG_VALUE_ACCESSOR`](https://indepth.dev/posts/1055/never-again-be-confused-when-implementing-controlvalueaccessor-in-angular-forms#implementing-custom-value-accessor)
 
@@ -91,8 +90,8 @@ tags:
       _value: string;
       // ... constructor from first step
 
-      onChanged = (v: string): void => {}
-      onTouched = (): void => {}
+      onChanged = (v: string): void => {};
+      onTouched = (): void => {};
 
       writeValue(obj: any): void {
         this._value = value;
@@ -112,7 +111,7 @@ tags:
 
       sweetChange($event) {
         this.onTouched();
-        this.onChanged($event.currentTarget.value)
+        this.onChanged($event.currentTarget.value);
       }
     }
     ```
@@ -177,8 +176,6 @@ tags:
 #### Infinite loop with writeValue and set value
 
 - Don't call onChange from the value setter
-
-
 
 - [How to PROPERLY implement ControlValueAccessor - Angular Form](https://blog.woodies11.dev/how-to-properly-implement-controlvalueaccessor/)
 - [Why do I need call onChange and onTouch in writeValue when implementing ControlValueAccessor in Angular?](https://stackoverflow.com/a/46743580/3195475)

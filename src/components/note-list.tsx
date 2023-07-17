@@ -5,14 +5,14 @@ import {
   ListItem,
   ListItemText,
   Typography,
-} from "@mui/material"
-import { Link } from "gatsby"
-import React from "react"
-import { makeStyles } from "tss-react/mui"
-import { useNoteExcerptList } from "../hooks/use-note-excerpt-list"
-import { Note } from "../models/note"
+} from "@mui/material";
+import { Link } from "gatsby";
+import React from "react";
+import { makeStyles } from "tss-react/mui";
+import { useNoteExcerptList } from "../hooks/use-note-excerpt-list";
+import { Note } from "../models/note";
 
-const useStyles = makeStyles({ name: "NoteList" })(_theme => ({
+const useStyles = makeStyles({ name: "NoteList" })((_theme) => ({
   noteListItem: {
     "& .head": {
       display: "flex",
@@ -35,21 +35,21 @@ const useStyles = makeStyles({ name: "NoteList" })(_theme => ({
     border: "none",
     borderRadius: 0,
   },
-}))
+}));
 
 interface NoteListProps {}
 
 const NoteList: React.FC<NoteListProps> = () => {
-  const { classes, cx } = useStyles()
-  const { notes } = useNoteExcerptList()
+  const { classes, cx } = useStyles();
+  const { notes } = useNoteExcerptList();
   // const {modifiedDate, slug} = pageContext;
 
   return (
     <List>
       {notes
-        .filter(note => note.node.frontmatter.title.length > 0)
+        .filter((note) => note.node.frontmatter.title.length > 0)
         .map(({ node }) => {
-          const note = node as Note
+          const note = node as Note;
           return (
             <ListItem
               className={classes.noteListItem}
@@ -108,11 +108,11 @@ const NoteList: React.FC<NoteListProps> = () => {
                 }
               ></ListItemText>
             </ListItem>
-          )
+          );
         })}
     </List>
-  )
-}
+  );
+};
 
-export { NoteList }
-export default NoteList
+export { NoteList };
+export default NoteList;

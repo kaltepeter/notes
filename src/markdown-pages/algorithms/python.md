@@ -117,4 +117,4 @@ https://numpy.org/doc/stable/user/absolute_beginners.html - getting started
 
 https://www.educba.com/matrix-multiplication-in-numpy/ - detailed explanations of functions
 
-https://www.tutorialexample.com/understand-numpy-np-multiply-np-dot-and-operation-a-beginner-guide-numpy-tutorial/ - explains diff between dot, multiply and *
+https://www.tutorialexample.com/understand-numpy-np-multiply-np-dot-and-operation-a-beginner-guide-numpy-tutorial/ - explains diff between dot, multiply and \*

@@ -2,10 +2,10 @@
 title: Application Architecture with Micro Frontends
 date: 2020-12-03
 tags:
-- workshop
+  - workshop
 ---
 
-https://www.amazon.com/Team-Topologies-Organizing-Business-Technology/dp/1942788819 
+https://www.amazon.com/Team-Topologies-Organizing-Business-Technology/dp/1942788819
 
 ## Communication patterns
 

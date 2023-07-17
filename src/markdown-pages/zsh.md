@@ -2,7 +2,7 @@
 title: ZSH
 date: 2019-07-13
 tags:
-- nix
+  - nix
 ---
 
 ## install zsh
@@ -31,13 +31,14 @@ tags:
 3. https://github.com/carloscuesta/materialshell/tree/master/shell-color-themes#macos
 
    follow this
+
 4. https://github.com/robbyrussell/oh-my-zsh/wiki/Customization
    1. `curl -fsSL -o "$HOME/.oh-my-zsh/custom/themes/materialshell.zsh-theme" https://raw.githubusercontent.com/carloscuesta/materialshell/master/materialshell.zsh`
    1. Modify `.zshrc` to enable the theme with `ZSH_THEME="materialshell"`
 
 ## vars
 
-[https://wiki.archlinux.org/index.php/environment\_variables](https://wiki.archlinux.org/index.php/environment_variables)
+[https://wiki.archlinux.org/index.php/environment_variables](https://wiki.archlinux.org/index.php/environment_variables)
 
 1. put them in ~/.profile
 2. add `source ~/.profile` to `~/.zshrc` and `~/.bash_profile`
@@ -73,4 +74,3 @@ zsh -i -c -v -x exit
 ## solarized theme
 
 https://github.com/altercation/solarized
-

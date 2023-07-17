@@ -2,7 +2,7 @@
 title: Raspberry PI
 date: 2020-07-03
 tags:
-- IOT
+  - IOT
 ---
 
 ## getting info about hardware and software

@@ -2,7 +2,7 @@
 title: Graphql
 date: 2018-07-28
 tags:
-- library
+  - library
 ---
 
 beginner tutorial: [https://www.howtographql.com](https://www.howtographql.com)
@@ -22,4 +22,3 @@ dataloader batches and caches
 [https://dev-blog.apollodata.com/persisted-graphql-queries-with-apollo-client-119fd7e6bba5](https://dev-blog.apollodata.com/persisted-graphql-queries-with-apollo-client-119fd7e6bba5)
 
 [https://www.apollographql.com/engine](https://www.apollographql.com/engine) - caching and edge gateway
-

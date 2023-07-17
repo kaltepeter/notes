@@ -2,20 +2,12 @@
 title: Git In-Depth
 date: 2022-01-28
 tags:
-- course
-
+  - course
 ---
 
 `echo 'Hello, World!' | git hash-object --stdiin` print git hash, uses SHA1
 `echo 'blob 14\0Hello, World!' | openssl sha1` print same hash that git hash-object would
-`echo`Hello, World!' | git hash-object -w --stdin` writes the blob to the git data store.
-`git cat-file -t <sha>` print type of content
-`git cat-file -p <sha>` print the contents
-`cat .git/refs/heads/master` prints sha1 of master HEAD
-`cat ./git/HEAD` show current head
-`git ls-files -s` show the fiels in the staging area
-`git add -P` stage in chunks interactively
-`git checkout <stash name> -- <filename>` checkout one file from stash, it will overwrite local changes
+`echo`Hello, World!' | git hash-object -w --stdin`writes the blob to the git data store.`git cat-file -t <sha>`print type of content`git cat-file -p <sha>`print the contents`cat .git/refs/heads/master`prints sha1 of master HEAD`cat ./git/HEAD`show current head`git ls-files -s`show the fiels in the staging area`git add -P`stage in chunks interactively`git checkout <stash name> -- <filename>` checkout one file from stash, it will overwrite local changes
 
 ## Tree / Blob Storage
 
@@ -236,10 +228,7 @@ git branch --no-merged master # branches not merged into master
 
 ## Fixing Mistakes
 
-`git checkout` restore working tree or switch branches
-    1. Change HEAD to point to the new branch
-    1. Copy the commit snapshot to the staging area
-    1. Update the working area with the branch commits
+`git checkout` restore working tree or switch branches 1. Change HEAD to point to the new branch 1. Copy the commit snapshot to the staging area 1. Update the working area with the branch commits
 
 `git checkout -- <file>` completely overwrite files in working directory without warning
 
@@ -251,9 +240,7 @@ git branch --no-merged master # branches not merged into master
 
 `git clean` clear working area of untracked files `--dry-run`, prompts for changes
 
-`git reset` by default used 'mixed' mode.
-    1. For commit: moves head pointer, optionally modify files
-    1. For file path: does not move HEAD pointer, modifies files
+`git reset` by default used 'mixed' mode. 1. For commit: moves head pointer, optionally modify files 1. For file path: does not move HEAD pointer, modifies files
 
 ```bash
 git reset --soft HEAD~ # moves head pointer back one commit, has a dangling commit
@@ -264,7 +251,7 @@ git reset ORIG_HEAD # reset to original head
 
 ![Git Reset Cheatsheet](../../../images/git-reset-cheatsheet.png)
 
-__Never__ push change history to shared repository
+**Never** push change history to shared repository
 
 ## Git Revert
 
@@ -290,7 +277,7 @@ git rebase -i --autosquash <SHA>^
 ## Git Rebase
 
 - Pull latest changes from master, avoid messy commit history and apply changes cleanly on top
-- __Rebase__ means give a commit a new parent
+- **Rebase** means give a commit a new parent
 - Commits can be: edited, remoed, combined, re-ordered, inserted
 - `-i` interactive rebase
 - Can split commits
@@ -307,11 +294,11 @@ git rebase --abort # abandon ship
 ## Remotes
 
 - Stored elsewhere
-- __origin__ default name git gives the server you cloned
+- **origin** default name git gives the server you cloned
 - Can't push to origin if you clone someone elses
 - Forks are yours and you can push
 - setup an upstream
-- __upstream__ can pull down changes to original repository
+- **upstream** can pull down changes to original repository
 
 ```bash
 git remote -v
@@ -321,6 +308,7 @@ git branch -vv # shows branch tracking, commits ahead/behind
 ## Workflows
 
 - Triangular is the most common
+
   - Clone your fork
   - make changes, push to fork
   - PR from fork to upstream

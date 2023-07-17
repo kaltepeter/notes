@@ -2,7 +2,7 @@
 title: Mac
 date: 2021-01-14
 tags:
-- mac
+  - mac
 ---
 
 ## cleanup disk space, old stuffs
@@ -11,7 +11,7 @@ tags:
 
 brew. old files can take up a lot of space
 
-*TIP*: run upgrade first so it cleans old files and updates
+_TIP_: run upgrade first so it cleans old files and updates
 
 upgrade all and cleanup
 
@@ -227,31 +227,32 @@ mv ~/Desktop/Monterey.cdr ~/Desktop/Monterey.iso
 
 1. Click Create
 1. On the Virutal Hard Disk Dialog:
-    - Name the disk: Monterey.vdi
-    - File size: 50 GB
-    - Hard disk type: VDI
-    - Storage on physical hard disk: dynamically allocated
+
+   - Name the disk: Monterey.vdi
+   - File size: 50 GB
+   - Hard disk type: VDI
+   - Storage on physical hard disk: dynamically allocated
 
 1. Click create
 1. Select the VM and click settings
 
-    - System -> Processor -> 2 processors at least
-    - Display -> Video memory 128 MB
-    - Display -> Use SVGA, uncheck 3d
-    - USB -> USB 3.0
+   - System -> Processor -> 2 processors at least
+   - Display -> Video memory 128 MB
+   - Display -> Use SVGA, uncheck 3d
+   - USB -> USB 3.0
 
 1. Storage -> Create new SATA Controller
 
-    - Choose disk button on the optical drive
-    - Add button -> point to your ISO
-    - click choose
+   - Choose disk button on the optical drive
+   - Add button -> point to your ISO
+   - click choose
 
 1. click ok
 1. Shutdown Virtual Box and run this in terminal to fix the display
 
-    ```bash
-    VBoxManage setextradata "monterey" VBoxInternal2/EfiGraphicsResolution 1792x1120
-    ```
+   ```bash
+   VBoxManage setextradata "monterey" VBoxInternal2/EfiGraphicsResolution 1792x1120
+   ```
 
 1. Startup
 1. Select your language
@@ -262,8 +263,8 @@ mv ~/Desktop/Monterey.cdr ~/Desktop/Monterey.iso
 1. close disk utility
 1. Select install macos monterey
 1. Follow setup configuration wizard
-    - skip migration assistant
-    - skip apple profile setup
+   - skip migration assistant
+   - skip apple profile setup
 
 ## Automation with Security Settings
 

@@ -2,7 +2,7 @@
 title: SSH Keys for PI
 date: 2020-07-03
 tags:
-- IOT
+  - IOT
 ---
 
 [https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md](https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md)

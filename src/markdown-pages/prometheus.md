@@ -6,7 +6,7 @@ tags:
 
 ## getting started
 
-[https://prometheus.io/docs/prometheus/latest/getting\_started/](https://prometheus.io/docs/prometheus/latest/getting_started/)
+[https://prometheus.io/docs/prometheus/latest/getting_started/](https://prometheus.io/docs/prometheus/latest/getting_started/)
 
 Use docker instead of local:
 
@@ -71,7 +71,7 @@ scrape_configs:
 
 ## grafana
 
-[https://github.com/vegasbrianc/grafana\_dashboard](https://github.com/vegasbrianc/grafana_dashboard) - example dashboard
+[https://github.com/vegasbrianc/grafana_dashboard](https://github.com/vegasbrianc/grafana_dashboard) - example dashboard
 
 [https://finestructure.co/blog/2016/5/16/monitoring-with-prometheus-grafana-docker-part-1](https://finestructure.co/blog/2016/5/16/monitoring-with-prometheus-grafana-docker-part-1)
 

@@ -1,8 +1,8 @@
 ---
-title: Developer Productivity 
+title: Developer Productivity
 date: 2021-01-12
 tags:
-- workshop
+  - workshop
 ---
 
 https://github.com/ThePrimeagen/dev-productivity
@@ -23,7 +23,7 @@ Prefix key: `ctrl + b`
 `tmux new-session` start new session
 `tmux attach` attach to session or `tmux a`
 `tmux kill-server` kills tmux
-`ctrl+b,d` close tmux, detaches tmux and exit session 
+`ctrl+b,d` close tmux, detaches tmux and exit session
 `ctrl+b,w` navigate through tmux sessions
 `ctrl+d` end of file, ends, detach
 `ctrl+b,c` create window
@@ -33,9 +33,7 @@ Prefix key: `ctrl + b`
 `ctrl+d` from window will just kill window
 `tmux new-session -d -s "foo"` start a session named foo
 `tmux new-window -n "foo" start a window named foo
-`ctrl+b, %` split pane
-`ctrl+b,[` goes into vim mode
-
+`ctrl+b, %`split pane`ctrl+b,[` goes into vim mode
 
 tmuxrc
 
@@ -56,7 +54,6 @@ set -g base-index 1
 
 bind -r D neww -c "#{pane_current_path}" "[[ -e TODO.md ]] && nvim TODO.md || nvim ~/dotfiles/todo.md"
 ```
-
 
 ## Cheat Sheet
 
@@ -93,5 +90,3 @@ From VIM
 `:set incsearch` set inc search
 
 lookup vim tutor
-
-

@@ -390,7 +390,6 @@ end
 
 - <https://github.com/cyu/rack-cors>
 
-
 `config.enforce_ssl` should be enabled in higher environments if not all.
 
 If you absolutely must exclude a route or set of routes you can exclude the path. This may be something like health/liveness checks.
@@ -425,5 +424,3 @@ end
 ```
 
 In Rails make sure the origin header does not have a traling slash. An origin header is required for CORS.
-
-

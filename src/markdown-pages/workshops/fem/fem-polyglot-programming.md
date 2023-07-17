@@ -2,8 +2,8 @@
 title: FEM Polyglot Programming - TS, Go and Rust
 date: 2023-03-10
 tags:
-- workshop
-- front-end-masters
+  - workshop
+  - front-end-masters
 ---
 
 - https://theprimeagen.github.io/ts-go-rust/
@@ -31,16 +31,15 @@ b.push(5);
 println!("a size: {}", a.len());
 println!("b size: {}", b.len());
 ```
- 
 
 - Rust and typescript are very close
 - Go uses `iota`
 
 ### Rust
+
 - Enums can have different types on items
 - Rust has nullables which are enums
 
-
-- [WASM with Rust](https://github.com/yewstack/yew) 
+- [WASM with Rust](https://github.com/yewstack/yew)
 - [vscode tools](https://www.becomebetterprogrammer.com/rust-recommended-vscode-extensions/)
 - [vscode tools 2](https://users.rust-lang.org/t/setting-up-rust-with-vs-code/76907)

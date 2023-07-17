@@ -2,7 +2,7 @@
 title: Logstash
 date: 2018-10-31
 tags:
-- nix
+  - nix
 ---
 
 ## docker

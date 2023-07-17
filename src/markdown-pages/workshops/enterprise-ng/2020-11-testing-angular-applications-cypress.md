@@ -2,7 +2,7 @@
 title: Testing angular applications with cypress
 date: 2020-12-03
 tags:
-- workshop
+  - workshop
 ---
 
 https://bit.ly/35xYv5c
