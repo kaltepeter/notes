@@ -29,23 +29,21 @@ export const usePageTree = (): {
   allPaths?: PathList
 } => {
   const { allMarkdownRemark: pageList } = useStaticQuery(
-    graphql`
-      query AllPages {
-        allMarkdownRemark(sort: { fields: fields___slug, order: ASC }) {
-          nodes {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              tags
-              date
-            }
-          }
-        }
+    graphql`query AllPages {
+  allMarkdownRemark(sort: {fields: {slug: ASC}}) {
+    nodes {
+      id
+      fields {
+        slug
       }
-    `
+      frontmatter {
+        title
+        tags
+        date
+      }
+    }
+  }
+}`
   )
 
   const allTags = new Set<string>(

@@ -1,10 +1,11 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import { Box, Container, Paper, Typography } from "@mui/material"
-import { makeStyles } from "tss-react/mui"
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import { Box, Container, Paper, Typography } from "@mui/material";
+import { makeStyles } from "tss-react/mui";
+import SEO from "../components/seo";
 
-const useStyles = makeStyles({ name: "Template" })(_theme => ({
+const useStyles = makeStyles({ name: "Template" })((_theme) => ({
   root: {
     padding: _theme.spacing(4),
   },
@@ -15,16 +16,16 @@ const useStyles = makeStyles({ name: "Template" })(_theme => ({
   noteContent: {
     padding: _theme.spacing(4),
   },
-}))
+}));
 
-export default function Template({
+export default function Template<PageProps>({
   data, // this prop will be injected by the GraphQL query below.
   pageContext,
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
-  const { modifiedDate } = pageContext
-  const { classes } = useStyles()
+  const { markdownRemark } = data; // data.markdownRemark holds your post data
+  const { frontmatter, html } = markdownRemark;
+  const { modifiedDate } = pageContext;
+  const { classes } = useStyles();
 
   return (
     <Layout>
@@ -38,7 +39,7 @@ export default function Template({
         </Paper>
       </Container>
     </Layout>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -52,4 +53,13 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
+
+export const Head = ({ data, location }) => {
+  return (
+    <SEO
+      title={data.markdownRemark.frontmatter?.title}
+      pathname={location.pathname}
+    />
+  );
+};

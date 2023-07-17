@@ -5,81 +5,60 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { ReactElement } from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { ReactElement } from "react";
+import { useSiteMetadata } from "../hooks/use-site-metadata";
 
-const defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
+type SEOProps = {
+  description?: string;
+  lang?: string;
+  meta?: Array<{}>;
+  title: string;
+  children?: ReactElement;
+  pathname?: string;
+};
 
-type SEOProps = { description?: string, lang?: string, meta?: Array<{}>, title: string } & typeof defaultProps
+function SEO({
+  description,
+  title,
+  children,
+  pathname,
+}: SEOProps): ReactElement {
+  const {
+    title: defaultTitle,
+    description: defaultDescription,
+    image,
+    siteUrl,
+    twitterUsername,
+  } = useSiteMetadata();
 
-function SEO({ description, lang, meta, title }: SEOProps): ReactElement {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const seo = {
+    title: title ? `${title} | ${defaultTitle}` : defaultTitle,
+    description: description || defaultDescription,
+    image: `${siteUrl}${image}`,
+    url: `${siteUrl}${pathname || ``}`,
+    twitterUsername,
+  };
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
-  )
+    <>
+      <html lang="en" />
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description} />
+      <meta name="image" content={seo.image} />
+      {/* <meta name="twitter:card" content="summary" /> */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:url" content={seo.url} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
+      <meta name="twitter:creator" content={seo.twitterUsername} />
+      <meta name="og:title" content={seo.title} />
+      <meta name="og:description" content={seo.description} />
+      <meta name="og:type" content="website" />
+      <link rel="icon" href={seo.image} />
+      {children}
+    </>
+  );
 }
 
-export default SEO
-SEO.defaultProps = defaultProps
+export default SEO;
