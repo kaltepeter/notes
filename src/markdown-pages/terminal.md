@@ -2,7 +2,7 @@
 title: Terminal Tricks
 date: 2019-07-23
 tags:
-- nix
+  - nix
 ---
 
 ## tmux

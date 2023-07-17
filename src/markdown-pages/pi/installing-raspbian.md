@@ -2,20 +2,20 @@
 title: Installing Raspbian
 date: 2020-07-03
 tags:
-- IOT
+  - IOT
 ---
 
 ## Using Etcher
 
 1. Download preferred version. <https://www.raspberrypi.org/downloads/raspberry-pi-os/>
-   - *desktop*: for a gui/dev env
-   - *lite*: for no gui, small system
+   - _desktop_: for a gui/dev env
+   - _lite_: for no gui, small system
 1. Download and install etcher: <https://etcher.io/>
-    1. `brew install --cask balenaetcher`
+   1. `brew install --cask balenaetcher`
 1. Run etcher
-    1. Point the image to the downloaded zip
-    1. Point the media to the sdcard to install on
-    1. Click flash
+   1. Point the image to the downloaded zip
+   1. Point the media to the sdcard to install on
+   1. Click flash
 
 ## Using Raspberry Pi Imager
 
@@ -42,7 +42,7 @@ sudo update-alternatives --set editor /usr/bin/vim.tiny
 
 ## set hostname
 
-> *NOTE*: restart required
+> _NOTE_: restart required
 
 ```bash
 sudo vi /etc/hostname

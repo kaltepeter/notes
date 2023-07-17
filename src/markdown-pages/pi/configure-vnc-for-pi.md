@@ -2,7 +2,7 @@
 title: Configure VNC for PI
 date: 2020-07-03
 tags:
-- IOT
+  - IOT
 ---
 
 [http://www.penguintutor.com/linux/tightvnc](http://www.penguintutor.com/linux/tightvnc)
@@ -64,6 +64,3 @@ ssh pi@192.168.1.6 -L 5901:localhost:5901
 apt-get install xtightvncviewer
 xtightvncviewer 127.0.0.1:1
 ```
-
-
-

@@ -2,13 +2,13 @@
 title: Jenkins
 date: 2019-02-03
 tags:
-- CI
-- CD
+  - CI
+  - CD
 ---
 
 ### automation
 
-[https://github.com/arangamani/jenkins\_api\_client](https://github.com/arangamani/jenkins_api_client) - ruby libraries
+[https://github.com/arangamani/jenkins_api_client](https://github.com/arangamani/jenkins_api_client) - ruby libraries
 
 [https://jenkins.io/doc/book/managing/cli/](https://jenkins.io/doc/book/managing/cli/) - cli
 
@@ -20,7 +20,7 @@ tags:
 
 [https://github.com/jenkinsci/credentials-plugin/blob/master/src/main/java/com/cloudbees/plugins/credentials/cli/UpdateCredentialsByXmlCommand.java](https://github.com/jenkinsci/credentials-plugin/blob/master/src/main/java/com/cloudbees/plugins/credentials/cli/UpdateCredentialsByXmlCommand.java) - update credentials code
 
-{jenkins\_server}/cli/ - cli docs
+{jenkins_server}/cli/ - cli docs
 
 [https://github.com/jenkinsci/job-dsl-plugin/wiki](https://github.com/jenkinsci/job-dsl-plugin/wiki) - example dsl configuartions
 
@@ -81,7 +81,7 @@ println Jenkins.instance.metaClass.methods*.name.sort().unique()
 ```
 
 ```groovy
-Jenkins.instance.getItems().each {it -> 
+Jenkins.instance.getItems().each {it ->
   println it.name
 }
 Jenkins.instance.getComputers().eachWithIndex{ it, index ->
@@ -104,7 +104,7 @@ import hudson.util.RemotingDiagnostics;
 print_ip = 'println InetAddress.localHost.hostAddress';
 print_hostname = 'println InetAddress.localHost.canonicalHostName';
 
-// here it is - the shell command, uname as example 
+// here it is - the shell command, uname as example
 uname = 'def proc = "uname -a".execute(); proc.waitFor(); println proc.in.text';
 
 for (slave in hudson.model.Hudson.instance.slaves) {
@@ -214,7 +214,7 @@ import jenkins.model.Jenkins
 import hudson.model.*
 
 def q = Jenkins.instance.queue
-  
+
 q.items.each { q.cancel(it.task) }
 
 
@@ -223,7 +223,7 @@ def cancelBuilds(root) {
     if (!job.hasProperty('builds')) {
       println "job has no property builds. ${job}"
       cancelBuilds(job)
-            
+
     } else {
       for (build in job.builds) {
         println "build: ${build}"
@@ -443,7 +443,7 @@ mounting a volume from the jenkins home can cause permissions issues:
 >
 > _really_
 >
-> need to bind mount jenkins\_home, ensure that directory on host is accessible by the jenkins user in container \(jenkins user - uid 1000\) or use
+> need to bind mount jenkins_home, ensure that directory on host is accessible by the jenkins user in container \(jenkins user - uid 1000\) or use
 >
 > `-u some_other_user`
 >
@@ -464,6 +464,7 @@ mounting a volume from the jenkins home can cause permissions issues:
 [https://jenkins.io/pipeline/getting-started-pipelines/](https://jenkins.io/pipeline/getting-started-pipelines/) - getting started guide
 
 ### cps/@NonCPS
+
 [https://jenkins.io/blog/2017/02/01/pipeline-scalability-best-practice/](https://jenkins.io/blog/2017/02/01/pipeline-scalability-best-practice/) - guide
 
 https://issues.jenkins-ci.org/browse/JENKINS-45904
@@ -481,7 +482,7 @@ calling code
   def payload = JsonOutput.toJson(message)
   println payload.dump()
   println payload.toString()
-  
+
   // method from message class
   @Override
   @NonCPS // added in after example
@@ -542,7 +543,7 @@ new DslScriptLoader(jobManagement).runScript(jobDslScript.text)
 docker run --detach --volume=$HOME/.gradle:/home/gradle/.gradle -p 5050:5050 ewypych/job-dsl-playground:latest
 ```
 
-### tuning 
+### tuning
 
 #### gc
 
@@ -569,11 +570,13 @@ https://jenkins.io/blog/2016/10/16/stage-lock-milestone
 ### cleanup/backup
 
 recreate jenkins config structure only
+
 ```bash
 find . -name 'config.xml' -exec cp --parents \{\} ~/temp/jenkinstest \;
 ```
 
 find string in directory and log it
+
 ```bash
 grep -R --line-buffered -e 'utils/util' . > findutil.log
 ```

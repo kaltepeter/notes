@@ -2,7 +2,7 @@
 title: Securing
 date: 2020-07-03
 tags:
-- IOT
+  - IOT
 ---
 
 https://www.raspberrypi.org/documentation/configuration/security.md
@@ -12,7 +12,7 @@ https://www.raspberrypi.org/documentation/configuration/security.md
 https://www.raspberrypi.org/documentation/linux/usage/users.md
 
 > SKEL \
-Upon creating a new user, the contents of /etc/skel/ will be copied to the new user's home folder. You can add or modify dot-files such as the .bashrc in  /etc/skel/ to your requirements, and this version will be applied to new users.
+> Upon creating a new user, the contents of /etc/skel/ will be copied to the new user's home folder. You can add or modify dot-files such as the .bashrc in /etc/skel/ to your requirements, and this version will be applied to new users.
 
 ```bash
 sudo adduser myuser
@@ -55,4 +55,3 @@ passwd
 ```bash
 sudo passwd myuser
 ```
-

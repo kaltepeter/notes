@@ -24,22 +24,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   // **Note:** The graphql function call returns a Promise
   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
-  const result = await graphql(`{
-  allMarkdownRemark(sort: [{frontmatter: {date: DESC}}, {fields: {slug: ASC}}]) {
-    edges {
-      node {
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          date(formatString: "MMMM DD, YYYY")
-          tags
+  const result = await graphql(`
+    {
+      allMarkdownRemark(
+        sort: [{ frontmatter: { date: DESC } }, { fields: { slug: ASC } }]
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              date(formatString: "MMMM DD, YYYY")
+              tags
+            }
+          }
         }
       }
     }
-  }
-}`);
+  `);
 
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`);

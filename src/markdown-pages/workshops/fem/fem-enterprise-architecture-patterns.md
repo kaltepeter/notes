@@ -2,8 +2,8 @@
 title: FEM Enterprise Architecture Patterns
 date: 2022-02-12
 tags:
-- workshop
-- front-end-masters
+  - workshop
+  - front-end-masters
 ---
 
 ## Course Info
@@ -16,6 +16,7 @@ tags:
 - https://moss.cs.iit.edu/cs100/papers/out-of-the-tar-pit.pdf
 
 The Iron Triangle
+
 - State
 - Code Volume
 - Flow Control
@@ -75,7 +76,6 @@ Encapsulate, transport and transform data from user interactions.
 If you are transforming in the subscribe, you are doing wrong. Use the observable to transform to the shape you need.
 
 Combines the Iterator pattern and Observer pattern.
-
 
 ## Angular Courses
 

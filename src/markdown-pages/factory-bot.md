@@ -2,9 +2,9 @@
 title: Factory Bot
 date: 2023-06-19
 tags:
-- framework
-- ruby
-- backend
+  - framework
+  - ruby
+  - backend
 ---
 
 ## Transient attributes

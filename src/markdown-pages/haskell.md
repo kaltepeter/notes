@@ -2,7 +2,7 @@
 title: Haskell
 date: 2020-01-19
 tags:
-- language
+  - language
 ---
 
 https://tech.fpcomplete.com/haskell/learn
@@ -66,4 +66,3 @@ https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#g:13 - built
 -- curried operator
     (+) 1 2
 ```
-

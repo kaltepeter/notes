@@ -2,8 +2,8 @@
 title: Making Typescript Stick
 date: 2022-03-23
 tags:
-- workshop
-- front-end-masters
+  - workshop
+  - front-end-masters
 ---
 
 # Making Typescript Stick
@@ -14,12 +14,12 @@ Make it stick book --> using to write onboarding
 
 ```tsx
 // @errors: 2322 2320
-let first: string & number
-let second: String & Number
+let first: string & number;
+let second: String & Number;
 
-first = "abc"
-second = "abc"
-second = new String("abc")
+first = "abc";
+second = "abc";
+second = new String("abc");
 ```
 
 [Playground Link](https://www.typescriptlang.org/play?#code/PTAEAEFMCdoe2gZwFygEwGY1vVgDAFAA2kALqAGYCWSpqip0VAdgOagBkozArgLYAjGMTKhEkAMZxmAE1QBlRi3ZcAcvyHQCBarVABeUACIAhgIlGC4qbIPGzFq5Oky7zSAHdQipmwAUpuZGAJRAA)
@@ -81,10 +81,10 @@ Example of cleaning types: <https://github.com/ReactiveX/rxjs/pull/5859/files>
 function somethingRisky() {}
 // ---cut---
 try {
-  somethingRisky()
+  somethingRisky();
 } catch (err: unknown) {
-  if (err instanceof Error) throw err
-  else throw new Error(`${err}`)
+  if (err instanceof Error) throw err;
+  else throw new Error(`${err}`);
 }
 ```
 
@@ -95,13 +95,13 @@ try {
 ```tsx
 // @errors: 2300
 type Color = {
-  red: number
-  green: number
-  blue: number
-}
+  red: number;
+  green: number;
+  blue: number;
+};
 
 interface Color {
-  alpha: number
+  alpha: number;
 }
 ```
 

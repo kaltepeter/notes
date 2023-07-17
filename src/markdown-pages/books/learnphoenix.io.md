@@ -2,8 +2,8 @@
 title: LearnPhoenix.io
 date: 2023-04-30
 tags:
-- book
-- phoenix
+  - book
+  - phoenix
 ---
 
 <https://www.learnphoenix.io/phoenix-chat/directory-structure>

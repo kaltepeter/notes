@@ -18,5 +18,5 @@ Next.js is server and ui
 use client components:
 
 ```typescript
-'use client';
+"use client";
 ```

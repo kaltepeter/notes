@@ -2,7 +2,7 @@
 title: Emulators
 date: 2020-07-03
 tags:
-- IOT
+  - IOT
 ---
 
 ~~https://roboticsbackend.com/install-raspbian-desktop-on-a-virtual-machine-virtualbox/~~
@@ -54,9 +54,7 @@ https://medium.com/@pythonpow/remote-development-on-a-raspberry-pi-with-ssh-and-
 
 https://learn.adafruit.com/adafruits-raspberry-pi-lesson-5-using-a-console-cable/software-installation-mac
 
-
 ## setup APDS9960
-
 
 ```bash
 sudo pip3 install adafruit-circuitpython-apds9960

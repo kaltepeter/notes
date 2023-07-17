@@ -70,12 +70,12 @@ Tips:
 
 ```typescript
 const pokemonPromise = fetchPokemon("pikachu").then(
-  pokemonData => (pokemon = pokemonData)
-)
+  (pokemonData) => (pokemon = pokemonData),
+);
 
 function PokemonInfo() {
   if (!pokemon) {
-    throw pokemonPromise
+    throw pokemonPromise;
   }
 
   return (
@@ -85,41 +85,41 @@ function PokemonInfo() {
       </div>
       <PokemonDataView pokemon={pokemon} />
     </div>
-  )
+  );
 }
 ```
 
 ### Error Handling
 
 ```typescript
-  if (pokemonError) {
-    throw pokemonError;
-  }
-
+if (pokemonError) {
+  throw pokemonError;
+}
 
 <ErrorBoundary>
   <React.Suspense fallback={<div>loading...</div>}>Yo</React.Suspense>
-</ErrorBoundary>
+</ErrorBoundary>;
 ```
 
-### Promises inside render 
+### Promises inside render
 
 - Dangerous, don't assume render called only once
 - Use a cache to resolve
 
 ```typescript
-const promiseCache = {}
-function MySuspendingComponent({value}) {
-  let resource = promiseCache[value]
+const promiseCache = {};
+function MySuspendingComponent({ value }) {
+  let resource = promiseCache[value];
   if (!resource) {
-    resource = doAsyncThing(value)
-    promiseCache[value] = resource // <-- this is very important
+    resource = doAsyncThing(value);
+    promiseCache[value] = resource; // <-- this is very important
   }
-  return <div>{resource.read()}</div>
+  return <div>{resource.read()}</div>;
 }
 ```
 
 ✅ ⚠️ ⛔
+
 ### Fetch on Render (default)
 
 ✅ benefits from colocation
@@ -135,7 +135,6 @@ function MySuspendingComponent({value}) {
 
 ✅ Fetch data and assets as soon as you have the assets you need (preload)
 ⚠️ Lose the benefits of colocation unless split into two files (data and component)
-
 
 ### Suspense List
 

@@ -1,19 +1,19 @@
 ---
 title: Advanced Git CLI
-date: 2022-03-07 
+date: 2022-03-07
 tags:
-- course
+  - course
 ---
 
 ## Learning Git
 
-1. <https://gitimmersion.com/> really good walk-through of concepts. 
-    - A bit dated but holds up well
-    - Interactive
+1. <https://gitimmersion.com/> really good walk-through of concepts.
+   - A bit dated but holds up well
+   - Interactive
 1. <https://frontendmasters.com/courses/git-in-depth/> Advanced Git Course
-    - Really in depth, advanced topics
+   - Really in depth, advanced topics
 1. <https://git-scm.com/book/en/v2> Pro Git Book
-    - Reference style book
+   - Reference style book
 
 ---
 
@@ -59,7 +59,7 @@ tags:
 
 ![gst](../../images/gst.png)
 
-- This is 'tracking' against 'upstream/master' (source, master) 
+- This is 'tracking' against 'upstream/master' (source, master)
 - Shows the count of commits ahead/behind, will show diverged branches
 - Fast forwarded means no merge-commit needed (clean history)
 
@@ -75,8 +75,6 @@ tags:
 
 ## Tracking Branches
 
-
-
 ---
 
 ## Keeping Repos Up To Date
@@ -88,8 +86,6 @@ gfa # git fetch --all --prune
 ---
 
 ## gwip/gunwip
-
-
 
 ---
 

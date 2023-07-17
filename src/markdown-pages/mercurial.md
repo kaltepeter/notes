@@ -2,7 +2,7 @@
 title: Mercurial
 date: 2018-10-21
 tags:
-- DVCS
+  - DVCS
 ---
 
 ## migrating to git

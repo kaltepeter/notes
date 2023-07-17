@@ -6,7 +6,7 @@ tags:
 
 proxying - [https://www.digitalocean.com/community/tutorials/understanding-nginx-http-proxying-load-balancing-buffering-and-caching](https://www.digitalocean.com/community/tutorials/understanding-nginx-http-proxying-load-balancing-buffering-and-caching)
 
-https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms - matching algorithms 
+https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms - matching algorithms
 
 https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04 - manager server blocks
 

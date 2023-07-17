@@ -2,8 +2,8 @@
 title: Spring Boot
 date: 2018-07-28
 tags:
-- java
-- framework
+  - java
+  - framework
 ---
 
 ### Health Check
@@ -26,7 +26,7 @@ will echo "down" if is not UP
 
 will exit with error status if healthcheck is not UP
 
-> It is possible to change the HTTP status codes of the /health response. By default, if the status is Status.DOWN or Status.OUT\_OF\_SERVICE HTTP status 503 - Service Unavailable will be returned. \(Please note that in Spring Boot versions &lt;= 1.1.4, there is a bug that will cause 200 - OK to be returned by default.\)
+> It is possible to change the HTTP status codes of the /health response. By default, if the status is Status.DOWN or Status.OUT_OF_SERVICE HTTP status 503 - Service Unavailable will be returned. \(Please note that in Spring Boot versions &lt;= 1.1.4, there is a bug that will cause 200 - OK to be returned by default.\)
 
 because of error codes it will cause a curl fail state
 
@@ -43,4 +43,3 @@ spring.data.mongodb.host=mongodbhost
 ## properties
 
 **command line properties:** [https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html\#boot-features-external-config-command-line-args](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html#boot-features-external-config-command-line-args)
-

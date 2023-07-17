@@ -2,8 +2,8 @@
 title: Local Dev
 date: 2023-06-20
 tags:
-- productivity
-- tools
+  - productivity
+  - tools
 ---
 
 ## SSL for local
@@ -58,35 +58,34 @@ server {
 1. `echo "local.nginx.conf" >> .gitignore`
 1. Run the script below `./local.nginx.sh`
 
-    ```bash
-    # local.nginx.sh
-    #!/usr/bin/env bash
-    set -o errexit
-    set -o pipefail
-    set -o nounset
-    [[ ${DEBUG:-} == true ]] && set -o xtrace
-    __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+   ```bash
+   # local.nginx.sh
+   #!/usr/bin/env bash
+   set -o errexit
+   set -o pipefail
+   set -o nounset
+   [[ ${DEBUG:-} == true ]] && set -o xtrace
+   __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-    source_nginx_conf="${__dir}/local.nginx.conf"
-    cp "${source_nginx_conf}.example" "${__dir}/local.nginx.conf"
+   source_nginx_conf="${__dir}/local.nginx.conf"
+   cp "${source_nginx_conf}.example" "${__dir}/local.nginx.conf"
 
-    nginx_servers_path=$(brew info nginx | grep "nginx will load all files in" | sed -e 's/nginx will load all files in \(.*\)./\1/')
-    sed -i "" -e "s|CERT_LOCATION|${nginx_servers_path}../certs/localhost+4.pem|" "${source_nginx_conf}"
-    sed -i "" -e "s|CERT_KEY_LOCATION|${nginx_servers_path}../certs/localhost+4-key.pem|" "${source_nginx_conf}"
+   nginx_servers_path=$(brew info nginx | grep "nginx will load all files in" | sed -e 's/nginx will load all files in \(.*\)./\1/')
+   sed -i "" -e "s|CERT_LOCATION|${nginx_servers_path}../certs/localhost+4.pem|" "${source_nginx_conf}"
+   sed -i "" -e "s|CERT_KEY_LOCATION|${nginx_servers_path}../certs/localhost+4-key.pem|" "${source_nginx_conf}"
 
-    if [[ ! -d "${nginx_servers_path}/../certs" ]]; then
-        mkdir -p "${nginx_servers_path}/../certs"
-    fi
+   if [[ ! -d "${nginx_servers_path}/../certs" ]]; then
+       mkdir -p "${nginx_servers_path}/../certs"
+   fi
 
-    find "${__dir}/certs" -type f ! -iname .gitkeep -exec ln -sf {} "${nginx_servers_path}/../certs" \;
-    ln -sf "${__dir}/local.nginx.conf" "${nginx_servers_path}"
+   find "${__dir}/certs" -type f ! -iname .gitkeep -exec ln -sf {} "${nginx_servers_path}/../certs" \;
+   ln -sf "${__dir}/local.nginx.conf" "${nginx_servers_path}"
 
-    nginx -s reload
-    ```
+   nginx -s reload
+   ```
+
 1. Edit your `package.json` if node.
 
-    ```json
-    "start:dev2": "HTTPS=true SSL_CRT_FILE=certs/localhost+4.pem SSL_KEY_FILE=certs/localhost+4-key.pem HOST=local.mydomain.com npm run start:dev",
-    ```
-
-
+   ```json
+   "start:dev2": "HTTPS=true SSL_CRT_FILE=certs/localhost+4.pem SSL_KEY_FILE=certs/localhost+4-key.pem HOST=local.mydomain.com npm run start:dev",
+   ```

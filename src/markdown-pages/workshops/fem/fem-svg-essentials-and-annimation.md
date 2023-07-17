@@ -2,8 +2,8 @@
 title: SVG Essentials & Annimation
 date: 2022-10-16
 tags:
-- workshop
-- front-end-masters
+  - workshop
+  - front-end-masters
 ---
 
 ## Resources
@@ -49,7 +49,7 @@ Four points filling the width. Elements outside of viewbox are clipped. They sti
 
 ### `preserveaspectratio`
 
-Almost never needed. Align the ___of the element's viewBox with the___ value of the viewport
+Almost never needed. Align the **_of the element's viewBox with the_** value of the viewport
 
 `meet` default
 
@@ -162,7 +162,7 @@ Lower case letters are relative coordinates
 ## DOM/Virtual DOM vs. Canvas
 
 | DOM/Virtual DOM                                           | Canvas                                                                                                                   |
-|:----------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------|
+| :-------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------- |
 | Pros                                                      | Pros                                                                                                                     |
 | - Great for UI/UX animation                               | - Dance, pixels, dance!                                                                                                  |
 | - Great for SG that is resolution independent             | - Great for really impressive 3d or immersive stuff                                                                      |
@@ -175,7 +175,7 @@ Lower case letters are relative coordinates
 ## Tools for the Job
 
 | CSS/SCSS                                      | GSAP (GreenSock)                            | React Spring/React-Motion                                    |
-|-----------------------------------------------|---------------------------------------------|--------------------------------------------------------------|
+| --------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------ |
 | - Small sequences and simple interactions     | - Great for sequencing and complex movement | - Great for single movements that you want to look realistic |
 | - Onces you get more than 3... switch to: --> | - Cross-browser consistency                 |                                                              |
 

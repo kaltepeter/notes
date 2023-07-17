@@ -2,11 +2,10 @@
 title: Angular Component Design
 date: 2023-01-13
 tags:
-- ui
-- framework
-- angular
+  - ui
+  - framework
+  - angular
 ---
-
 
 ## Composing Components
 

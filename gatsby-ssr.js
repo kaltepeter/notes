@@ -6,12 +6,12 @@
 
 // Notes on MUI 5 and SSR
 // https://dev.to/deckstar/gatsby-js-how-to-solve-fouc-when-using-tss-react-and-material-ui-v5-465f
-import { CacheProvider } from '@emotion/react';
-import createEmotionServer from '@emotion/server/create-instance';
-import React from 'react';
-import { renderToString } from 'react-dom/server';
+import { CacheProvider } from "@emotion/react";
+import createEmotionServer from "@emotion/server/create-instance";
+import React from "react";
+import { renderToString } from "react-dom/server";
 
-import { makeMuiCache } from './src/theme/cache';
+import { makeMuiCache } from "./src/theme/cache";
 
 /** @param {import('gatsby').ReplaceRendererArgs} args */
 export const replaceRenderer = (args) => {
@@ -22,8 +22,8 @@ export const replaceRenderer = (args) => {
 
   const emotionStyles = extractCriticalToChunks(
     renderToString(
-      <CacheProvider value={muiCache}>{bodyComponent}</CacheProvider>
-    )
+      <CacheProvider value={muiCache}>{bodyComponent}</CacheProvider>,
+    ),
   );
 
   const muiStyleTags = emotionStyles.styles.map((style) => {

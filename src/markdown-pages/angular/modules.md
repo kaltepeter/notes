@@ -13,12 +13,10 @@ The `HeaderComponent` is dependent on a material module. This module needs the i
 ```typescript
 @NgModule({
   declarations: [SharedUiComponent, HeaderComponent],
-  imports: [
-    MaterialModule
-  ],
-  exports: [SharedUiComponent, HeaderComponent, MaterialModule]
+  imports: [MaterialModule],
+  exports: [SharedUiComponent, HeaderComponent, MaterialModule],
 })
-export class SharedUiModule { }
+export class SharedUiModule {}
 ```
 
 This module re-exports material modules for use in other modules. This works, however, I am not sure this is correct.
@@ -30,11 +28,8 @@ I think the exception would be if you put this module in vendor and loaded once 
 ```typescript
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-  ],
-  exports: [MatToolbarModule]
+  imports: [CommonModule],
+  exports: [MatToolbarModule],
 })
-export class MaterialModule { }
-
+export class MaterialModule {}
 ```

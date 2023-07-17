@@ -2,8 +2,8 @@
 title: Astro
 date: 2023-05-30
 tags:
-- workshop
-- front-end-masters
+  - workshop
+  - front-end-masters
 ---
 
 <https://github.com/learnwithjason/astro-frontend-masters>
@@ -31,13 +31,10 @@ Course: <https://frontendmasters.com/workshops/astro/#player>
 - Fast to adopt incrementally
 - Ships web standards
 
-
 ## State
 
 <https://github.com/nanostores/nanostores> simpler than tanstack query.
 
-
 ## content
 
 <https://www.npmjs.com/package/zod>
-

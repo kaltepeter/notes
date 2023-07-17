@@ -2,7 +2,7 @@
 title: Elixir
 date: 2023-03-26
 tags:
-- language
+  - language
 ---
 
 ## Install/Tools
@@ -227,7 +227,7 @@ IO.puts("Your ability modifier is #{ability_modifier}")
 [a,a,a] = [1,1,1] # the list must have three elements with the same value
 [a,b,a] = [1,2,1] # [1,2,1]
 [a,a,a] = ["apples", "apples", "apples"]
-[a, a, "pineapples"] = ["apples", "apples", "pineapples"] 
+[a, a, "pineapples"] = ["apples", "apples", "pineapples"]
 [head | tail] = [:a, :b, :c, :d]
 head # :a
 tail # [:b, :c, :d]
@@ -393,7 +393,7 @@ number_compare = fn
   number, other_number when number >= other_number -> number
   _, other_number -> other_number
 end
-number_compare_v3.(1,2) # 2    
+number_compare_v3.(1,2) # 2
 ```
 
 - [Functions/Operators allowed in guard clause](https://elixir-lang.org/getting-started/case-cond-and-if.html#expressions-in-guard-clauses)
@@ -413,7 +413,7 @@ defmodule EvenOrOdd do
   def check(number) when Integer.is_odd(number), do: "odd"
 end
 
-EvenOrOdd.check(42) # "even" 
+EvenOrOdd.check(42) # "even"
 EvenOrOdd.check(43) # "odd"
 ```
 
@@ -618,7 +618,7 @@ defmodule TrFactorial do
   defp factorial_of(0, acc), do: acc
   defp factorial_of(n, acc) when n > 0, do: factorial_of(n - 1, n * acc)
 end
-TrFactorial.of(10000) # returns much faster than the original body recursive 
+TrFactorial.of(10000) # returns much faster than the original body recursive
 ```
 
 ## unbounded recursion
@@ -724,7 +724,7 @@ factorial.(5)
 
 ## Higher Order Functions
 
-- pass a function  into a function
+- pass a function into a function
 - hides complexity
 
 ```elixir
@@ -749,7 +749,7 @@ MyListV2.each(MyListV2.enchanted_items, fn item -> IO.puts item.title end)
 ```
 
 ```elixir
-increase_price = fn i -> %{title: i.title, price: i.price * 1.1} end 
+increase_price = fn i -> %{title: i.title, price: i.price * 1.1} end
 increase_price = fn item -> update_in(item.price, &(&1 * 1.1)) end # same as above using built-in higher-order function
 ```
 
@@ -807,7 +807,7 @@ Enum.group_by(medals, &(&1.medal), &(&1.player))
 
 ```elixir
 for a <- ["dogs", "cats", "flowers"], do: String.upcase(a)
-for a <- ["Willy", "Anna"], b <- ["Math", "English"], do: {a,b} # combining 
+for a <- ["Willy", "Anna"], b <- ["Math", "English"], do: {a,b} # combining
 parseds = for i <- ["10", "hot dogs", "20"], do: Integer.parse(i) # [{10, ""}, :error, {20, ""}]
 for {n,_} <- parseds, do: n # [10,20]
 for n <- [1, 2, 3, 4, 5, 6, 7], n > 3, do: n # [4, 5, 6, 7]
@@ -822,7 +822,7 @@ defmodule HigherOrderFunctions do
   end
 end
 
-import HigherOrderFunctions 
+import HigherOrderFunctions
 first_letter_and_upcase = compose(&String.upcase/1, &String.first/1)
 first_letter_and_upcase.("works") # W
 

@@ -2,8 +2,8 @@
 title: Angular Material
 date: 2021-01-13
 tags:
-- ui
-- framework
+  - ui
+  - framework
 ---
 
 Comprehensive guide: https://blog.thoughtram.io/angular/2017/05/23/custom-themes-with-angular-material.html
@@ -51,37 +51,38 @@ $ds-purple: (
 1. Generate palette in code
 1. example theme:
 
-    ```typescript
-    @import '~@angular/material/theming';
-    @import '../palette';
-    // Plus imports for other components in your app.
+   ```typescript
+   @import '~@angular/material/theming';
+   @import '../palette';
+   // Plus imports for other components in your app.
 
-    // Include the common styles for Angular Material. We include this here so that you only
-    // have to load a single css file for Angular Material in your app.
-    // Be sure that you only ever include this mixin once!
-    @include mat-core();
+   // Include the common styles for Angular Material. We include this here so that you only
+   // have to load a single css file for Angular Material in your app.
+   // Be sure that you only ever include this mixin once!
+   @include mat-core();
 
-    // Define the palettes for your theme using the Material Design palettes available in palette.scss
-    // (imported above). For each palette, you can optionally specify a default, lighter, and darker
-    // hue. Available color palettes: https://material.io/design/color/
-    $shiny-new-app-primary: mat-palette($sn-gray-blue, 800);
-    $shiny-new-app-accent: mat-palette($sn-green, 300);
+   // Define the palettes for your theme using the Material Design palettes available in palette.scss
+   // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+   // hue. Available color palettes: https://material.io/design/color/
+   $shiny-new-app-primary: mat-palette($sn-gray-blue, 800);
+   $shiny-new-app-accent: mat-palette($sn-green, 300);
 
-    // The warn palette is optional (defaults to red).
-    $shiny-new-app-warn: mat-palette($mat-red);
+   // The warn palette is optional (defaults to red).
+   $shiny-new-app-warn: mat-palette($mat-red);
 
-    // Create the theme object. A theme consists of configurations for individual
-    // theming systems such as `color` or `typography`.
-    $shiny-new-app-theme: mat-light-theme(
-    $shiny-new-app-primary,
-    $shiny-new-app-accent,
-    $shiny-new-app-warn
-    );
+   // Create the theme object. A theme consists of configurations for individual
+   // theming systems such as `color` or `typography`.
+   $shiny-new-app-theme: mat-light-theme(
+   $shiny-new-app-primary,
+   $shiny-new-app-accent,
+   $shiny-new-app-warn
+   );
 
-    // Include theme styles for core and each component used in your app.
-    // Alternatively, you can import and @include the theme mixins for each component
-    // that you are using.
-    @include angular-material-theme($shiny-new-app-theme);
+   // Include theme styles for core and each component used in your app.
+   // Alternatively, you can import and @include the theme mixins for each component
+   // that you are using.
+   @include angular-material-theme($shiny-new-app-theme);
 
-    ```
+   ```
+
 1. Import in your app styles

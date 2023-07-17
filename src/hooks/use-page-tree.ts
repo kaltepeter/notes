@@ -1,57 +1,57 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby";
 
 export interface Page {
-  id: string
-  slug: string
-  segments: string[]
-  tags: string[]
-  date: Date
-  title: string
+  id: string;
+  slug: string;
+  segments: string[];
+  tags: string[];
+  date: Date;
+  title: string;
 }
 
 export interface PageList {
-  [id: string]: Page
+  [id: string]: Page;
 }
 
 export interface Path {
-  name: string
-  slug?: string
-  children: PathList
+  name: string;
+  slug?: string;
+  children: PathList;
 }
 
 export interface PathList {
-  [id: string]: Path
+  [id: string]: Path;
 }
 
 export const usePageTree = (): {
-  pages: PageList
-  allTags: Set<string>
-  allPaths?: PathList
+  pages: PageList;
+  allTags: Set<string>;
+  allPaths?: PathList;
 } => {
-  const { allMarkdownRemark: pageList } = useStaticQuery(
-    graphql`query AllPages {
-  allMarkdownRemark(sort: {fields: {slug: ASC}}) {
-    nodes {
-      id
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-        tags
-        date
+  const { allMarkdownRemark: pageList } = useStaticQuery(graphql`
+    query AllPages {
+      allMarkdownRemark(sort: { fields: { slug: ASC } }) {
+        nodes {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            tags
+            date
+          }
+        }
       }
     }
-  }
-}`
-  )
+  `);
 
   const allTags = new Set<string>(
     pageList.nodes
       .map(({ frontmatter }) => frontmatter.tags)
       .flat()
-      .filter(t => !!t)
-  )
+      .filter((t) => !!t),
+  );
 
   const pages = pageList.nodes.map(({ id, fields, frontmatter }) => ({
     id,
@@ -61,22 +61,22 @@ export const usePageTree = (): {
     slug: fields.slug,
     segments: fields.slug
       ?.split("/")
-      .filter(seg => seg && seg !== "")
+      .filter((seg) => seg && seg !== "")
       .slice(0, -1),
-  }))
+  }));
 
-  let allPaths = { ["root"]: { name: "root", slug: '/', children: {} } }
-  pages.forEach(page => {
+  let allPaths = { ["root"]: { name: "root", slug: "/", children: {} } };
+  pages.forEach((page) => {
     if (page.segments.length > 0) {
-      const segmentList = [...page.segments]
-      let segment
-      let curParent = allPaths["root"]
+      const segmentList = [...page.segments];
+      let segment;
+      let curParent = allPaths["root"];
       while (segmentList.length > 0) {
-        segment = segmentList.shift()
+        segment = segmentList.shift();
         if (!curParent.children[segment]) {
-          curParent.children[segment] = { name: segment, children: {} }
+          curParent.children[segment] = { name: segment, children: {} };
         }
-        curParent = curParent.children[segment]
+        curParent = curParent.children[segment];
       }
       if (page.slug.match(/README\/?$/)) {
         curParent.slug = page.slug;
@@ -85,20 +85,20 @@ export const usePageTree = (): {
           name: page.title,
           slug: page.slug,
           children: {},
-        }
+        };
       }
     } else {
       allPaths.root.children[page.id] = {
         name: page.title,
         slug: page.slug,
         children: {},
-      }
+      };
     }
-  })
+  });
 
   return {
     pages: { ...pages },
     allTags,
     allPaths,
-  }
-}
+  };
+};

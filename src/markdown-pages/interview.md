@@ -2,7 +2,7 @@
 title: Interviewing for FE
 date: 2020-01-19
 tags:
-- workshop
+  - workshop
 ---
 
 http://jemyoung.com/interviewing
@@ -68,7 +68,7 @@ interviewer:
 - Have a code review checklist
 
 |           Average            |                 Good                 |                   Exceptional                    |
-|:----------------------------:|:------------------------------------:|:------------------------------------------------:|
+| :--------------------------: | :----------------------------------: | :----------------------------------------------: |
 | Application starts properly. |       Code is well documented.       |       Created unit and integration tests.        |
 |  3/5 requirements complete.  |    All requirements are complete.    | Modular architecture designed for extensibility. |
 |                              | No errors are thrown in the console. |                                                  |
@@ -97,4 +97,3 @@ interviewer
 - Go over general sample problems
 - Ask your friends to test you
 - Try to ask what the style of technical questions will be
-

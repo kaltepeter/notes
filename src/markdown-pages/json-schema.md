@@ -4,7 +4,7 @@ date: 2020-11-01
 tags:
 ---
 
-https://json-schema.org/understanding-json-schema/index.html 
+https://json-schema.org/understanding-json-schema/index.html
 
 Used by angular builders: https://github.com/angular/angular/blob/master/aio/content/guide/cli-builder.md#angular-cli-builders
 

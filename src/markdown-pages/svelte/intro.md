@@ -2,7 +2,7 @@
 title: "FEM: Svelte"
 date: 2020-06-14
 tags:
-- ui
+  - ui
 ---
 
 https://svelte-workshop.netlify.app/introduction/
@@ -21,8 +21,8 @@ Clone a template using `degit`
 
 ```bash
 mkdir my-project
-cd my-project 
-npx degit "sveltejs/sapper-template#rollup" --force  
+cd my-project
+npx degit "sveltejs/sapper-template#rollup" --force
 code .
 npm i
 ```

@@ -44,8 +44,8 @@ Used to find optimal translations, rotation and scaling. Example used is alignin
 
 ## Manhatten Distance
 
-> he distance between two points is the sum of the absolute differences of their Cartesian coordinates 
--- https://en.wikipedia.org/wiki/Taxicab_geometry
+> he distance between two points is the sum of the absolute differences of their Cartesian coordinates
+> -- https://en.wikipedia.org/wiki/Taxicab_geometry
 
 Used to quantify distance between points. In 3d it would be:
 

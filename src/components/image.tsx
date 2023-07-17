@@ -1,10 +1,10 @@
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
-import React, { ReactElement } from "react"
-import { Box, Typography } from "@mui/material"
-import { makeStyles } from "tss-react/mui"
-import { graphql, useStaticQuery } from "gatsby"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import React, { ReactElement } from "react";
+import { Box, Typography } from "@mui/material";
+import { makeStyles } from "tss-react/mui";
+import { graphql, useStaticQuery } from "gatsby";
 
-const useStyles = makeStyles({ name: "Image" })(_theme => ({
+const useStyles = makeStyles({ name: "Image" })((_theme) => ({
   root: {
     position: "relative",
     top: "-15vh",
@@ -19,10 +19,10 @@ const useStyles = makeStyles({ name: "Image" })(_theme => ({
     right: 0,
     opacity: "50%",
   },
-}))
+}));
 
 const Image = (): ReactElement => {
-  const { classes } = useStyles()
+  const { classes } = useStyles();
 
   return (
     <>
@@ -47,7 +47,7 @@ const Image = (): ReactElement => {
         </a>
       </Typography>
     </>
-  )
-}
+  );
+};
 
-export default Image
+export default Image;

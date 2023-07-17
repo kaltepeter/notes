@@ -2,8 +2,8 @@
 title: FEM A Tour of JS Patterns
 date: 2022-02-11
 tags:
-- workshop
-- front-end-masters
+  - workshop
+  - front-end-masters
 ---
 
 # A Tour of JS Patterns
@@ -13,15 +13,17 @@ tags:
 - https://www.patterns.dev/
 - https://leanpub.com/composingsoftware
 - https://www.theavocoder.com/
-✅ ⚠️ ⛔
+  ✅ ⚠️ ⛔
 
 ### Module Pattern
+
 ✅ encapsulation: controls public/private footprint
 ✅ reusability: can be used in entire app
 
 `type="module"` or use `.mjs` extension
 
 ### Singleton Pattern
+
 Use case: ensure a single DB connection
 ✅ memory: can save memory for one instance
 ⚠️ unnecessary: ES2015 modules are singletons
@@ -40,7 +42,9 @@ export default singletonCounter;
 ```
 
 ### Proxy Pattern
+
 Use case: validation, logging, formatting, notifications, debugging
+
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
 
 ✅ Control: see use cases
@@ -49,6 +53,7 @@ Use case: validation, logging, formatting, notifications, debugging
 Reflect returns a truthy value which is important for proxies.
 
 ### Observer
+
 ✅ separation of concerns, loose coupling
 ⚠️ notifying all observers can take a lot of time if it becomes complex or if there are too many observers to notify
 
@@ -57,18 +62,21 @@ Could parallelize if promises or similar.
 - https://frontendmasters.com/learn/async-rx-js/
 
 ### Factory
+
 ✅ DRY
 ⚠️ Not very memory efficient or useful in js
 
 A function that returns objects
 
 ### Prototype
+
 ✅ memory efficient. Items are stored on the prototype rather than each instance
 ⚠️ Readability. With multiple extensions it's hard to see where properties came from.
 
 `__proto__` shows prototype
 
 ### Container/Presentation Pattern
+
 Separate logic from the view.
 ✅ separation of concerns. the presentation can be pure functions
 ✅ reusability. views don't affect state
@@ -77,12 +85,14 @@ Separate logic from the view.
 ⚠️ overkill for smaller applications
 
 ### HOC
-Wraps a component and adds props, extracts logic 
+
+Wraps a component and adds props, extracts logic
 ✅ separation of concerns
-⚠️ naming collisions 
+⚠️ naming collisions
 ⚠️ readability
 
 ## Render Props
+
 Passing components as props to other components
 ✅ Reusability
 ✅ Separation of concerns
@@ -90,20 +100,23 @@ Passing components as props to other components
 ⚠️ Unessesary with hooks
 
 ## Hooks
+
 Add state to functional components, reuse stateful logic, and manage component lifecycle.
 
 ✅ Simplifies components
 ✅ Reusing stateful logic
 ✅ Sharing non-visual logic
 ✅ Good alternative to older react design patterns.
-⚠️ Rules of hooks. 
+⚠️ Rules of hooks.
 
 ## Provider Pattern
-A HOC that allows passing a context. 
+
+A HOC that allows passing a context.
 ✅ scalability
 ⚠️ components that consume the provider context re-render whenever a value changes
 
 ## Compound Pattern
+
 Multiple components work together for a single task.
 ✅ State management, compound components manage their own internal state and share with children.
 ✅ single import
@@ -113,32 +126,41 @@ Multiple components work together for a single task.
 ## Bundling/Tree-shaking/compiling
 
 ### Bundlers
+
 Bundles the application in one or multiple files, making it possible to run in other environments.
--   [Webpack](https://webpack.js.org/) (We'll be using this one in the following examples)
--   [Parcel](https://parceljs.org/)
--   [Rollup](https://rollupjs.org/guide/en/)
+
+- [Webpack](https://webpack.js.org/) (We'll be using this one in the following examples)
+- [Parcel](https://parceljs.org/)
+- [Rollup](https://rollupjs.org/guide/en/)
 - https://frontendmasters.com/learn/webpack/
 
 ### Compilers
-Converts javascript or Typescript into another version. 
--   [Babel](https://babeljs.io/)
--   [TypeScript](https://www.typescriptlang.org/)
 
-### Minifiers 
+Converts javascript or Typescript into another version.
+
+- [Babel](https://babeljs.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+### Minifiers
 
 Reduce the size by removing comments, making variable and function names smaller, removing white space, etc.
--   [Terser](https://terser.org/)
--   [Uglify](https://www.uglifyjs.net/)
+
+- [Terser](https://terser.org/)
+- [Uglify](https://www.uglifyjs.net/)
 
 ### Combination
+
 There are tools that combine the steps
--   [SWC](https://swc.rs/) - a Rust-based compiler, bundler, and minifier
--   [ESBuild](https://esbuild.github.io/) - a Go-based compiler, bundler, and minifier.
+
+- [SWC](https://swc.rs/) - a Rust-based compiler, bundler, and minifier
+- [ESBuild](https://esbuild.github.io/) - a Go-based compiler, bundler, and minifier.
 
 ### Bundle Splitting
-Creating multiple, smaller bundles rather than one large bundle. 
+
+Creating multiple, smaller bundles rather than one large bundle.
 
 ### Tree shaking
+
 Dropping unused code
 
 ## Static Import
@@ -162,10 +184,12 @@ Import code on demand. Static imports are bundled and included. Dynamically impo
 ⚠️ User experience. Lazy loading needs an initial render, which may be long.
 
 ## Import on Visibility
+
 Load non-critical components when they are visible.
+
 - https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 - https://www.npmjs.com/package/react-intersection-observer
-- 
+-
 
 ✅ Faster initial load.
 ⚠️ Layout shift. If the fallback component differs the layout will shift.
@@ -181,6 +205,7 @@ Dynamically load components based on the current route.
 Use hints to tell the browser about (optionally) critical resources.
 
 ### Prefetch
+
 Fetch and cache the resources that may be requested soon.
 
 ```html
@@ -195,6 +220,7 @@ const About = lazy(() => import(/* webpackPrefetch: true */ "./about"));
 ⚠️ unnecessary. If the user never needed the resource, it was extra.
 
 ### Preload
+
 Inform the browser of critical resources before they are discovered.
 
 Will fetch no matter what.
@@ -204,8 +230,8 @@ Will fetch no matter what.
 ```
 
 ```typescript
-const SearchFlyout = lazy(() =>
-  import(/* webpackPreload: true */ "./SearchFlyout")
+const SearchFlyout = lazy(
+  () => import(/* webpackPreload: true */ "./SearchFlyout"),
 );
 ```
 
@@ -219,14 +245,14 @@ const SearchFlyout = lazy(() =>
 
 ### Web Vitals
 
-|Key| Name | Description |
-| --- | --- | --- |
-| TTFB | Time to First Byte | Time it takes for a client to receive the first byte of page content |
-| FCP | First Contentful Paint | Time it takes the browser to render the first piece of content after navigation |
-| LCP | Largest Contentful Paint | Time it takes to load and render the page's main content | 
-| TTI | Time To Interactive | Time from when the page starts loading to when it's reliably responding to user input quickly |
-| CLS | Cumulative Layout Shift | Measures visual stability to avoid unexpected layout shift |
-| FIP | First Input Delay | Time from when the user interacts with the page to the time when the event handlers are able to run |
+| Key  | Name                     | Description                                                                                         |
+| ---- | ------------------------ | --------------------------------------------------------------------------------------------------- |
+| TTFB | Time to First Byte       | Time it takes for a client to receive the first byte of page content                                |
+| FCP  | First Contentful Paint   | Time it takes the browser to render the first piece of content after navigation                     |
+| LCP  | Largest Contentful Paint | Time it takes to load and render the page's main content                                            |
+| TTI  | Time To Interactive      | Time from when the page starts loading to when it's reliably responding to user input quickly       |
+| CLS  | Cumulative Layout Shift  | Measures visual stability to avoid unexpected layout shift                                          |
+| FIP  | First Input Delay        | Time from when the user interacts with the page to the time when the event handlers are able to run |
 
 > **Compiling**: Converting JavaScript into native machine code
 > **Execution time**: The time it takes to execute the previously fetched, parsed, and compiled data
@@ -239,6 +265,7 @@ const SearchFlyout = lazy(() =>
 > -- https://javascriptpatterns.vercel.app/patterns/rendering-patterns/introduction
 
 ### Client-side rendering
+
 SPAs, the client does the rendering.
 
 ![Performance of Client Side Rendering](../../../images/perf-client-side-rendering.png)
@@ -249,6 +276,7 @@ SPAs, the client does the rendering.
 ⚠️ SEO
 
 ### Static rendering
+
 Deliver pre-rendered HTML content that was generated when the site was built.
 
 ![Performance of Static Rendering](../../../images/perf-static-rendering.png)
@@ -260,9 +288,10 @@ Deliver pre-rendered HTML content that was generated when the site was built.
 ⚠️ Dynamic data. If there is dynamic data it can be a long LCP.
 
 ### Dynamic data
-Adding dynamic data to static pages. Frameworks such as Next.js support it. 
 
-![Performance of Dynamic Data](../../../images/perf-dynamic-data.png) 
+Adding dynamic data to static pages. Frameworks such as Next.js support it.
+
+![Performance of Dynamic Data](../../../images/perf-dynamic-data.png)
 
 ✅ Static benefits.
 ✅ Dynamic data.
@@ -273,7 +302,7 @@ Adding dynamic data to static pages. Frameworks such as Next.js support it.
 
 Using client-side fetch to add dynamic data.
 
-![Performance of Fetching Dynamic Data Client Side](../../../images/perf-fetching-dynamic-data-client-side.png) 
+![Performance of Fetching Dynamic Data Client Side](../../../images/perf-fetching-dynamic-data-client-side.png)
 
 ✅ Static benefits.
 ⚠️ Server costs
@@ -283,7 +312,7 @@ Using client-side fetch to add dynamic data.
 
 Pre-render certain pages, and render others on demand.
 
-![Performance of Incremental Static Regeneration](../../../images/perf-incremental-static-regeneration.png) 
+![Performance of Incremental Static Regeneration](../../../images/perf-incremental-static-regeneration.png)
 
 ✅ Static benefits.
 ⚠️ Server costs
@@ -292,7 +321,7 @@ Pre-render certain pages, and render others on demand.
 
 With server-side rendering, we can generate HTML on the server on every request.
 
-![Performance of Server-side Rendering](../../../images/perf-server-side-rendering.png) 
+![Performance of Server-side Rendering](../../../images/perf-server-side-rendering.png)
 
 ✅ Personalized pages.
 ✅ Render blocking.
@@ -303,8 +332,8 @@ With server-side rendering, we can generate HTML on the server on every request.
 
 Generate HTML on every request, sending it down piece by piece
 
-![Performance of Streaming Server-side Rendering](../../../images/perf-streaming-server-side-rendering.png) 
+![Performance of Streaming Server-side Rendering](../../../images/perf-streaming-server-side-rendering.png)
 
-✅  Performance regardless of the page size. 
-✅ Network backpressure. 
+✅ Performance regardless of the page size.
+✅ Network backpressure.
 ⚠️ Support. Not all runtimes support HTTP streaming.

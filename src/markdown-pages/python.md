@@ -2,7 +2,7 @@
 title: Python
 date: 2020-07-19
 tags:
-- language
+  - language
 ---
 
 [https://www.computerhope.com/issues/ch001721.htm](https://www.computerhope.com/issues/ch001721.htm) - extracting text
@@ -52,7 +52,7 @@ python3 -m pip install --user SomeProject
 
 ```bash
  "$(python3 -m site --user-base)"/bin/ansible-playbook
- ```
+```
 
 ## installing on mac
 
@@ -212,7 +212,7 @@ export PATH="$MAGICK_HOME/bin:$PATH"
 
 symlink lib
 
-ln -s $MAGICK\_HOME/lib/libMagickWand-6.Q16.dylib /usr/local/lib/libMagickWand.dylib
+ln -s $MAGICK_HOME/lib/libMagickWand-6.Q16.dylib /usr/local/lib/libMagickWand.dylib
 
 install ghostscript
 
@@ -222,7 +222,7 @@ brew install ghostscript
 
 ## PDFs
 
-tutorials: [http://stanford.edu/~mgorkove/cgi-bin/rpython\_tutorials/tutorials.php](http://stanford.edu/~mgorkove/cgi-bin/rpython_tutorials/tutorials.php)
+tutorials: [http://stanford.edu/~mgorkove/cgi-bin/rpython_tutorials/tutorials.php](http://stanford.edu/~mgorkove/cgi-bin/rpython_tutorials/tutorials.php)
 
 ## dependency management
 
@@ -268,7 +268,7 @@ print(tu) # (1, 2, 3, 4)
 ```python
 tu = (1,2,3,4)
 tu += (5,)
-print(tu) # 
+print(tu) #
 ```
 
 ## Dict
@@ -562,7 +562,7 @@ return -1 if pair1 < pair2
 
 ```python
 from functools import cmp_to_key
- 
+
 def compare(pair1, pair2):
     number1, word1 = pair1
     number2, word2 = pair2
@@ -575,7 +575,7 @@ def compare(pair1, pair2):
         return -1
     else:
         return 1
- 
+
 compare_key = cmp_to_key(compare)
 s_list = sorted(my_list, key=compare_key)
 ```

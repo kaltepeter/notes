@@ -2,9 +2,9 @@
 title: NestJS
 date: 2021-05-16
 tags:
-- node
-- NestJS
-- graphql
+  - node
+  - NestJS
+  - graphql
 ---
 
 ## GraphQL

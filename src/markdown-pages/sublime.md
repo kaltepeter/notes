@@ -6,5 +6,5 @@ tags:
 
 ## plugins
 
-* editorconfig
-* MarkdownLivePreview
+- editorconfig
+- MarkdownLivePreview

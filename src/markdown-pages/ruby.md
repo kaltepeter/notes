@@ -2,7 +2,7 @@
 title: Ruby
 date: 2021-01-14
 tags:
-- language
+  - language
 ---
 
 ### command line apps
@@ -97,36 +97,36 @@ https://medium.com/better-programming/code-like-a-pro-tooling-to-supercharge-vs-
 
 1. Install vscode extensions:
 
-    - [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby): `rebornix.ruby`
-    - [Ruby Language Colorization](https://marketplace.visualstudio.com/items?itemName=groksrc.ruby): `groksrc.ruby`
-    - [Ruby Solargraph](https://marketplace.visualstudio.com/items?itemName=castwide.solargraph): `castwide.solargraph`
-    - [VSCode Ruby](https://marketplace.visualstudio.com/items?itemName=wingrunr21.vscode-ruby): `wingrunr21.vscode-ruby` - this comes with another plugin as a dependency
+   - [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby): `rebornix.ruby`
+   - [Ruby Language Colorization](https://marketplace.visualstudio.com/items?itemName=groksrc.ruby): `groksrc.ruby`
+   - [Ruby Solargraph](https://marketplace.visualstudio.com/items?itemName=castwide.solargraph): `castwide.solargraph`
+   - [VSCode Ruby](https://marketplace.visualstudio.com/items?itemName=wingrunr21.vscode-ruby): `wingrunr21.vscode-ruby` - this comes with another plugin as a dependency
 
 1. Install two global gems. These are used by the IDE and have trouble using project level rvn installs.
 
-    ```bash
-    rvm @global do bundle update
-    rvm @global do gem install rubocop
-    rvm @global do gem install solargraph
-    ```
+   ```bash
+   rvm @global do bundle update
+   rvm @global do gem install rubocop
+   rvm @global do gem install solargraph
+   ```
 
 1. Configure VSCode User Settings:
 
-    ```json
-    "ruby.codeCompletion": "rcodetools",
-    "ruby.format": "rubocop",
-    "ruby.intellisense": "rubyLocate",
-    "ruby.useBundler": true, //run non-lint commands with bundle exec
-    "ruby.useLanguageServer": true, // use the internal language server (see below)
-    "ruby.lint": {
-        "rubocop": {
-        "useBundler": true // enable rubocop via bundler
-        },
-        "reek": {
-        "useBundler": true // enable reek via bundler
-        }
-    }
-    ```
+   ```json
+   "ruby.codeCompletion": "rcodetools",
+   "ruby.format": "rubocop",
+   "ruby.intellisense": "rubyLocate",
+   "ruby.useBundler": true, //run non-lint commands with bundle exec
+   "ruby.useLanguageServer": true, // use the internal language server (see below)
+   "ruby.lint": {
+       "rubocop": {
+       "useBundler": true // enable rubocop via bundler
+       },
+       "reek": {
+       "useBundler": true // enable reek via bundler
+       }
+   }
+   ```
 
 1. Restart IDE
 
@@ -142,41 +142,41 @@ https://medium.com/@kirill_shevch/lint-your-ruby-code-with-overcommit-and-static
 
 1. Add these gems to your project.
 
-    ```ruby
-        gem 'debase', '~> 0.2.1', group: :development
-        gem 'overcommit', '~> 0.54.0'
-        gem 'rubocop', require: false
-    ```
+   ```ruby
+       gem 'debase', '~> 0.2.1', group: :development
+       gem 'overcommit', '~> 0.54.0'
+       gem 'rubocop', require: false
+   ```
 
-    Run
+   Run
 
-    ```bash
-    bundle install
-    ```
+   ```bash
+   bundle install
+   ```
 
 1. Configure IDE
 
 1. Setup overcommit
 
-    ```bash
-    overcommit --install
-    overcommit --sign
-    ```
+   ```bash
+   overcommit --install
+   overcommit --sign
+   ```
 
 1. Setup rubocop
 
-    ```bash
-    rubocop --auto-gen-config
-    rubocop -a -x
-    ```
+   ```bash
+   rubocop --auto-gen-config
+   rubocop -a -x
+   ```
 
 1. Edit overcommit config, enable rubocop
 
-    ```yaml
-    PreCommit:
-      RuboCop:
-        enabled: true
-    ```
+   ```yaml
+   PreCommit:
+     RuboCop:
+       enabled: true
+   ```
 
 1. Hooks will now run on commits
 
@@ -243,7 +243,7 @@ https://medium.com/@kirill_shevch/lint-your-ruby-code-with-overcommit-and-static
 - `{ name: 'blah' }` is a literal hash
 - `"data-turbo-track": "reload"` and `{ "data-turbo-track": "reload" }` are same, `{}` are optional, like parenthesis
 
-## *Splat and Double **Splat
+## \*Splat and Double \*\*Splat
 
 - <https://www.freecodecamp.org/news/rubys-splat-and-double-splat-operators-ceb753329a78/>
 
@@ -297,7 +297,6 @@ When working with numbers if any number is a float it will use float precision.
 - <https://andycroll.com/ruby/calculate-the-standard-deviation-of-a-ruby-array/>
 - <https://andycroll.com/ruby/calculate-a-mean-average-from-a-ruby-array/>
 
-
 ```ruby
 def calc_stats(array, round_digits = 2)
   n = array.size
@@ -347,4 +346,3 @@ end
 ## Exceptions
 
 <https://rollbar.com/guides/ruby/how-to-handle-exceptions-in-ruby/>
-

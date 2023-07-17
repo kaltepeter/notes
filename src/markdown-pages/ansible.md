@@ -2,7 +2,7 @@
 title: Ansible
 date: 2022-02-13
 tags:
-- automation
+  - automation
 ---
 
 <https://medium.com/geekculture/ansible-2-10-installation-on-mac-os-x-add6a1034c16> - high level walkthrough

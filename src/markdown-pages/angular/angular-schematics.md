@@ -2,8 +2,8 @@
 title: Angular Schematics
 date: 2021-01-13
 tags:
-- ui
-- framework
+  - ui
+  - framework
 ---
 
 [https://astexplorer.net/](https://astexplorer.net/) - ast explorer
@@ -65,8 +65,8 @@ return chain([
       tags: `domain:${options.name},type:domain-logic`,
       style: 'scss',
     }),
-    (!options.addApp) ? 
-      noop() : 
+    (!options.addApp) ?
+      noop() :
       externalSchematic('@nrwl/angular', 'app', {
         name: options.name,
         tags: `domain:${options.name},type:app`,

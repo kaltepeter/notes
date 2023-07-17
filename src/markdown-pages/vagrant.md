@@ -2,7 +2,7 @@
 title: Vagrant
 date: 2018-07-28
 tags:
-- tools
+  - tools
 ---
 
 ## getting started
@@ -11,7 +11,7 @@ build a box start to finish - [https://www.engineyard.com/blog/building-a-vagran
 
 ## Networking
 
-[https://www.vagrantup.com/docs/networking/basic\_usage.html](https://www.vagrantup.com/docs/networking/basic_usage.html) - docs
+[https://www.vagrantup.com/docs/networking/basic_usage.html](https://www.vagrantup.com/docs/networking/basic_usage.html) - docs
 
 from: [https://www.safaribooksonline.com/library/view/vagrant-virtual-development/9781784393748/ch05s02.html](https://www.safaribooksonline.com/library/view/vagrant-virtual-development/9781784393748/ch05s02.html)
 
@@ -19,7 +19,7 @@ from: [https://www.safaribooksonline.com/library/view/vagrant-virtual-developmen
 
 When using astatic IP address on a local machine, we'll want to ensure that we are using IP ranges reserved for private networks to avoid any possible collisions with our outside environment. The IP ranges for private networks are established by the Internet Engineering Task Force and are reserved for use by private networks. The three ranges are defined in RFC1918 \([http://tools.ietf.org/html/rfc1918](http://tools.ietf.org/html/rfc1918)\) as:
 
-* `10.0.0.0`
+- `10.0.0.0`
 
   -
 
@@ -27,7 +27,7 @@ When using astatic IP address on a local machine, we'll want to ensure that we a
 
   \(10/8 prefix\)
 
-* `172.16.0.0`
+- `172.16.0.0`
 
   -
 
@@ -35,7 +35,7 @@ When using astatic IP address on a local machine, we'll want to ensure that we a
 
   \(172.16/12 prefix\)
 
-* `192.168.0.0`
+- `192.168.0.0`
 
   -
 
@@ -57,7 +57,7 @@ When assigning static IPs in a Vagrantfile, choose one of these ranges to assign
 
 ### serverspec
 
-[https://serverspec.org/resource\_types.html\#file](https://serverspec.org/resource_types.html#file)
+[https://serverspec.org/resource_types.html\#file](https://serverspec.org/resource_types.html#file)
 
 example spec
 
@@ -71,4 +71,3 @@ example spec
     expect(file('/home/vagrant/gradle')).to be_executable 'vagrant'
   end
 ```
-

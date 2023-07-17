@@ -2,7 +2,7 @@
 title: Groovy
 date: 2019-02-03
 tags:
-- language
+  - language
 ---
 
 get env vars: [http://www.mytechtoday.com/2009/01/read-environment-variables-with-groovy.html](http://www.mytechtoday.com/2009/01/read-environment-variables-with-groovy.html)
@@ -34,7 +34,7 @@ docker exec -it jenkinsmaster cli -remoting groovy jar:file:./build/llibs/jenkin
   manifest {
     attributes 'Main-Class': mainClassName
   }
-  ```
+```
 
 ### get parent directory path
 
@@ -116,7 +116,7 @@ assert message == message2
 
 ```bash
 herepizza23: [text:yo, channelName:NODE_DEFAULT]
-Assertion failed: 
+Assertion failed:
 herepizza23: [text:yo, channelName:NODE_DEFAULT]
 
 com.mrll.javelin.slack.Message@68c72235
@@ -132,7 +132,7 @@ assert message == message2
 herepizza23: [text:yo2, channelName:NODE_DEFAULT]
 herepizza23: [text:yo, channelName:NODE_DEFAULT]
 com.mrll.javelin.slack.Message@1f97cf0d
-Assertion failed: 
+Assertion failed:
 
 assert message == message2
        |       |  |

@@ -1,9 +1,9 @@
-import { red, grey } from "@mui/material/colors"
-import { createTheme, alpha, responsiveFontSizes } from "@mui/material/styles"
+import { red, grey } from "@mui/material/colors";
+import { createTheme, alpha, responsiveFontSizes } from "@mui/material/styles";
 
 const merriweatherBase = {
   fontFamily: "'Merriweather', serif",
-}
+};
 
 const merriweather = {
   blackItalic: {
@@ -20,11 +20,11 @@ const merriweather = {
     ...merriweatherBase,
     fontWeight: 400,
   },
-}
+};
 
 const libreFranklinBase = {
   fontFamily: "'Libre Franklin', sans-serif",
-}
+};
 
 const libreFranklin = {
   light: {
@@ -43,12 +43,12 @@ const libreFranklin = {
     ...libreFranklinBase,
     fontWeight: 700,
   },
-}
+};
 
 const bodyBase = {
   ...merriweather.regular,
   fontSize: "16px",
-}
+};
 
 const typography = {
   h1: {
@@ -103,9 +103,9 @@ const typography = {
     ...libreFranklin.bold,
     fontSize: ".625rem",
   },
-}
+};
 
-const baseSpacing = createTheme()
+const baseSpacing = createTheme();
 
 const labOverrides = {
   MuiTreeItem: {
@@ -124,7 +124,7 @@ const labOverrides = {
       },
     },
   },
-}
+};
 
 // A custom theme for this app
 const baseTheme = createTheme({
@@ -177,8 +177,8 @@ const baseTheme = createTheme({
     },
     ...labOverrides,
   },
-})
+});
 
-const theme = responsiveFontSizes(baseTheme)
+const theme = responsiveFontSizes(baseTheme);
 
-export default theme
+export default theme;

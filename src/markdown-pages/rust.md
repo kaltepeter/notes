@@ -2,7 +2,7 @@
 title: rust
 date: 2023-03-11
 tags:
-- language
+  - language
 ---
 
 ## Getting Started

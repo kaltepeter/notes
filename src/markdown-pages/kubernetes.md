@@ -2,7 +2,7 @@
 title: Kubernetes
 date: 2019-11-12
 tags:
-- platform
+  - platform
 ---
 
 DOCS: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.10/#container-v1-core

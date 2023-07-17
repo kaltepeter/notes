@@ -89,7 +89,7 @@ func (c *Coord) GetAllRotations() map[Coord]bool {
     pairs := [][]int{{c.X, c.X * -1}, {c.Y, c.Y * -1}, {c.Z, c.Z * -1}}
     for i, c := range pairs {
         pList := [][]int{}
-        
+
         if i > 0 {
             pList = append(pList, pairs[:i]...)
         }
@@ -102,7 +102,7 @@ func (c *Coord) GetAllRotations() map[Coord]bool {
         cListR := NewIntAdjList(c[1], pList)
         adjList := calcCombos(&cListL)
         adjList = append(adjList, calcCombos(&cListR)...)
-        
+
         for _, c := range adjList {
             coords[c] = true
         }

@@ -2,21 +2,17 @@
 title: Performance
 date: 2021-04-11
 tags:
-- ui
-- angular
+  - ui
+  - angular
 ---
 
 ## Build Optimizer and Vendor Chunk
 
-Don't assume vendor chunk is helpful. 
+Don't assume vendor chunk is helpful.
 
-Use Vendor IF:
-    - You can cache the asset
-    - The asset doesn't change as often as the app
-    - The vendor chunk reduces main significantly
+Use Vendor IF: - You can cache the asset - The asset doesn't change as often as the app - The vendor chunk reduces main significantly
 
-Use the build optimizer with vendor off IF:
-    - You benefit from smaller bundle size overall
+Use the build optimizer with vendor off IF: - You benefit from smaller bundle size overall
 
 > If we put all shared pipes, directives and common components in one big shared module and then import it everywhere(inside sync and async chunks) then that code will be in our initial main chunk. So if you want to get a bad initial load performance then it’s the way to go.
 

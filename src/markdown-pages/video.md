@@ -2,7 +2,7 @@
 title: Video Tools
 date: 2019-09-16
 tags:
-- tools
+  - tools
 ---
 
 capturing screen: quicktime or giffy capture
