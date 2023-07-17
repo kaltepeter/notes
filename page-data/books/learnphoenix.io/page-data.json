@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-note-template-tsx",
-    "path": "/books/learnphoenix.io/",
-    "result": {"data":{"markdownRemark":{"html":"<p><a href=\"https://www.learnphoenix.io/phoenix-chat/directory-structure\">https://www.learnphoenix.io/phoenix-chat/directory-structure</a></p>\n<pre><code class=\"language-bash\">mix local.hex\nmix archive.install hex phx_new\n</code></pre>","frontmatter":{"date":"April 30, 2023","title":"LearnPhoenix.io","tags":["book","phoenix"]}}},"pageContext":{"slug":"/books/learnphoenix.io/"}},
-    "staticQueryHashes": ["1929983096","3649515864"]}
+{"componentChunkName":"component---src-templates-note-template-tsx","path":"/books/learnphoenix.io/","result":{"data":{"markdownRemark":{"html":"<p><a href=\"https://www.learnphoenix.io/phoenix-chat/directory-structure\">https://www.learnphoenix.io/phoenix-chat/directory-structure</a></p>\n<pre><code class=\"language-bash\">mix local.hex\nmix archive.install hex phx_new\n</code></pre>","frontmatter":{"date":"April 30, 2023","title":"LearnPhoenix.io","tags":["book","phoenix"]}}},"pageContext":{"slug":"/books/learnphoenix.io/"}},"staticQueryHashes":["1865044719","3489759178","3649515864"],"slicesMap":{}}

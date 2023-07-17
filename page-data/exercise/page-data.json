@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-note-template-tsx",
-    "path": "/exercise/",
-    "result": {"data":{"markdownRemark":{"html":"<h2>Exercise 2: Insert mode</h2>\n<p>There are a few ways to go into insert mode (I also am not including about\nanother 10...)</p>\n<p>i: left side of cursor\na: right side of cursor\n----I:\nA: -----<br>\no: insert new line below line and go into insert mode\nO: insert new line above line and go into insert mode</p>\n<p>lets play around</p>","frontmatter":{"date":null,"title":"insert","tags":null}}},"pageContext":{"slug":"/exercise/"}},
-    "staticQueryHashes": ["1929983096","3649515864"]}
+{"componentChunkName":"component---src-templates-note-template-tsx","path":"/exercise/","result":{"data":{"markdownRemark":{"html":"<h2>Exercise 2: Insert mode</h2>\n<p>There are a few ways to go into insert mode (I also am not including about\nanother 10...)</p>\n<p>i: left side of cursor\na: right side of cursor\n----I:\nA: -----<br>\no: insert new line below line and go into insert mode\nO: insert new line above line and go into insert mode</p>\n<p>lets play around</p>","frontmatter":{"date":null,"title":"insert","tags":null}}},"pageContext":{"slug":"/exercise/"}},"staticQueryHashes":["1865044719","3489759178","3649515864"],"slicesMap":{}}

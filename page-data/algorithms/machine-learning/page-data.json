@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-note-template-tsx",
-    "path": "/algorithms/machine-learning/",
-    "result": {"data":{"markdownRemark":{"html":"<p><a href=\"https://www.youtube.com/playlist?list=PLRDl2inPrWQW1QSWhBU0ki-jq_uElkh2a\">https://www.youtube.com/playlist?list=PLRDl2inPrWQW1QSWhBU0ki-jq_uElkh2a</a> - Machine Learning Foundations Course</p>","frontmatter":{"date":"December 01, 2021","title":"Machine Learning","tags":null}}},"pageContext":{"slug":"/algorithms/machine-learning/"}},
-    "staticQueryHashes": ["1929983096","3649515864"]}
+{"componentChunkName":"component---src-templates-note-template-tsx","path":"/algorithms/machine-learning/","result":{"data":{"markdownRemark":{"html":"<p><a href=\"https://www.youtube.com/playlist?list=PLRDl2inPrWQW1QSWhBU0ki-jq_uElkh2a\">https://www.youtube.com/playlist?list=PLRDl2inPrWQW1QSWhBU0ki-jq_uElkh2a</a> - Machine Learning Foundations Course</p>","frontmatter":{"date":"December 01, 2021","title":"Machine Learning","tags":null}}},"pageContext":{"slug":"/algorithms/machine-learning/"}},"staticQueryHashes":["1865044719","3489759178","3649515864"],"slicesMap":{}}

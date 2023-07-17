@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-note-template-tsx",
-    "path": "/excel/",
-    "result": {"data":{"markdownRemark":{"html":"<h2>formulas</h2>\n<p>get human time from epoch</p>\n<pre><code>= (F98 / 86400000) + DATE(1970,1,1)\n</code></pre>","frontmatter":{"date":"October 16, 2018","title":"Excel","tags":null}}},"pageContext":{"slug":"/excel/"}},
-    "staticQueryHashes": ["1929983096","3649515864"]}
+{"componentChunkName":"component---src-templates-note-template-tsx","path":"/excel/","result":{"data":{"markdownRemark":{"html":"<h2>formulas</h2>\n<p>get human time from epoch</p>\n<pre><code>= (F98 / 86400000) + DATE(1970,1,1)\n</code></pre>","frontmatter":{"date":"October 16, 2018","title":"Excel","tags":null}}},"pageContext":{"slug":"/excel/"}},"staticQueryHashes":["1865044719","3489759178","3649515864"],"slicesMap":{}}
