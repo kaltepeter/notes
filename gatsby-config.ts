@@ -1,17 +1,15 @@
-// @ts-check
+import { GatsbyConfig } from "./src/model";
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
-module.exports = {
+const config: GatsbyConfig = {
   pathPrefix: "/notes",
   trailingSlash: "always",
+  graphqlTypegen: true,
   siteMetadata: {
     title: `Notes`,
     description: `
       How do we remember things? How do we solidify our understandings? How do we free up our minds? How do we organize thoughts? We should write it down, anyway that works for you.
     `,
-    image: "src/images/notes-icon.svg",
+    image: "/images/notes-icon.svg",
     siteUrl: `https://kaltepeter.github.io/notes`,
     twitterUsername: `@kaltepeter`,
   },
@@ -65,3 +63,5 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 };
+
+export default config;

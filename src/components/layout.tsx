@@ -67,7 +67,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { classes } = useStyles({ drawerWidth });
 
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query SiteTitle {
       site {
         siteMetadata {
           title
@@ -119,5 +119,5 @@ const LayoutWrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
   );
 };
 
-export { LayoutWrapper as Layout };
+export { LayoutWrapper };
 export default LayoutWrapper;

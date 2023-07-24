@@ -26,7 +26,7 @@ export interface PathList {
 export const usePageTree = (): {
   pages: PageList;
   allTags: Set<string>;
-  allPaths?: PathList;
+  allPaths: PathList;
 } => {
   const { allMarkdownRemark: pageList } = useStaticQuery(graphql`
     query AllPages {
@@ -65,7 +65,7 @@ export const usePageTree = (): {
       .slice(0, -1),
   }));
 
-  let allPaths = { ["root"]: { name: "root", slug: "/", children: {} } };
+  const allPaths = { ["root"]: { name: "root", slug: "/", children: {} } };
   pages.forEach((page) => {
     if (page.segments.length > 0) {
       const segmentList = [...page.segments];

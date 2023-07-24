@@ -1,20 +1,9 @@
 import { graphql, useStaticQuery } from "gatsby";
+import { GatsbyConfig } from "../model";
 
-type ReturnValue = {
-  site: {
-    siteMetadata: {
-      title: string;
-      description: string;
-      twitterUsername: string;
-      image: string;
-      siteUrl: string;
-    };
-  };
-};
-
-export const useSiteMetadata = () => {
-  const data = useStaticQuery<ReturnValue>(graphql`
-    query {
+export const useSiteMetadata = (): GatsbyConfig["siteMetadata"] => {
+  const { site } = useStaticQuery(graphql`
+    query UseSiteMetadata {
       site {
         siteMetadata {
           title
@@ -26,5 +15,10 @@ export const useSiteMetadata = () => {
       }
     }
   `);
-  return data.site.siteMetadata;
+
+  if (!site?.siteMetadata) {
+    throw new Error("Site metadata not found");
+  }
+
+  return site?.siteMetadata;
 };

@@ -2,7 +2,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { TreeItem } from "@mui/lab";
 import TreeView from "@mui/lab/TreeView";
-import { Divider, Drawer, Hidden, useTheme } from "@mui/material";
+import { Divider, Drawer, Hidden, Toolbar, useTheme } from "@mui/material";
 import { Link } from "gatsby";
 import React from "react";
 import { makeStyles } from "tss-react/mui";
@@ -22,10 +22,10 @@ const useStyles = makeStyles<NavigationProps>({ name: "Navigation" })(
         flexShrink: 0,
       },
     },
-    toolbar: _theme.mixins.toolbar,
     drawerPaper: {
       width: `${drawerWidth}px`,
     },
+    modal: {},
     activeNavLink: {
       color: _theme.palette.text.primary,
       fontWeight: 900,
@@ -41,14 +41,14 @@ const Navigation: React.FC<NavigationProps> = (props) => {
   const { drawerOpen, onToggleDrawer } = props;
   const { classes } = useStyles(props);
   const theme = useTheme();
-  const { pages, allTags, allPaths } = usePageTree();
+  const { allPaths } = usePageTree();
 
-  const titleCase = (sentence) =>
+  const titleCase = (sentence: string) =>
     sentence.replace(/\w\S*/g, (w) => w.replace(/^\w/, (c) => c.toUpperCase()));
 
   const getTreeLabel = (node: Path) => (
     <div>
-      {node.slug?.length > 0 ? (
+      {node.slug && node.slug?.length > 0 ? (
         <Link
           to={node.slug}
           className={classes.navLink}
@@ -67,12 +67,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
     return (
       <>
         {Object.entries(nodes).map(([tId, tPath]) => (
-          <TreeItem
-            key={tId}
-            nodeId={tId}
-            label={getTreeLabel(tPath)}
-            className={classes.treeItem}
-          >
+          <TreeItem key={tId} nodeId={tId} label={getTreeLabel(tPath)}>
             {Object.keys(tPath.children).length > 0
               ? Object.entries(tPath.children).map(([id, node]) =>
                   renderTree({ [id]: { ...node } }),
@@ -86,7 +81,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
 
   const drawerChildren = () => (
     <>
-      <div className={classes.toolbar} />
+      <Toolbar />
       <Divider />
       <TreeView
         defaultCollapseIcon={<ExpandMoreIcon />}
