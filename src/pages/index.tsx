@@ -7,8 +7,8 @@ import {
   Box as Paper,
   Typography,
 } from "@mui/material";
-import { PageProps } from "gatsby";
-import React from "react";
+import { HeadProps, PageProps } from "gatsby";
+import React, { ReactElement } from "react";
 import { makeStyles } from "tss-react/mui";
 import Image from "../components/image";
 import Layout from "../components/layout";
@@ -111,6 +111,6 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 };
 
 export default IndexPage;
-export const Head = ({ location }) => (
+export const Head = ({ location }: HeadProps): ReactElement<typeof SEO> => (
   <SEO title="Home" pathname={location.pathname} />
 );

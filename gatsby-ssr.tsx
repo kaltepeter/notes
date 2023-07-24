@@ -1,3 +1,9 @@
+import createEmotionServer from "@emotion/server/create-instance";
+import React from "react";
+import { CacheProvider } from "@emotion/react";
+import { makeMuiCache } from "./src/theme/cache";
+import { renderToString } from "react-dom/server";
+import { ReplaceRendererArgs } from "gatsby";
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
  *
@@ -6,15 +12,8 @@
 
 // Notes on MUI 5 and SSR
 // https://dev.to/deckstar/gatsby-js-how-to-solve-fouc-when-using-tss-react-and-material-ui-v5-465f
-import { CacheProvider } from "@emotion/react";
-import createEmotionServer from "@emotion/server/create-instance";
-import React from "react";
-import { renderToString } from "react-dom/server";
 
-import { makeMuiCache } from "./src/theme/cache";
-
-/** @param {import('gatsby').ReplaceRendererArgs} args */
-export const replaceRenderer = (args) => {
+export const replaceRenderer = (args: ReplaceRendererArgs): void => {
   const { bodyComponent, replaceBodyHTMLString, setHeadComponents } = args;
 
   const muiCache = makeMuiCache();

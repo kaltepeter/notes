@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "@ka/notes",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My personal notes site.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kayla Altepeter",
   "engines": {
     "node": ">=18.16.1",
     "npm": ">=9.5.1"
@@ -35,6 +35,14 @@
     "tss-react": "^4.8.8"
   },
   "devDependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@graphql-eslint/eslint-plugin": "^3.20.1",
+    "@types/node": "^20.4.2",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "eslint": "^7.32.0",
     "gh-pages": "^5.0.0",
     "prettier": "^3.0.0",
     "typescript": "^5.1.6"
@@ -45,12 +53,14 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build --prefix-paths",
+    "clean": "gatsby clean",
     "deploy": "gh-pages --dist \"public\"",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix",
     "start": "npm run develop",
     "serve": "gatsby serve --prefix-paths",
-    "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {

@@ -37,6 +37,7 @@ const useStyles = makeStyles({ name: "NoteList" })((_theme) => ({
   },
 }));
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface NoteListProps {}
 
 const NoteList: React.FC<NoteListProps> = () => {

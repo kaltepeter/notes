@@ -11,7 +11,6 @@ import { useSiteMetadata } from "../hooks/use-site-metadata";
 type SEOProps = {
   description?: string;
   lang?: string;
-  meta?: Array<{}>;
   title: string;
   children?: ReactElement;
   pathname?: string;

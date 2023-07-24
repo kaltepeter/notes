@@ -1,8 +1,7 @@
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
-import React, { ReactElement } from "react";
 import { Box, Typography } from "@mui/material";
+import { StaticImage } from "gatsby-plugin-image";
+import React, { ReactElement } from "react";
 import { makeStyles } from "tss-react/mui";
-import { graphql, useStaticQuery } from "gatsby";
 
 const useStyles = makeStyles({ name: "Image" })((_theme) => ({
   root: {

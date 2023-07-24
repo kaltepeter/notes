@@ -150,7 +150,7 @@ const Header = (props: HeaderProps): ReactElement => {
               <IconButton
                 edge="start"
                 className={classes.menuButton}
-                onClick={(e) => handleDrawerToggle()}
+                onClick={() => handleDrawerToggle()}
                 color="inherit"
                 aria-label="open drawer"
                 size="large"
