@@ -1,5 +1,5 @@
 ---
-title: Ruby on Rails: Materialize CSS
+title: "Ruby on Rails: Materialize CSS"
 date: 2023-08-29
 tags:
   - ruby
