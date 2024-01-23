@@ -238,6 +238,21 @@ Prettier plugin deprecated for black
 pip install black
 ```
 
+## Flow Control
+
+### Inline If
+
+```python
+a = "Hello" if foo() else "Goodbye"
+```
+
+### Loop Backwards
+
+```python
+for x in reversed(whatever):
+    do_something()
+```
+
 ## Enums
 
 ```python
@@ -249,6 +264,8 @@ print(NodeType.F)
 ```
 
 ## Tuple
+
+Tuples are immutable
 
 `('root',)` is valid
 `('root')` is not valid, the comma makes the tuple
@@ -271,6 +288,29 @@ tu += (5,)
 print(tu) #
 ```
 
+### Subtracting
+
+<https://www.geeksforgeeks.org/python-how-to-get-subtraction-of-tuples/>
+
+```python
+import numpy as np
+
+# initialize tuples
+test_tup1 = (10, 4, 5)
+test_tup2 = (2, 5, 18)
+
+# printing original tuples
+print("The original tuple 1 : " + str(test_tup1))
+print("The original tuple 2 : " + str(test_tup2))
+
+# Subtraction of tuples using numpy
+res = tuple(np.subtract(test_tup1, test_tup2))
+
+# printing result
+print("Resultant tuple after subtraction : " + str(res))
+#This code is contributed by Edula Vinay Kumar Reddy
+```
+
 ## Dict
 
 Using a tuple as key:
@@ -285,6 +325,22 @@ has item
 list = {('root', 'a', 'b'): 80, ('root', 'a'): 20, ('root',): 100}
 if ('root', 'a') in list:
     print("found")
+```
+
+safe get. `.get` returns None, attempting to access direct errors
+
+```python
+inventory = {'Knife': 1, 'Health Kit': 3, 'Wood': 5}
+print(inventory)
+# print(inventory['Gold']) # error
+
+print(inventory.get('Gold')) # None
+
+print(inventory.keys())
+print(inventory.values())
+
+print(inventory.pop('Knife')) # 1
+print(inventory) # {'Health Kit': 3, 'Wood': 5}
 ```
 
 Merging
@@ -353,6 +409,26 @@ target_node = dpath.get(file_tree, "/children/".join(cur_path))["children"]
 print(target_node) # {'i': {'name': 'i', 'size': 584, 'type': <NodeType.F: 'FILE'>, 'children': {}}}
 ```
 
+### slicing
+
+```python
+import itertools
+
+d = {1: 2, 3: 4, 5: 6}
+
+dict(itertools.islice(d.items(), 2))
+
+{1: 2, 3: 4}
+```
+
+### Dictionary Comprehension
+
+<https://stackoverflow.com/questions/1747817/create-a-dictionary-with-comprehension>
+
+```python
+{key: value for key, value in zip(keys, values)}
+```
+
 ### TypeError 'set' object does not support item assignment
 
 <https://stackoverflow.com/questions/40553742/typeerror-set-object-does-not-support-item-assignment>
@@ -391,11 +467,19 @@ print(tail)  # [2, 3, 4, 5]
 
 ## Eval
 
+<https://realpython.com/python-eval-function/>
+
 ```python
 def get_fn(old: int, op: str) -> int:
     return eval(op)
 
 print(get_fn(79, "old * old")) # 6241
+```
+
+passing local vars to eval
+
+```python
+eval(step, {}, {**part, END: success})
 ```
 
 ## Image Generation
@@ -422,6 +506,11 @@ Too large number:
 ```bash
 ValueError('Exceeds the limit (4300) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit'
 ```
+
+### int vs. float
+
+- If you assign 1 it is int, 1.0 is float. (dynamic types) or type hint to be explicit
+- No double in native python
 
 ## Functools
 
@@ -580,6 +669,12 @@ compare_key = cmp_to_key(compare)
 s_list = sorted(my_list, key=compare_key)
 ```
 
+sort by a value
+
+```python
+sorted(student_tuples, key=lambda student: student[2])
+```
+
 ## Zip
 
 Unequal lists default to ignored, it stops processing. Pass `strict=True` to raise exception.
@@ -633,6 +728,369 @@ n # next
 `15 / 4` = 3.75
 `15 // 4` = 3
 
+`%` is modulus
+
+`5 % 2` = 1
+
+`print(x_pos ** 2)` = 25, power of 2
+
 ## Set
 
 <https://realpython.com/python-sets/>
+
+## Breaking Loops
+
+```python
+def calculate_start_pipe(data: InputData) -> StartPipe:
+    start_pipe = [(0, 0), ""]
+    for y, row in enumerate(data):
+        for x, col in enumerate(row):
+            if col == "S":
+                start_pipe[0] = (x, y)
+                break
+        else:
+            continue
+        break
+```
+
+For will loop while it has values. Else will run if no values. This will exit both loops.
+
+## Arrays
+
+### Rotating
+
+```python
+def rotate90(grid: InputData):
+    return ["".join(list(x)) for x in zip(*grid)]
+```
+
+### reversing
+
+```python
+above = note[:r][::-1]
+```
+
+### Reducing
+
+<https://realpython.com/python-reduce-function/>
+<https://stackoverflow.com/questions/15384143/reduce-list-based-on-index>
+
+```python
+out = [reduce(lambda a, b: a * b, i) for i in zip(x1, x2, x3)]
+```
+
+### Finding mirrors
+
+```python
+note = [
+    "#.##..#",
+    "..##...",
+    "##..###",
+    "#....#.",
+    ".#..#.#",
+    ".#..#.#",
+    "#....#.",
+    "##..###",
+    "..##...",
+]
+
+for r in range(1, len(note)):
+    above = note[:r]
+    below = note[r:]
+
+    print(r)
+    print("above: ", above)
+    print("below: ", below)
+    print("")
+
+
+```
+
+```text
+1
+above:  ['#.##..#']
+below:  ['..##...', '##..###', '#....#.', '.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+2
+above:  ['#.##..#', '..##...']
+below:  ['##..###', '#....#.', '.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+3
+above:  ['#.##..#', '..##...', '##..###']
+below:  ['#....#.', '.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+4
+above:  ['#.##..#', '..##...', '##..###', '#....#.']
+below:  ['.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+5
+above:  ['#.##..#', '..##...', '##..###', '#....#.', '.#..#.#']
+below:  ['.#..#.#', '#....#.', '##..###', '..##...']
+...
+```
+
+reverse the top half
+
+```python
+note = [
+    "#.##..#",
+    "..##...",
+    "##..###",
+    "#....#.",
+    ".#..#.#",
+    ".#..#.#",
+    "#....#.",
+    "##..###",
+    "..##...",
+]
+
+for r in range(1, len(note)):
+    above = note[:r][::-1]
+    below = note[r:]
+
+    print(r)
+    print("above: ", above)
+    print("below: ", below)
+    print("")
+
+```
+
+```text
+1
+above:  ['#.##..#']
+below:  ['..##...', '##..###', '#....#.', '.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+2
+above:  ['..##...', '#.##..#']
+below:  ['##..###', '#....#.', '.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+3
+above:  ['##..###', '..##...', '#.##..#']
+below:  ['#....#.', '.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+4
+above:  ['#....#.', '##..###', '..##...', '#.##..#']
+below:  ['.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+5
+above:  ['.#..#.#', '#....#.', '##..###', '..##...', '#.##..#']
+below:  ['.#..#.#', '#....#.', '##..###', '..##...']
+...
+```
+
+chop off extra
+
+```python
+note = [
+    "#.##..#",
+    "..##...",
+    "##..###",
+    "#....#.",
+    ".#..#.#",
+    ".#..#.#",
+    "#....#.",
+    "##..###",
+    "..##...",
+]
+
+for r in range(1, len(note)):
+    above = note[:r][::-1]
+    below = note[r:]
+
+    above = above[: len(below)]
+    below = below[: len(above)]
+
+    if above == below:
+        print("match")
+
+    print(r)
+    print("above: ", above)
+    print("below: ", below)
+    print("")
+
+```
+
+```text
+1
+above:  ['#.##..#']
+below:  ['..##...']
+
+2
+above:  ['..##...', '#.##..#']
+below:  ['##..###', '#....#.']
+
+3
+above:  ['##..###', '..##...', '#.##..#']
+below:  ['#....#.', '.#..#.#', '.#..#.#']
+
+4
+above:  ['#....#.', '##..###', '..##...', '#.##..#']
+below:  ['.#..#.#', '.#..#.#', '#....#.', '##..###']
+
+match
+5
+above:  ['.#..#.#', '#....#.', '##..###', '..##...']
+below:  ['.#..#.#', '#....#.', '##..###', '..##...']
+...
+```
+
+## Sets
+
+get set item without removing it
+
+```python
+next(iter(my_set))
+```
+
+### intersection
+
+```python
+a = [1,2,3,4,5]
+b = [1,3,5,6]
+list(set(a) & set(b))
+[1, 3, 5]
+```
+
+## Combinations
+
+<https://codereview.stackexchange.com/questions/256952/python-get-all-unique-pair-combinations-from-list-of-elements>
+
+```python
+list(itertools.combinations(elements, 2))
+```
+
+## NumPy
+
+### Flatten
+
+<https://www.pythontutorial.net/python-numpy/numpy-flatten/>
+
+```python
+import numpy as np
+
+a = np.array([[1, 2], [3, 4]])
+b = a.flatten()
+print(b)
+```
+
+## Strings
+
+Any other type can convert to a string but not necessarily the inverse.
+
+### Replacing
+
+<https://stackoverflow.com/questions/68283522/python-replace-character-in-string-at-specific-position>
+
+```python
+aStr = 'Name0, Location0, Address0, Price0'
+aStr = aStr.replace(',', ' &', 2)
+aStr = aStr.replace('&', ',', 1)
+```
+
+## Types
+
+check type: `type(var_name)`
+
+### Conversions
+
+### Bool
+
+- numbers, anything not zero is true
+- strings, anything is true
+- strings, empty is false
+
+```python
+print(bool(0)) # False
+print(bool(0.1)) # True
+print(bool('adfafdk')) # True
+print(bool('')) # False
+print(bool("False")) # True
+```
+
+### int
+
+- If string is not a digit it will error
+- Float will truncate, not round
+- Bool will be 0 for False and 1 for True
+
+```python
+# print(int("fasdfa")) # error
+print(int("1")) # 1
+print(int(0.5)) # 0
+print(int(False)) # 0
+print(int(True)) # 1
+```
+
+### Float
+
+- always has decimal
+
+```python
+print(float("1")) # 1.0
+print(float(5)) # 5.0
+print(float(False)) # 0.0
+print(float(True)) # 1.0
+```
+
+## Testing
+
+<https://stackoverflow.com/questions/42014484/pytest-using-fixtures-as-arguments-in-parametrize/42599627#42599627>
+
+```python
+@pytest.mark.parametrize(
+    "b1,b2,expected",
+    [
+        (0, 1, True),
+        (0, 2, True),
+        (0, 3, False),
+        (1, 2, False),
+        (1, 3, True),
+        (1, 4, True),
+    ],
+)
+def test_overlaps(b1, b2, expected, request):
+    example_data = request.getfixturevalue("example_data")
+    brick1 = example_data[b1]
+    brick2 = example_data[b2]
+    assert brick1.overlaps(brick2) == expected
+
+
+```
+
+## Classes
+
+<https://realpython.com/operator-function-overloading/>
+
+## Binary
+
+<https://stackoverflow.com/questions/25757415/bit-shifting-until-first-1-in-a-bit-string>
+
+```python
+while ( (n & 0x1) == 0) n >>= 1;
+```
+
+string to binary number
+
+```python
+int('11111111', 2)
+```
+
+## itertools
+
+<https://docs.python.org/3/library/itertools.html>
+
+## Structural Pattern Matching
+
+<https://peps.python.org/pep-0636/>
+
+```python
+
+```
+
+## Generator
+
+<https://realpython.com/introduction-to-python-generators/>
+
+## Libraries
+
+<https://www.sympy.org/en/index.html> - math solver
