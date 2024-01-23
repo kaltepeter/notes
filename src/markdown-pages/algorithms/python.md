@@ -54,7 +54,7 @@ manhattan_distance((2,18),(-2, 15)) # 7
 
 ## Umeyama algorithm
 
-https://zpl.fi/aligning-point-patterns-with-kabsch-umeyama-algorithm/
+<https://zpl.fi/aligning-point-patterns-with-kabsch-umeyama-algorithm/>
 
 ```python
 def kabsch_umeyama(A, B):
@@ -113,8 +113,60 @@ B = np.array([t + c * R @ b for b in B])
 
 ### NumPy
 
-https://numpy.org/doc/stable/user/absolute_beginners.html - getting started
+<https://numpy.org/doc/stable/user/absolute_beginners.html> - getting started
 
-https://www.educba.com/matrix-multiplication-in-numpy/ - detailed explanations of functions
+<https://www.educba.com/matrix-multiplication-in-numpy/> - detailed explanations of functions
 
-https://www.tutorialexample.com/understand-numpy-np-multiply-np-dot-and-operation-a-beginner-guide-numpy-tutorial/ - explains diff between dot, multiply and \*
+<https://www.tutorialexample.com/understand-numpy-np-multiply-np-dot-and-operation-a-beginner-guide-numpy-tutorial/> - explains diff between dot, multiply and \*
+
+## Raycasting
+
+Find whether a point is inside or outside a polygon. Odd number of inversions is inside, even is outside.
+
+<http://philliplemons.com/posts/ray-casting-algorithm>
+
+```python
+# http://philliplemons.com/posts/ray-casting-algorithm
+# https://www.youtube.com/watch?v=zhmzPQwgPg0
+# has edge cases
+def count_inversions(visited: set[Coord], line: str, x: int, y: int) -> int:
+    count = 0
+    for idx in range(x):
+        if not (idx, y) in visited:
+            continue
+
+        count += line[idx] in {CharMap.PIPE.value, CharMap.EL.value, CharMap.JAY.value}
+
+    return count
+```
+
+## Finding Cycles
+
+Endless/large loops can be shortcut by finding 'cycles' or repeating patterns and using math.
+
+### example with offset (pattern starts after offset)
+
+set is used to speed up lookups, tuple is required to use it. (<https://www.youtube.com/watch?v=WCVOBKUNc38>)
+
+```python
+def part_2(data: InputData) -> int:
+    data = tuple(data)
+    seen = {data}
+    cycles = [data]
+
+    iteration = 0
+    while True:
+        iteration += 1
+        data = spin_cycle(data)
+        if data in seen:
+            break
+
+        seen.add(data)
+        cycles.append(data)
+
+    first = cycles.index(data)
+    cycle_grid_index = (1000000000 - first) % (iteration - first) + first
+    data = cycles[cycle_grid_index]
+
+    return calculate_load(list(data))
+```
