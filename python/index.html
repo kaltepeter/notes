@@ -134,6 +134,14 @@ export PATH="$MAGICK_HOME/bin:$PATH"
 <p><a href="https://github.com/psf/black">https://github.com/psf/black</a></p>
 <pre><code class="language-bash">pip install black
 </code></pre>
+<h2>Flow Control</h2>
+<h3>Inline If</h3>
+<pre><code class="language-python">a = "Hello" if foo() else "Goodbye"
+</code></pre>
+<h3>Loop Backwards</h3>
+<pre><code class="language-python">for x in reversed(whatever):
+    do_something()
+</code></pre>
 <h2>Enums</h2>
 <pre><code class="language-python">class NodeType(Enum):
     F = "FILE"
@@ -142,6 +150,7 @@ export PATH="$MAGICK_HOME/bin:$PATH"
 print(NodeType.F)
 </code></pre>
 <h2>Tuple</h2>
+<p>Tuples are immutable</p>
 <p><code>('root',)</code> is valid
 <code>('root')</code> is not valid, the comma makes the tuple</p>
 <p>remove last item (<a href="https://www.geeksforgeeks.org/python-program-to-remove-last-element-from-tuple/">https://www.geeksforgeeks.org/python-program-to-remove-last-element-from-tuple/</a>)</p>
@@ -156,6 +165,25 @@ print(tu) # (1, 2, 3, 4)
 tu += (5,)
 print(tu) #
 </code></pre>
+<h3>Subtracting</h3>
+<p><a href="https://www.geeksforgeeks.org/python-how-to-get-subtraction-of-tuples/">https://www.geeksforgeeks.org/python-how-to-get-subtraction-of-tuples/</a></p>
+<pre><code class="language-python">import numpy as np
+
+# initialize tuples
+test_tup1 = (10, 4, 5)
+test_tup2 = (2, 5, 18)
+
+# printing original tuples
+print("The original tuple 1 : " + str(test_tup1))
+print("The original tuple 2 : " + str(test_tup2))
+
+# Subtraction of tuples using numpy
+res = tuple(np.subtract(test_tup1, test_tup2))
+
+# printing result
+print("Resultant tuple after subtraction : " + str(res))
+#This code is contributed by Edula Vinay Kumar Reddy
+</code></pre>
 <h2>Dict</h2>
 <p>Using a tuple as key:</p>
 <pre><code class="language-python">list = {('root', 'a', 'b'): 80, ('root', 'a'): 20, ('root',): 100}
@@ -164,6 +192,19 @@ print(tu) #
 <pre><code class="language-python">list = {('root', 'a', 'b'): 80, ('root', 'a'): 20, ('root',): 100}
 if ('root', 'a') in list:
     print("found")
+</code></pre>
+<p>safe get. <code>.get</code> returns None, attempting to access direct errors</p>
+<pre><code class="language-python">inventory = {'Knife': 1, 'Health Kit': 3, 'Wood': 5}
+print(inventory)
+# print(inventory['Gold']) # error
+
+print(inventory.get('Gold')) # None
+
+print(inventory.keys())
+print(inventory.values())
+
+print(inventory.pop('Knife')) # 1
+print(inventory) # {'Health Kit': 3, 'Wood': 5}
 </code></pre>
 <p>Merging</p>
 <p><a href="https://peps.python.org/pep-0584/">https://peps.python.org/pep-0584/</a></p>
@@ -222,6 +263,19 @@ cur_path = ['root', 'a', 'e']
 target_node = dpath.get(file_tree, "/children/".join(cur_path))["children"]
 print(target_node) # {'i': {'name': 'i', 'size': 584, 'type': &#x3C;NodeType.F: 'FILE'>, 'children': {}}}
 </code></pre>
+<h3>slicing</h3>
+<pre><code class="language-python">import itertools
+
+d = {1: 2, 3: 4, 5: 6}
+
+dict(itertools.islice(d.items(), 2))
+
+{1: 2, 3: 4}
+</code></pre>
+<h3>Dictionary Comprehension</h3>
+<p><a href="https://stackoverflow.com/questions/1747817/create-a-dictionary-with-comprehension">https://stackoverflow.com/questions/1747817/create-a-dictionary-with-comprehension</a></p>
+<pre><code class="language-python">{key: value for key, value in zip(keys, values)}
+</code></pre>
 <h3>TypeError 'set' object does not support item assignment</h3>
 <p><a href="https://stackoverflow.com/questions/40553742/typeerror-set-object-does-not-support-item-assignment">https://stackoverflow.com/questions/40553742/typeerror-set-object-does-not-support-item-assignment</a></p>
 <p>Both dictionaries and sets use the same syntax. Be careful when initializing them.</p>
@@ -244,10 +298,14 @@ print(head)  # 1
 print(tail)  # [2, 3, 4, 5]
 </code></pre>
 <h2>Eval</h2>
+<p><a href="https://realpython.com/python-eval-function/">https://realpython.com/python-eval-function/</a></p>
 <pre><code class="language-python">def get_fn(old: int, op: str) -> int:
     return eval(op)
 
 print(get_fn(79, "old * old")) # 6241
+</code></pre>
+<p>passing local vars to eval</p>
+<pre><code class="language-python">eval(step, {}, {**part, END: success})
 </code></pre>
 <h2>Image Generation</h2>
 <p><a href="https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.new">https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.new</a></p>
@@ -262,6 +320,11 @@ sys.maxsize # 9223372036854775807
 <p>Too large number:</p>
 <pre><code class="language-bash">ValueError('Exceeds the limit (4300) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit'
 </code></pre>
+<h3>int vs. float</h3>
+<ul>
+<li>If you assign 1 it is int, 1.0 is float. (dynamic types) or type hint to be explicit</li>
+<li>No double in native python</li>
+</ul>
 <h2>Functools</h2>
 <p><a href="https://www.geeksforgeeks.org/functools-module-in-python/">https://www.geeksforgeeks.org/functools-module-in-python/</a></p>
 <h2>Higher order functions (Partial)</h2>
@@ -387,6 +450,9 @@ def compare(pair1, pair2):
 compare_key = cmp_to_key(compare)
 s_list = sorted(my_list, key=compare_key)
 </code></pre>
+<p>sort by a value</p>
+<pre><code class="language-python">sorted(student_tuples, key=lambda student: student[2])
+</code></pre>
 <h2>Zip</h2>
 <p>Unequal lists default to ignored, it stops processing. Pass <code>strict=True</code> to raise exception.</p>
 <pre><code class="language-python">integers = [1, 2, 3]
@@ -423,8 +489,283 @@ n # next
 <p><code>//</code> floor division, same as <code>math.floor(15/4)</code></p>
 <p><code>15 / 4</code> = 3.75
 <code>15 // 4</code> = 3</p>
+<p><code>%</code> is modulus</p>
+<p><code>5 % 2</code> = 1</p>
+<p><code>print(x_pos ** 2)</code> = 25, power of 2</p>
 <h2>Set</h2>
-<p><a href="https://realpython.com/python-sets/">https://realpython.com/python-sets/</a></p></div></div></div></main><footer class="MuiBox-root mui-11mcpv2-Layout-footer">© <!-- -->2024<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p><a href="https://realpython.com/python-sets/">https://realpython.com/python-sets/</a></p>
+<h2>Breaking Loops</h2>
+<pre><code class="language-python">def calculate_start_pipe(data: InputData) -> StartPipe:
+    start_pipe = [(0, 0), ""]
+    for y, row in enumerate(data):
+        for x, col in enumerate(row):
+            if col == "S":
+                start_pipe[0] = (x, y)
+                break
+        else:
+            continue
+        break
+</code></pre>
+<p>For will loop while it has values. Else will run if no values. This will exit both loops.</p>
+<h2>Arrays</h2>
+<h3>Rotating</h3>
+<pre><code class="language-python">def rotate90(grid: InputData):
+    return ["".join(list(x)) for x in zip(*grid)]
+</code></pre>
+<h3>reversing</h3>
+<pre><code class="language-python">above = note[:r][::-1]
+</code></pre>
+<h3>Reducing</h3>
+<p><a href="https://realpython.com/python-reduce-function/">https://realpython.com/python-reduce-function/</a>
+<a href="https://stackoverflow.com/questions/15384143/reduce-list-based-on-index">https://stackoverflow.com/questions/15384143/reduce-list-based-on-index</a></p>
+<pre><code class="language-python">out = [reduce(lambda a, b: a * b, i) for i in zip(x1, x2, x3)]
+</code></pre>
+<h3>Finding mirrors</h3>
+<pre><code class="language-python">note = [
+    "#.##..#",
+    "..##...",
+    "##..###",
+    "#....#.",
+    ".#..#.#",
+    ".#..#.#",
+    "#....#.",
+    "##..###",
+    "..##...",
+]
+
+for r in range(1, len(note)):
+    above = note[:r]
+    below = note[r:]
+
+    print(r)
+    print("above: ", above)
+    print("below: ", below)
+    print("")
+
+
+</code></pre>
+<pre><code class="language-text">1
+above:  ['#.##..#']
+below:  ['..##...', '##..###', '#....#.', '.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+2
+above:  ['#.##..#', '..##...']
+below:  ['##..###', '#....#.', '.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+3
+above:  ['#.##..#', '..##...', '##..###']
+below:  ['#....#.', '.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+4
+above:  ['#.##..#', '..##...', '##..###', '#....#.']
+below:  ['.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+5
+above:  ['#.##..#', '..##...', '##..###', '#....#.', '.#..#.#']
+below:  ['.#..#.#', '#....#.', '##..###', '..##...']
+...
+</code></pre>
+<p>reverse the top half</p>
+<pre><code class="language-python">note = [
+    "#.##..#",
+    "..##...",
+    "##..###",
+    "#....#.",
+    ".#..#.#",
+    ".#..#.#",
+    "#....#.",
+    "##..###",
+    "..##...",
+]
+
+for r in range(1, len(note)):
+    above = note[:r][::-1]
+    below = note[r:]
+
+    print(r)
+    print("above: ", above)
+    print("below: ", below)
+    print("")
+
+</code></pre>
+<pre><code class="language-text">1
+above:  ['#.##..#']
+below:  ['..##...', '##..###', '#....#.', '.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+2
+above:  ['..##...', '#.##..#']
+below:  ['##..###', '#....#.', '.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+3
+above:  ['##..###', '..##...', '#.##..#']
+below:  ['#....#.', '.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+4
+above:  ['#....#.', '##..###', '..##...', '#.##..#']
+below:  ['.#..#.#', '.#..#.#', '#....#.', '##..###', '..##...']
+
+5
+above:  ['.#..#.#', '#....#.', '##..###', '..##...', '#.##..#']
+below:  ['.#..#.#', '#....#.', '##..###', '..##...']
+...
+</code></pre>
+<p>chop off extra</p>
+<pre><code class="language-python">note = [
+    "#.##..#",
+    "..##...",
+    "##..###",
+    "#....#.",
+    ".#..#.#",
+    ".#..#.#",
+    "#....#.",
+    "##..###",
+    "..##...",
+]
+
+for r in range(1, len(note)):
+    above = note[:r][::-1]
+    below = note[r:]
+
+    above = above[: len(below)]
+    below = below[: len(above)]
+
+    if above == below:
+        print("match")
+
+    print(r)
+    print("above: ", above)
+    print("below: ", below)
+    print("")
+
+</code></pre>
+<pre><code class="language-text">1
+above:  ['#.##..#']
+below:  ['..##...']
+
+2
+above:  ['..##...', '#.##..#']
+below:  ['##..###', '#....#.']
+
+3
+above:  ['##..###', '..##...', '#.##..#']
+below:  ['#....#.', '.#..#.#', '.#..#.#']
+
+4
+above:  ['#....#.', '##..###', '..##...', '#.##..#']
+below:  ['.#..#.#', '.#..#.#', '#....#.', '##..###']
+
+match
+5
+above:  ['.#..#.#', '#....#.', '##..###', '..##...']
+below:  ['.#..#.#', '#....#.', '##..###', '..##...']
+...
+</code></pre>
+<h2>Sets</h2>
+<p>get set item without removing it</p>
+<pre><code class="language-python">next(iter(my_set))
+</code></pre>
+<h3>intersection</h3>
+<pre><code class="language-python">a = [1,2,3,4,5]
+b = [1,3,5,6]
+list(set(a) &#x26; set(b))
+[1, 3, 5]
+</code></pre>
+<h2>Combinations</h2>
+<p><a href="https://codereview.stackexchange.com/questions/256952/python-get-all-unique-pair-combinations-from-list-of-elements">https://codereview.stackexchange.com/questions/256952/python-get-all-unique-pair-combinations-from-list-of-elements</a></p>
+<pre><code class="language-python">list(itertools.combinations(elements, 2))
+</code></pre>
+<h2>NumPy</h2>
+<h3>Flatten</h3>
+<p><a href="https://www.pythontutorial.net/python-numpy/numpy-flatten/">https://www.pythontutorial.net/python-numpy/numpy-flatten/</a></p>
+<pre><code class="language-python">import numpy as np
+
+a = np.array([[1, 2], [3, 4]])
+b = a.flatten()
+print(b)
+</code></pre>
+<h2>Strings</h2>
+<p>Any other type can convert to a string but not necessarily the inverse.</p>
+<h3>Replacing</h3>
+<p><a href="https://stackoverflow.com/questions/68283522/python-replace-character-in-string-at-specific-position">https://stackoverflow.com/questions/68283522/python-replace-character-in-string-at-specific-position</a></p>
+<pre><code class="language-python">aStr = 'Name0, Location0, Address0, Price0'
+aStr = aStr.replace(',', ' &#x26;', 2)
+aStr = aStr.replace('&#x26;', ',', 1)
+</code></pre>
+<h2>Types</h2>
+<p>check type: <code>type(var_name)</code></p>
+<h3>Conversions</h3>
+<h3>Bool</h3>
+<ul>
+<li>numbers, anything not zero is true</li>
+<li>strings, anything is true</li>
+<li>strings, empty is false</li>
+</ul>
+<pre><code class="language-python">print(bool(0)) # False
+print(bool(0.1)) # True
+print(bool('adfafdk')) # True
+print(bool('')) # False
+print(bool("False")) # True
+</code></pre>
+<h3>int</h3>
+<ul>
+<li>If string is not a digit it will error</li>
+<li>Float will truncate, not round</li>
+<li>Bool will be 0 for False and 1 for True</li>
+</ul>
+<pre><code class="language-python"># print(int("fasdfa")) # error
+print(int("1")) # 1
+print(int(0.5)) # 0
+print(int(False)) # 0
+print(int(True)) # 1
+</code></pre>
+<h3>Float</h3>
+<ul>
+<li>always has decimal</li>
+</ul>
+<pre><code class="language-python">print(float("1")) # 1.0
+print(float(5)) # 5.0
+print(float(False)) # 0.0
+print(float(True)) # 1.0
+</code></pre>
+<h2>Testing</h2>
+<p><a href="https://stackoverflow.com/questions/42014484/pytest-using-fixtures-as-arguments-in-parametrize/42599627#42599627">https://stackoverflow.com/questions/42014484/pytest-using-fixtures-as-arguments-in-parametrize/42599627#42599627</a></p>
+<pre><code class="language-python">@pytest.mark.parametrize(
+    "b1,b2,expected",
+    [
+        (0, 1, True),
+        (0, 2, True),
+        (0, 3, False),
+        (1, 2, False),
+        (1, 3, True),
+        (1, 4, True),
+    ],
+)
+def test_overlaps(b1, b2, expected, request):
+    example_data = request.getfixturevalue("example_data")
+    brick1 = example_data[b1]
+    brick2 = example_data[b2]
+    assert brick1.overlaps(brick2) == expected
+
+
+</code></pre>
+<h2>Classes</h2>
+<p><a href="https://realpython.com/operator-function-overloading/">https://realpython.com/operator-function-overloading/</a></p>
+<h2>Binary</h2>
+<p><a href="https://stackoverflow.com/questions/25757415/bit-shifting-until-first-1-in-a-bit-string">https://stackoverflow.com/questions/25757415/bit-shifting-until-first-1-in-a-bit-string</a></p>
+<pre><code class="language-python">while ( (n &#x26; 0x1) == 0) n >>= 1;
+</code></pre>
+<p>string to binary number</p>
+<pre><code class="language-python">int('11111111', 2)
+</code></pre>
+<h2>itertools</h2>
+<p><a href="https://docs.python.org/3/library/itertools.html">https://docs.python.org/3/library/itertools.html</a></p>
+<h2>Structural Pattern Matching</h2>
+<p><a href="https://peps.python.org/pep-0636/">https://peps.python.org/pep-0636/</a></p>
+<pre><code class="language-python"></code></pre>
+<h2>Generator</h2>
+<p><a href="https://realpython.com/introduction-to-python-generators/">https://realpython.com/introduction-to-python-generators/</a></p>
+<h2>Libraries</h2>
+<p><a href="https://www.sympy.org/en/index.html">https://www.sympy.org/en/index.html</a> - math solver</p></div></div></div></main><footer class="MuiBox-root mui-11mcpv2-Layout-footer">© <!-- -->2024<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >

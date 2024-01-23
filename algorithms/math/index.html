@@ -56,7 +56,7 @@
 <h2>Kabsch-Umeyama Algorithm</h2>
 <p><a href="https://zpl.fi/aligning-point-patterns-with-kabsch-umeyama-algorithm/">https://zpl.fi/aligning-point-patterns-with-kabsch-umeyama-algorithm/</a></p>
 <p>Used to find optimal translations, rotation and scaling. Example used is aligning the big dipper and little dipper. This works amazingly well. Very easy python example, golang required gonum.</p>
-<h2>Manhatten Distance</h2>
+<h2>Manhattan Distance</h2>
 <blockquote>
 <p>he distance between two points is the sum of the absolute differences of their Cartesian coordinates
 -- <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">https://en.wikipedia.org/wiki/Taxicab_geometry</a></p>
@@ -65,7 +65,18 @@
 <pre><code class="language-md">pointA = [1105,-1205,1229]
 pointB = [-92,-2380,-20]
 |(1105 + -92)| + |(-1205 + -2380)| + |(1229 + -20)| = 3621
-</code></pre></div></div></div></main><footer class="MuiBox-root mui-11mcpv2-Layout-footer">© <!-- -->2024<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithms/math/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+</code></pre>
+<h2>Lagrange Interpolation</h2>
+<blockquote>
+<p>The Lagrange interpolation formula is a way to find a polynomial, called Lagrange polynomial, that takes on certain values at arbitrary points. Lagrange’s interpolation is an Nth degree polynomial approximation to f(x). Let us understand Lagrange interpolation formula using solved examples in the upcoming sections.</p>
+</blockquote>
+<blockquote>
+<p>Given n distinct real values $x_1, x_2,...,x_n$ and n real values $y_1, y_2,...,y_n$ (not necessarily distinct), there is a unique polynomial P with real coefficients satisfying $P \left(x_i\right) = Y_i$ for $i \in {1, 2, …, n}$, such that $deg\left(P\right) &#x3C; n$. Lagrange interpolation formula for different order of polynomials is given as,</p>
+</blockquote>
+<p>$f\left(x\right)=f\left(x_0\right) + \left(x - x_0\right)\left(\frac{f\left(x_0\right)-f\left(x_1\right)}{x_0-x_1}\right)$</p>
+<p>simplified:</p>
+<p>$f\left(x\right) = \frac{\left(x - x_1\right)}{\left(x_0 - x_1\right)}f_0 + \frac{\left(x - x_0\right)}{\left(x_1 - x_0\right)}f_1$</p>
+<p>-- <a href="https://www.cuemath.com/lagrange-interpolation-formula/">https://www.cuemath.com/lagrange-interpolation-formula/</a></p></div></div></div></main><footer class="MuiBox-root mui-11mcpv2-Layout-footer">© <!-- -->2024<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithms/math/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >

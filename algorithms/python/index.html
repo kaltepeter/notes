@@ -93,7 +93,48 @@ B = np.array([t + c * R @ b for b in B])
 <h3>NumPy</h3>
 <p><a href="https://numpy.org/doc/stable/user/absolute_beginners.html">https://numpy.org/doc/stable/user/absolute_beginners.html</a> - getting started</p>
 <p><a href="https://www.educba.com/matrix-multiplication-in-numpy/">https://www.educba.com/matrix-multiplication-in-numpy/</a> - detailed explanations of functions</p>
-<p><a href="https://www.tutorialexample.com/understand-numpy-np-multiply-np-dot-and-operation-a-beginner-guide-numpy-tutorial/">https://www.tutorialexample.com/understand-numpy-np-multiply-np-dot-and-operation-a-beginner-guide-numpy-tutorial/</a> - explains diff between dot, multiply and *</p></div></div></div></main><footer class="MuiBox-root mui-11mcpv2-Layout-footer">© <!-- -->2024<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithms/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p><a href="https://www.tutorialexample.com/understand-numpy-np-multiply-np-dot-and-operation-a-beginner-guide-numpy-tutorial/">https://www.tutorialexample.com/understand-numpy-np-multiply-np-dot-and-operation-a-beginner-guide-numpy-tutorial/</a> - explains diff between dot, multiply and *</p>
+<h2>Raycasting</h2>
+<p>Find whether a point is inside or outside a polygon. Odd number of inversions is inside, even is outside.</p>
+<p><a href="http://philliplemons.com/posts/ray-casting-algorithm">http://philliplemons.com/posts/ray-casting-algorithm</a></p>
+<pre><code class="language-python"># http://philliplemons.com/posts/ray-casting-algorithm
+# https://www.youtube.com/watch?v=zhmzPQwgPg0
+# has edge cases
+def count_inversions(visited: set[Coord], line: str, x: int, y: int) -> int:
+    count = 0
+    for idx in range(x):
+        if not (idx, y) in visited:
+            continue
+
+        count += line[idx] in {CharMap.PIPE.value, CharMap.EL.value, CharMap.JAY.value}
+
+    return count
+</code></pre>
+<h2>Finding Cycles</h2>
+<p>Endless/large loops can be shortcut by finding 'cycles' or repeating patterns and using math.</p>
+<h3>example with offset (pattern starts after offset)</h3>
+<p>set is used to speed up lookups, tuple is required to use it. (<a href="https://www.youtube.com/watch?v=WCVOBKUNc38">https://www.youtube.com/watch?v=WCVOBKUNc38</a>)</p>
+<pre><code class="language-python">def part_2(data: InputData) -> int:
+    data = tuple(data)
+    seen = {data}
+    cycles = [data]
+
+    iteration = 0
+    while True:
+        iteration += 1
+        data = spin_cycle(data)
+        if data in seen:
+            break
+
+        seen.add(data)
+        cycles.append(data)
+
+    first = cycles.index(data)
+    cycle_grid_index = (1000000000 - first) % (iteration - first) + first
+    data = cycles[cycle_grid_index]
+
+    return calculate_load(list(data))
+</code></pre></div></div></div></main><footer class="MuiBox-root mui-11mcpv2-Layout-footer">© <!-- -->2024<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithms/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
