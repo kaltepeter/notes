@@ -216,3 +216,26 @@ https://misc.flogisoft.com/bash/tip_colors_and_formatting
 ```bash
 sudo !!
 ```
+
+## Generating a Sequence for Output
+
+I needed to execute several scripts in terminal tabs, this made that easier.
+
+```bash
+#!/usr/bin/env bash
+set -o nounset
+set -o errexit
+set -o pipefail
+DEBUG="${DEBUG:-false}"
+[[ ${DEBUG} == true ]] && set -o xtrace
+
+start_num=50000
+end_num=90000
+increment=10000
+
+for ((i=start_num; i<=end_num; i+=increment)); do
+    finish=$((i+increment))
+#    echo "start: $i, finish ${finish}"
+    echo "time bundle exec rails 'one_time:preprocess_active_storage_for_users_and_companies[${i},${finish},100]'"
+done
+```

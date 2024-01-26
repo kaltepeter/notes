@@ -74,3 +74,11 @@ zsh -i -c -v -x exit
 ## solarized theme
 
 https://github.com/altercation/solarized
+
+## Mac Plugin
+
+<https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/macos>
+
+Shortcuts to open terminals, etc.
+
+`tab` open new tab in current directory

@@ -7,6 +7,11 @@ tags:
   - framework
 ---
 
+## New App
+
+- [Suspenders](https://github.com/thoughtbot/suspenders/tree/main) - thoughbot default settings and libraries
+
+
 ## Active Record
 
 - Scope vs class method, similar, pick one.
@@ -386,7 +391,124 @@ def validate_resource_id
 end
 ```
 
-## CORS
+## SSL
+
+- <https://gist.github.com/tadast/9932075>
+
+### Using ngrok
+
+1. Install and start
+
+    ```bash
+    brew install ngrok
+    ngrok http 3000
+    ```
+
+1. Edit `config/environments/development.rb` and replace `<id>.ngrok-free.app` with your local ngrok url.
+
+    ```ruby
+    config.hosts << '<id>.ngrok-free.app'
+    ```
+
+### Using mkcert
+
+<https://www.filippoliverani.com/ssl-rails-local-development-puma>
+
+1. Install mkcert
+
+    ```bash
+    brew install mkcert
+    brew install nss # if you use Firefox
+    ```
+
+1. Add pem file to gitignore
+
+    ```bash
+    echo "*.pem" >> .gitignore
+    ```
+
+1. Create a script to generate certs and directory to store them.
+
+    ```bash
+    touch generate-certs.sh && chmod u+x generate-certs.sh
+    ```
+
+1. Edit the script
+
+    ```bash
+    #!/usr/bin/env bash
+    set -o errexit
+    set -o pipefail
+    set -o nounset
+    [[ ${DEBUG:-} == true ]] && set -o xtrace
+    readonly __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    readonly cert_dir="${__dir}/config/certs"
+
+    if ! command -v mkcert > /dev/null; then
+      echo "This repo requires mkcert to genearte a local trusted cert. Install with 'brew install mkcert' or follow os instructions."
+    fi
+
+    if [[ ! -d "${cert_dir}" ]]; then
+      mkdir -p "${cert_dir}"
+    fi
+
+    if [[ ! -f "${cert_dir}/localhost.pem" ]]; then
+        mkcert -install
+        mkcert localhost
+        mv localhost.pem "${cert_dir}/localhost.pem"
+        mv localhost-key.pem "${cert_dir}/localhost-key.pem"
+    fi
+    ```
+
+1. Run the script
+
+    ```bash
+    ./generate-certs.sh
+    ```
+
+1. Edit puma config, refactor the port and env nad startup based on env.
+
+    ```ruby
+    # pull up the vars we need
+    rails_env = ENV.fetch("RAILS_ENV") { "development" }
+    rails_port = ENV.fetch("PORT") { 3000 }
+
+    environment rails_env # environment ENV.fetch("RAILS_ENV") { "development" }
+
+    if rails_env == 'development'
+      ssl_bind(
+        '0.0.0.0',
+        rails_port,
+        key: ENV.fetch('SSL_KEY_FILE', 'config/certs/localhost-key.pem'),
+        cert: ENV.fetch('SSL_CERT_FILE', 'config/certs/localhost.pem'),
+        verify_mode: 'none'
+      )
+    else
+      # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
+      #
+      port rails_port
+    end
+    ```
+
+1. Enforce SSL in your environments files: `config/environments/{development,production}.rb`
+
+    ```ruby
+    config.force_ssl = true
+    ```
+
+1. Start your server `rails s`. Visit https://localhost:3000. You should see logs like: `Listening on ssl://0.0.0.0:3000?cert=config%2Fcerts%2Flocalhost.pem&key=config%2Fcerts%2Flocalhost-key.pem&verify_mode=none`
+
+1. Commit your script and config settings to the repository and add instructions to the readme to run the `./generate-certs.sh` one time.
+
+### Starting with RubyMine
+
+If you use the default RubyMine it will provide an address using the `rails s -b` option and port which overrides the ssl settings.
+
+1. Edit your server config and delete the IP address and port options to fix.
+
+    ![RubyMine Configurations](../../images/rails-ssl-rubymine.png)
+
+### CORS
 
 - <https://github.com/cyu/rack-cors>
 
@@ -424,3 +546,43 @@ end
 ```
 
 In Rails make sure the origin header does not have a traling slash. An origin header is required for CORS.
+
+## UI/Themes
+
+- [Materialize CSS](rails/materialize.md)
+- [Rails UI](https://railsui.com/docs/themes)
+- [Simple Form](https://github.com/heartcombo/simple_form)
+- [Show For](https://github.com/heartcombo/show_for)
+- [JQuery](https://github.com/rails/jquery-rails)
+- [JQuery Datatables](https://github.com/mkhairi/jquery-datatables)
+- [SassC](https://github.com/sass/sassc-rails)
+
+### SVGs
+
+- [undraw](https://github.com/mkhairi/undraw)
+- [inline-svg](https://github.com/jamesmartin/inline_svg)
+
+## Rails Templates/Examples
+
+<https://railsbytes.com/>
+
+## Templating Engines
+
+- [Slim](https://github.com/slim-template/slim-rails)
+  - [Cheatsheet](https://devhints.io/slim)
+
+## Asset Pipeline
+
+<https://guides.rubyonrails.org/asset_pipeline.html>
+
+### Javascript
+
+### CSS
+
+## Responses
+
+- [Responders](https://github.com/heartcombo/responders)
+
+## Admin Tools
+
+- [Trestle](https://github.com/TrestleAdmin/trestle)
