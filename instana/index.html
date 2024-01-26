@@ -25,7 +25,45 @@
   instana/agent
 </code></pre>
 <h3>mac</h3>
-<p>curl -o setup_agent.sh <a href="https://setup.instana.io/agent">https://setup.instana.io/agent</a> &#x26;&#x26; chmod 700 ./setup_agent.sh &#x26;&#x26; sudo ./setup_agent.sh -a "${instana_agent_key}" -t dynamic -l us -s</p></div></div></div></main><footer class="MuiBox-root mui-11mcpv2-Layout-footer">© <!-- -->2024<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/instana/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>curl -o setup_agent.sh <a href="https://setup.instana.io/agent">https://setup.instana.io/agent</a> &#x26;&#x26; chmod 700 ./setup_agent.sh &#x26;&#x26; sudo ./setup_agent.sh -a "${instana_agent_key}" -t dynamic -l us -s</p>
+<h2>Run API Tests locally</h2>
+<pre><code class="language-json">  "scripts": {
+    "build": "script-cli -z src/$npm_config_bundle_name index.js",
+    "exec": "BASE_URL=$npm_config_base_url script-cli -d src/$npm_config_bundle_name index.js",
+    "test": "echo \"Error: no test specified\" &#x26;&#x26; exit 1",
+    "zip": "./zip-script.sh"
+  },
+</code></pre>
+<pre><code class="language-bash">npm run exec --bundle_name=global-search # execute
+npm run zip dealmaker-profile # zip output
+# run all zips
+find ./src -type d -maxdepth 1 ! -iname src -exec basename {} \; | xargs -I{} npm run zip {}
+</code></pre>
+<pre><code class="language-bash">#!/usr/bin/env bash
+set -o errexit
+set -o pipefail
+set -o nounset
+[[ ${DEBUG:-} == true ]] &#x26;&#x26; set -o xtrace
+readonly __dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &#x26;&#x26; pwd)"
+
+current_dir=$(pwd)
+bundle_dir="${__dir}/bundles"
+
+[[ ${1:-} ]] || { echo "missing an argument. first argument must be a bundle name" >&#x26;2; exit 1; }
+bundle_name=${1:-}
+
+# [[ ${2:-} ]] || { echo "missing an argument. second argument must be the target env. i.e. dev, stage or prod" >&#x26;2; exit 1; }
+# target_env=${2:-}
+
+cd "${__dir}/src/${bundle_name}"
+
+zip -r "${bundle_dir}/${bundle_name}.zip" .
+
+cd "${current_dir}"
+npm run build --silent --bundle_name="${bundle_name}" > "${bundle_dir}/${bundle_name}.json"
+exit 0
+
+</code></pre></div></div></div></main><footer class="MuiBox-root mui-11mcpv2-Layout-footer">© <!-- -->2024<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/instana/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
