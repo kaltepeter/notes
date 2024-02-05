@@ -20,6 +20,10 @@ tags:
 
 [Learn Functional Programming with Elixir](https://pragprog.com/titles/cdc-elixir/learn-functional-programming-with-elixir/)
 
+## Learn
+
+<https://alchemist.camp/start#topics>
+
 ## Repl
 
 `iex` start interactive session
