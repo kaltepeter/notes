@@ -22,3 +22,9 @@ dataloader batches and caches
 [https://dev-blog.apollodata.com/persisted-graphql-queries-with-apollo-client-119fd7e6bba5](https://dev-blog.apollodata.com/persisted-graphql-queries-with-apollo-client-119fd7e6bba5)
 
 [https://www.apollographql.com/engine](https://www.apollographql.com/engine) - caching and edge gateway
+
+[GraphQL Schema Delegation](https://www.apollographql.com/blog/graphql-schema-delegation-9d832648c543/)
+
+[Ultimate Guide to Schema Stitching](https://hasura.io/blog/the-ultimate-guide-to-schema-stitching-in-graphql-f30178ac0072/)
+
+[GraphQL in a Micro Services Architecture](https://itnext.io/graphql-in-a-microservices-architecture-d17922b886eb)

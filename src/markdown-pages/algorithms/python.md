@@ -207,11 +207,20 @@ for val in original_order:
 
 ## Graphs
 
+[Practical Graph Theory using Networkx](https://garba.org/posts/2022/graph/)
+
 ### Cuts
 
 Identify the x(3) places to cut and split graphs.
 
-<https://networkx.org/documentation/stable/reference/algorithms/cuts.html>
+- <https://networkx.org/documentation/stable/reference/algorithms/cuts.html>
+- <https://en.wikipedia.org/wiki/Cut_%28graph_theory%29>
+
+Visualizing
+
+![Visualizing Cuts](../../images/networkx-graph.png)
+
+Cutting `fri -- thx`, `ccp -- fvm`, and `llm -- lhg` would create two separate graphs.
 
 ```python
 import networkx as nx

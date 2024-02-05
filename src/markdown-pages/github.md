@@ -122,9 +122,9 @@ gitbook serve
 [![Dr. Nicole Forsgren](https://i1.ytimg.com/vi/R9izKUqPCiU/maxresdefault.jpg)](https://www.youtube-nocookie.com/embed/R9izKUqPCiU?start=1019 "Devops/JenkinsWorld Closing Keynote")
 ```
 
-{% embed data="{\"url\":\"http://www.getyoutubevideothumbnail.com\",\"type\":\"link\",\"title\":\"Get Free YouTube Video Thumbnail Image \| YouTube Video Thumbnail Image \| YouTube Thumbnail Image Downloader\",\"icon\":{\"type\":\"icon\",\"url\":\"http://www.getyoutubevideothumbnail.com/favicon.ico\",\"aspectRatio\":0}}" %}
+{% embed data="{\"url\":\"<http://www.getyoutubevideothumbnail.com\",\"type\":\"link\",\"title\":\"Get> Free YouTube Video Thumbnail Image \| YouTube Video Thumbnail Image \| YouTube Thumbnail Image Downloader\",\"icon\":{\"type\":\"icon\",\"url\":\"<http://www.getyoutubevideothumbnail.com/favicon.ico\",\"aspectRatio\":0}}>" %}
 
-{% embed data="{\"url\":\"http://www.getyoutubevideothumbnail.com/add-play-button-to-image\",\"type\":\"link\",\"title\":\"Add Play Button to Image Online \| Add Play Button to YouTube Video Thumbnail Image Online \| play button image\",\"description\":\"add play button to image, play button image, play button on image, add play button to image online, youtube thumbnail generator with play button, play button overlay,transparent play button overlay, overlay play button on image, video play button overlay, add play button to image\",\"icon\":{\"type\":\"icon\",\"url\":\"http://www.getyoutubevideothumbnail.com/favicon.ico\",\"aspectRatio\":0}}" %}
+{% embed data="{\"url\":\"<http://www.getyoutubevideothumbnail.com/add-play-button-to-image\",\"type\":\"link\",\"title\":\"Add> Play Button to Image Online \| Add Play Button to YouTube Video Thumbnail Image Online \| play button image\",\"description\":\"add play button to image, play button image, play button on image, add play button to image online, youtube thumbnail generator with play button, play button overlay,transparent play button overlay, overlay play button on image, video play button overlay, add play button to image\",\"icon\":{\"type\":\"icon\",\"url\":\"<http://www.getyoutubevideothumbnail.com/favicon.ico\",\"aspectRatio\":0}}>" %}
 
 <https://www.markdownguide.org/cheat-sheet>
 
@@ -160,3 +160,8 @@ chmod 400 ~/.ssh/id_rsa_github
 <https://github-actions-hero.now.sh/> - interactive learning
 
 lab.github.com
+
+## GraphQL
+
+- [GitHub GraphQL Schema Validation](https://www.npmjs.com/package/@octokit/graphql-schema)
+- [Adding Typescript Types to GitHub's GraphQL API](https://benlimmer.com/2020/05/16/adding-typescript-types-github-graphql-api/)

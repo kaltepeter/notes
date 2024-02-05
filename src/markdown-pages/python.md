@@ -1121,3 +1121,8 @@ int('11111111', 2)
 
 <https://www.sympy.org/en/index.html> - math solver
 <https://microsoft.github.io/z3guide/programming/Z3%20Python%20-%20Readonly/Introduction> - equation solver
+
+## Projects
+
+- <https://docs.python-guide.org/writing/structure/>
+- <https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata>
