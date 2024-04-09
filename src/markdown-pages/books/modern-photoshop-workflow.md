@@ -339,3 +339,253 @@ Author used a black of CMYK version curved beyond print. Why this works. CMY are
 e.g. New York Stock Exchange, washed out, very neutral with red stripes
 
 This step of the workflow is fruitless. Skip it. It requires too many layers and can be solved better in the next step.
+
+## 3. Once More for Color, How Much is Too Much?
+
+e.g. yellowish house, skies in background, overall blue cast
+
+- step 1: remove cast
+- step 2: contrast
+  - skies are best in red channel, but the yellows will dissappear
+  - blend red into rgb in darken mode
+  - blend blue into red, darken to strengthen buildling and sky
+  - straightline curves to red and green to lighten clouds
+  - luminosity mode
+
+1. Apply Color Boost Action and decide how much to cut. Just lowered opacity
+1. Adjust endpoints as needed. Look at lightest cloud for highlight.
+1. Sharpen 
+1. Prepare for output.
+
+### Color Boost Action
+
+1. Window: Actions to bring up actions panel
+1. Click New Action. Give it a name and click Record
+1. Image: Mode > LAB mode
+1. Add a curves adjustment layer and call it color boost. Adjust the A/B channel curves. These are straightline, about 3-1/3 small grid lines in on A and 3 on B. For A this is 33 and 66%, for B 30 and 70.
+1. Change layer opacity to 75%.
+1. Add a second curves adjustment layer and name it endpoint adjustment. Click ok so it does nothing.
+1. Make the color boost layer the active layer
+1. Click stop recording and your done
+
+**NOTE**: In the LAB workflow book the author recommended equal straighline curves. In this modern workflow he recommends a steeper A: 33, 66 vs. B: 30, 70. 
+
+As a general rule bolder/brighter colors will intensify faster thn duller colors. If that is not the preference for the image simply lowering opacity won't work and you can use techniques to adjust.
+
+**NOTE**: The defaults work for MOST images, stronger A than B. If you option click the action a panel comes up with options to set defaults and to choose A>B, A=B, or B>A. 
+
+### Adjusting the Blend With a Mask
+
+e.g. a field with elk, very yellow field, the elk need more color
+
+- Adjust the endpoint layer first if needed. The lightness is brought to 33%
+- Activate the color boost layer mask
+- Image: Adjustments > Invert to fill the mask black
+- Set foreground color to white
+- Activate paint brush, soft brush and a good size, normal mode, 100% opacity
+- Quickly paint the two animals, the author deliberately added background behind the front female almost as big as her
+- Lighten the layer mask, adjust curves while the mask is active. e.g. drop top right 4 small grids down, 60%. The mask becomes gray and white blending the layers. Alternatively use the denisty adjustment from the adjustment layer panel.
+- reduce opacity of layer to taste. e.g. 53%
+
+This workflow bypassed the first two steps of PPW, making it about 1 min, applying MMM + CB would yeild better results nearly as fast.
+
+### Blending Adjustments
+
+- Author says straight opacity is about 30% of the time.
+- Typically he recommends using the L channel as a layer mask and adjust to taste.
+- Masking is a last resort
+
+### Using the L Channel as a Mask
+
+- Apply color boost
+- Active mask of color boost layer
+- Image: Apply Image, L channel
+- adjust opacity to taste, may have to go up
+- adjust endpoints layer
+
+### When CMYK is the Destination
+
+- Trying to push color out of gamut won't help. To view CMYK use View: Proof Colors, it's not perfect but close. Reduce color to in gamut for CMYK
+- Colors are out of CMYK gamut in three ways primarily: brillant blues are impossible, pastels (very light pure colors) can't be duplicated unless the paper is brillant white, and vivid colors that are also dark can't be achieved.
+- CMYK has the advantage for shadow detail. Adjust that in the black. 
+
+### Shape of The Layer Mask Curve
+
+- **Lightening the Midpoint:** makes a vivid picture but most of the color is added to the midrange. It's not the same look as increasing layer opacity.
+- **Lightening the Quartertone Point:** is a quandry, it will either work really good or really bad. 
+- **Moving the Highlight:** toward center, retaining a straight line, favors the lightest colors because they fall in a steeper part of the curve. Everything will gain contrast but the lighter parts will gain more.
+- **Lightening the Shadow:** by moving the dark endpoint vertically, thus retaining straightlines, favors the darkest colors.
+- **Moving both Highlight and Shadow:** to retain the same angle while moving towards lightness creates almost the same effect as lowering opacity.
+
+When retouching the most appropiate curve looks like an 'S', when changing for color it looks like a 'U'.
+
+### Using Blend If
+
+- If you need the change to affect only part of the image, e.g. blue sky in mostly yellow picture
+- If the isolation could be on either layer, use the more colorful of the two
+
+How to find what affects?
+
+1. Create an invert color adjustment layer above the color boost layer. The image turns into a negative.
+1. Create a clipping mask on the invert adjustment layer. The parts affected by blend if turn gray.
+1. When you move the blend if slider on this layer, the excluded parts look normal. If underlying layer, the opposite will happen.
+1. When done delete the invert layer
+
+### Color Boosting When the Image is Flat
+
+e.g. a thermal pond, the water should be very blue, too much yellow competes, steam offuscates the blues. Standard practice make colors wild, the L can't be a mask. The off colors are seen when the color boost is 100% opacity. The yellows are too vivid and the split between blue/yellow is mangled.
+
+Solution: use the B channel, the channel is too flat, needs to be inverted (mask yellow, not blue), and B is noisy, so it will need blurring.
+
+1. Apply B to mask inverted.
+1. Add a curve to the mask to add contrast to blues
+1. blur with surface blur
+1. Color Boost layer is at 100% opacity
+
+Better, need more options.
+
+1. Duplicate color boost with mask
+1. Second layer is at 35% opacity
+
+Steam needs to be more neutral.
+
+1. On the second layer, apply the inverted L in darken mode at 100% opacity
+1. Both color boosts were 100% opacity and color excessive.
+1. Turn off original layer
+1. Duplicate 2nd color boost
+1. Set one to 100% opacity and 1 to 65%
+
+### Rules of Color Boost
+
+e.g. greenish river in yellowstone, the glacier melt produces more green and unusual colors
+
+- If the color is unusual boost it
+- It the color is disaggreeable try not to strenghten it
+
+Attempt 1:
+
+1. Adjust luminosity, applied red to RGB 
+1. Applied color boost
+1. Applied inverted A to mask of color boost, normal 100%
+1. Blur mask, surface
+1. Enhance contrast, Image: Auto Tone
+1. apply inverted u curve to mask
+
+Attempt 2:
+
+1. Skip color correction step
+1. On a duplicate layer apply red to blue
+1. Adjust the midtone of the green to be lighter for more detail
+1. Apply false profile with blurred mask multiplied (ch 11)
+1. Apply updated MMM action
+
+## The Modern Man from Mars
+
+The action is about 60 steps. It's preferred to combine with CB but having them separate can help learning.
+
+- Select an area of importance in the picture, or multiple, you can also feather
+- Play the action
+- Adjust the color and luminosity layers to taste or remove either if needed
+
+### How Often
+
+The MMM + CB is used in nearly image. 1/3 of the time the author junks the MMM luminosity layer. About 1/3 of the time the author junks the MMM color layer or severely lowers opacity.
+
+### FAQS
+
+- What images benefit most?
+  - Images with large significant ares of little color variation
+  - Shots dominated by a single color
+  - Faces if large enough
+
+- What does this action do?
+  - Evaluates the selection for how to apply
+  - Discards the selection and applies to the whole image
+
+- What problems can this cause?
+  - Loss of detail in areas not matching the selection
+  - Vibrant shifted colors in places you don't want them
+
+- Why did light clouds not change?
+  - The orginal action would have made them purple
+  - The updated version masks out near neutrals to avoid shifting neutrals
+  - Humans won't accept color shift of known neutrals and that limited the utility of the original action.
+  - 
+
+  ### Selections
+
+  - Any selection can work
+  - A better selection includes large areas of focus to balance color
+  - select all can work 
+
+  ### Histograms
+
+  The author hates them, and doesn't show them. There is an equalize command that spreads pixels lightness equally. Usually with worse results. If you select before running you get other options.
+
+  MMM takes the selection and equalize approach but applies smartly.
+
+  ### MMM Action Steps
+
+  - Convert to LAB color and flatten
+  - On a duplicate layer, apply Equalize to each channel. Choose use the selection as a base and apply to the whole channel
+  - Immediately after each one apply fade. A is faded less than B.
+  - Name the layer MMM Color and change the mode to color mode at a low opacity (30%)
+  - Duplicate the MMM color, rename it and change mode to luminosity
+  - Group the two layers
+  - Add a mask to the MMM luminosity to avoid damaging highlight and shadows when the action increases tonal range
+  - Add a mask the MMM color layer to minimize change to near neutrals. 
+
+  ### Note on Faces
+
+  Three categories to avoid with MMM
+  
+  1. fleshtones that are beet-red
+  2. green-haired blonds
+  3. contrast that ages the skin
+
+- #3 is easily avoided by dropping the MMM luminosity layer.
+- Color can be handled by not overdoing initial corrections, i.e. removing too much pink
+- Selecting all colors of fleshtones
+- Blending the green channel at a lower opacity and adjusting curves
+- Apply shadow/highlights commands
+- sharpening
+
+### Advanced Uses
+
+Option + Click the MMM + CB will provide more options, including adding a saturation layer to dull the effects. 
+
+## Shadows/Highlights
+
+In graphic design images are divided into five tones. Highlight, quartertone, midtone, three-quartertone and shadow.
+
+Shadow is referring to the darkest parts.
+Highlights is referring to the lightest parts.
+
+This is the optional step between luminosity and color steps.
+
+Is it needed?
+
+- No. It's unimportant, possibly counter productive.
+- Yes. It would be nice to add to one of these zones.
+- Yes. It is absolutely critical to inject more detail into at least one of these two zones.
+
+If it's option 1 skip it. If 2 or 3 continue.
+
+### Settings Change
+
+Image: Adjustments > Shadows/Highlights
+
+Open advanced options, enter the following settings and save as defaults.
+
+- Shadows - amount: 18%, tonal width: 25%, radius: 30px
+- Highlights - amount: 9%, tonal width: 25%, radius: 30px
+- Adjustments - Color Correction: +20, Midtone Contrast: 0, Black Clip: 0.01%, White Clip: 0.01%
+
+PPW should have these defaults set.
+
+## Creative Uses
+
+- Use Hue instead of color for a lighter color touch
+- option + click and experiemnt with selections
+
+### When to Apply
