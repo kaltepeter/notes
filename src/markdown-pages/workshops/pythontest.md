@@ -69,12 +69,14 @@ assert c is None # checking none
 assert c == 0   # checking equality
 
 # code in block raises exception
+# This is preferred
 with pytest.raises(TypeError):
     pass
 
-# more specific exception checking, messy, use the generic type instead
+# If you need more.
+# more specific exception checking, messy, use the above style more often
 with pytest.raises(TypeError) as exc_info:
-        cards.CardsDB()
+    cards.CardsDB()
     expected = "missing 1 required positional argument"
     assert expected in str(exc_info.value)
 ```
