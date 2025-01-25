@@ -19,7 +19,7 @@ tags:
 
 [https://github.com/aperezdc/perezdecastro.org/blob/master/stash/using-boolean-variables-in-bash.markdown](https://github.com/aperezdc/perezdecastro.org/blob/master/stash/using-boolean-variables-in-bash.markdown) - flag variables in bourne shell
 
-[https://kvz.io/blog/2013/11/21/bash-best-practices/](https://kvz.io/blog/2013/11/21/bash-best-practices/) - boiler plate and best practice guide
+[https://kvz.io/blog/bash-best-practices.html](https://kvz.io/blog/bash-best-practices.html) - boiler plate and best practice guide -> [bash3boilerplate](https://github.com/kvz/bash3boilerplate/blob/main/README.md)
 
 https://explainshell.com/explain - amazing visual explanation
 
@@ -238,4 +238,153 @@ for ((i=start_num; i<=end_num; i+=increment)); do
 #    echo "start: $i, finish ${finish}"
     echo "time bundle exec rails 'one_time:preprocess_active_storage_for_users_and_companies[${i},${finish},100]'"
 done
+```
+
+## Bulletproof Bash
+
+http://codeacumen.info/posts/bulletproof-bash-scripting/
+
+- Robust
+- Predictiable
+- Repeatable
+- Accurate
+- Exacting
+
+Bulletproof does not mean secure.
+
+`setuid` can likely expose root access.
+
+PATH and umask
+
+- always set both
+- shorter path is better
+  - `PATH=/usr/bin:/bin:/usr/sbin:/sbin`
+- umask is less work than chmod
+  - uusually 22 or 77
+  - mask against default permission (usually 666), mask subtracts. 666 - 22 = 644
+- `set -xv`
+  - prints eqach line to stderr as it reads
+  - prints a plus sign and the final version after expansion and subsitition to stderr
+  - pipes, shell functions, and redirections are non-intuitivve
+- `exec 2>> logfile`
+  - opens logfile for append
+  - redirects stderr to logfile
+  - captures errors from programs and `set -xv` output
+  - e.g. `exec 3>&2 >> $ME.log 2>&1`. file handle 3 is a dupe of stderr and capture stderr and stdout to logfile. stderr can be sent to user with 3.
+- `set -e` 
+  - error checking, exits on error
+  - `mkdir foo || :` is a noop, `:` is noop in shell, it's complex so `-e` won't fire
+- trap bang EXIT
+  - runs before exit, to catch signals
+  - bang can be a shell function. alerts to look in a logfile
+  - can alert you to look in the logfile
+  - to disablwe, trap again with `-` as arg
+    - `trap - EXIT` 
+    - `bang() { echo FAILED. >&3; exit 1; }`
+- `set -u`
+  - unset variables are fatal errors
+  - alternative to setting defaults for all variables
+  - affects $1, $2, etc.
+    - for optional positional arguments, use `${2:-}`
+- flock
+  - exclusive advisory lock
+  - -n switch for non-blocking
+  - use on a filehandle opened by bash
+  - lock automatically released when bash exits
+  - `exec 4> .$ME.lock`
+  - `flock -n 4 || exit 0`
+- `: > /opt/log/rmlogs.log` to truncate logfile
+- `[ expr ]` vs. `[[ expr ]]`
+  - `[ ex ]` many errors due to word splitting and path expansion
+  - `[[ ex ]]` no word splitting or path expansion
+  - `ls | egrep -q '^dump\.' && echo true`
+  - `nargs () { perl -e 'print ++$i, " $_\n" for @ARGV' "$@"; }` will print the args with quotes to see splitting
+
+This script has errors. Iterate through them to fix.
+
+```bash
+#!/bin/bash
+
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin
+umask 2
+
+ME=`basename $0`
+exec 3>&2 >> /opt/log/$ME.log 2>&1
+set -xveu
+date
+hostname
+
+bang() { echo FAILED. >&3; exit 1; }
+trap bang EXIT
+
+cat2 () { perl -pe 'print STDERR' "$@"; }
+
+cd /opt/query
+
+exec 4> .$ME.lock
+flock -n 4 || exit 0
+
+. /opt/etc/$ME.conf
+
+find . -type f -mtime +$DBGLOCKEEP | cat2 | egrep "$DBGLOGPAT" | xargs rm -v
+
+trap - EXIT
+exit 0
+```
+
+better bang. don't have to disable trap, only prints fail if failed.
+
+```bash
+end () { [[ $? = 0 ]] && return; echo FAILED >$3; exit 1; }
+```
+
+better basename. ## takes longest pattern up to / and chop it off.
+
+```bash
+ME=${0##*/}
+```
+
+better top directory. If first char is a /, it's full path. If not, it's relative to pwd and $0. Strip off /bin/whatever.
+
+```bash
+[[ ${0:0:1} = / ]] && TOP=$0 || TOP='pwd' /$0
+export TOP=${TOP%/bin/*}
+```
+
+http://codeacumen.info/posts/bulletproof-bash-redux/
+
+- IFS - Internal Field Separator
+  - set of delimiters for word splitting
+  - default is space, tab, newline
+  - if the value is null, no splitting is done
+  - if unset, splitting uses default delimters
+  - special cases, esp. for the first character
+- ERR vs. EXIT traps
+  - ERR fires on same conditions as `set -e`
+    - pitall! not inherited by shell functions
+    - use `set -E` to inherit ERR trap
+  - EXIT trap runs unconditionally at exit
+    - can use `$?` to determine failure
+- nullglob `shopt -s nullglob`
+  - pathname expansion of a glob without match removes the word
+- failglob `shopt -s failglob`
+  - pathname expansion of a glob without match returns an error
+
+```bash
+echo -n "$IFS" | hexdump -c  
+# 0000000      \t  \n  \0                                                
+# 0000004
+
+nargs () { perl -e 'print ++$i, " $_\n" for @ARGV' "$@"; }
+foo='a b c' 
+nargs $foo
+# 1 a b c
+
+IFS=
+nargs $foo
+# 1 a b c
+
+unset IFS
+nargs $foo
+
 ```
