@@ -134,6 +134,109 @@ def count_inversions(visited: set[Coord], line: str, x: int, y: int) -> int:
     data = cycles[cycle_grid_index]
 
     return calculate_load(list(data))
+</code></pre>
+<h2>rotating lists</h2>
+<p><a href="https://github.com/terminalmage/adventofcode/blob/main/2022/day20.py">https://github.com/terminalmage/adventofcode/blob/main/2022/day20.py</a></p>
+<p>Take a list of numbers and move the original values + or - the amount of the value.</p>
+<pre><code class="language-python">from random import randrange
+from collections import deque
+
+data = [x * randrange(-10, 10) for x in range(10)]
+# [0, 9, -12, -21, 16, 10, -36, -56, -16, 27]
+
+original_order = list(enumerate(int(x) * 1 for x in data))
+# [(0, 0), (1, 9), (2, -12), (3, -21), (4, 16), (5, 10), (6, -36), (7, -56), (8, -16), (9, 27)]
+sorted_list = deque(original_order, maxlen=len(data))
+for val in original_order:
+    # Rotate until we get to the location of this value
+    sorted_list.rotate(-sorted_list.index(val))
+    # deque([(0, 0), (1, 9), (2, -12), (3, -21), (4, 16), (5, 10), (6, -36), (7, -56), (8, -16), (9, 27)], maxlen=10)
+
+    # Pop the value off the list, and then rotate again by that
+    # amount to point the front of the queue at the location where
+    # we need to move it
+    sorted_list.rotate(-sorted_list.popleft()[1])
+    # deque([(1, 9), (2, -12), (3, -21), (4, 16), (5, 10), (6, -36), (7, -56), (8, -16), (9, 27)], maxlen=10)
+
+    # Place the the value in its new location
+    sorted_list.appendleft(val)
+    # deque([(0, 0), (1, 9), (2, -12), (3, -21), (4, 16), (5, 10), (6, -36), (7, -56), (8, -16), (9, 27)], maxlen=10)
+
+# deque([(9, 27), (4, 16), (0, 0), (1, 9), (7, -56), (6, -36), (5, 10), (2, -12), (3, -21), (8, -16)], maxlen=10)
+</code></pre>
+<h2>Graphs</h2>
+<p><a href="https://garba.org/posts/2022/graph/">Practical Graph Theory using Networkx</a></p>
+<h3>Cuts</h3>
+<p>Identify the x(3) places to cut and split graphs.</p>
+<ul>
+<li><a href="https://networkx.org/documentation/stable/reference/algorithms/cuts.html">https://networkx.org/documentation/stable/reference/algorithms/cuts.html</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cut_%28graph_theory%29">https://en.wikipedia.org/wiki/Cut_%28graph_theory%29</a></li>
+</ul>
+<p>Visualizing</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/notes/static/201e0e4e59e81231dbe468e223ddf6d5/5c263/networkx-graph.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 65.03067484662577%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAABy0lEQVR42pWTzytEURTHz/vBbJSFhUlmw0JRNhZkQVkQGxb+AsPGWo1kYTspJVKysCMLUiNKszKTjTJNXkYpv6bZKMUMhjfv3q9733vzDEPGqdM7nd75nns/51yCZxycczdmwk07918jT84VSyYXsLzcjXC4E5ubg0gkZlEo5LymFQjKk8kwh729UbS0EFRVgaYpqKkhTE3VwjQv3absb0HGCnZwdbWEnh4CkY7qahW6Ll3B8LAPLy/JygU5t+zg4WFfFEtBRZxQE18N9fUkrt6MbPbYFSy4rBlknVPLy6/smAXDWEQo1ISuLkJvL2F6ug6RSANOTsZsLMXmpSbZl+apdMqOveIiNYd0eg2MZXB7uypwbCOXk1h2cX8fRSazg3g8hFhsEs/P519w0NduFnjZIJ3E4+MdDg46sLHhR1+fDz4fwe8nzMy04vpaNn8rF/wUZu4ucpebAGLlcXo6gqGhKpuzrutQFOmEYFDB+/vl74LfjTGHkWGE0dbmbIKmqmK15PAI48Eq5POJygWLfNLpLayvt6O/n9AYUBAIqBgYIESjE96AqPJH5bA0zRs8PR0ilVqBcTYv4iMwK+v9Q/95p86K8B/zxbX5AH1hf2tlMuLVAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Visualizing Cuts"
+        title=""
+        src="/notes/static/201e0e4e59e81231dbe468e223ddf6d5/a6d36/networkx-graph.png"
+        srcset="/notes/static/201e0e4e59e81231dbe468e223ddf6d5/222b7/networkx-graph.png 163w,
+/notes/static/201e0e4e59e81231dbe468e223ddf6d5/ff46a/networkx-graph.png 325w,
+/notes/static/201e0e4e59e81231dbe468e223ddf6d5/a6d36/networkx-graph.png 650w,
+/notes/static/201e0e4e59e81231dbe468e223ddf6d5/e548f/networkx-graph.png 975w,
+/notes/static/201e0e4e59e81231dbe468e223ddf6d5/3c492/networkx-graph.png 1300w,
+/notes/static/201e0e4e59e81231dbe468e223ddf6d5/5c263/networkx-graph.png 1636w"
+        sizes="(max-width: 650px) 100vw, 650px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Cutting <code>fri -- thx</code>, <code>ccp -- fvm</code>, and <code>llm -- lhg</code> would create two separate graphs.</p>
+<pre><code class="language-python">import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+
+InputData = dict[str, set[str]]
+
+data = {'jqt': {'nvd', 'ntq', 'xhk', 'rhn'}, 'nvd': {'jqt', 'pzl', 'cmg', 'lhk', 'qnr'}, 'xhk': {'jqt', 'rhn', 'bvb', 'ntq', 'hfx'}, 'rhn': {'bvb', 'jqt', 'hfx', 'xhk'}, 'rsh': {'frs', 'rzs', 'lsr', 'pzl'}, 'frs': {'lhk', 'qnr', 'lsr', 'rsh'}, 'lsr': {'rzs', 'pzl', 'rsh', 'frs', 'lhk'}, 'pzl': {'nvd', 'hfx', 'lsr', 'rsh'}, 'hfx': {'pzl', 'rhn', 'bvb', 'ntq', 'xhk'}, 'cmg': {'rzs', 'nvd', 'bvb', 'lhk', 'qnr'}, 'lhk': {'nvd', 'frs', 'cmg', 'lsr'}, 'bvb': {'rhn', 'cmg', 'ntq', 'hfx', 'xhk'}, 'qnr': {'nvd', 'frs', 'rzs', 'cmg'}, 'ntq': {'bvb', 'jqt', 'hfx', 'xhk'}, 'rzs': {'lsr', 'cmg', 'qnr', 'rsh'}}
+
+vertices = []
+edges = []
+
+for k, vals in data.items():
+    vertices.append(k)
+    for v in vals:
+        edges.append((k, v))
+
+G = nx.Graph()
+G.add_nodes_from(vertices)
+G.add_edges_from(edges)
+plt.subplot()
+nx.draw(G, with_labels=True, node_color="y", node_size=800)
+
+cuts = nx.minimum_edge_cut(G)
+for cut in cuts:
+    G.remove_edge(*cut)
+
+# print(max(nx.connected_components(G), key=len))
+subgraphs = [G.subgraph(c).copy() for c in nx.connected_components(G)]
+counts = [len(s) for s in subgraphs]
+
 </code></pre></div></div></div></main><footer class="MuiBox-root mui-11mcpv2-Layout-footer">© <!-- -->2025<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/algorithms/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"

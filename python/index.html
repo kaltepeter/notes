@@ -263,6 +263,8 @@ cur_path = ['root', 'a', 'e']
 target_node = dpath.get(file_tree, "/children/".join(cur_path))["children"]
 print(target_node) # {'i': {'name': 'i', 'size': 584, 'type': &#x3C;NodeType.F: 'FILE'>, 'children': {}}}
 </code></pre>
+<p>get a list of the first three items</p>
+<p><code>for id, bp in list(data.items())[:3]:</code></p>
 <h3>slicing</h3>
 <pre><code class="language-python">import itertools
 
@@ -320,11 +322,18 @@ sys.maxsize # 9223372036854775807
 <p>Too large number:</p>
 <pre><code class="language-bash">ValueError('Exceeds the limit (4300) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit'
 </code></pre>
+<p>is numeric</p>
+<pre><code class="language-python">isinstance(value, (int, float, complex))
+</code></pre>
 <h3>int vs. float</h3>
 <ul>
 <li>If you assign 1 it is int, 1.0 is float. (dynamic types) or type hint to be explicit</li>
 <li>No double in native python</li>
 </ul>
+<h3>Complex Numbers</h3>
+<p><a href="https://realpython.com/python-complex-numbers/">https://realpython.com/python-complex-numbers/</a></p>
+<p>Can store real and imaginary, can access separately.</p>
+<p>Uses <code>j</code> like <code>1j</code> for imaginary, most languages use <code>i</code> but to avoid confusion with engineering it uses <code>j</code>. <code>i</code> is also super common as a variable name while iterating.</p>
 <h2>Functools</h2>
 <p><a href="https://www.geeksforgeeks.org/functools-module-in-python/">https://www.geeksforgeeks.org/functools-module-in-python/</a></p>
 <h2>Higher order functions (Partial)</h2>
@@ -507,6 +516,11 @@ n # next
         break
 </code></pre>
 <p>For will loop while it has values. Else will run if no values. This will exit both loops.</p>
+<p>are all values in a tuple are in a list</p>
+<pre><code class="language-python">d = {'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'humn': 5, 'ljgn': 2, 'sllz': 4, 'hmdt': 32}
+set(('sllz', 'dvpt')) &#x3C;= set(d.keys()) # True
+set(('sllz', 'sjmn')) &#x3C;= set(d.keys()) # False
+</code></pre>
 <h2>Arrays</h2>
 <h3>Rotating</h3>
 <pre><code class="language-python">def rotate90(grid: InputData):
@@ -765,7 +779,13 @@ def test_overlaps(b1, b2, expected, request):
 <h2>Generator</h2>
 <p><a href="https://realpython.com/introduction-to-python-generators/">https://realpython.com/introduction-to-python-generators/</a></p>
 <h2>Libraries</h2>
-<p><a href="https://www.sympy.org/en/index.html">https://www.sympy.org/en/index.html</a> - math solver</p></div></div></div></main><footer class="MuiBox-root mui-11mcpv2-Layout-footer">© <!-- -->2025<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p><a href="https://www.sympy.org/en/index.html">https://www.sympy.org/en/index.html</a> - math solver
+<a href="https://microsoft.github.io/z3guide/programming/Z3%20Python%20-%20Readonly/Introduction">https://microsoft.github.io/z3guide/programming/Z3%20Python%20-%20Readonly/Introduction</a> - equation solver</p>
+<h2>Projects</h2>
+<ul>
+<li><a href="https://docs.python-guide.org/writing/structure/">https://docs.python-guide.org/writing/structure/</a></li>
+<li><a href="https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata">https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata</a></li>
+</ul></div></div></div></main><footer class="MuiBox-root mui-11mcpv2-Layout-footer">© <!-- -->2025<!-- --> Kayla Altepeter, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a><div>Icons made by<!-- --> <a href="http://www.freepik.com/" title="Freepik">Freepik</a> <!-- -->from<!-- --> <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/python/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
