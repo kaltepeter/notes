@@ -170,3 +170,87 @@ def part_2(data: InputData) -> int:
 
     return calculate_load(list(data))
 ```
+
+## rotating lists
+
+<https://github.com/terminalmage/adventofcode/blob/main/2022/day20.py>
+
+Take a list of numbers and move the original values + or - the amount of the value.
+
+```python
+from random import randrange
+from collections import deque
+
+data = [x * randrange(-10, 10) for x in range(10)]
+# [0, 9, -12, -21, 16, 10, -36, -56, -16, 27]
+
+original_order = list(enumerate(int(x) * 1 for x in data))
+# [(0, 0), (1, 9), (2, -12), (3, -21), (4, 16), (5, 10), (6, -36), (7, -56), (8, -16), (9, 27)]
+sorted_list = deque(original_order, maxlen=len(data))
+for val in original_order:
+    # Rotate until we get to the location of this value
+    sorted_list.rotate(-sorted_list.index(val))
+    # deque([(0, 0), (1, 9), (2, -12), (3, -21), (4, 16), (5, 10), (6, -36), (7, -56), (8, -16), (9, 27)], maxlen=10)
+
+    # Pop the value off the list, and then rotate again by that
+    # amount to point the front of the queue at the location where
+    # we need to move it
+    sorted_list.rotate(-sorted_list.popleft()[1])
+    # deque([(1, 9), (2, -12), (3, -21), (4, 16), (5, 10), (6, -36), (7, -56), (8, -16), (9, 27)], maxlen=10)
+
+    # Place the the value in its new location
+    sorted_list.appendleft(val)
+    # deque([(0, 0), (1, 9), (2, -12), (3, -21), (4, 16), (5, 10), (6, -36), (7, -56), (8, -16), (9, 27)], maxlen=10)
+
+# deque([(9, 27), (4, 16), (0, 0), (1, 9), (7, -56), (6, -36), (5, 10), (2, -12), (3, -21), (8, -16)], maxlen=10)
+```
+
+## Graphs
+
+[Practical Graph Theory using Networkx](https://garba.org/posts/2022/graph/)
+
+### Cuts
+
+Identify the x(3) places to cut and split graphs.
+
+- <https://networkx.org/documentation/stable/reference/algorithms/cuts.html>
+- <https://en.wikipedia.org/wiki/Cut_%28graph_theory%29>
+
+Visualizing
+
+![Visualizing Cuts](../../images/networkx-graph.png)
+
+Cutting `fri -- thx`, `ccp -- fvm`, and `llm -- lhg` would create two separate graphs.
+
+```python
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+
+InputData = dict[str, set[str]]
+
+data = {'jqt': {'nvd', 'ntq', 'xhk', 'rhn'}, 'nvd': {'jqt', 'pzl', 'cmg', 'lhk', 'qnr'}, 'xhk': {'jqt', 'rhn', 'bvb', 'ntq', 'hfx'}, 'rhn': {'bvb', 'jqt', 'hfx', 'xhk'}, 'rsh': {'frs', 'rzs', 'lsr', 'pzl'}, 'frs': {'lhk', 'qnr', 'lsr', 'rsh'}, 'lsr': {'rzs', 'pzl', 'rsh', 'frs', 'lhk'}, 'pzl': {'nvd', 'hfx', 'lsr', 'rsh'}, 'hfx': {'pzl', 'rhn', 'bvb', 'ntq', 'xhk'}, 'cmg': {'rzs', 'nvd', 'bvb', 'lhk', 'qnr'}, 'lhk': {'nvd', 'frs', 'cmg', 'lsr'}, 'bvb': {'rhn', 'cmg', 'ntq', 'hfx', 'xhk'}, 'qnr': {'nvd', 'frs', 'rzs', 'cmg'}, 'ntq': {'bvb', 'jqt', 'hfx', 'xhk'}, 'rzs': {'lsr', 'cmg', 'qnr', 'rsh'}}
+
+vertices = []
+edges = []
+
+for k, vals in data.items():
+    vertices.append(k)
+    for v in vals:
+        edges.append((k, v))
+
+G = nx.Graph()
+G.add_nodes_from(vertices)
+G.add_edges_from(edges)
+plt.subplot()
+nx.draw(G, with_labels=True, node_color="y", node_size=800)
+
+cuts = nx.minimum_edge_cut(G)
+for cut in cuts:
+    G.remove_edge(*cut)
+
+# print(max(nx.connected_components(G), key=len))
+subgraphs = [G.subgraph(c).copy() for c in nx.connected_components(G)]
+counts = [len(s) for s in subgraphs]
+
+```

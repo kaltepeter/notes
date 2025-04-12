@@ -409,6 +409,10 @@ target_node = dpath.get(file_tree, "/children/".join(cur_path))["children"]
 print(target_node) # {'i': {'name': 'i', 'size': 584, 'type': <NodeType.F: 'FILE'>, 'children': {}}}
 ```
 
+get a list of the first three items
+
+`for id, bp in list(data.items())[:3]:`
+
 ### slicing
 
 ```python
@@ -507,10 +511,24 @@ Too large number:
 ValueError('Exceeds the limit (4300) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit'
 ```
 
+is numeric
+
+```python
+isinstance(value, (int, float, complex))
+```
+
 ### int vs. float
 
 - If you assign 1 it is int, 1.0 is float. (dynamic types) or type hint to be explicit
 - No double in native python
+
+### Complex Numbers
+
+<https://realpython.com/python-complex-numbers/>
+
+Can store real and imaginary, can access separately.
+
+Uses `j` like `1j` for imaginary, most languages use `i` but to avoid confusion with engineering it uses `j`. `i` is also super common as a variable name while iterating.
 
 ## Functools
 
@@ -754,6 +772,14 @@ def calculate_start_pipe(data: InputData) -> StartPipe:
 ```
 
 For will loop while it has values. Else will run if no values. This will exit both loops.
+
+are all values in a tuple are in a list
+
+```python
+d = {'dbpl': 5, 'zczc': 2, 'dvpt': 3, 'lfqf': 4, 'humn': 5, 'ljgn': 2, 'sllz': 4, 'hmdt': 32}
+set(('sllz', 'dvpt')) <= set(d.keys()) # True
+set(('sllz', 'sjmn')) <= set(d.keys()) # False
+```
 
 ## Arrays
 
@@ -1094,3 +1120,9 @@ int('11111111', 2)
 ## Libraries
 
 <https://www.sympy.org/en/index.html> - math solver
+<https://microsoft.github.io/z3guide/programming/Z3%20Python%20-%20Readonly/Introduction> - equation solver
+
+## Projects
+
+- <https://docs.python-guide.org/writing/structure/>
+- <https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata>
