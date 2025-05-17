@@ -5,6 +5,7 @@ tags:
   - course
   - real-python
   - pydantic
+  - python
 ---
 
 https://realpython.com/courses/pydantic-simplify-data-validation/ 
