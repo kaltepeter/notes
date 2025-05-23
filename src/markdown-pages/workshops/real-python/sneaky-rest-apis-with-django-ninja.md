@@ -11,6 +11,8 @@ tags:
 
 https://realpython.com/videos/sneaky-rest-apis-with-django-ninja-overview/
 
+grandpa: https://www.django-rest-framework.org/ is different from ninja
+
 ## Overview
 - Django Ninja is a FastAPI inspired library for writing REST APIs with Django
 - Decorate a Django view with HTTP operations
