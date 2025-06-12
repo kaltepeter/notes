@@ -1,6 +1,6 @@
 ---
-title: Bild a URL Shortener With Python and FastAPI
-date: 2025-5-19
+title: Build a URL Shortener With Python and FastAPI
+date: 2025-05-19
 tags:
   - course
   - real-python

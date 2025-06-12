@@ -1,6 +1,6 @@
 ---
 title: Sneaky REST APIs With Django Ninja
-date: 2025-5-19
+date: 2025-05-19
 tags:
   - course
   - real-python

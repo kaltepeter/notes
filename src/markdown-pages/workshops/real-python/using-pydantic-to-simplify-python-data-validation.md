@@ -1,6 +1,6 @@
 ---
 title: Using Pydantic to Simplify Python Data Validation
-date: 2025--5-16
+date: 2025-05-16
 tags:
   - course
   - real-python
