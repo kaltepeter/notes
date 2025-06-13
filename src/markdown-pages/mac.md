@@ -294,3 +294,65 @@ Great CLI for interacting with app store.
 Several issues with login: <https://github.com/mas-cli/mas#%EF%B8%8F-known-issues>
 
 example: <https://github.com/tiiiecherle/osx_install_config/blob/master/03_homebrew_casks_and_mas/3b_homebrew_casks_and_mas_install/6_mas_appstore.sh>
+
+## Create Windows Compatible ISO
+
+- https://umatechnology.org/how-to-create-windows-compatible-iso-disc-images-on-a-mac/
+
+```bash
+diskutil list # note the id, e.g. /dev/disk2
+cd ~/data/discs
+diskutil unmountDisk /dev/disk2
+sudo dd if=/dev/disk2 of=filename.iso bs=8m # /dev/disk2 is the id from diskutil list
+hdiutil verify filename.iso
+```
+
+## Creating Windows VMs
+
+Using UTM.
+
+### Windows XP
+
+- <https://milen.me/writings/exploring-windows-xp-on-macos-arm64/>
+- <https://tinyapps.org/blog/202105220715_m1_mac_emulate_x86.html>
+
+Steps:
+
+- Disc required, no official downloads [without a paid MSDN subscription](https://learn.microsoft.com/en-us/answers/questions/2077837/where-to-download-windows-xp)
+- [Update catalog](https://catalog.update.microsoft.com/Search.aspx?q=windows%20xp) has updates
+- Download the [XP template](https://mac.getutm.app/gallery/windows-xp) from the UTM catalog
+- After downloading the template and finding a copy of the ISO (Windows XP SP3 (x86) recommended)
+- Open the template with UTM
+- Click edit. Most games have severe limitations if requiring XP.
+   - Arch: x86_64 emulated
+   - Set the CPU to 1
+   - Set RAM between 512MB and 1014MB
+   - Graphics: basic VGA (set in the template)
+   - Sound: sound blaster compatible (had to change)
+   - network: vlan (already set) 
+   - add second shared connection
+- Load the XP iso into the virtual drive
+- Start the VM, it will start the install.
+- After install, install the guest tools [using older version](https://www.spice-space.org/download/windows/spice-webdavd/spice-webdavd-x86-2.2.msi)
+- IE won't work, download chrome: https://www.google.com/chrome/other-platforms/
+- Run the network setup for a residential gateway, turn on file sharing
+- create an iso with chrome and wdav tools. 
+   - add to a folder
+   - open disc utility
+   - new iamge > from folder
+   - select hybrid as type
+   - rename .dmg to .iso
+   - mount in vm
+- 
+
+
+
+
+## Windows 11
+
+
+
+
+## Running Old Games in a Windows VM
+
+- [Windows 11 DirectX Emulation](https://github.com/dege-diosg/dgVoodoo2) - pay attention to where to copy directx, never system locations
