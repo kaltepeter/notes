@@ -294,3 +294,15 @@ Great CLI for interacting with app store.
 Several issues with login: <https://github.com/mas-cli/mas#%EF%B8%8F-known-issues>
 
 example: <https://github.com/tiiiecherle/osx_install_config/blob/master/03_homebrew_casks_and_mas/3b_homebrew_casks_and_mas_install/6_mas_appstore.sh>
+
+## Create Windows Compatible ISO
+
+- https://umatechnology.org/how-to-create-windows-compatible-iso-disc-images-on-a-mac/
+
+```bash
+diskutil list # note the id, e.g. /dev/disk2
+cd ~/data/discs
+diskutil unmountDisk /dev/disk2
+sudo dd if=/dev/disk2 of=filename.iso bs=8m # /dev/disk2 is the id from diskutil list
+hdiutil verify filename.iso
+```
