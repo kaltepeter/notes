@@ -2160,3 +2160,367 @@ class OrderAdmin(admin.ModelAdmin):
     list_filter = ['paid', 'created', 'updated']
     inlines = [OrderItemInline]
 ```
+
+### Export CSV with Custom Action
+
+- [outputting csv](https://docs.djangoproject.com/en/5.0/howto/outputting-csv/)
+- [django import export library](https://django-import-export.readthedocs.io/en/latest/)
+- [import/export with celery](https://github.com/auto-mat/django-import-export-celery)
+
+```python
+# orders/admin.py
+def export_to_csv(modeladmin, request, queryset):
+    opts = modeladmin.model._meta
+    content_disposition = (f"attachment; filename={opts.verbose_name}.csv")
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = content_disposition
+    writer = csv.writer(response)
+    fields = [field
+              for field in opts.get_fields()
+              if not field.many_to_many and not field.one_to_many]
+    writer.writerow([field.verbose_name for field in fields])
+    
+    for obj in queryset:
+        data_row = []
+        for field in fields:
+            value = getattr(obj, field.name)
+            if isinstance(value, datetime.datetime):
+                value = value.strftime('%d/%m/%Y')
+            data_row.append(value)
+            
+        writer.writerow(data_row)
+
+        return response
+    
+export_to_csv.short_description = 'Export to CSV'
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    actions = [export_to_csv]
+```
+
+
+### Extend Admin Template
+
+- [django admin templates](https://github.com/django/django/tree/5.0/django/contrib/admin/templates/admin)
+
+```python
+# orders/views.py
+from django.shortcuts import redirect, render, get_object_or_404
+from django.contrib.admin.views.decorators import staff_member_required
+from cart.cart import Cart
+from .forms import OrderCreateForm
+from .models import OrderItem, Order
+from .tasks import order_created
+
+@staff_member_required
+def admin_order_detail(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+
+    return render(request,
+                  'admin/orders/order/detail.html',
+                  {'order': order})
+
+# orders/urls.py
+path('admin/order/<int:order_id>/', views.admin_order_detail, name='admin_order_detail'),
+
+# orders/admin.py
+from django.urls import reverse
+
+
+def order_detail(obj):
+    url = reverse('orders:admin_order_detail', args=[obj.id])
+
+    return mark_safe(f'<a href="{url}">View</a>')
+
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ['id', 'first_name', 'last_name', 'email',
+                    'address', 'postal_code', 'city', 'paid',
+                    order_payment, 'created', 'updated', order_detail]
+```  
+
+
+```html
+<!-- admin/orders/order/detail.html -->
+{% extends "admin/base_site.html" %}
+
+{% block title %}
+  Order {{ order.id }} {{ block.super }}
+{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url "admin:index" %}">Home</a> &rsaquo;
+    <a href="{% url "admin:orders_order_changelist" %}">Orders</a>
+    &rsaquo;
+    <a href="{% url "admin:orders_order_change" order.id %}">Order {{ order.id }}</a>
+    &rsaquo; Detail
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="module">
+  <h1>Order {{ order.id }}</h1>
+  <ul class="object-tools">
+    <li>
+      <a href="#" onclick="window.print();">
+        Print order
+      </a>
+    </li>
+  </ul>
+  <table>
+    <tr>
+      <th>Created</th>
+      <td>{{ order.created }}</td>
+    </tr>
+    <tr>
+      <th>Customer</th>
+      <td>{{ order.first_name }} {{ order.last_name }}</td>
+    </tr>
+    <tr>
+      <th>E-mail</th>
+      <td><a href="mailto:{{ order.email }}">{{ order.email }}</a></td>
+    </tr>
+    <tr>
+      <th>Address</th>
+    <td>
+      {{ order.address }},
+      {{ order.postal_code }} {{ order.city }}
+    </td>
+    </tr>
+    <tr>
+      <th>Total amount</th>
+      <td>${{ order.get_total_cost }}</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <td>{% if order.paid %}Paid{% else %}Pending payment{% endif %}</td>
+    </tr>
+    <tr>
+      <th>Stripe payment</th>
+      <td>
+        {% if order.stripe_id %}
+          <a href="{{ order.get_stripe_url }}" target="_blank">
+            {{ order.stripe_id }}
+          </a>
+        {% endif %}
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="module">
+  <h2>Items bought</h2>
+  <table style="width:100%">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in order.items.all %}
+        <tr class="row{% cycle "1" "2" %}">
+          <td>{{ item.product.name }}</td>
+          <td class="num">${{ item.price }}</td>
+          <td class="num">{{ item.quantity }}</td>
+          <td class="num">${{ item.get_cost }}</td>
+        </tr>
+      {% endfor %}
+      <tr class="total">
+        <td colspan="3">Total</td>
+        <td class="num">${{ order.get_total_cost }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+
+``` 
+
+
+### Generating PDF Invoices
+
+- [Django Outputting PDF](https://docs.djangoproject.com/en/5.0/howto/outputting-pdf/)
+- [WeasyPrint](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html)
+
+```bash
+python -m pip install WeasyPrint
+mkdir -p orders/static/css # repeat for all static
+python manage.py collectstatic  
+```
+
+```python
+# myshop/settings.py
+STATIC_ROOT = BASE_DIR / 'static'
+
+# orders/urls.py
+path('admin/order/<int:order_id>/pdf/', views.admin_order_pdf, name='admin_order_pdf'),
+
+# orders/views.py
+from django.shortcuts import redirect, render, get_object_or_404
+from django.contrib.admin.views.decorators import staff_member_required
+from django.template.loader import render_to_string
+from django.contrib.staticfiles import finders
+from django.http import HttpResponse
+from cart.cart import Cart
+from .forms import OrderCreateForm
+from .models import OrderItem, Order
+from .tasks import order_created
+import weasyprint
+
+
+@staff_member_required
+def admin_order_pdf(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    html = render_to_string('orders/order/pdf.html', {'order': order})
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = f'filename=order_{order.id}.pdf'
+    weasyprint.HTML(string=html).write_pdf(
+        response,
+        stylesheets=[weasyprint.CSS(finders.find('css/pdf.css'))],
+    )
+    return response
+
+
+# orders/admin.py
+def order_pdf(obj):
+    url = reverse('orders:admin_order_pdf', args=[obj.id])
+    return mark_safe(f'<a href="{url}">PDF</a>')
+
+
+order_detail.short_description = 'Invoice'
+```
+
+
+```html
+<!-- orders/templates/orders/order/pdf.html -->
+<html>
+<body>
+  <h1>My Shop</h1>
+  <p>
+    Invoice no. {{ order.id }}<br>
+    <span class="secondary">
+      {{ order.created|date:"M d, Y" }}
+    </span>
+  </p>
+  <h3>Bill to</h3>
+  <p>
+    {{ order.first_name }} {{ order.last_name }}<br>
+    {{ order.email }}<br>
+    {{ order.address }}<br>
+    {{ order.postal_code }}, {{ order.city }}
+  </p>
+  <h3>Items bought</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in order.items.all %}
+        <tr class="row{% cycle "1" "2" %}">
+          <td>{{ item.product.name }}</td>
+          <td class="num">${{ item.price }}</td>
+          <td class="num">{{ item.quantity }}</td>
+          <td class="num">${{ item.get_cost }}</td>
+        </tr>
+      {% endfor %}
+      <tr class="total">
+        <td colspan="3">Total</td>
+        <td class="num">${{ order.get_total_cost }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <span class="{% if order.paid %}paid{% else %}pending{% endif %}">
+    {% if order.paid %}Paid{% else %}Pending payment{% endif %}
+  </span>
+</body>
+</html>
+
+### Sending Email of PDF
+
+```python
+# payment/tasks.py
+from io import BytesIO
+import weasyprint
+from celery import shared_task
+from django.contrib.staticfiles import finders
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+from orders.models import Order
+import logging
+
+logger = logging.getLogger(__name__)
+
+@shared_task
+def payment_completed(order_id):
+    """
+    Task to send an e-mail notification when an order is successfully paid.
+    """
+    logger.info(f"Processing payment completed for order {order_id}")
+    order = Order.objects.get(id=order_id)
+    subject = f'My Shop - Invoice no. {order.id}'
+    message = 'Please, find attached the invoice for your recent purchase.'
+    email = EmailMessage(subject,
+                         message,
+                         'admin@myshop.com',
+                         [order.email])
+    
+    html = render_to_string('orders/order/pdf.html', {'order': order})
+    out = BytesIO()
+    stylesheets = [weasyprint.CSS(finders.find('css/pdf.css'))]
+    weasyprint.HTML(string=html).write_pdf(out,
+                                           stylesheets=stylesheets)
+    
+    email.attach(f'order_{order.id}.pdf',
+                 out.getvalue(),
+                 'application/pdf')
+    
+    email.send()
+
+# payment/webhooks.py
+import stripe
+from django.conf import settings
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+from orders.models import Order
+from .tasks import payment_completed
+
+@csrf_exempt
+def stripe_webhook(request):
+    payload = request.body
+    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
+    event = None
+    try:
+        event = stripe.Webhook.construct_event(
+            payload, sig_header, settings.STRIPE_WEBHOOK_SECRET
+        )
+    except ValueError as e:
+        return HttpResponse(status=400)
+    except stripe.error.SignatureVerificationError as e:
+        return HttpResponse(status=400)
+    
+    if event.type == 'checkout.session.completed':
+        session = event.data.object
+        
+        if session.mode == 'payment' and session.payment_status == 'paid':
+            try:
+                order = Order.objects.get(id=session.client_reference_id)
+            except Order.DoesNotExist:
+                return HttpResponse(status=404)
+            order.paid = True
+            order.stripe_id = session.payment_intent
+            order.save()
+            payment_completed.delay(order.id)
+            
+    return HttpResponse(status=200)
+```
