@@ -18,6 +18,7 @@ import NotesIcon from "../images/notes-icon.svg";
 import ElevationScroll from "./elevation-scroll";
 import HideOnScroll from "./hide-on-scroll";
 import { Navigation } from "./navigation";
+import { useFlexSearch } from "flexsearch";
 
 const useStyles = makeStyles<HeaderProps>({ name: "Header" })((
   _theme,
@@ -135,6 +136,22 @@ const Header = (props: HeaderProps): ReactElement => {
     setDrawerOpen(!drawerOpen);
   };
 
+  const queryData = useStaticQuery(graphql`
+    query {
+      localSearchPages {
+        index
+        store
+      }
+    }
+  `);
+  const index = queryData.localSearchPages.index;
+  console.log("🚀 ~ file: header.tsx ~ line 145 ~ Header ~ index", index);
+  const store = queryData.localSearchPages.store;
+  console.log("🚀 ~ file: header.tsx ~ line 147 ~ Header ~ store", store);
+
+  const [query, setQuery] = useState("");
+  const results = useFlexSearch(query, index, store);
+
   return (
     <>
       <ElevationScroll>
@@ -185,6 +202,8 @@ const Header = (props: HeaderProps): ReactElement => {
                     input: classes.inputInput,
                   }}
                   inputProps={{ "aria-label": "search" }}
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
                 />
               </div>
             </HideOnScroll>
