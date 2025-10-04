@@ -4,12 +4,7 @@
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
-import {
-  Box,
-  CssBaseline,
-  ThemeProvider,
-  StyledEngineProvider,
-} from "@mui/material";
+import { Box, CssBaseline, Theme, ThemeProvider } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import "@fontsource/libre-franklin/300.css";
 import "@fontsource/libre-franklin/400.css";
@@ -39,6 +34,7 @@ const useStyles = makeStyles<LayoutProps>({ name: "Layout" })(
         padding: _theme.spacing(3),
       },
       flexDirection: "column",
+      height: "100%",
     },
     content: {
       flexGrow: 1,
@@ -63,7 +59,7 @@ const muiCache = makeMuiCache();
 
 // This component exists because of https://mui.com/material-ui/migration/migration-v4/#set-up-themeprovider
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const drawerWidth = 400;
+  const drawerWidth = 300;
   const { classes } = useStyles({ drawerWidth });
 
   const data = useStaticQuery(graphql`
@@ -83,7 +79,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         siteTitle={data.site.siteMetadata?.title || `Title`}
       />
       {/* <Toolbar>
-          </Toolbar> */}
+        </Toolbar> */}
       <Box my={2} component="main" className={classes.content}>
         {children}
       </Box>
