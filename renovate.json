@@ -2,7 +2,7 @@
   "extends": ["config:recommended", "group:linters"],
   "packageRules": [
     {
-      "updateTypes": ["minor", "patch"],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
   ],
