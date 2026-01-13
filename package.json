@@ -20,6 +20,7 @@
     "@svgr/webpack": "^8.0.1",
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
+	  "gatsby-plugin-local-search": "^2.0.1",
     "gatsby-plugin-manifest": "^5.11.0",
     "gatsby-plugin-offline": "^6.11.0",
     "gatsby-plugin-postcss": "^6.11.0",
@@ -32,7 +33,8 @@
     "postcss": "^8.4.26",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tss-react": "^4.8.8"
+    "tss-react": "^4.8.8",
+    "react-use-flexsearch": "^0.1.1"
   },
   "devDependencies": {
     "@emotion/cache": "^11.11.0",
