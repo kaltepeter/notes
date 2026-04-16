@@ -1,5 +1,4 @@
 import {
-  Box,
   Chip,
   List,
   ListItem,
@@ -36,10 +35,7 @@ const TagChip = styled((props: React.ComponentProps<typeof Chip>) => (
   borderRadius: 0,
 });
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface NoteListProps {}
-
-const NoteList: React.FC<NoteListProps> = () => {
+const NoteList: React.FC = () => {
   const { notes } = useNoteExcerptList();
 
   return (
