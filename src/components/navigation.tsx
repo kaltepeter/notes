@@ -1,7 +1,7 @@
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { SimpleTreeView, TreeItem } from "@mui/x-tree-view";
-import { Box, Divider, Drawer, Toolbar, useTheme } from "@mui/material";
+import { Box, Divider, Drawer, List, ListItem, ListItemButton, ListItemText, Toolbar, useTheme } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link } from "gatsby";
 import React from "react";
@@ -53,6 +53,26 @@ const NavLink = styled(Link)(({ theme }) => ({
   },
 }));
 
+const MainNavList = styled(List)(({ theme }) => ({
+  padding: theme.spacing(1, 0),
+}));
+
+const MainNavLink = styled(Link)(({ theme }) => ({
+  color: "inherit",
+  textDecoration: "none",
+  "&.active": {
+    backgroundColor: theme.palette.action.selected,
+  },
+}));
+
+const NotesLabel = styled(ListItemText)(({ theme }) => ({
+  "& .MuiListItemText-primary": {
+    ...theme.typography.overline,
+    color: theme.palette.text.secondary,
+    paddingLeft: theme.spacing(2),
+  },
+}));
+
 const Navigation: React.FC<NavigationProps> = (props) => {
   const { drawerOpen, onToggleDrawer, drawerWidth } = props;
   const theme = useTheme();
@@ -91,6 +111,22 @@ const Navigation: React.FC<NavigationProps> = (props) => {
     <>
       <Toolbar />
       <Divider />
+      <MainNavList>
+        <ListItem disablePadding>
+          <ListItemButton component={MainNavLink} to="/">
+            <ListItemText primary="Home" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton component={MainNavLink} to="/about">
+            <ListItemText primary="About" />
+          </ListItemButton>
+        </ListItem>
+      </MainNavList>
+      <Divider />
+      <ListItem disablePadding>
+        <NotesLabel primary="Notes" />
+      </ListItem>
       <SimpleTreeView
         slots={{ collapseIcon: ExpandMoreIcon, expandIcon: ChevronRightIcon }}
       >

@@ -11,13 +11,6 @@ import {
   StyledEngineProvider,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import "@fontsource/libre-franklin/300.css";
-import "@fontsource/libre-franklin/400.css";
-import "@fontsource/libre-franklin/500.css";
-import "@fontsource/libre-franklin/700.css";
-import "@fontsource/merriweather/400.css";
-import "@fontsource/merriweather/700-italic.css";
-import "@fontsource/merriweather/900-italic.css";
 import { graphql, useStaticQuery } from "gatsby";
 import React, { ReactNode } from "react";
 import Header from "./header";
@@ -25,7 +18,7 @@ import { CacheProvider } from "@emotion/react";
 import { makeMuiCache } from "../theme/cache";
 import theme from "./theme";
 
-const DRAWER_WIDTH = 400;
+const DRAWER_WIDTH = 280;
 
 const LayoutRoot = styled(Box)(({ theme }) => ({
   display: "flex",
