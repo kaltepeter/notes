@@ -79,9 +79,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
         {Object.entries(nodes).map(([tId, tPath]) => (
           <TreeItem key={tId} itemId={tId} label={getTreeLabel(tPath)}>
             {Object.keys(tPath.children).length > 0
-              ? Object.entries(tPath.children).map(([id, node]) =>
-                  renderTree({ [id]: { ...node } }),
-                )
+              ? renderTree(tPath.children)
               : null}
           </TreeItem>
         ))}
