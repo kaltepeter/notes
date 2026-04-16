@@ -4,8 +4,10 @@ import { StaticImage } from "gatsby-plugin-image";
 import React, { ReactElement } from "react";
 
 const ImageWrapper = styled(Box)({
-  position: "relative",
-  top: "-15vh",
+  position: "absolute",
+  bottom: "-50px",
+  left: 0,
+  width: "100%",
 });
 
 const ImageOverlay = styled(Box)(({ theme }) => ({
