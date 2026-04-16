@@ -2,21 +2,21 @@ import React, { ReactElement } from "react";
 import { HeadProps, PageProps, graphql } from "gatsby";
 import { LayoutWrapper } from "../components/layout";
 import { Box, Container, Paper, Typography } from "@mui/material";
-import { makeStyles } from "tss-react/mui";
+import { styled } from "@mui/material/styles";
 import SEO from "../components/seo";
 
-const useStyles = makeStyles({ name: "Template" })((_theme) => ({
-  root: {
-    padding: _theme.spacing(4),
-  },
-  noteHeader: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  noteContent: {
-    padding: _theme.spacing(4),
-  },
+const NoteContainer = styled(Container)(({ theme }) => ({
+  padding: theme.spacing(4),
 }));
+
+const NoteContent = styled(Paper)(({ theme }) => ({
+  padding: theme.spacing(4),
+}));
+
+const NoteHeader = styled(Box)({
+  display: "flex",
+  flexDirection: "column",
+});
 
 export const Template = ({
   data: { markdownRemark },
@@ -30,7 +30,6 @@ export const Template = ({
 
   const { frontmatter, html } = markdownRemark;
   // const { modifiedDate } = pageContext;
-  const { classes } = useStyles();
 
   const data = {
     title: frontmatter?.title || "",
@@ -40,15 +39,15 @@ export const Template = ({
 
   return (
     <LayoutWrapper>
-      <Container className={classes.root}>
-        <Paper className={classes.noteContent}>
-          <Box className={classes.noteHeader}>
+      <NoteContainer>
+        <NoteContent>
+          <NoteHeader>
             <Typography variant="h1">{data.title}</Typography>
             <Typography variant="overline">{data.date}</Typography>
-          </Box>
+          </NoteHeader>
           <Box dangerouslySetInnerHTML={{ __html: data.html }} />
-        </Paper>
-      </Container>
+        </NoteContent>
+      </NoteContainer>
     </LayoutWrapper>
   );
 };

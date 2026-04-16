@@ -7,7 +7,7 @@ interface ElevationScrollProps {
    * You won't need it on your project.
    */
   window?: () => Window;
-  children: React.ReactElement;
+  children: React.ReactElement<{ elevation?: number }>;
 }
 
 // https://material-ui.com/components/app-bar/#elevate-app-bar
