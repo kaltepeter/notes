@@ -1,11 +1,10 @@
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { TreeItem } from "@mui/lab";
-import TreeView from "@mui/lab/TreeView";
-import { Divider, Drawer, Hidden, Toolbar, useTheme } from "@mui/material";
+import { SimpleTreeView, TreeItem } from "@mui/x-tree-view";
+import { Box, Divider, Drawer, Toolbar, useTheme } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { Link } from "gatsby";
 import React from "react";
-import { makeStyles } from "tss-react/mui";
 import { Path, PathList, usePageTree } from "../hooks/use-page-tree";
 
 interface NavigationProps {
@@ -14,32 +13,48 @@ interface NavigationProps {
   drawerWidth: number;
 }
 
-const useStyles = makeStyles<NavigationProps>({ name: "Navigation" })(
-  (_theme, { drawerWidth }) => ({
-    drawer: {
-      [_theme.breakpoints.up("sm")]: {
-        width: `${drawerWidth}px`,
-        flexShrink: 0,
-      },
-    },
-    drawerPaper: {
-      width: `${drawerWidth}px`,
-    },
-    modal: {},
-    activeNavLink: {
-      color: _theme.palette.text.primary,
-      fontWeight: 900,
-    },
-    navLink: {
-      color: "inherit",
-      textDecoration: "none",
-    },
-  }),
-);
+const NavContainer = styled("nav", {
+  shouldForwardProp: (prop) => prop !== "drawerWidth",
+})<{ drawerWidth: number }>(({ theme, drawerWidth }) => ({
+  [theme.breakpoints.up("sm")]: {
+    width: `${drawerWidth}px`,
+    flexShrink: 0,
+  },
+}));
+
+const MobileNav = styled(Box)({
+  display: "block",
+  "@media (min-width: 600px)": {
+    display: "none",
+  },
+});
+
+const DesktopNav = styled(Box)({
+  display: "none",
+  "@media (min-width: 1200px)": {
+    display: "block",
+  },
+});
+
+const NavDrawer = styled(Drawer, {
+  shouldForwardProp: (prop) => prop !== "drawerWidth",
+})<{ drawerWidth: number }>(({ drawerWidth }) => ({
+  "& .MuiDrawer-paper": {
+    width: `${drawerWidth}px`,
+  },
+}));
+
+const NavLink = styled(Link)(({ theme }) => ({
+  color: "inherit",
+  textDecoration: "none",
+  "&.active": {
+    color: theme.palette.text.primary,
+    fontWeight: 900,
+  },
+}));
 
 const Navigation: React.FC<NavigationProps> = (props) => {
-  const { drawerOpen, onToggleDrawer } = props;
-  const { classes } = useStyles(props);
+  const { drawerOpen, onToggleDrawer, drawerWidth } = props;
   const theme = useTheme();
   const { allPaths } = usePageTree();
 
@@ -49,14 +64,9 @@ const Navigation: React.FC<NavigationProps> = (props) => {
   const getTreeLabel = (node: Path) => (
     <div>
       {node.slug && node.slug?.length > 0 ? (
-        <Link
-          to={node.slug}
-          className={classes.navLink}
-          partiallyActive={true}
-          activeClassName={classes.activeNavLink}
-        >
+        <NavLink to={node.slug} partiallyActive={true}>
           {titleCase(node.name)}
-        </Link>
+        </NavLink>
       ) : (
         titleCase(node.name)
       )}
@@ -67,7 +77,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
     return (
       <>
         {Object.entries(nodes).map(([tId, tPath]) => (
-          <TreeItem key={tId} nodeId={tId} label={getTreeLabel(tPath)}>
+          <TreeItem key={tId} itemId={tId} label={getTreeLabel(tPath)}>
             {Object.keys(tPath.children).length > 0
               ? Object.entries(tPath.children).map(([id, node]) =>
                   renderTree({ [id]: { ...node } }),
@@ -83,50 +93,34 @@ const Navigation: React.FC<NavigationProps> = (props) => {
     <>
       <Toolbar />
       <Divider />
-      <TreeView
-        defaultCollapseIcon={<ExpandMoreIcon />}
-        // defaultExpanded={["root"]}
-        defaultExpandIcon={<ChevronRightIcon />}
+      <SimpleTreeView
+        slots={{ collapseIcon: ExpandMoreIcon, expandIcon: ChevronRightIcon }}
       >
         {renderTree(allPaths["root"].children)}
-      </TreeView>
+      </SimpleTreeView>
     </>
   );
 
   return (
-    <>
-      <nav className={classes.drawer} aria-label="notes">
-        <Hidden smUp implementation="css">
-          <Drawer
-            variant="temporary"
-            anchor={theme.direction === "rtl" ? "right" : "left"}
-            open={drawerOpen}
-            onClose={onToggleDrawer}
-            classes={{
-              paper: classes.drawerPaper,
-              modal: classes.modal,
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            {drawerChildren()}
-          </Drawer>
-        </Hidden>
-        <Hidden mdDown implementation="css">
-          <Drawer
-            classes={{
-              paper: classes.drawerPaper,
-              modal: classes.modal,
-            }}
-            variant="permanent"
-            open
-          >
-            {drawerChildren()}
-          </Drawer>
-        </Hidden>
-      </nav>
-    </>
+    <NavContainer aria-label="notes" drawerWidth={drawerWidth}>
+      <MobileNav>
+        <NavDrawer
+          drawerWidth={drawerWidth}
+          variant="temporary"
+          anchor={theme.direction === "rtl" ? "right" : "left"}
+          open={drawerOpen}
+          onClose={onToggleDrawer}
+          ModalProps={{ keepMounted: true }}
+        >
+          {drawerChildren()}
+        </NavDrawer>
+      </MobileNav>
+      <DesktopNav>
+        <NavDrawer drawerWidth={drawerWidth} variant="permanent" open>
+          {drawerChildren()}
+        </NavDrawer>
+      </DesktopNav>
+    </NavContainer>
   );
 };
 

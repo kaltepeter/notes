@@ -1,41 +1,50 @@
 import {
+  Box,
   Divider,
   Grid,
-  Hidden,
   List,
   ListItem,
   Box as Paper,
   Typography,
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { HeadProps, PageProps } from "gatsby";
 import React, { ReactElement } from "react";
-import { makeStyles } from "tss-react/mui";
 import Image from "../components/image";
 import Layout from "../components/layout";
 import { NoteList } from "../components/note-list";
 import SEO from "../components/seo";
 
-const useStyles = makeStyles({ name: "IndexPage" })((_theme) => ({
-  root: {
-    flexGrow: 1,
-    padding: _theme.spacing(0, 4),
-  },
-  featureText: {
-    paddingBottom: _theme.spacing(2),
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    "& h3": {
-      textAlign: "right",
-      paddingRight: _theme.spacing(2),
-    },
-  },
-  featureImage: {
-    maxHeight: "40vh",
-    overflow: "hidden",
+const PageGrid = styled(Grid)(({ theme }) => ({
+  flexGrow: 1,
+  padding: theme.spacing(0, 4),
+  justifyContent: "space-between",
+  alignItems: "stretch",
+}));
+
+const FeatureImage = styled(Paper)({
+  maxHeight: "40vh",
+  overflow: "hidden",
+});
+
+const FeatureSection = styled(Paper)(({ theme }) => ({
+  paddingBottom: theme.spacing(2),
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  alignItems: "center",
+  "& h3": {
+    textAlign: "right",
+    paddingRight: theme.spacing(2),
   },
 }));
+
+const VerticalDividerWrapper = styled(Box)({
+  display: "none",
+  "@media (min-width: 1536px)": {
+    display: "block",
+  },
+});
 
 // Please note that you can use https://github.com/dotansimha/graphql-code-generator
 // to generate all types from graphQL schema
@@ -53,23 +62,14 @@ interface IndexPageProps extends PageProps {
 }
 
 const IndexPage: React.FC<IndexPageProps> = () => {
-  const { classes } = useStyles();
-
   return (
     <Layout>
-      <Grid
-        container
-        direction="row"
-        justifyContent="space-between"
-        alignItems="stretch"
-        spacing={4}
-        className={classes.root}
-      >
-        <Grid item xs={12} sm={6}>
-          <Paper className={classes.featureImage}>
+      <PageGrid container spacing={4}>
+        <Grid size={{ xs: 12, sm: 6 }}>
+          <FeatureImage>
             <Image />
-          </Paper>
-          <Paper className={classes.featureText}>
+          </FeatureImage>
+          <FeatureSection>
             <Typography variant="h3">Write It Down</Typography>
             <List>
               <ListItem>How do we remember things?</ListItem>
@@ -77,14 +77,14 @@ const IndexPage: React.FC<IndexPageProps> = () => {
               <ListItem>How do we free up our minds?</ListItem>
               <ListItem>How do we organize thoughts?</ListItem>
             </List>
-          </Paper>
-          <Paper className={classes.featureText}>
+          </FeatureSection>
+          <FeatureSection>
             <Typography component="p" variant="body2">
               We should <em>write it down</em>, <em>anyway</em> that works for
               you.
             </Typography>
-          </Paper>
-          <Paper className={classes.featureText}>
+          </FeatureSection>
+          <FeatureSection>
             <List>
               <ListItem>
                 <a href="https://sourcesofinsight.com/write-things-down/">
@@ -97,15 +97,15 @@ const IndexPage: React.FC<IndexPageProps> = () => {
                 </a>
               </ListItem>
             </List>
-          </Paper>
+          </FeatureSection>
         </Grid>
-        <Hidden lgDown>
+        <VerticalDividerWrapper>
           <Divider orientation="vertical" flexItem component="span" />
-        </Hidden>
-        <Grid item xs={12} sm={5}>
+        </VerticalDividerWrapper>
+        <Grid size={{ xs: 12, sm: 5 }}>
           <NoteList />
         </Grid>
-      </Grid>
+      </PageGrid>
     </Layout>
   );
 };

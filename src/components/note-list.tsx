@@ -6,64 +6,55 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { Link } from "gatsby";
 import React from "react";
-import { makeStyles } from "tss-react/mui";
 import { useNoteExcerptList } from "../hooks/use-note-excerpt-list";
 import { Note } from "../models/note";
 
-const useStyles = makeStyles({ name: "NoteList" })((_theme) => ({
-  noteListItem: {
-    "& .head": {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "baseline",
-    },
-  },
-  noteListItemText: {
-    // marginTop: theme.spacing(2),
-  },
-  chipList: {
+const NoteListItem = styled(ListItem)({
+  "& .head": {
     display: "flex",
-    justifyContent: "left",
-    flexWrap: "wrap",
-    listStyle: "none",
-    padding: _theme.spacing(0.5),
-    margin: 0,
+    justifyContent: "space-between",
+    alignItems: "baseline",
   },
-  chip: {
-    border: "none",
-    borderRadius: 0,
-  },
+});
+
+const TagList = styled("ul")(({ theme }) => ({
+  display: "flex",
+  justifyContent: "left",
+  flexWrap: "wrap",
+  listStyle: "none",
+  padding: theme.spacing(0.5),
+  margin: 0,
 }));
+
+const TagChip = styled((props: React.ComponentProps<typeof Chip>) => (
+  <Chip component="span" {...props} />
+))({
+  border: "none",
+  borderRadius: 0,
+});
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface NoteListProps {}
 
 const NoteList: React.FC<NoteListProps> = () => {
-  const { classes, cx } = useStyles();
   const { notes } = useNoteExcerptList();
-  // const {modifiedDate, slug} = pageContext;
 
   return (
     <List>
       {notes
-        .filter((note) => note.node.frontmatter.title.length > 0)
+        .filter((note) => (note.node.frontmatter?.title?.length ?? 0) > 0)
         .map(({ node }) => {
-          const note = node as Note;
+          const note = node as unknown as Note;
           return (
-            <ListItem
-              className={classes.noteListItem}
-              key={note.id}
-              divider={true}
-            >
+            <NoteListItem key={note.id} divider={true}>
               <ListItemText
                 inset={false}
-                primaryTypographyProps={{
-                  className: "head",
-                }}
-                secondaryTypographyProps={{
-                  component: "div",
+                slotProps={{
+                  primary: { className: "head" },
+                  secondary: { component: "div" },
                 }}
                 primary={
                   <>
@@ -79,36 +70,33 @@ const NoteList: React.FC<NoteListProps> = () => {
                 }
                 secondary={
                   <>
-                    <Box component="ul" className={classes.chipList}>
+                    <TagList>
                       {note.frontmatter.tags?.map((tag, index) => (
                         <Typography
                           component="li"
                           variant="subtitle1"
                           key={index}
                         >
-                          <Chip
+                          <TagChip
                             size="medium"
                             variant="outlined"
-                            component="span"
                             color="secondary"
                             label={`#${tag}`}
-                            className={cx(classes.chip)}
                           />
                         </Typography>
                       ))}
-                    </Box>
+                    </TagList>
                     <Typography
                       component="p"
                       variant="body1"
-                      color="textPrimary"
-                      className={classes.noteListItemText}
+                      color="text.primary"
                     >
                       {note.excerpt}
                     </Typography>
                   </>
                 }
-              ></ListItemText>
-            </ListItem>
+              />
+            </NoteListItem>
           );
         })}
     </List>

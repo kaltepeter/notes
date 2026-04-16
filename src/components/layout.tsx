@@ -10,7 +10,7 @@ import {
   ThemeProvider,
   StyledEngineProvider,
 } from "@mui/material";
-import { makeStyles } from "tss-react/mui";
+import { styled } from "@mui/material/styles";
 import "@fontsource/libre-franklin/300.css";
 import "@fontsource/libre-franklin/400.css";
 import "@fontsource/libre-franklin/500.css";
@@ -25,47 +25,45 @@ import { CacheProvider } from "@emotion/react";
 import { makeMuiCache } from "../theme/cache";
 import theme from "./theme";
 
+const DRAWER_WIDTH = 400;
+
+const LayoutRoot = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  padding: theme.spacing(2),
+  [theme.breakpoints.up("sm")]: {
+    padding: theme.spacing(3),
+  },
+}));
+
+const MainContent = styled("main")(({ theme }) => ({
+  flexGrow: 1,
+  padding: theme.spacing(3),
+  marginTop: theme.spacing(2),
+  marginBottom: theme.spacing(2),
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: `${DRAWER_WIDTH}px`,
+  },
+}));
+
+const Footer = styled("footer")(({ theme }) => ({
+  width: "100vw",
+  backgroundColor: theme.palette.primary.main,
+  padding: theme.spacing(2),
+  display: "block",
+  [theme.breakpoints.up("sm")]: {
+    marginLeft: `${DRAWER_WIDTH}px`,
+  },
+}));
+
 type LayoutProps = {
-  drawerWidth?: number;
   children?: React.ReactNode;
 };
-
-const useStyles = makeStyles<LayoutProps>({ name: "Layout" })(
-  (_theme, { drawerWidth }) => ({
-    root: {
-      display: "flex",
-      padding: _theme.spacing(2),
-      [_theme.breakpoints.up("sm")]: {
-        padding: _theme.spacing(3),
-      },
-      flexDirection: "column",
-    },
-    content: {
-      flexGrow: 1,
-      [_theme.breakpoints.up("sm")]: {
-        marginLeft: drawerWidth,
-      },
-      padding: _theme.spacing(3),
-    },
-    footer: {
-      width: "100vw",
-      background: _theme.palette.primary.main,
-      padding: _theme.spacing(2),
-      display: "block",
-      [_theme.breakpoints.up("sm")]: {
-        marginLeft: drawerWidth,
-      },
-    },
-  }),
-);
 
 const muiCache = makeMuiCache();
 
 // This component exists because of https://mui.com/material-ui/migration/migration-v4/#set-up-themeprovider
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const drawerWidth = 400;
-  const { classes } = useStyles({ drawerWidth });
-
   const data = useStaticQuery(graphql`
     query SiteTitle {
       site {
@@ -77,17 +75,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   `);
 
   return (
-    <div className={classes.root}>
+    <LayoutRoot>
       <Header
-        drawerWidth={drawerWidth}
+        drawerWidth={DRAWER_WIDTH}
         siteTitle={data.site.siteMetadata?.title || `Title`}
       />
-      {/* <Toolbar>
-          </Toolbar> */}
-      <Box my={2} component="main" className={classes.content}>
-        {children}
-      </Box>
-      <Box component="footer" className={classes.footer}>
+      <MainContent>{children}</MainContent>
+      <Footer>
         © {new Date().getFullYear()} Kayla Altepeter, Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
@@ -101,8 +95,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             www.flaticon.com
           </a>
         </div>
-      </Box>
-    </div>
+      </Footer>
+    </LayoutRoot>
   );
 };
 

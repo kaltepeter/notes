@@ -28,7 +28,7 @@ export const usePageTree = (): {
   allTags: Set<string>;
   allPaths: PathList;
 } => {
-  const { allMarkdownRemark: pageList } = useStaticQuery(graphql`
+  const { allMarkdownRemark: pageList } = useStaticQuery<Queries.AllPagesQuery>(graphql`
     query AllPages {
       allMarkdownRemark(sort: { fields: { slug: ASC } }) {
         nodes {
@@ -48,56 +48,55 @@ export const usePageTree = (): {
 
   const allTags = new Set<string>(
     pageList.nodes
-      .map(({ frontmatter }) => frontmatter.tags)
+      .map((node) => node.frontmatter?.tags)
       .flat()
-      .filter((t) => !!t),
+      .filter((t): t is string => !!t),
   );
 
-  const pages = pageList.nodes.map(({ id, fields, frontmatter }) => ({
-    id,
-    title: frontmatter.title,
-    date: frontmatter.date,
-    tags: frontmatter.tags,
-    slug: fields.slug,
-    segments: fields.slug
+  const pages = pageList.nodes.map((node) => ({
+    id: node.id,
+    title: node.frontmatter?.title ?? "",
+    date: node.frontmatter?.date,
+    tags: node.frontmatter?.tags?.filter((t): t is string => t !== null),
+    slug: node.fields?.slug,
+    segments: node.fields?.slug
       ?.split("/")
-      .filter((seg) => seg && seg !== "")
-      .slice(0, -1),
+      .filter((seg): seg is string => !!seg && seg !== "")
+      .slice(0, -1) ?? [],
   }));
 
-  const allPaths = { ["root"]: { name: "root", slug: "/", children: {} } };
+  const allPaths: PathList = { root: { name: "root", slug: "/", children: {} } };
   pages.forEach((page) => {
     if (page.segments.length > 0) {
       const segmentList = [...page.segments];
-      let segment;
       let curParent = allPaths["root"];
       while (segmentList.length > 0) {
-        segment = segmentList.shift();
+        const segment = segmentList.shift()!;
         if (!curParent.children[segment]) {
           curParent.children[segment] = { name: segment, children: {} };
         }
         curParent = curParent.children[segment];
       }
-      if (page.slug.match(/README\/?$/)) {
+      if (page.slug && page.slug.match(/README\/?$/)) {
         curParent.slug = page.slug;
       } else {
         curParent.children[page.id] = {
           name: page.title,
-          slug: page.slug,
+          slug: page.slug ?? undefined,
           children: {},
         };
       }
     } else {
       allPaths.root.children[page.id] = {
         name: page.title,
-        slug: page.slug,
+        slug: page.slug ?? undefined,
         children: {},
       };
     }
   });
 
   return {
-    pages: { ...pages },
+    pages: Object.fromEntries(pages.map((p) => [p.id, p])) as unknown as PageList,
     allTags,
     allPaths,
   };
