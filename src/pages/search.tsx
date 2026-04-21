@@ -5,13 +5,11 @@ import React, { ReactElement } from "react";
 import Layout from "../components/layout";
 import NoteListEntry from "../components/note-list-entry";
 import SEO from "../components/seo";
-import { useNoteSearch } from "../hooks/use-note-search";
+import { MIN_QUERY_LENGTH, useNoteSearch } from "../hooks/use-note-search";
 
 const ResultsHeader = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(2),
 }));
-
-const MIN_QUERY_LENGTH = 3;
 
 const SearchPage: React.FC<PageProps> = ({ location }) => {
   const params = new URLSearchParams(location.search);

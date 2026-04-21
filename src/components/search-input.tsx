@@ -15,11 +15,10 @@ import {
 import { styled } from "@mui/material/styles";
 import { Link, navigate } from "gatsby";
 import React, { useRef, useState } from "react";
-import { useNoteSearch } from "../hooks/use-note-search";
+import { MIN_QUERY_LENGTH, useNoteSearch } from "../hooks/use-note-search";
 import { Note } from "../models/note";
 
 const PREVIEW_LIMIT = 5;
-const MIN_QUERY_LENGTH = 3;
 const SNIPPET_WINDOW = 70;
 
 function relativeDate(isoDateStr: string | undefined): string {
@@ -55,7 +54,7 @@ function matchSnippet(excerpt: string, query: string): Snippet {
   };
 }
 
-export const SearchContainer = styled(Box, {
+const SearchContainer = styled(Box, {
   shouldForwardProp: (prop) => prop !== "expanded",
 })<{ expanded: boolean }>(({ theme, expanded }) => ({
   position: "relative",
@@ -75,7 +74,7 @@ export const SearchContainer = styled(Box, {
   },
 }));
 
-export const SearchIconWrapper = styled(Box)(({ theme }) => ({
+const SearchIconWrapper = styled(Box)(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: "100%",
   position: "absolute",
@@ -85,7 +84,7 @@ export const SearchIconWrapper = styled(Box)(({ theme }) => ({
   justifyContent: "center",
 }));
 
-export const StyledInputBase = styled(InputBase, {
+const StyledInputBase = styled(InputBase, {
   shouldForwardProp: (prop) => prop !== "expanded",
 })<{ expanded: boolean }>(({ theme, expanded }) => ({
   color: "inherit",
@@ -279,7 +278,7 @@ const SearchInput: React.FC = () => {
                 </List>
                 <Divider />
                 <AllResultsLink
-                  to={`/search?q=${encodeURIComponent(query)}`}
+                  to={`/search?q=${encodeURIComponent(trimmedQuery)}`}
                   onClick={handleClear}
                 >
                   <Typography variant="body2">

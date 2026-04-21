@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Kayla Altepeter",
   "engines": {
-    "node": ">=18.16.1",
+    "node": ">=24.15.0",
     "npm": ">=9.5.1"
   },
   "dependencies": {

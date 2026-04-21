@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import React from "react";
 import { Note } from "../models/note";
 
-export const NoteItemContainer = styled(ListItem)({
+const NoteItemContainer = styled(ListItem)({
   "& .head": {
     display: "flex",
     justifyContent: "space-between",
