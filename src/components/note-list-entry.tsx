@@ -12,11 +12,6 @@ export const NoteItemContainer = styled(ListItem)({
   },
 });
 
-const NoteItemLink = styled(Link)({
-  color: "inherit",
-  textDecoration: "none",
-});
-
 const TagList = styled("ul")(({ theme }) => ({
   display: "flex",
   justifyContent: "left",
@@ -62,8 +57,8 @@ const NoteListEntry: React.FC<NoteListEntryProps> = ({
       secondary={
         <>
           <TagList>
-            {note.frontmatter.tags?.map((tag, index) => (
-              <Typography component="li" variant="subtitle1" key={index}>
+            {note.frontmatter.tags?.map((tag) => (
+              <Typography component="li" variant="subtitle1" key={tag}>
                 <TagChip
                   size="medium"
                   variant="outlined"

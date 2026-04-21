@@ -7,6 +7,7 @@ export type Note = {
   frontmatter: {
     title?: string;
     date?: string;
+    rawDate?: string;
     tags?: string[];
   };
 };
