@@ -22,12 +22,11 @@ const PREVIEW_LIMIT = 5;
 const MIN_QUERY_LENGTH = 3;
 const SNIPPET_WINDOW = 70;
 
-function relativeDate(dateStr: string | undefined): string {
-  if (!dateStr) return "";
-  const date = new Date(dateStr);
-  const diffDays = Math.floor(
-    (Date.now() - date.getTime()) / 86400000,
-  );
+function relativeDate(isoDateStr: string | undefined): string {
+  if (!isoDateStr) return "";
+  const date = new Date(isoDateStr);
+  if (isNaN(date.getTime())) return "";
+  const diffDays = Math.floor((Date.now() - date.getTime()) / 86400000);
   if (diffDays < 1) return "today";
   if (diffDays < 7) return `${diffDays}d ago`;
   if (diffDays < 30) return `${Math.floor(diffDays / 7)}w ago`;
@@ -174,7 +173,7 @@ type NotePreviewProps = { note: Note; query: string; onClick: () => void };
 
 const NotePreview: React.FC<NotePreviewProps> = ({ note, query, onClick }) => {
   const snippet = note.excerpt ? matchSnippet(note.excerpt, query) : null;
-  const date = relativeDate(note.frontmatter.date);
+  const date = relativeDate(note.frontmatter.rawDate);
   const tags = note.frontmatter.tags ?? [];
 
   return (
@@ -221,11 +220,12 @@ const SearchInput: React.FC = () => {
   const [focused, setFocused] = useState(false);
   const anchorRef = useRef<HTMLDivElement>(null);
 
-  const expanded = focused || query.length > 0;
-  const searchQuery = query.length >= MIN_QUERY_LENGTH ? query : "";
+  const trimmedQuery = query.trim();
+  const expanded = focused || trimmedQuery.length > 0;
+  const searchQuery = trimmedQuery.length >= MIN_QUERY_LENGTH ? trimmedQuery : "";
   const results = useNoteSearch(searchQuery);
   const previewResults = results.slice(0, PREVIEW_LIMIT);
-  const open = query.length >= MIN_QUERY_LENGTH;
+  const open = trimmedQuery.length >= MIN_QUERY_LENGTH;
 
   const handleClear = () => {
     setQuery("");

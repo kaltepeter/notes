@@ -15,7 +15,7 @@ const MIN_QUERY_LENGTH = 3;
 
 const SearchPage: React.FC<PageProps> = ({ location }) => {
   const params = new URLSearchParams(location.search);
-  const query = params.get("q") ?? "";
+  const query = (params.get("q") ?? "").trim();
   const searchQuery = query.length >= MIN_QUERY_LENGTH ? query : "";
   const results = useNoteSearch(searchQuery);
 
