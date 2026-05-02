@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Kayla Altepeter",
   "engines": {
-    "node": ">=18.16.1",
+    "node": ">=24.15.0",
     "npm": ">=9.5.1"
   },
   "dependencies": {
@@ -29,13 +29,16 @@
     "gatsby-source-filesystem": "^5.11.0",
     "gatsby-transformer-remark": "^6.11.0",
     "gatsby-transformer-sharp": "^5.11.0",
+    "js-search": "^2.0.1",
     "postcss": "^8.4.26",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@emotion/cache": "^11.14.0",
+    "@eslint/js": "^10.0.1",
     "@graphql-eslint/eslint-plugin": "^4.0.0",
+    "@types/js-search": "^1.4.4",
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
