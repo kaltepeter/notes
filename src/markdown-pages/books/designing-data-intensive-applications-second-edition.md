@@ -218,7 +218,9 @@ Shared-disk shared fast disk and nothing else
 
 Shared-nothing is horizontal scaling and common with distributed systems
 
-## Storage and Retreival
+## Data Models and Query Languages
+
+### Storage and Retreival
 
 This is fundamental to databases.
 
