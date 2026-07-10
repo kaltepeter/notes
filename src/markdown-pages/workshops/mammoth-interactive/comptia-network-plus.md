@@ -396,7 +396,7 @@ Baseband vs. Broadband
 ### Twisted Pairs
 
 - Cable used in networking which consists of paired-insulated twisted-wires
-- Helps reduce the elctromagnetic interference
+- Helps reduce the electromagnetic interference
 - connectors terminate and connect
   - RJ45 (registered jack). Ethernet, 8 pin Unshielded twisted pair cables. 8 positions, 8 contracts, modular plug configuration
   - RJ-11. telephone lines. 6 positions, 4 contacts. smaller than RJ45, smaller guage cables, cat3 or similar.
