@@ -89,6 +89,16 @@ const TagChip = styled((props: React.ComponentProps<typeof Chip>) => (
 ))({ border: "none", borderRadius: 0 });
 ```
 
+## GitHub Comments & Reviews
+
+When posting any comment, review, or reply on GitHub (PRs, issues, etc.), always append the following signature on a new line at the end:
+
+```
+— 🤖 Claude
+```
+
+This applies to PR review comments, inline code comments, issue comments, and review summaries — anything posted via `gh` CLI or GitHub API.
+
 ## Dependency Notes
 
 - **`tss-react` is removed.** It does not support MUI v9. Do not re-add it.

@@ -19,6 +19,7 @@ export const useNoteExcerptList = (): {
               frontmatter {
                 title
                 date(formatString: "MMMM DD, YYYY")
+                rawDate: date
                 tags
               }
             }
